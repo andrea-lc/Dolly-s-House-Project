@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="diseñoIndex.css">
+        <title>Dolly's House | Pet Shop</title>
+        <link rel="stylesheet" href="DiseñoProductos.css">
+    </head>
+    <body>
+        <!-- BARRA SUPERIOR CON MARQUEE -->
+            <div class="barra-top">
+                <marquee behavior="scroll" direction="left">
+                    Ofertas especiales esta semana🎁 &nbsp;&nbsp;•&nbsp;&nbsp; 20% OFF en alimentos &nbsp;&nbsp;•&nbsp;&nbsp; Accesorios para hamsters &nbsp;&nbsp;•&nbsp;&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100! 
+                </marquee>
+            </div>
+        <!-- ENCABEZADO -->
+        <header class="header-principal">
+            <div class="logo" >
+                <img src="images/logo.png">
+            </div>
+            <div class="caja-derecha">
+                <span class="carrito-texto">🛒 Carrito</span>
+                <input type="text" class="buscador" placeholder="Buscar">
+            </div>
+        </header>
+
+         <!-- MENÚ DE NAVEGACIÓN -->
+        <div class="navegacion">
+            <ul class="opciones">
+                <li><a href="#">Ropa</a></li>
+                <li><a href="#">Alimentos</a></li>
+                <li><a href="#">Mascotas Grandes</a></li>
+                <li><a href="#">Mascotas Pequeñas</a></li>
+                <li><a href="#">Aves</a></li>
+            </ul>
+        </div>
+         <!-- TITULO DEL CUERPO -->
+          <div class="contenedor">
+            <h1 class="titulo-pagina">Alimentos</h1>
+            <p class="subtitulo"><a href="index.html">volver a inicio</a></p>
+            <div class="layout">
+                
+              <!-- SIDEBAR FILTROS -->
+              <aside class="sidebar-filtros">
+                <button class="btn-borrar">Borrar todo</button>
+
+                <div class="filtro-bloque">
+                  <div class="filtro-titulo">Categoría</div>
+                  <ul class="filtro-opciones">
+                    <li><input type="checkbox" id="f-accesorios"> <label for="f-accesorios">Accesorios para mascotas</label></li>
+                    <li><input type="checkbox" id="f-alimentos"> <label for="f-alimentos">Alimentos para mascotas</label></li>
+                    <li><input type="checkbox" id="f-pequeños"> <label for="f-pequeños">Animales pequeños</label></li>
+                    <li><input type="checkbox" id="f-aves"> <label for="f-aves">Aves</label></li>
+                    <li><input type="checkbox" id="f-corral"> <label for="f-corral">Aves de corral</label></li>
+                  </ul>
+                </div>
+
+                <div class="filtro-bloque">
+                  <div class="filtro-titulo">Mascota</div>
+                  <ul class="filtro-opciones">
+                    <li><input type="checkbox" id="f-perro"> <label for="f-perro">Perro</label></li>
+                    <li><input type="checkbox" id="f-gato"> <label for="f-gato">Gato</label></li>
+                    <li><input type="checkbox" id="f-ave2"> <label for="f-ave2">Ave</label></li>
+                    <li><input type="checkbox" id="f-hamster"> <label for="f-hamster">Hámster</label></li>
+                  </ul>
+                </div>
+
+                <div class="filtro-bloque">
+                  <div class="filtro-titulo">Tipo de producto</div>
+                  <ul class="filtro-opciones">
+                    <li><input type="checkbox" id="f-seco"> <label for="f-seco">Alimento seco</label></li>
+                    <li><input type="checkbox" id="f-humedo"> <label for="f-humedo">Alimento húmedo</label></li>
+                    <li><input type="checkbox" id="f-ropa"> <label for="f-ropa">Ropa</label></li>
+                    <li><input type="checkbox" id="f-jaulas"> <label for="f-jaulas">Jaulas</label></li>
+                    <li><input type="checkbox" id="f-juguetes"> <label for="f-juguetes">Juguetes</label></li>
+                  </ul>
+                </div>
+
+                <div class="filtro-bloque">
+                  <div class="filtro-titulo">Precio</div>
+                  <ul class="filtro-opciones">
+                    <li><input type="checkbox" id="f-p1"> <label for="f-p1">S/. 0 – S/. 20</label></li>
+                    <li><input type="checkbox" id="f-p2"> <label for="f-p2">S/. 21 – S/. 50</label></li>
+                    <li><input type="checkbox" id="f-p3"> <label for="f-p3">S/. 51 – S/. 100</label></li>
+                    <li><input type="checkbox" id="f-p4"> <label for="f-p4">S/. 100 a más</label></li>
+                  </ul>
+                </div>
+
+                <div class="filtro-bloque">
+                  <div class="filtro-titulo">Oferta</div>
+                  <ul class="filtro-opciones">
+                    <li><input type="checkbox" id="f-oferta"> <label for="f-oferta">Solo ofertas</label></li>
+                  </ul>
+                </div>
+
+              </aside>
+
+              <!-- ÁREA DE PRODUCTOS -->
+              <div class="productos-area">
+
+                <div class="productos-header">
+                  <span class="resultados">10 Resultados</span>
+                  <select class="ordenar">
+                    <option>Ordenar por</option>
+                    <option>Menor precio</option>
+                    <option>Mayor precio</option>
+                    <option>Más vendidos</option>
+                    <option>Novedades</option>
+                  </select>
+                </div>
+
+                <div class="grid-productos">
+
+                  <div class="producto-card">
+                    <img src="images/producto1.png" alt="Croquetas Premium para perros">
+                    <div class="card-body">
+                      <p class="marca">PetFood</p>
+                      <p class="nombre">Croquetas Premium Perro Adulto 3kg</p>
+                      <p class="precio">S/. 45.00</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                  <div class="producto-card">
+                    <div class="etiqueta oferta">20% OFF</div>
+                    <img src="images/producto1.png" alt="Alimento húmedo para gatos">
+                    <div class="card-body">
+                      <p class="marca">NaturCat</p>
+                      <p class="nombre">Alimento Húmedo Gato Adulto x12</p>
+                      <p class="precio-tachado">S/. 15.00</p>
+                      <p class="precio">S/. 12.00</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                  <div class="producto-card">
+                    <img src="images/producto1.png" alt="Collar acolchado para mascotas">
+                    <div class="card-body">
+                      <p class="marca">PetStyle</p>
+                      <p class="nombre">Collar Acolchado con Cierre de Seguridad</p>
+                      <p class="precio">S/. 18.00</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                  <div class="producto-card">
+                    <div class="etiqueta liquidacion">50% LIQUIDACIÓN</div>
+                    <img src="images/producto1.png" alt="Jaula Deluxe para aves">
+                    <div class="card-body">
+                      <p class="marca">AviHome</p>
+                      <p class="nombre">Jaula Deluxe para Loros y Canarios</p>
+                      <p class="precio-tachado">S/. 178.00</p>
+                      <p class="precio">S/. 89.00</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                  <div class="producto-card">
+                    <img src="images/producto1.png" alt="Abrigo para mascotas">
+                    <div class="card-body">
+                      <p class="marca">PetStyle</p>
+                      <p class="nombre">Abrigo Cálido para Mascotas Talla M</p>
+                      <p class="precio">S/. 32.00</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                  <div class="producto-card">
+                    <div class="etiqueta regalo">REGALO</div>
+                    <img src="images/producto1.png" alt="Kit para hámster">
+                    <div class="card-body">
+                      <p class="marca">SmallPet</p>
+                      <p class="nombre">Kit Starter Hámster: Jaula + Rueda + Bebedero</p>
+                      <p class="precio">S/. 55.00</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                  <div class="producto-card">
+                    <img src="images/producto1.png" alt="Alpiste Premium para aves">
+                    <div class="card-body">
+                      <p class="marca">AviFood</p>
+                      <p class="nombre">Alpiste Premium para Aves 1kg</p>
+                      <p class="precio">S/. 9.50</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                  <div class="producto-card">
+                    <img src="images/producto1.png" alt="Cama acolchada para mascotas">
+                    <div class="card-body">
+                      <p class="marca">PetComfort</p>
+                      <p class="nombre">Cama Acolchada Grande para Perros</p>
+                      <p class="precio">S/. 65.00</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                  <div class="producto-card">
+                    <div class="etiqueta oferta">10% OFF</div>
+                    <img src="images/producto1.png" alt="Bebedero automático">
+                    <div class="card-body">
+                      <p class="marca">PetTech</p>
+                      <p class="nombre">Bebedero Automático para Mascotas</p>
+                      <p class="precio-tachado">S/. 31.00</p>
+                      <p class="precio">S/. 28.00</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                  <div class="producto-card">
+                    <img src="images/producto1.png" alt="Juguete interactivo para mascotas">
+                    <div class="card-body">
+                      <p class="marca">FunPet</p>
+                      <p class="nombre">Juguete Interactivo con Plumas para Gatos</p>
+                      <p class="precio">S/. 22.00</p>
+                      <a href="carrito.html" class="btn-comprar">Agregar al carrito</a>
+                    </div>
+                  </div>
+
+                </div><!-- fin grid-productos -->
+
+                <!-- TABLA RESUMEN -->
+                <section class="tabla-resumen">
+                  <h2>Resumen de Precios</h2>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Código</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Precio (S/.)</th>
+                        <th>Stock</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>P001</td>
+                        <td>Croquetas Premium 3kg</td>
+                        <td>Alimentos</td>
+                        <td>45.00</td>
+                        <td>150</td>
+                      </tr>
+                      <tr class="fila-par">
+                        <td>P002</td>
+                        <td>Alimento Húmedo Gato x12</td>
+                        <td>Alimentos</td>
+                        <td>12.00</td>
+                        <td>200</td>
+                      </tr>
+                      <tr>
+                        <td>P003</td>
+                        <td>Collar Acolchado</td>
+                        <td>Accesorios</td>
+                        <td>18.00</td>
+                        <td>80</td>
+                      </tr>
+                      <tr class="fila-par">
+                        <td>P004</td>
+                        <td>Jaula Deluxe para Aves</td>
+                        <td>Aves</td>
+                        <td>89.00</td>
+                        <td>25</td>
+                      </tr>
+                      <tr>
+                        <td>P005</td>
+                        <td>Abrigo para Mascotas</td>
+                        <td>Accesorios</td>
+                        <td>32.00</td>
+                        <td>60</td>
+                      </tr>
+                      <tr class="fila-par">
+                        <td>P006</td>
+                        <td>Kit Hámster Starter</td>
+                        <td>Animales Pequeños</td>
+                        <td>55.00</td>
+                        <td>40</td>
+                      </tr>
+                      <tr>
+                        <td>P007</td>
+                        <td>Alpiste Premium 1kg</td>
+                        <td>Aves</td>
+                        <td>9.50</td>
+                        <td>300</td>
+                      </tr>
+                      <tr class="fila-par">
+                        <td>P008</td>
+                        <td>Cama Acolchada Grande</td>
+                        <td>Accesorios</td>
+                        <td>65.00</td>
+                        <td>35</td>
+                      </tr>
+                      <tr>
+                        <td>P009</td>
+                        <td>Bebedero Automático</td>
+                        <td>Accesorios</td>
+                        <td>28.00</td>
+                        <td>90</td>
+                      </tr>
+                      <tr class="fila-par">
+                        <td>P010</td>
+                        <td>Juguete Interactivo</td>
+                        <td>Accesorios</td>
+                        <td>22.00</td>
+                        <td>70</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </section>
+
+              </div><!-- fin productos-area -->
+            </div><!-- fin layout -->
+        </div><!-- fin contenedor -->
+    
+    <!-- Pie de Pagina -->
+    <footer>
+        <div class="footer-items">
+            <div class="logo" >
+            <img src="images/logo.png">
+            </div>
+            <div>
+                <!-- Columna 2: Navegación -->
+                <h2 class="footer-titles">Navegación</h2>
+                <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Redes Sociales -->
+            <div>
+                <h2 class="footer-titles">Redes Sociales</h2>
+                <a href="https://instagram.com" target="_blank" class="btn-social">Instagram</a><br>
+                <a href="https://tiktok.com" target="_blank" class="btn-social">TikTok</a><br>
+                <a href="https://wa.me/51999999999" target="_blank" class="btn-social">WhatsApp</a>
+            </div>
+
+            <!-- Columna 4: Contacto + Mapa -->
+            <div>
+                <h2 class="footer-titles">Contacto</h2>
+                <p>Av. Arequipa 699-655, Alto Selva Alegre 04001</p>
+                <p>946414833 (tu gei de confianza)</p>
+                <p>porotokun@gmail.com</p>
+                <p>Lun–Sab: 9am a 7pm</p>
+                    
+            </div>
+            <div>
+                <section>
+                        <h2 class="footer-titles">Encuéntranos</h2>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475.8!2d-71.5221687!3d-16.3856758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bb4795b0b37:0xc4e750d606a68ca6!2sAv.+Arequipa+699-655%2C+Alto+Selva+Alegre+04001!5e0!3m2!1ses!2spe!4v1713456789"
+                            width="100%" height="300" style="border:1px solid #ccc;" allowfullscreen="" loading="lazy"
+                            title="Mapa de ubicación PetShop"><!-- Que direccuion pondremos? NOSE-->
+                        </iframe>
+                </section>
+            </div>
+        </div>
+    </footer>
+    </body>
+</html>
