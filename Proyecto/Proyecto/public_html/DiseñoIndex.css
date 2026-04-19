@@ -68,7 +68,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 /* BANNER PRINCIPAL */
 .banner{
-    background-image: url(fotos/BANNER\ \(1\).png);
+    background-image: url(images/BANNER (1).png);
     background-size: cover;
     background-position: center; /* Cambia 'center' por 'top center' */
     background-repeat: no-repeat;
