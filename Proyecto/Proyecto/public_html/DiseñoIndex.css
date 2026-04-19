@@ -5,33 +5,173 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 /* 
     Cree esto porque queria ver algo del diseño
 */
-body {
-  line-height: 1.6;
+/* 1. Reset y Fuente global */
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Esto evita que el padding aumente el ancho */
 }
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  flex-wrap: wrap;
-  gap: 10px;
+
+/* 2. Barra negra (solo colores y texto) */
+.barra-top {
+    background-color: #151515;
+    color: white;
+    font-size: 14px;
+    padding: 5px 0; /* No olvides el padding para que no se pegue el texto */
 }
-.boton-carrito {
-  color: white;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 0.9em;
+
+/* 3. TRUCO: Agrupamos lo que se repite */
+.header-principal, .caja-derecha {
+    display: flex;
+    align-items: center;
 }
-.banner {
-  border: 1px;
-  padding: 50px 40px;
-  text-align: center;
+
+/* 4. Estilos únicos del Header */
+.header-principal {
+    background-color: #153652;
+    padding: 15px 30px;
+    justify-content: space-between;
 }
-.boton-agregar {
-  display: inline-block;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
-  margin-top: 8px;
-  font-size: 0.85em;
+
+.logo img { height: 100px; }
+
+.caja-derecha { gap: 20px; } /* Solo el espacio entre elementos */
+
+.carrito-texto {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 5. Buscador (todo en líneas compactas) */
+.buscador {
+    background-color: #f3e8d5;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 250px;
+    outline: none;
+}
+
+.navegacion{
+    background-color:#ee9b7d ;
+    padding: 5px;
+}
+
+.opciones{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BANNER PRINCIPAL */
+.banner{
+    background-image: url(images/BANNER.png);
+    background-size: cover;
+    background-position: center; /* Cambia 'center' por 'top center' */
+    background-repeat: no-repeat;
+    min-height: 500px; /* Asegura una altura mínima */
+
+}
+
+body{
+    background-color:#efe3cd; 
+}
+.product-top-text{
+    padding: 20px;
+    padding-left: 40px;
+    font-size: 10px;
+    color: #153652;
+}
+
+/*PRODUCTOS*/
+/* Contenedor principal de la sección */
+.section-productos {
+    background-color: #fdf6e9; /* El color beige/crema del fondo de la imagen */
+    padding: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+/* Título de la sección */
+.product-top-text {
+    color: #003366; /* Azul oscuro de la web */
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Contenedor que pone los 4 productos en fila */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espacio entre tarjetas */
+    margin: 0 auto;
+}
+
+/* La tarjeta blanca individual */
+.product-card {
+    background-color: #ffffff;
+    border-radius: 10px; /* Bordes redondeados */
+    width: 250px; /* Ancho aproximado de la tarjeta */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo el contenido */
+}
+
+/* Efecto hover opcional (opcional, pero queda bien) */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Contenedor de la imagen para que no se salga */
+.product-image-container {
+    width: 100%;
+    height: 200px; /* Altura fija para mantener orden */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.product-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Asegura que el producto se vea completo */
+}
+
+/* Título del producto */
+.product-title {
+    font-size: 20 px;
+    color: #003366;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    text-align: justify; /* Texto centrado como en la foto */
+    font-weight: 500;
+}
+
+/* Precio */
+.product-price {
+    color: #b93c3c; /* El color rojizo/marrón del precio */
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right; /* ALINEA EL PRECIO A LA DERECHA (como en la foto) */
+}
+
+footer{
+    padding: 50px;
+    background-color: #153652;
+}
+.footer-items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-titles{
+    color: #ece0cf;
+    
 }
