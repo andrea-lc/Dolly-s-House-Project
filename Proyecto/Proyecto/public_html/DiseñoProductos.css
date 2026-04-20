@@ -104,7 +104,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   border: 1px solid #dddddd;
   padding: 16px;
 }
- 
+
 .btn-borrar {
   width: 100%;
   padding: 9px;
@@ -151,10 +151,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 .filtro-opciones label { cursor: pointer; color: #444; }
 .filtro-opciones label:hover { color: #e8734a; }
- 
+
 /*ÁREA DE PRODUCTOS*/
 .productos-area { flex: 1; min-width: 300px; }
- 
+
 .productos-header {
   display: flex;
   justify-content: space-between;
@@ -163,12 +163,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   flex-wrap: wrap;
   gap: 10px;
 }
- 
+
 .resultados {
   font-size: 0.88em;
   color: #777;
 }
- 
+
 .ordenar {
   padding: 7px 12px;
   border: 1px solid #dddddd;
@@ -177,14 +177,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   background: white;
   cursor: pointer;
 }
- 
+
 /*GRID DE CARDS*/
 .grid-productos {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
- 
+
 .producto-card {
   background: white;
   border: 1px solid #dddddd;
@@ -192,17 +192,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   position: relative;
   transition: box-shadow 0.2s;
 }
- 
+
 .producto-card:hover {
   box-shadow: 0 2px 10px rgba(0,0,0,0.12);
 }
- 
+
 .producto-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
- 
+
 /* Etiquetas de oferta */
 .etiqueta {
   position: absolute;
@@ -215,13 +215,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   color: white;
   z-index: 1;
 }
- 
+
 .etiqueta.oferta { background-color: #e8734a; }
 .etiqueta.liquidacion { background-color: #cc2222; }
 .etiqueta.regalo { background-color: #e8b800; color: #333; }
- 
+
 .card-body { padding: 12px; }
- 
+
 .marca {
   font-size: 0.78em;
   font-weight: bold;
@@ -278,9 +278,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   padding-bottom: 6px;
   margin-bottom: 14px;
 }
- 
+
 .tabla-resumen table { width: 100%; border-collapse: collapse; }
- 
+
 .tabla-resumen th {
   background-color: #1a2e4a;
   color: white;
@@ -288,13 +288,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   text-align: left;
   font-size: 0.88em;
 }
- 
+
 .tabla-resumen td {
   padding: 9px 14px;
   border: 1px solid  #dddddd;
   font-size: 0.88em;
   background: white;
 }
- 
+
 .fila-par td { background-color: #f0f0f0; }
 .tabla-resumen tr:hover td { background-color: #ffe8da; }
