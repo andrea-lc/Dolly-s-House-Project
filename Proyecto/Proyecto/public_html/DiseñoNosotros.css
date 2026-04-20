@@ -78,7 +78,7 @@ body{
   padding: 20px 24px;
 }
  
-.breadcrumb a { color: var(--color-primario); }
+.breadcrumb a { color: #e8734a; }
  
 .titulo-seccion {
   font-size: 1.8em;
