@@ -75,11 +75,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   padding: 20px 24px;
 }
  
-.breadcrumb a { color: var(--color-primario); }
+.breadcrumb a { color: #e8734a; }
  
 .titulo-pagina {
   font-size: 1.8em;
-  color: var(--color-secundario);
+  color: #163551;
   margin-bottom: 4px;
 }
  
@@ -100,34 +100,34 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 .sidebar-filtros {
   width: 220px;
   min-width: 180px;
-  background: var(--color-claro);
-  border: 1px solid var(--color-borde);
+  background: #ffffff;
+  border: 1px solid #dddddd;
   padding: 16px;
 }
  
 .btn-borrar {
   width: 100%;
   padding: 9px;
-  border: 2px solid var(--color-secundario);
+  border: 2px solid #1a2e4a;
   background: white;
-  color: var(--color-secundario);
+  color: #1a2e4a;
   font-size: 0.9em;
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 16px;
   border-radius: 3px;
 }
-.btn-borrar:hover { background-color: var(--color-secundario); color: white; }
+.btn-borrar:hover { background-color: #1a2e4a; color: white; }
  
 .filtro-bloque {
-  border-top: 1px solid var(--color-borde);
+  border-top: 1px solid #dddddd;
   padding: 12px 0;
 }
  
 .filtro-titulo {
   font-weight: bold;
   font-size: 0.92em;
-  color: var(--color-secundario);
+  color: #1a2e4a;
   margin-bottom: 10px;
   cursor: pointer;
   display: flex;
@@ -143,14 +143,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 }
  
 .filtro-opciones input[type="checkbox"] {
-  accent-color: var(--color-primario);
+  accent-color: #e8734a;
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
  
 .filtro-opciones label { cursor: pointer; color: #444; }
-.filtro-opciones label:hover { color: var(--color-primario); }
+.filtro-opciones label:hover { color: #e8734a; }
  
 /*ÁREA DE PRODUCTOS*/
 .productos-area { flex: 1; min-width: 300px; }
@@ -171,7 +171,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
  
 .ordenar {
   padding: 7px 12px;
-  border: 1px solid var(--color-borde);
+  border: 1px solid #dddddd;
   border-radius: 3px;
   font-size: 0.88em;
   background: white;
@@ -187,7 +187,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
  
 .producto-card {
   background: white;
-  border: 1px solid var(--color-borde);
+  border: 1px solid #dddddd;
   width: 200px;
   position: relative;
   transition: box-shadow 0.2s;
@@ -232,7 +232,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
  
 .nombre {
   font-size: 0.88em;
-  color: var(--color-texto);
+  color: #333333;
   margin-bottom: 8px;
   line-height: 1.4;
   min-height: 38px;
@@ -248,14 +248,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 .precio {
   font-size: 1.05em;
   font-weight: bold;
-  color: var(--color-primario);
+  color: #e8734a;
   margin-bottom: 10px;
 }
  
 .btn-comprar {
   display: block;
   text-align: center;
-  background-color: var(--color-primario);
+  background-color: #e8734a;
   color: white;
   padding: 9px;
   border-radius: 20px;
@@ -273,8 +273,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
  
 .tabla-resumen h2 {
   font-size: 1.3em;
-  color: var(--color-secundario);
-  border-bottom: 3px solid var(--color-primario);
+  color: #1a2e4a;
+  border-bottom: 3px solid #e8734a;
   padding-bottom: 6px;
   margin-bottom: 14px;
 }
@@ -282,7 +282,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 .tabla-resumen table { width: 100%; border-collapse: collapse; }
  
 .tabla-resumen th {
-  background-color: var(--color-secundario);
+  background-color: #1a2e4a;
   color: white;
   padding: 10px 14px;
   text-align: left;
@@ -291,7 +291,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
  
 .tabla-resumen td {
   padding: 9px 14px;
-  border: 1px solid var(--color-borde);
+  border: 1px solid  #dddddd;
   font-size: 0.88em;
   background: white;
 }
