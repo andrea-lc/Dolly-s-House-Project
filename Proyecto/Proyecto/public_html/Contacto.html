@@ -39,44 +39,47 @@
     </div>
     <!--FORMULARIO-->
     <body>
-        <div class="form-container">
-        <form class="form">
-            <h2>Contactanos - Dolly's House</h2>
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Nombre</label>
-                    <input type="text">
+        <div class="container">
+        <h2 class="form-title">Contactanos - Dolly's House</h2>    
+        <form class="form">  
+            <div class="form-items">
+                <div class="form-row">
+                    <div class="form-group">
+                        <p class="btn-titles">Nombre</p>
+                        <input type="text" placeholder="Ingrese su Nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <p class="btn-titles">Apellidos</p>
+                        <input type="text" placeholder="Ingrese sus Apellidos">
+                    </div>
                 </div>
                 
                 <div class="form-group">
-                    <label>Apellido</label>
-                    <input type="text">
+                    <p class="btn-titles">Telefono</p>
+                    <input type="text" placeholder="Ingrese su telefono">
                 </div>
                 
                 <div class="form-group">
-                    <label>Asunto</label>
-                    <input type="text" value="Consulta General">
+                    <p class="btn-titles">Direccion de correo</p>
+                    <input type="text" placeholder="Ingrese su correo">
+                </div>               
+                <div class="form-group">
+                        <button type="submit"><b>ENVIAR MENSAJE</b></button>
+                    </div>
+            </div>
+            <div class="form-items">
+                <div class="form-group">
+                    <p class="btn-titles">Asunto</p>
+                    <select>
+                            <option>Consulta General</option>
+                            <option>Reclamo</option>
+                            <option>Sugerencia</option>
+                        </select> 
                 </div>
-            </div>
-            
-            <div class="form-group full-width">
-                <label>Telefono</label>
-                <input type="tel">
-            </div>
-            
-            <div class="form-group full-width">
-                <label>Direccion de Correo</label>
-                <input type="email">
-            </div>
-            
-            <div class="form-row-bottom">
-                <div class="form-group" style="flex: 2;">
-                    <button type="submit">ENVIAR MENSAJE</button>
-                </div>
-                
-                <div class="form-group" style="flex: 3;">
-                    <label>Mensaje</label>
-                    <textarea rows="5"></textarea>
+                <div class="form-group">
+                    <p class="btn-titles">Mensaje</p>
+                    <textarea rows="10" placeholder="Ingrese el Mensaje"></textarea>
                 </div>
             </div>
         </form>
@@ -129,6 +132,6 @@
                         <p class="footer-text">Jirón Andrés Avelino Cáceres 312, Alto Selva Alegre 04003</p>
                 </section>
             </div>
-        </div>
+        </>
     </footer>
 </html>
