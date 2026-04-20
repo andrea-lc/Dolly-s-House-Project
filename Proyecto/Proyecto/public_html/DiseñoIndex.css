@@ -182,6 +182,7 @@ footer{
 /*textos de cada columna en el footer*/
 .footer-titles{
     color: #ece0cf;
+    margin-bottom: 15px;
     
 }
 
