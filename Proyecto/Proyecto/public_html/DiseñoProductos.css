@@ -79,7 +79,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
  
 .titulo-pagina {
   font-size: 1.8em;
-  color: var(--color-secundario);
+  color: #003366;
   margin-bottom: 4px;
 }
  
@@ -127,7 +127,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 .filtro-titulo {
   font-weight: bold;
   font-size: 0.92em;
-  color: var(--color-secundario);
+  color: #003366;
   margin-bottom: 10px;
   cursor: pointer;
   display: flex;
@@ -232,7 +232,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
  
 .nombre {
   font-size: 0.88em;
-  color: var(--color-texto);
+  color: #003366;
   margin-bottom: 8px;
   line-height: 1.4;
   min-height: 38px;
@@ -248,7 +248,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 .precio {
   font-size: 1.05em;
   font-weight: bold;
-  color: var(--color-primario);
+  color: #b93c3c;
   margin-bottom: 10px;
 }
  
@@ -263,7 +263,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
   font-weight: bold;
   transition: background 0.2s;
 }
-.btn-comprar:hover { background-color: #c55e38; text-decoration: none; }
+.btn-comprar:hover { background-color: #ee9b7d; text-decoration: none; }
  
 /*TABLA RESUMEN*/
 .tabla-resumen {
