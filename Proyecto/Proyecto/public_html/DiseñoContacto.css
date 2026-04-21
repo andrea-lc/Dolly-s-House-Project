@@ -62,8 +62,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     gap: 30px;
     align-items: center;
     justify-content: center;
+    list-style: none;
 }
 
+.opciones a {
+    text-decoration: none;  /* quita subrayado */
+    color: black;           /* color normal */
+}
 
 /*FORMULARIO*/
 
