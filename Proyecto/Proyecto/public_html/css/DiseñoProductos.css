@@ -116,9 +116,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     gap: 30px;
     align-items: center;
     justify-content: center;
+    list-style: none;
 }
 
 /*CONTENEDOR GENERAL*/
+body{
+    background-color:#efe3cd; 
+}
 .contenedor {
   max-width: 1200px;
   margin: 0 auto;
@@ -315,39 +319,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 }
 .btn-comprar:hover { background-color: #ee9b7d; text-decoration: none; }
 
-/*TABLA RESUMEN*/
-.tabla-resumen {
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-
-.tabla-resumen h2 {
-  font-size: 1.3em;
-  color: #1a2e4a;
-  border-bottom: 3px solid #e8734a;
-  padding-bottom: 6px;
-  margin-bottom: 14px;
-}
-
-.tabla-resumen table { width: 100%; border-collapse: collapse; }
-
-.tabla-resumen th {
-  background-color: #1a2e4a;
-  color: white;
-  padding: 10px 14px;
-  text-align: left;
-  font-size: 0.88em;
-}
-
-.tabla-resumen td {
-  padding: 9px 14px;
-  border: 1px solid  #dddddd;
-  font-size: 0.88em;
-  background: white;
-}
-
-.fila-par td { background-color: #f0f0f0; }
-.tabla-resumen tr:hover td { background-color: #ffe8da; }
 
 /*PIE DE PAGINA*/
 footer{

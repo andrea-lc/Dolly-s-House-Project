@@ -7,7 +7,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 /* Selector universal*/
 * {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     box-sizing: border-box; /* esto podemos borrar */
 }
 
@@ -74,7 +74,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 /* BANNER PRINCIPAL */
 .banner{
-    background-image: url(images/BANNER.png);
+    background-image: url(/public_html/images/BANNER.png);
     background-size: cover;
     background-position: center; /* Cambia 'center' por 'top center' */
     background-repeat: no-repeat;
@@ -102,9 +102,6 @@ body{
     transition: box-shadow 0.2s;
 }
     
-.producto-card:hover {
-    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
-}
     
 .producto-card img {
     width: 100%;
@@ -140,15 +137,13 @@ body{
 .btn-comprar {
     display: block;
     text-align: center;
-    background-color: var(--color-primario);
+    background-color: #e8734a;
     color: white;
     padding: 9px;
     border-radius: 20px;
     font-size: 0.85em;
     font-weight: bold;
-    transition: background 0.2s;
 }
-.btn-comprar:hover { background-color: #ee9b7d; text-decoration: none; }
 
 
 .section-productos {
