@@ -12,7 +12,6 @@
 .barra-top {
     background-color: #151515;
     color: white;
-    font-size: 14px;
     padding: 5px 0; 
 }
 
@@ -39,8 +38,6 @@
 
 .carrito-texto {
     color: white;
-    font-size: 18px;
-    font-weight: bold;
 }
 
 /* Buscador*/
@@ -49,7 +46,6 @@
     border: none;
     border-radius: 50px;
     padding: 10px 20px;
-    font-size: 16px;
     width: 250px;
     outline: none;
 }
@@ -88,7 +84,6 @@ body{
 }
  
 .titulo-seccion {
-  font-size: 1.8em;
   color: #163551;
   margin-bottom: 4px;
 }
@@ -114,16 +109,12 @@ body{
 }
 
 .card h3 {
-  font-size: 1em;
   color: #1a2e4a;
   margin-bottom: 12px;
-  font-family: Arial;
-  font-weight: bold;
   text-align: center;
 }
 
 .card p {
-  font-size: 0.85em;
   color: #555;
   line-height: 1.6;
   margin-bottom: 10px;
@@ -143,9 +134,7 @@ body{
 }
 
 .card-pie {
-  font-size: 0.82em;
   color: #666;
-  font-style: italic;
 }
 
 /* Card Misión */
@@ -181,10 +170,8 @@ body{
 }
 
 .card h4 {
-  font-size: 0.95em;
   color: #1a2e4a;
   margin: 8px 0 6px;
-  font-family: Arial;
 }
 
 /* Card Contacto */
@@ -203,7 +190,6 @@ body{
 }
 
 .datos-contacto p {
-  font-size: 0.82em;
   margin-bottom: 8px;
   color: #444;
   line-height: 1.5;
@@ -217,7 +203,6 @@ body{
 
 .texto-contacto {
   text-align: center;
-  font-size: 0.9em;
   color: #666;
   margin-bottom: 18px;
 }
@@ -233,17 +218,12 @@ body{
   color: white;
   padding: 12px 50px;
   border-radius: 4px;
-  font-family: Arial, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
   margin-bottom: 10px;
 }
 
 .btn-cancelar {
   display: inline-block;
   color: #e8734a;
-  font-size: 0.88em;
-  text-decoration: underline;
 }
 
 /*PIE DE PAGINA*/
