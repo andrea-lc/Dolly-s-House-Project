@@ -4,7 +4,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 */
 /* 
 */
-/* Selector universal*/
 * {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -64,6 +63,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     align-items: center;
     justify-content: center;
 }
+
 
 /*FORMULARIO*/
 
