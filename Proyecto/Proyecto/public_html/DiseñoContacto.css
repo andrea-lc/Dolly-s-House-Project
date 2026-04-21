@@ -91,7 +91,7 @@ body {
 }
 
 .form-items{
-    width: 50%;
+    width: inherit;
 }
 /* Fila con 3 columnas */
 .form-row {
@@ -150,7 +150,6 @@ footer{
 /*textos de cada columna en el footer*/
 .footer-titles{
     color: #ece0cf;
-    margin-bottom: 15px;
     
 }
 

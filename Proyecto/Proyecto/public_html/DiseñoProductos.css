@@ -7,29 +7,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : USER
 */
 
-/* 1. Reset y Fuente global */
+/* Selector universal*/
 * {
     margin: 0;
     font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Esto evita que el padding aumente el ancho */
+    box-sizing: border-box; /* esto podemos borrar */
 }
 
-/* 2. Barra negra (solo colores y texto) */
+/* BARRA SUPERIOR CON MARQUEE */
 .barra-top {
     background-color: #151515;
     color: white;
     font-size: 14px;
-    padding: 5px 0; /* No olvides el padding para que no se pegue el texto */
+    padding: 5px 0; 
 }
-
-/* 3. TRUCO: Agrupamos lo que se repite */
-.header-principal, .caja-derecha {
+/* BARRA SUPERIOR*/
+.header-derecha, .header-izquierda {
     display: flex;
     align-items: center;
 }
 
-/* 4. Estilos únicos del Header */
-.header-principal {
+.header-izquierda {
     background-color: #153652;
     padding: 15px 30px;
     justify-content: space-between;
@@ -37,7 +35,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 .logo img { height: 100px; }
 
-.caja-derecha { gap: 20px; } /* Solo el espacio entre elementos */
+.header-derecha { gap: 20px; } 
 
 .carrito-texto {
     color: white;
@@ -45,7 +43,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     font-weight: bold;
 }
 
-/* 5. Buscador (todo en líneas compactas) */
+/*  Buscador */
 .buscador {
     background-color: #f3e8d5;
     border: none;
@@ -55,6 +53,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     width: 250px;
     outline: none;
 }
+
+/* MENÚ DE NAVEGACIÓN */
 
 .navegacion{
     background-color:#ee9b7d ;
