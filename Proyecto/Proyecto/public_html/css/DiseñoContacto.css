@@ -1,23 +1,22 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-*/
+
+/* Selector universal*/
 * {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     box-sizing: border-box; /* esto podemos borrar */
 }
 
 /* BARRA SUPERIOR CON MARQUEE */
+
 .barra-top {
     background-color: #151515;
     color: white;
     font-size: 14px;
     padding: 5px 0; 
 }
+
 /* BARRA SUPERIOR*/
+
 .header-derecha, .header-izquierda {
     display: flex;
     align-items: center;
@@ -29,9 +28,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     justify-content: space-between;
 }
 
-.logo img { height: 100px; }
+.logo img { 
+    height: 100px; 
+}
 
-.header-derecha { gap: 20px; } 
+.header-derecha { 
+    gap: 20px; 
+} 
 
 .carrito-texto {
     color: white;
@@ -98,6 +101,7 @@ body {
 .form-items{
     width: 50%;
 }
+
 /* Fila con 3 columnas */
 .form-row {
     display: flex;
@@ -108,8 +112,6 @@ body {
 .form-group {
     margin-bottom: 10px;
 }
-
-
 
 .btn-titles {
     color: #2c5f7c;
@@ -137,15 +139,14 @@ button {
     margin-top: 15px;
 }
 
-button:hover {
-    background-color: #ff795e;
-}
 
-/*PIE DE PAGINA*/
+/*FOOTER*/
+
 footer{
     padding: 50px;
     background-color: #153652;
 }
+
 /*Divide los elementos del footer en columnas*/
 .footer-items{
     display: flex;
