@@ -72,7 +72,7 @@
 
 .opciones a {
     text-decoration: none;  /* quita subrayado */
-    color: black;           /* color normal */
+    color: #153652;           /* color normal */
 }
 
 /*CONTENEDOR GENERAL*/
@@ -229,7 +229,7 @@ body{
 
 .btn-enviar {
   display: inline-block;
-  background-color: #e8734a;
+  background-color: #ff8a71;
   color: white;
   padding: 12px 50px;
   border-radius: 4px;
