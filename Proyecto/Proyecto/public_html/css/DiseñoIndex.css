@@ -9,7 +9,6 @@
 .barra-top {
     background-color: #151515;
     color: white;
-    font-size: 14px;
     padding: 5px 0; 
 }
 
@@ -36,8 +35,6 @@
 
 .carrito-texto {
     color: white;
-    font-size: 18px;
-    font-weight: bold;
 }
 
 
@@ -47,7 +44,6 @@
     border: none;
     border-radius: 50px;
     padding: 10px 20px;
-    font-size: 16px;
     width: 250px;
     outline: none;
 }
@@ -68,16 +64,16 @@
 }
 .opciones a {
     text-decoration: none;  
-    color: black;           
+    color: #153652;           
 }
 
 
 
 /* BANNER PRINCIPAL */
 .banner{
-    background-image: url(../images/BANNER.png);
+    background-image: url(../images/Images_Head-Foot/BANNER.png);
     background-size: cover;
-    background-position: center; /* Cambia 'center' por 'top center' */
+    background-position: center; 
     background-repeat: no-repeat;
     min-height: 500px; /* Asegura una altura mínima */
 
@@ -90,7 +86,6 @@ body{
 .product-top-text{
     padding: 20px;
     padding-left: 40px;
-    font-size: 10px;
     color: #153652;
 }
 
@@ -102,15 +97,12 @@ body{
     background-color: #fdf6e9; 
     padding: 40px;
     text-align: center;
-    font-family: sans-serif;
 }
 
 /* Título de la sección */
 .product-top-text {
     color: #003366; 
-    font-size: 30px;
     margin-bottom: 30px;
-    font-weight: bold;
 }
 
 /* Contenedor que pone los  productos en fila */
@@ -141,26 +133,21 @@ body{
 }
 
 .marca {
-    font-size: 0.78em;
-    font-weight: bold;
     color: #555;
-    margin-bottom: 4px;
-    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .nombre {
-    font-size: 0.88em;
     color: #003366;
     margin-bottom: 8px;
-    line-height: 1.4;
-    min-height: 38px;
+    text-align: justify;
 }
 
 .precio {
-    font-size: 1.05em;
-    font-weight: bold;
     color: #b93c3c;
     margin-bottom: 10px;
+    text-align: right;
 }
 
 .btn-comprar {
@@ -170,8 +157,6 @@ body{
     color: white;
     padding: 9px;
     border-radius: 20px;
-    font-size: 0.85em;
-    font-weight: bold;
 }
 
 
