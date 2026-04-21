@@ -10,17 +10,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 * {
     margin: 0;
     font-family: Arial, sans-serif;
-    box-sizing: border-box; /* esto podemos borrar */
+    box-sizing: border-box;
 }
 
-/* BARRA SUPERIOR CON MARQUEE */
 .barra-top {
     background-color: #151515;
     color: white;
     font-size: 14px;
     padding: 5px 0; 
 }
-/* BARRA SUPERIOR*/
 .header-derecha, .header-izquierda {
     display: flex;
     align-items: center;
@@ -42,7 +40,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     font-weight: bold;
 }
 
-/*  Buscador */
 .buscador {
     background-color: #f3e8d5;
     border: none;
@@ -52,66 +49,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     width: 250px;
     outline: none;
 }
-
-body{
-    background-color:#f6ddb1; 
-}
-/* 1. Reset y Fuente global */
-* {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Esto evita que el padding aumente el ancho */
-}
-
-/* 2. Barra negra (solo colores y texto) */
-.barra-top {
-    background-color: #151515;
-    color: white;
-    font-size: 14px;
-    padding: 5px 0; /* No olvides el padding para que no se pegue el texto */
-    }
-
-/* 3. TRUCO: Agrupamos lo que se repite */
-.header-principal, .caja-derecha {
-    display: flex;
-    align-items: center;
-}
-
-/* 4. Estilos únicos del Header */
-.header-principal {
-    background-color: #153652;
-    padding: 15px 30px;
-    justify-content: space-between;
-}
-
-.logo img { 
-    height: 100px; 
-}
-
-.caja-derecha { gap: 20px; } /* Solo el espacio entre elementos */
-
-.carrito-texto {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* 5. Buscador (todo en líneas compactas) */
-.buscador {
-    background-color: #f3e8d5;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 250px;
-    outline: none;
-}
-
 .navegacion{
     background-color:#ee9b7d ;
     padding: 5px;
 }
-
 .opciones{
     display: flex;
     gap: 30px;
@@ -125,129 +66,105 @@ body{
     color: black;           /* color normal */
 }
 
-/*CONTENEDOR ARTÍCULO */
+/*INICIO DE LA PARTE DE BLOG*/
+
+body{
+    background-color:#efe3cd; 
+}
+
+/*Contenedor de Articulo */
 .contenedor {
-  max-width: 860px;
-  margin: 40px auto;
-  padding: 40px 48px 60px;
-  background: #fffaf2;
-  border: 1px solid #d4b483;
-  border-radius: 8px;
-}
- 
- 
-/* TÍTULO */
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 40px 48px 60px;
+    background: #fffaf2;
+    border: 1px solid #d4b483;
+    border-radius: 8px;
+} 
+/* Titulo del articulo */
 .articulo-titulo {
-  font-size: 2em;
-  color: #153652;
-  font-family: Arial, sans-serif;
-  font-weight: 900;
-  line-height: 1.3;
-  margin-bottom: 20px;
+    font-size: 2em;
+    color: #153652;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 20px;
 }
- 
-/* IMAGEN */
+/* Imagen del articulo */
 .articulo-imagen {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 24px;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 24px;
 }
- 
-/* TEXTO */
+
+/*Texto del articulo */
 .articulo-texto {
-  font-size: 0.95em;
-  color: #333;
-  margin-bottom: 18px;
-  line-height: 1.8;
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 18px;
+    line-height: 1.8;
 }
- 
-/* SUBTÍTULOS */
+    
+/*Subtitulo del articulo */
 .articulo-subtitulo {
-  font-size: 1.6em;
-  font-family: Arial, sans-serif;
-  font-weight: 900;
-  color: #153652;
-  margin: 30px 0 16px;
-  border-left: 4px solid #e8734a;
-  padding-left: 12px;
+    font-size: 1.6em;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    color: #153652;
+    margin: 30px 0 16px;
+    border-left: 4px solid #e8734a;
+    padding-left: 12px;
 }
- 
-/*TABLA COMPARATIVA*/
+    
+/*Tabla comparativa*/
 .tabla-comparativa {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-  font-family: Arial, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
 }
- 
+    
 .tabla-comparativa th {
-  background-color: #153652;
-  color: white;
-  padding: 12px 14px;
-  text-align: left;
-  font-size: 0.88em;
-  font-weight: bold;
+    background-color: #153652;
+    color: white;
+    padding: 12px 14px;
+    text-align: left;
+
 }
 
 .tabla-comparativa td {
-  padding: 12px 14px;
-  border-bottom: 1px solid #dddddd;
-  font-size: 0.88em;
-  color: #444;
+    padding: 12px 14px;
+    border-bottom: 1px solid #dddddd;
+    color: #444;
 }
- 
+    
 .fila-par td { 
     background-color: #fdf0d5; 
 }
-.tabla-comparativa tr:hover td { 
-    background-color: #fff5f0; 
-}
- 
-.estrellas { 
-    font-size: 1em; 
-    letter-spacing: 2px; 
-}
- 
+
 /* SEPARADOR ENTRE ARTÍCULOS */
 .separador {
-  border: none;
-  border-top: 2px solid #dddddd;
-  margin: 50px 0 40px;
+    border: none;
+    border-top: 2px solid #dddddd;
+    margin: 50px 0 40px;
 }
- 
-/* ENLACE VOLVER */
-.volver {
-  margin-top: 40px;
-  font-family: Arial, sans-serif;
-  font-size: 0.9em;
-  text-align: center;
-  color: #888;
-}
- 
-.volver a { color: #e8734a; }
-.volver a:hover { text-decoration: underline; }
+
 
 /*PIE DE PAGINA*/
 footer{
     padding: 50px;
     background-color: #153652;
 }
-/*Divide los elementos del footer en columnas*/
 .footer-items{
     display: flex;
     justify-content: space-between;
 }
-
-/*textos de cada columna en el footer*/
 .footer-titles{
     color: #ece0cf;
     margin-bottom: 15px;
     
 }
-
 .footer-text{
     color: #ece0cf;
-
 }

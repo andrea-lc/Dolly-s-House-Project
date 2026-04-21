@@ -9,17 +9,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 * {
     margin: 0;
     font-family: Arial, sans-serif;
-    box-sizing: border-box; /* esto podemos borrar */
 }
 
-/* BARRA SUPERIOR CON MARQUEE */
 .barra-top {
     background-color: #151515;
     color: white;
     font-size: 14px;
     padding: 5px 0; 
 }
-/* BARRA SUPERIOR*/
 .header-derecha, .header-izquierda {
     display: flex;
     align-items: center;
@@ -41,7 +38,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     font-weight: bold;
 }
 
-/*  Buscador */
 .buscador {
     background-color: #f3e8d5;
     border: none;
@@ -51,61 +47,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     width: 250px;
     outline: none;
 }
-/* 1. Reset y Fuente global */
-* {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Esto evita que el padding aumente el ancho */
-}
-
-/* 2. Barra negra (solo colores y texto) */
-.barra-top {
-    background-color: #151515;
-    color: white;
-    font-size: 14px;
-    padding: 5px 0; /* No olvides el padding para que no se pegue el texto */
-}
-
-/* 3. TRUCO: Agrupamos lo que se repite */
-.header-principal, .caja-derecha {
-    display: flex;
-    align-items: center;
-}
-
-/* 4. Estilos únicos del Header */
-.header-principal {
-    background-color: #153652;
-    padding: 15px 30px;
-    justify-content: space-between;
-}
-
-.logo img { height: 100px; }
-
-.caja-derecha { gap: 20px; } /* Solo el espacio entre elementos */
-
-.carrito-texto {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* 5. Buscador (todo en líneas compactas) */
-.buscador {
-    background-color: #f3e8d5;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 250px;
-    outline: none;
-    list-style: none;
-}
-
-.opciones a {
-    text-decoration: none;  /* quita subrayado */
-    color: black;           /* color normal */
-}
-
 .navegacion{
     background-color:#ee9b7d ;
     padding: 5px;
@@ -118,8 +59,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     justify-content: center;
     list-style: none;
 }
+.opciones a {
+    text-decoration: none;  
+    color: black;           
+}
 
-/*CONTENEDOR GENERAL*/
+/*SECCION DE ALIMENTOS*/
+
+/*CONTENEDOR GENERAL DE LA SECCION*/
+
 body{
     background-color:#efe3cd; 
 }
@@ -128,29 +76,20 @@ body{
   margin: 0 auto;
   padding: 20px 24px;
 }
-
-.breadcrumb a { color: #e8734a; }
-
 .titulo-pagina {
   font-size: 1.8em;
   color: #163551;
   margin-bottom: 4px;
 }
 
-.subtitulo {
-  font-size: 0.85em;
-  margin-bottom: 20px;
-}
-
-/*LAYOUT: SIDEBAR + PRODUCTOS*/
+/*POSICION DE ELEMENTOS EN LA SECCION PRODUCTOS*/
 .layout {
   display: flex;
   gap: 24px;
   align-items: flex-start;
-  flex-wrap: wrap;
 }
 
-/*SIDEBAR FILTROS*/
+/*BARRA LATERAL DE FILTROS*/
 .sidebar-filtros {
   width: 220px;
   min-width: 180px;
@@ -165,13 +104,9 @@ body{
   border: 2px solid #1a2e4a;
   background: white;
   color: #1a2e4a;
-  font-size: 0.9em;
-  font-weight: bold;
-  cursor: pointer;
   margin-bottom: 16px;
   border-radius: 3px;
 }
-.btn-borrar:hover { background-color: #1a2e4a; color: white; }
 
 .filtro-bloque {
   border-top: 1px solid #dddddd;
@@ -179,18 +114,14 @@ body{
 }
 
 .filtro-titulo {
-  font-weight: bold;
-  font-size: 0.92em;
   color: #003366;
   margin-bottom: 10px;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
 }
 
 .filtro-opciones li {
-  padding: 4px 0;
-  font-size: 0.85em;
+  padding: 4px ;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -203,12 +134,18 @@ body{
   cursor: pointer;
 }
 
-.filtro-opciones label { cursor: pointer; color: #444; }
-.filtro-opciones label:hover { color: #e8734a; }
+.filtro-opciones label { color: #444; }
+
 
 /*ÁREA DE PRODUCTOS*/
-.productos-area { flex: 1; min-width: 300px; }
 
+/*area de resultados y opcion para ordenar*/
+.productos-area { 
+  flex: 1;
+  min-width: 300px; 
+}
+
+/*Bloque para cada producto*/
 .productos-header {
   display: flex;
   justify-content: space-between;
@@ -218,6 +155,7 @@ body{
   gap: 10px;
 }
 
+/*Resultados totales de productos que aparecen en la pagina y boton de ordenar*/
 .resultados {
   font-size: 0.88em;
   color: #777;
@@ -232,31 +170,67 @@ body{
   cursor: pointer;
 }
 
-/*GRID DE CARDS*/
+/*Bloque de Productos*/
+
 .grid-productos {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
 
+/*Bloque individual para cada Producto*/
 .producto-card {
   background: white;
   border: 1px solid #dddddd;
   width: 200px;
   position: relative;
-  transition: box-shadow 0.2s;
 }
 
-.producto-card:hover {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
-}
-
+/*Imagen en cada bloque de Producto*/
 .producto-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
+/*Bloque para que los items dentro no esten tan cerca del margen del bloque de producto individual*/
+.card-body { padding: 12px; }
+
+/*Textos y precios del bloque de producto*/
+.marca {
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.nombre {
+  color: #003366;
+  margin-bottom: 8px;
+}
+
+.precio-tachado {
+  color: #aaa;
+  margin-bottom: 2px;
+}
+
+.precio {
+  font-size: 1.05em;
+  font-weight: bold;
+  color: #b93c3c;
+  margin-bottom: 10px;
+}
+
+/*Boton de comprar*/
+.btn-comprar {
+  display: block;
+  text-align: center;
+  background-color: #e8734a;
+  color: white;
+  padding: 9px;
+  border-radius: 20px;
+}
+
+
+/*Etiquetas, diseño y tipos como de oferta, liquidacion, regalo*/
 /* Etiquetas de oferta */
 .etiqueta {
   position: absolute;
@@ -274,50 +248,8 @@ body{
 .etiqueta.liquidacion { background-color: #cc2222; }
 .etiqueta.regalo { background-color: #e8b800; color: #333; }
 
-.card-body { padding: 12px; }
 
-.marca {
-  font-size: 0.78em;
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-}
 
-.nombre {
-  font-size: 0.88em;
-  color: #003366;
-  margin-bottom: 8px;
-  line-height: 1.4;
-  min-height: 38px;
-}
-
-.precio-tachado {
-  font-size: 0.82em;
-  color: #aaa;
-  text-decoration: line-through;
-  margin-bottom: 2px;
-}
-
-.precio {
-  font-size: 1.05em;
-  font-weight: bold;
-  color: #b93c3c;
-  margin-bottom: 10px;
-}
-
-.btn-comprar {
-  display: block;
-  text-align: center;
-  background-color: #e8734a;
-  color: white;
-  padding: 9px;
-  border-radius: 20px;
-  font-size: 0.85em;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-.btn-comprar:hover { background-color: #ee9b7d; text-decoration: none; }
 
 
 /*PIE DE PAGINA*/
