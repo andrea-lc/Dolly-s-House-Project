@@ -7,6 +7,52 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : USER
 */
 
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* esto podemos borrar */
+}
+
+/* BARRA SUPERIOR CON MARQUEE */
+.barra-top {
+    background-color: #151515;
+    color: white;
+    font-size: 14px;
+    padding: 5px 0; 
+}
+/* BARRA SUPERIOR*/
+.header-derecha, .header-izquierda {
+    display: flex;
+    align-items: center;
+}
+
+.header-izquierda {
+    background-color: #153652;
+    padding: 15px 30px;
+    justify-content: space-between;
+}
+
+.logo img { height: 100px; }
+
+.header-derecha { gap: 20px; } 
+
+.carrito-texto {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*  Buscador */
+.buscador {
+    background-color: #f3e8d5;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 250px;
+    outline: none;
+}
+
 body{
     background-color:#f6ddb1; 
 }
@@ -179,17 +225,25 @@ body{
 .volver a { color: #e8734a; }
 .volver a:hover { text-decoration: underline; }
 
-/*FOOTER*/
+/*PIE DE PAGINA*/
 footer{
     padding: 50px;
     background-color: #153652;
 }
+/*Divide los elementos del footer en columnas*/
 .footer-items{
     display: flex;
     justify-content: space-between;
 }
 
+/*textos de cada columna en el footer*/
 .footer-titles{
     color: #ece0cf;
+    margin-bottom: 15px;
+    
 }
- 
+
+.footer-text{
+    color: #ece0cf;
+
+}
