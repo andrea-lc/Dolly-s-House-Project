@@ -4,21 +4,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 */
 /* 
 */
-/* Selector universal*/
 * {
     margin: 0;
-    font-family: Arial;
-    box-sizing: border-box; /* esto podemos borrar */
+    font-family: Arial, sans-serif;
 }
 
-/* BARRA SUPERIOR CON MARQUEE */
 .barra-top {
     background-color: #151515;
     color: white;
     font-size: 14px;
     padding: 5px 0; 
 }
-/* BARRA SUPERIOR*/
 .header-derecha, .header-izquierda {
     display: flex;
     align-items: center;
@@ -40,7 +36,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     font-weight: bold;
 }
 
-/*  Buscador */
 .buscador {
     background-color: #f3e8d5;
     border: none;
@@ -50,9 +45,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     width: 250px;
     outline: none;
 }
-
-/* MENÚ DE NAVEGACIÓN */
-
 .navegacion{
     background-color:#ee9b7d ;
     padding: 5px;
@@ -65,11 +57,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     justify-content: center;
     list-style: none;
 }
-
 .opciones a {
-    text-decoration: none;  /* quita subrayado */
-    color: black;           /* color normal */
+    text-decoration: none;  
+    color: black;           
 }
+
 
 
 /* BANNER PRINCIPAL */
