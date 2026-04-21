@@ -14,7 +14,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 .barra-top {
     background-color: #151515;
     color: white;
-    font-size: 14px;
     padding: 5px 0; 
 }
 .header-derecha, .header-izquierda {
@@ -34,8 +33,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 .carrito-texto {
     color: white;
-    font-size: 18px;
-    font-weight: bold;
 }
 
 .buscador {
@@ -43,7 +40,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     border: none;
     border-radius: 50px;
     padding: 10px 20px;
-    font-size: 16px;
     width: 250px;
     outline: none;
 }
@@ -77,7 +73,6 @@ body{
   padding: 20px 24px;
 }
 .titulo-pagina {
-  font-size: 1.8em;
   color: #163551;
   margin-bottom: 4px;
 }
@@ -153,7 +148,6 @@ body{
 
 /*Resultados totales de productos que aparecen en la pagina y boton de ordenar*/
 .resultados {
-  font-size: 0.88em;
   color: #777;
 }
 
@@ -161,7 +155,6 @@ body{
   padding: 7px 12px;
   border: 1px solid #dddddd;
   border-radius: 3px;
-  font-size: 0.88em;
   background: white;
   cursor: pointer;
 }
@@ -209,8 +202,6 @@ body{
 }
 
 .precio {
-  font-size: 1.05em;
-  font-weight: bold;
   color: #b93c3c;
   margin-bottom: 10px;
 }
@@ -234,8 +225,6 @@ body{
   left: 10px;
   padding: 4px 10px;
   border-radius: 20px;
-  font-size: 0.75em;
-  font-weight: bold;
   color: white;
   z-index: 1;
 }
