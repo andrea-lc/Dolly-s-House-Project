@@ -70,7 +70,7 @@
 
 .opciones a {
     text-decoration: none;  /* quita subrayado */
-    color: black;           /* color normal */
+    color: #153652;           /* color normal */
 }
 
 /*FORMULARIO*/
@@ -133,7 +133,7 @@ button {
     width: 100%;
     padding: 15px;
     background-color: #ff8a71;
-    color: #2c5f7c;
+    color: white;
     border: none;
     border-radius: 4px;
     margin-top: 15px;
