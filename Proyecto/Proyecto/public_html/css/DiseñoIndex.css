@@ -1,9 +1,4 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-*/
+
 /* Selector universal*/
 * {
     margin: 0;
@@ -18,6 +13,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     font-size: 14px;
     padding: 5px 0; 
 }
+
 /* BARRA SUPERIOR*/
 .header-derecha, .header-izquierda {
     display: flex;
@@ -30,9 +26,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     justify-content: space-between;
 }
 
-.logo img { height: 100px; }
+.logo img { 
+    height: 100px; 
+}
 
-.header-derecha { gap: 20px; } 
+.header-derecha { 
+    gap: 20px; 
+} 
 
 .carrito-texto {
     color: white;
@@ -40,7 +40,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     font-weight: bold;
 }
 
-/*  Buscador */
+/* Buscador*/
 .buscador {
     background-color: #f3e8d5;
     border: none;
@@ -50,6 +50,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     width: 250px;
     outline: none;
 }
+
 
 /* MENÚ DE NAVEGACIÓN */
 
@@ -74,7 +75,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 /* BANNER PRINCIPAL */
 .banner{
-    background-image: url(/public_html/images/BANNER.png);
+    background-image: url(../images/BANNER.png);
     background-size: cover;
     background-position: center; /* Cambia 'center' por 'top center' */
     background-repeat: no-repeat;
@@ -85,6 +86,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 body{
     background-color:#efe3cd; 
 }
+
 .product-top-text{
     padding: 20px;
     padding-left: 40px;
@@ -92,16 +94,41 @@ body{
     color: #153652;
 }
 
+
+
 /*PRODUCTOS DESTACADOS*/
+
+.section-productos {
+    background-color: #fdf6e9; 
+    padding: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+/* Título de la sección */
+.product-top-text {
+    color: #003366; 
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Contenedor que pone los  productos en fila */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    margin: 0 auto;
+}
+
 /* Contenedor principal de la sección */
 .producto-card {
     background: white;
-    border: 1px solid var(--color-borde);
+    border: 1px solid #dddddd;
     width: 200px;
     position: relative;
     transition: box-shadow 0.2s;
 }
-    
     
 .producto-card img {
     width: 100%;
@@ -109,7 +136,9 @@ body{
     object-fit: cover;
 }
 
-.card-body { padding: 12px; }
+.card-body { 
+    padding: 12px; 
+}
 
 .marca {
     font-size: 0.78em;
@@ -146,42 +175,22 @@ body{
 }
 
 
-.section-productos {
-    background-color: #fdf6e9; 
-    padding: 40px;
-    text-align: center;
-    font-family: sans-serif;
-}
+/*FOOTER*/
 
-/* Título de la sección */
-.product-top-text {
-    color: #003366; 
-    font-size: 30px;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-
-/* Contenedor que pone los  productos en fila */
-.product-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px; 
-    margin: 0 auto;
-}
-
-
-/*PIE DE PAGINA*/
 footer{
     padding: 50px;
     background-color: #153652;
 }
+
 /*Divide los elementos del footer en columnas*/
+
 .footer-items{
     display: flex;
     justify-content: space-between;
 }
 
 /*textos de cada columna en el footer*/
+
 .footer-titles{
     color: #ece0cf;
     margin-bottom: 15px;
