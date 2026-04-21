@@ -127,15 +127,11 @@ body{
   gap: 7px;
 }
 
-.filtro-opciones input[type="checkbox"] {
+.filtro-opciones input{
   accent-color: #e8734a;
   width: 15px;
   height: 15px;
-  cursor: pointer;
 }
-
-.filtro-opciones label { color: #444; }
-
 
 /*ÁREA DE PRODUCTOS*/
 
