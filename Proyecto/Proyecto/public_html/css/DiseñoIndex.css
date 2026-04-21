@@ -75,7 +75,7 @@
 
 /* BANNER PRINCIPAL */
 .banner{
-    background-image: url(../images/BANNER.png);
+    background-image: url(../images/Images_Head-Foot/BANNER.png);
     background-size: cover;
     background-position: center; /* Cambia 'center' por 'top center' */
     background-repeat: no-repeat;
