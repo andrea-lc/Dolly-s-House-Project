@@ -117,9 +117,13 @@ body{
     gap: 30px;
     align-items: center;
     justify-content: center;
+    list-style: none;
 }
 
-
+.opciones a {
+    text-decoration: none;  /* quita subrayado */
+    color: black;           /* color normal */
+}
 
 /*CONTENEDOR ARTÍCULO */
 .contenedor {
