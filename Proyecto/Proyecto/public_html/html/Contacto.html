@@ -1,100 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public_html/css/DiseñoContacto.css">
-    <title>Dolly's House | Pet Shop</title>
-            <!-- BARRA SUPERIOR CON MARQUEE -->
-    <div class="barra-top">
-        <marquee behavior="scroll" direction="left">
-            Ofertas especiales esta semana🎁 &nbsp;&nbsp;•&nbsp;&nbsp; 20% OFF en alimentos &nbsp;&nbsp;•&nbsp;&nbsp; Accesorios para hamsters &nbsp;&nbsp;•&nbsp;&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100! 
-        </marquee>
-    </div>
-    <!-- BARRA SUPERIOR -->
-    <div class="header-izquierda">
-        <div class="logo" >
-            <img src="/public_html/images/logo.png">
+    
+    <!--CABECERA -->
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/DiseñoContacto.css">
+        <title>Dolly's House | Pet Shop</title>
+        
+        <!-- BARRA SUPERIOR CON MARQUEE -->
+        
+        <div class="barra-top">
+            <marquee behavior="scroll" direction="left">
+                Ofertas especiales esta semana🎁 &nbsp;&nbsp;•&nbsp;&nbsp; 20% OFF en alimentos &nbsp;&nbsp;•&nbsp;&nbsp; Accesorios para hamsters &nbsp;&nbsp;•&nbsp;&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100! 
+            </marquee>
         </div>
-        <div class="header-derecha">
-            <span class="carrito-texto">🛒 Carrito</span>
-            <input type="text" class="buscador" placeholder="Buscar">
+    
+        <!-- BARRA SUPERIOR -->
+        
+        <div class="header-izquierda">
+            <div class="logo" >
+                <img src="../images/logo.png">
+            </div>
+            <div class="header-derecha">
+                <span class="carrito-texto">🛒 Carrito</span>
+                <input type="text" class="buscador" placeholder="Buscar">
+            </div>
         </div>
-    </div>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <div class="navegacion">
-        <ul class="opciones">
-            <li><a href="/public_html/html/index.html">Inicio</a></li>
-            <li><a href="#">Ropa</a></li>
-            <li><a href="/public_html/html/Productos.html">Alimentos</a></li>
-            <li><a href="#">Mascotas Grandes</a></li>
-            <li><a href="#">Mascotas Pequeñas</a></li>
-            <li><a href="#">Aves</a></li>
-            <li><a href="/public_html/html/Blog.html">Blog</a></li>
-            <li><a href="/public_html/html/Nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="/public_html/html/Contacto.html">Contactanos</a></li>
-        </ul>
-    </div>
-</head>
+        <!-- MENÚ DE NAVEGACIÓN -->
+        
+        <div class="navegacion">
+            <ul class="opciones">
+                <li><a href="../html/index.html">Inicio</a></li>
+                <li><a href="#">Ropa</a></li>
+                <li><a href="../html/Productos.html">Alimentos</a></li>
+                <li><a href="#">Mascotas Grandes</a></li>
+                <li><a href="#">Mascotas Pequeñas</a></li>
+                <li><a href="#">Aves</a></li>
+                <li><a href="../html/Blog.html">Blog</a></li>
+                <li><a href="../html/Nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../html/Contacto.html">Contactanos</a></li>
+            </ul>
+        </div>
+    </head>
 
+    
     <!--FORMULARIO-->
+    
     <body>
         <div class="container">
-        <h2 class="form-title">Contactanos - Dolly's House</h2>    
-        <form class="form">  
-            <div class="form-items">
-                <div class="form-row">
+            <h2 class="form-title">Contactanos - Dolly's House</h2>    
+            <form class="form">  
+                <div class="form-items">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <p class="btn-titles">Nombre</p>
+                            <input type="text" placeholder="Ingrese su Nombre">
+                        </div>
+
+                        <div class="form-group">
+                            <p class="btn-titles">Apellidos</p>
+                            <input type="text" placeholder="Ingrese sus Apellidos">
+                        </div>
+                    </div>
                     <div class="form-group">
-                        <p class="btn-titles">Nombre</p>
-                        <input type="text" placeholder="Ingrese su Nombre">
+                        <p class="btn-titles">Telefono</p>
+                        <input type="text" placeholder="Ingrese su telefono">
                     </div>
-                    
                     <div class="form-group">
-                        <p class="btn-titles">Apellidos</p>
-                        <input type="text" placeholder="Ingrese sus Apellidos">
-                    </div>
+                        <p class="btn-titles">Direccion de correo</p>
+                        <input type="text" placeholder="Ingrese su correo">
+                    </div>               
+                    <div class="form-group">
+                            <button type="submit"><b>ENVIAR MENSAJE</b></button>
+                        </div>
                 </div>
-                
-                <div class="form-group">
-                    <p class="btn-titles">Telefono</p>
-                    <input type="text" placeholder="Ingrese su telefono">
-                </div>
-                
-                <div class="form-group">
-                    <p class="btn-titles">Direccion de correo</p>
-                    <input type="text" placeholder="Ingrese su correo">
-                </div>               
-                <div class="form-group">
-                        <button type="submit"><b>ENVIAR MENSAJE</b></button>
-                    </div>
-            </div>
-            <div class="form-items">
-                <div class="form-group">
-                    <p class="btn-titles">Asunto</p>
-                    <select>
+                <div class="form-items">
+                    <div class="form-group">
+                        <p class="btn-titles">Asunto</p>
+                        <select>
                             <option>Consulta General</option>
                             <option>Reclamo</option>
                             <option>Sugerencia</option>
                         </select> 
+                    </div>
+                    <div class="form-group">
+                        <p class="btn-titles">Mensaje</p>
+                        <textarea rows="10" placeholder="Ingrese el Mensaje"></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <p class="btn-titles">Mensaje</p>
-                    <textarea rows="10" placeholder="Ingrese el Mensaje"></textarea>
-                </div>
-            </div>
-        </form>
-    </div>
-
+            </form>
+        </div>
     </body>
-    <!-- PIE DE PAGINA -->
+    
+    <!-- FOOTER -->
+    
     <footer>
         <div class="footer-items">
             <div class="logo" >
-            <img src="/public_html/images/logo.png">
+            <img src="../images/logo.png">
             </div>
+            
+            <!-- Columna 2: Navegación -->
+            
             <div>
-                <!-- Columna 2: Navegación -->
                 <h2 class="footer-titles">Navegación</h2>
                 <ul>
                 <li><a href="index.html" class="footer-text">Inicio</a></li>
@@ -106,6 +117,7 @@
             </div>
 
             <!-- Columna 3: Redes Sociales -->
+            
             <div>
                 <h2 class="footer-titles">Redes Sociales</h2>
                 <a href="https://instagram.com"  class="footer-text">Instagram</a><br>
@@ -128,7 +140,6 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
                             width="100%" height="300" 
                             title="Mapa de ubicación PetShop">
-                            <!-- Que direccuion pondremos? NOSE-->
                         </iframe>
                         <p class="footer-text">Jirón Andrés Avelino Cáceres 312, Alto Selva Alegre 04003</p>
                 </div>

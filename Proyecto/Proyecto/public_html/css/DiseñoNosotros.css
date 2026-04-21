@@ -1,25 +1,23 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-    Created on : 20 abr 2026, 2:03:38 p.m.
-    Author     : USER
-*/
+
+/* Selector universal*/
 * {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     box-sizing: border-box; /* esto podemos borrar */
 }
 
+
 /* BARRA SUPERIOR CON MARQUEE */
+
 .barra-top {
     background-color: #151515;
     color: white;
     font-size: 14px;
     padding: 5px 0; 
 }
+
 /* BARRA SUPERIOR*/
+
 .header-derecha, .header-izquierda {
     display: flex;
     align-items: center;
@@ -31,9 +29,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     justify-content: space-between;
 }
 
-.logo img { height: 100px; }
+.logo img { 
+    height: 100px; 
+}
 
-.header-derecha { gap: 20px; } 
+.header-derecha { 
+    gap: 20px; 
+} 
 
 .carrito-texto {
     color: white;
@@ -41,7 +43,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     font-weight: bold;
 }
 
-/*  Buscador */
+/* Buscador*/
 .buscador {
     background-color: #f3e8d5;
     border: none;
@@ -52,57 +54,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     outline: none;
 }
 
-body{
-    background-color:#efe3cd; 
-}
-/* 1. Reset y Fuente global */
-* {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Esto evita que el padding aumente el ancho */
-}
 
-/* 2. Barra negra (solo colores y texto) */
-.barra-top {
-    background-color: #151515;
-    color: white;
-    font-size: 14px;
-    padding: 5px 0; /* No olvides el padding para que no se pegue el texto */
-    }
-
-/* 3. TRUCO: Agrupamos lo que se repite */
-.header-principal, .caja-derecha {
-    display: flex;
-    align-items: center;
-}
-
-/* 4. Estilos únicos del Header */
-.header-principal {
-    background-color: #153652;
-    padding: 15px 30px;
-    justify-content: space-between;
-}
-
-.logo img { height: 100px; }
-
-.caja-derecha { gap: 20px; } /* Solo el espacio entre elementos */
-
-.carrito-texto {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* 5. Buscador (todo en líneas compactas) */
-.buscador {
-    background-color: #f3e8d5;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 250px;
-    outline: none;
-}
+/* MENÚ DE NAVEGACIÓN*/
 
 .navegacion{
     background-color:#ee9b7d ;
@@ -123,13 +76,16 @@ body{
 }
 
 /*CONTENEDOR GENERAL*/
+
+body{
+    background-color:#efe3cd; 
+}
+
 .contenedor {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 24px;
 }
- 
-.breadcrumb a { color: #e8734a; }
  
 .titulo-seccion {
   font-size: 1.8em;
@@ -137,12 +93,8 @@ body{
   margin-bottom: 4px;
 }
  
-.subtitulo {
-  font-size: 0.85em;
-  margin-bottom: 20px;
-}
-
-   /* GRID DE CARDS */
+/* GRID DE CARDS */
+   
 .cards-grid {
   display: flex;
   gap: 18px;
@@ -165,8 +117,9 @@ body{
   font-size: 1em;
   color: #1a2e4a;
   margin-bottom: 12px;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   font-weight: bold;
+  text-align: center;
 }
 
 .card p {
@@ -196,6 +149,7 @@ body{
 }
 
 /* Card Misión */
+
 .card-mision {
   background-color: #fdebd8;
   border-color: #e8b89a;
@@ -212,6 +166,7 @@ body{
 
 
 /* Card Visión */
+
 .card-vision {
   background-color: #fdf6ec;
   text-align: center;
@@ -225,15 +180,15 @@ body{
   display: block;
 }
 
-
 .card h4 {
   font-size: 0.95em;
   color: #1a2e4a;
   margin: 8px 0 6px;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
 }
 
 /* Card Contacto */
+
 .card-contacto {
   background-color: #fdebd8;
   border-color: #e8b89a;
@@ -254,11 +209,12 @@ body{
   line-height: 1.5;
 }
 
-.datos-contacto strong {
+.datos-contacto b {
   color: #1a2e4a;
 }
 
 /* BOTONES */
+
 .texto-contacto {
   text-align: center;
   font-size: 0.9em;
@@ -283,31 +239,12 @@ body{
   margin-bottom: 10px;
 }
 
-.btn-enviar:hover { background-color: #c55e38; }
-
 .btn-cancelar {
   display: inline-block;
   color: #e8734a;
   font-size: 0.88em;
   text-decoration: underline;
 }
-
-.btn-cancelar:hover { color: #c55e38; }
-
-/* REDES */
-.redes {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.red-social {
-  font-size: 1.8em;
-  margin: 0 8px;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.red-social:hover { opacity: 0.7; }
 
 /*PIE DE PAGINA*/
 footer{
