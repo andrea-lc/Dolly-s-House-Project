@@ -16,7 +16,7 @@
 
 .header-derecha, .header-izquierda {
     display: flex;
-    align-items: center;
+    align-items:center ;
 }
 
 .header-izquierda {
