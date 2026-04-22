@@ -1,12 +1,3 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-    Created on : 20 abr 2026, 4:34:37 p.m.
-    Author     : USER
-*/
-
 * {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -18,6 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     color: white;
     padding: 5px 0; 
 }
+
 .header-derecha, .header-izquierda {
     display: flex;
     align-items: center;
