@@ -86,8 +86,6 @@ body{
     color: #153652;
 }
 
-
-
 /*PRODUCTOS DESTACADOS*/
 
 .section-productos {
@@ -116,7 +114,6 @@ body{
     border: 1px solid #dddddd;
     width: 200px;
     position: relative;
-    transition: box-shadow 0.2s;
 }
     
 .producto-card img {
@@ -176,7 +173,10 @@ footer{
 .footer-titles{
     color: #ece0cf;
     margin-bottom: 15px;
-    
+}
+
+.footer-titles a{
+    list-style: none;
 }
 
 .footer-text{
