@@ -126,9 +126,8 @@ body{
 
 /* SEPARADOR ENTRE ARTÍCULOS */
 .separador {
-    border: none;
-    border-top: 2px solid #dddddd;
-    margin: 50px 0 40px;
+    color: #dddddd;
+    margin: 50px 0;
 }
 
 
