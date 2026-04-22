@@ -77,23 +77,21 @@ body{
 }
 
 .contenedor {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 20px 24px;
 }
- 
+
 .titulo-seccion {
   color: #163551;
   margin-bottom: 4px;
 }
- 
+
 /* GRID DE CARDS */
-   
+
 .cards-grid {
   display: flex;
   gap: 18px;
-  flex-wrap: wrap;
-  justify-content: center;
   margin-bottom: 30px;
 }
 
@@ -102,7 +100,6 @@ body{
   border: 1px solid #ddd0bc;
   border-radius: 8px;
   padding: 20px;
-  flex: 1;
   min-width: 220px;
   max-width: 260px;
 }
@@ -132,9 +129,7 @@ body{
   display: block;
 }
 
-.card-pie {
-  color: #666;
-}
+
 
 /* Card Misión */
 
