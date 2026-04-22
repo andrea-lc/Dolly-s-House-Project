@@ -72,15 +72,15 @@ body{
 .contenedor {
     max-width: 860px;
     margin: 40px auto;
-    padding: 40px 48px 60px;
+    padding: 40px 48px;
     background: #fffaf2;
     border: 1px solid #d4b483;
     border-radius: 8px;
 } 
+
 /* Titulo del articulo */
 .articulo-titulo {
     color: #153652;
-    line-height: 1.3;
     margin-bottom: 20px;
 }
 /* Imagen del articulo */
@@ -95,8 +95,8 @@ body{
 /*Texto del articulo */
 .articulo-texto {
     color: #333;
-    margin-bottom: 18px;
     line-height: 1.8;
+    text-align: justify;
 }
     
 /*Subtitulo del articulo */
