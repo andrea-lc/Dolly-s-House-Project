@@ -68,13 +68,29 @@
 
 /* BANNER PRINCIPAL */
 .banner{
-    background-image: url(../images/Images_Head-Foot/BANNER.png);
+    background-image: url(../images/Images_Head-Foot/BANNER2.png);
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
     min-height: 500px; /* Asegura una altura mínima */
-
+    text-align: center;
 }
+
+.banner-text{
+    padding-top: 40px;
+    color: #153652;
+}
+.banner-text2{
+    padding-bottom: 15px;
+    color: #153652;
+}
+.banner-text3{
+    color: white;
+    background-color: #153652;
+    display: inline;
+    padding: 2px 10px;
+}
+
 
 body{
     background-color:#efe3cd; 
