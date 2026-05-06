@@ -77,4 +77,3 @@ Dos estudiantes, muchos errores de compilación y cero sueño después:
 ---
 
 > *Proyecto desarrollado sin inversión económica, usando herramientas gratuitas.*  
-> Docente: MBA Mg. Ing. Rene Alonso Nieto Valencia
