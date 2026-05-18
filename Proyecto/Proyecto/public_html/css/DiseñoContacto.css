@@ -75,7 +75,7 @@ body {
 }
 
 .container {
-    width: 900px;
+    max-width: 900px;
     margin: 0 auto;
     margin-bottom: 50px;
 }
@@ -97,7 +97,7 @@ body {
 
 /*Espacio que ocupa cada item dentro del formulario*/
 .form-items{
-    width: 50%;
+    width: 100%;
 }
 
 /* Fila con 2 columnas */
