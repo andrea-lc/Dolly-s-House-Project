@@ -4,9 +4,6 @@
            #c09c96 #4e9ba9 #849eab #4c4f3e #1b171e
    ============================================================ */
 
-/* ─── GOOGLE FONTS ─────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
-
 /* ─── CSS VARIABLES ─────────────────────────────────────────── */
 :root {
   --sand:       #dcc594;
@@ -25,8 +22,8 @@
   --text-light: #6b6460;
   --border:     #e2d5c0;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+ --font-display: Georgia, serif;
+  --font-body: Arial, sans-serif;
 
   --radius-sm: 4px;
   --radius-md: 10px;
@@ -1198,6 +1195,265 @@ footer {
   transform: translateY(-1px);
 }
 
+.banner-aves-principal{
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 30px 0;
+}
+
+.banner-aves-principal img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-contenido{
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  width: 90%;
+}
+
+
+.banner-contenido h2{
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.banner-contenido p{
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn-banner{
+  display: inline-block;
+  padding: 12px 28px;
+  background: #7dd3fc;
+  color: #0f172a;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.btn-banner:hover{
+  transform: scale(1.05);
+  background: #38bdf8;
+}
+
+/* MARQUESINA */
+.marquesina-banner{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0;
+  z-index: 3;
+  backdrop-filter: blur(4px);
+}
+
+.texto-marquesina{
+  white-space: nowrap;
+  display: inline-block;
+  padding-left: 100%;
+  color: #082f49;
+  font-weight: 700;
+  animation: moverMarquesina 18s linear infinite;
+}
+
+@keyframes moverMarquesina{
+  from{
+    transform: translateX(0);
+  }
+
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .banner-aves-principal{
+    height: 250px;
+  }
+
+  .banner-contenido h2{
+    font-size: 2rem;
+  }
+
+  .banner-contenido p{
+    font-size: 1rem;
+  }
+  
+  .marquesina-banner{
+    padding: 10px 0;
+  }
+
+}
+
+/*ProductosDetalle*/
+.breadcrumbs {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  padding: 0 40px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.breadcrumbs a:hover {
+  color: var(--amber);
+}
+
+.producto-detalle-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 40px;
+}
+.detalle-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+.detalle-imagen {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.detalle-imagen img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.detalle-badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.badge.oferta {
+  background: #ffe4c7;
+  color: #b96a1d;
+}
+
+.badge.stock {
+  background: #dff5e7;
+  color: #22744b;
+}
+
+.detalle-info .marca {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.detalle-titulo {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 32px);
+  color: var(--ink);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.detalle-precio-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.precio-anterior {
+  font-size: 18px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.precio-grande {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--wine);
+  line-height: 1;
+}
+.detalle-descripcion {
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-size: 14.5px;
+}
+.btn-grande {
+  padding: 14px 40px;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+.detalle-extras {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.detalle-extras p {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.detalle-secciones {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  margin-bottom: 48px;
+}
+.detalle-secciones h2 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-size: 20px;
+  margin-bottom: 14px;
+  margin-top: 24px;
+}
+.detalle-secciones h2:first-child { margin-top: 0; }
+.detalle-secciones p, .detalle-secciones ul {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 14.5px;
+}
+.detalle-secciones ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+.detalle-secciones li { margin-bottom: 6px; }
+
+/* ─── RESPONSIVE DETALLE PRODUCTO ───────────────────────────── */
+@media (max-width: 900px) {
+  .producto-detalle-page { padding: 32px 24px; }
+  .detalle-layout { grid-template-columns: 1fr; gap: 24px; }
+  .detalle-secciones { padding: 24px; }
+}
+@media (max-width: 600px) {
+  .producto-detalle-page { padding: 24px 16px; }
+  .detalle-titulo { font-size: 24px; }
+  .precio-grande { font-size: 24px; }
+  .detalle-secciones { padding: 18px; }
+}
 /* ============================================================
    RESPONSIVE — BREAKPOINTS
    ============================================================ */
@@ -1234,6 +1490,19 @@ footer {
   .promo-banner { margin: 0 24px 40px; padding: 36px 32px; }
 
   .categorias-strip { padding: 20px 24px; }
+  
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  .opciones li:hover .dropdown-menu {
+    display: none !important;
+  }
+
+  .dropdown-grid,
+  .marcas-grid {
+    display: none !important;
+  }
 }
 
 /* ─── MOBILE (≤600px) ───────────────────────────────────────── */
@@ -1251,7 +1520,9 @@ footer {
     flex-direction: column;
   }
 
-  .navegacion.open { display: block; }
+  #menu-toggle:checked + .site-header + .navegacion {
+  display: block;
+  }
 
   .opciones {
     flex-direction: column;
@@ -1318,9 +1589,19 @@ footer {
 
   .tabla-comparativa { font-size: 12px; }
   .tabla-comparativa th, .tabla-comparativa td { padding: 9px 10px; }
+  
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  .opciones li:hover .dropdown-menu {
+    display: none !important;
+  }
+  
 }
 
 @media (max-width: 380px) {
   .grid-productos-home,
   .grid-productos { grid-template-columns: 1fr; }
 }
+
