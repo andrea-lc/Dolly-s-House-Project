@@ -16,6 +16,7 @@
   </div>
 
   <!-- HEADER -->
+  <input type="checkbox" id="menu-toggle" hidden>
   <header class="site-header">
     <a href="index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png" alt="Dolly's House"></a>
     <div class="header-right">
@@ -29,88 +30,112 @@
         </div>
       <button class="carrito-btn">🛒 <span class="label">Carrito</span></button>
     </div>
-    <button class="hamburger" onclick="toggleNav()" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
+    <label for="menu-toggle" class="hamburger" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
   </header>
 
   <!-- NAVEGACIÓN -->
   <nav class="navegacion" id="nav">
-    <ul class="opciones">
-      <li><a href="index.html" class="active">Inicio</a></li>
-      <li><a href="#">Ropa</a></li>
-      <li><a href="Productos.html">Alimentos</a>
-        <div class="dropdown-menu">
-          <div class="drop-header">Alimentos por mascota</div>
-          <div class="dropdown-grid">
-            <a href="Productos.html"><span class="drop-icon">🐕</span>Perros</a>
-            <a href="Productos.html"><span class="drop-icon">🐈</span>Gatos</a>
-            <a href="Productos.html"><span class="drop-icon">🦜</span>Aves</a>
-            <a href="Productos.html"><span class="drop-icon">🐹</span>Hámster</a>
-            <a href="Productos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
-            <a href="Productos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
-            <a href="Productos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
-            <a href="Productos.html"><span class="drop-icon">⭐</span>Super Premium</a>
-          </div>
-        </div>
-      </li>
-      <li><a href="#">Mascotas Grandes</a></li>
-      <li><a href="#">Mascotas Pequeñas</a>
-          <div class="dropdown-menu">
-            <div class="drop-header">Mascotas pequeñas</div>
-            <div class="dropdown-grid">
-              <a href="#"><span class="drop-icon">🐹</span>Hámster</a>
-              <a href="#"><span class="drop-icon">🐰</span>Conejo</a>
-              <a href="#"><span class="drop-icon">🐭</span>Ratón</a>
-              <a href="#"><span class="drop-icon">🦔</span>Erizo</a>
-              <a href="#"><span class="drop-icon">🧸</span>Juguetes</a>
-              <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
-              <a href="#"><span class="drop-icon">🌿</span>Alimentos</a>
-              <a href="#"><span class="drop-icon">🪺</span>Camas y Nidos</a>
-              <a href="#"><span class="drop-icon">💊</span>Salud</a>
-            </div>
-          </div>
-      </li>
-      <li><a href="#">Aves</a>
-          <div class="dropdown-menu">
-            <div class="drop-header">Aves y accesorios</div>
-            <div class="dropdown-grid">
-              <a href="#"><span class="drop-icon">🦜</span>Loros</a>
-              <a href="#"><span class="drop-icon">🐦</span>Canarios</a>
-              <a href="#"><span class="drop-icon">🦚</span>Periquitos</a>
-              <a href="#"><span class="drop-icon">🐔</span>Aves de Corral</a>
-              <a href="#"><span class="drop-icon">🌾</span>Semillas</a>
-              <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
-              <a href="#"><span class="drop-icon">🛁</span>Bañeras</a>
-              <a href="#"><span class="drop-icon">🪵</span>Perchas</a>
-              <a href="#"><span class="drop-icon">💊</span>Vitaminas</a>
-            </div>
-          </div>
-      </li>
-      <li><a href="Blog.html">Blog</a></li>
-      <li><a href="Nosotros.html">Sobre Nosotros</a></li>
-      <li><a href="Contacto.html">Contáctanos</a></li>
-      <li><a href="#">Marcas</a>
-          <div class="dropdown-menu marcas-drop">
-            <div class="drop-header">Nuestras marcas</div>
-            <div class="marcas-grid">
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-              <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
-            </div>
-          </div>
-      </li>
-    </ul>
-  </nav>
+          <ul class="opciones">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Ropa</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Ropa y accesorios</div>
+                    <div class="dropdown-grid">
+                      <a href="#"><span class="drop-icon">👕</span>Polos</a>
+                      <a href="#"><span class="drop-icon">🧥</span>Casacas</a>
+                      <a href="#"><span class="drop-icon">🦴</span>Collares</a>
+                      <a href="#"><span class="drop-icon">🎀</span>Bandanas</a>
+                      <a href="#"><span class="drop-icon">👟</span>Botitas</a>
+                      <a href="#"><span class="drop-icon">🌧️</span>Impermeables</a>
+                      <a href="#"><span class="drop-icon">❄️</span>Ropa Invierno</a>
+                      <a href="#"><span class="drop-icon">☀️</span>Ropa Verano</a>
+                      <a href="#"><span class="drop-icon">✨</span>Accesorios</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="Productos.html">Alimentos</a>
+              <div class="dropdown-menu">
+                <div class="drop-header">Alimentos por mascota</div>
+                <div class="dropdown-grid">
+                  <a href="Productos.html"><span class="drop-icon">🐕</span>Perros</a>
+                  <a href="Productos.html"><span class="drop-icon">🐈</span>Gatos</a>
+                  <a href="Productos.html"><span class="drop-icon">🦜</span>Aves</a>
+                  <a href="Productos.html"><span class="drop-icon">🐹</span>Hámster</a>
+                  <a href="Productos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                  <a href="Productos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
+                  <a href="Productos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
+                  <a href="Productos.html"><span class="drop-icon">⭐</span>Super Premium</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="#">Mascotas Grandes</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Productos para mascotas grandes</div>
+                    <div class="dropdown-grid">
+                      <a href="#"><span class="drop-icon">🐕</span>Perros Grandes</a>
+                      <a href="#"><span class="drop-icon">🦴</span>Snacks y Premios</a>
+                      <a href="#"><span class="drop-icon">🥣</span>Comederos</a>
+                      <a href="#"><span class="drop-icon">🛏️</span>Camas</a>
+                      <a href="#"><span class="drop-icon">🎾</span>Juguetes Resistentes</a>
+                      <a href="#"><span class="drop-icon">🦮</span>Correas y Arneses</a>
+                      <a href="#"><span class="drop-icon">🧴</span>Higiene y Shampoo</a>
+                      <a href="#"><span class="drop-icon">💊</span>Vitaminas y Salud</a>
+                      <a href="#"><span class="drop-icon">🏠</span>Casas y Accesorios</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Mascotas Pequeñas</a>
+                <div class="dropdown-menu">
+                  <div class="drop-header">Mascotas pequeñas</div>
+                  <div class="dropdown-grid">
+                    <a href="#"><span class="drop-icon">🐹</span>Hámster</a>
+                    <a href="#"><span class="drop-icon">🐰</span>Conejo</a>
+                    <a href="#"><span class="drop-icon">🐭</span>Ratón</a>
+                    <a href="#"><span class="drop-icon">🦔</span>Erizo</a>
+                    <a href="#"><span class="drop-icon">🧸</span>Juguetes</a>
+                    <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+                    <a href="#"><span class="drop-icon">🌿</span>Alimentos</a>
+                    <a href="#"><span class="drop-icon">🪺</span>Camas y Nidos</a>
+                    <a href="#"><span class="drop-icon">💊</span>Salud</a>
+                  </div>
+                </div>
+            </li>
+            <li><a href="ProductosAves.html">Aves</a>
+                <div class="dropdown-menu">
+                  <div class="drop-header">Aves y accesorios</div>
+                  <div class="dropdown-grid">
+                    <a href="#"><span class="drop-icon">🦜</span>Loros</a>
+                    <a href="#"><span class="drop-icon">🐦</span>Canarios</a>
+                    <a href="#"><span class="drop-icon">🦚</span>Periquitos</a>
+                    <a href="#"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                    <a href="#"><span class="drop-icon">🌾</span>Semillas</a>
+                    <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+                    <a href="#"><span class="drop-icon">🛁</span>Bañeras</a>
+                    <a href="#"><span class="drop-icon">🪵</span>Perchas</a>
+                    <a href="#"><span class="drop-icon">💊</span>Vitaminas</a>
+                  </div>
+                </div>
+            </li>
+            <li><a href="#">Marcas</a>
+                <div class="dropdown-menu marcas-drop">
+                  <div class="drop-header">Nuestras marcas</div>
+                  <div class="marcas-grid">
+                    <a href="#"><img src="../images/Images_Marcas/1.png" alt="Hills"></a>
+                    <a href="#"><img src="../images/Images_Marcas/2.png" alt="RoyalCanin"></a>
+                    <a href="#"><img src="../images/Images_Marcas/3.png" alt="Salvaje"></a>
+                    <a href="#"><img src="../images/Images_Marcas/4.jpg" alt="TkPet"></a>
+                  </div>
+                </div>
+            </li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Nosotros.html" class="active">Sobre Nosotros</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
+          </ul>
+        </nav>
 
   <div class="nosotros-page">
     <h1 class="section-title">Sobre Nosotros</h1>
@@ -213,9 +238,5 @@
     </div>
     <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
   </footer>
-
-  <script>
-    function toggleNav() { document.getElementById('nav').classList.toggle('open'); }
-  </script>
 </body>
 </html>
