@@ -1,11 +1,10 @@
 /* ============================================================
-   DOLLY'S HOUSE — UNIFIED STYLESHEET
-   Paleta: #dcc594 #cc8747 #e1ece7 #aec8cc #9f4451
-           #c09c96 #4e9ba9 #849eab #4c4f3e #1b171e
+  DOLLY'S HOUSE — UNIFIED STYLESHEET
+  Paleta: #dcc594 #cc8747 #e1ece7 #aec8cc #9f4451
+          #c09c96 #4e9ba9 #849eab #4c4f3e #1b171e
    ============================================================ */
 
-/* ─── GOOGLE FONTS ─────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+/* ─── GOOGLE FONTS ─────────────────────────────────────────── */@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 /* ─── CSS VARIABLES ─────────────────────────────────────────── */
 :root {
@@ -571,7 +570,7 @@ footer {
 
 /* ─── HERO BANNER ───────────────────────────────────────────── */
 .hero {
-  background-image: url('../images/Images_Head-Foot/BANNER2.png');
+  background-image: url('../images/Images_Head-Foot/Banner\ 4.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -645,64 +644,53 @@ footer {
 }
 
 /* ─── CATEGORIES STRIP ──────────────────────────────────────── */
-.categorias-strip {
-  background: var(--white);
-  padding: 28px 40px;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  border-bottom: 1px solid var(--border);
-}
-
-.cat-chip {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 14px 20px;
-  border-radius: var(--radius-md);
-  border: 1.5px solid var(--border);
-  background: var(--cream);
-  color: var(--ink);
-  font-size: 12.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-  transition: var(--transition);
-  min-width: 90px;
-  text-align: center;
-}
-
-.cat-chip span.emoji { font-size: 22px; }
-
-.cat-chip:hover {
-  background: var(--sand);
-  border-color: var(--amber);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-}
-
-/* ─── PRODUCTOS DESTACADOS (INDEX) ──────────────────────────── */
-.section-productos {
-  padding: 56px 40px;
+.videos-categorias {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 25px;
 }
 
-.grid-productos-home {
+.videos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  justify-content: space-between;
+}
+
+.video-card {
+  display: block;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ─── BANNER SECUNDARIO (índice) ────────────────────────────── */
 .promo-banner {
-  margin: 0 40px 56px;
+  max-width: 1200px;
+  margin: 40px auto 25px;
+  padding: 48px 40px;  
   background: linear-gradient(135deg, var(--olive) 0%, var(--ink) 100%);
   border-radius: var(--radius-lg);
-  padding: 48px 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -711,15 +699,27 @@ footer {
   position: relative;
 }
 
-.promo-banner::before {
-  content: '🐾';
-  font-size: 180px;
-  position: absolute;
-  right: -10px;
-  top: -20px;
-  opacity: 0.07;
-  transform: rotate(-15deg);
-  pointer-events: none;
+.promo-banner-link {
+  margin: -48px -40px; /* 🔑 CAMBIADO: de -56px a -40px para compensar el nuevo padding */
+  flex: 1;
+  align-self: stretch;
+  display: block;
+  position: relative;
+}
+
+.promo-banner-link img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;        /* 🔑 Rellena el espacio recortando lo necesario, sin deformar */
+  object-position: center;
+}
+.promo-banner-link video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;        /* 🔑 Rellena el espacio recortando lo necesario, sin deformar */
+  object-position: center;
 }
 
 .promo-text h2 {
@@ -743,8 +743,60 @@ footer {
 .promo-badge .pct { font-size: 42px; font-weight: 700; line-height: 1; }
 .promo-badge .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
 
+/* ─── BANNERS EN FILA (3 COLUMNAS y 2 COLUMNAS) ─────────────────────────── */
+.banners-triple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 20px; /* Espacio entre las fotos */
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.banners-doble {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    gap: 20px; /* Espacio entre las fotos */
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+
+.banner-item {
+    display: block;
+    line-height: 0; /* Elimina cualquier espacio blanco debajo de la foto */
+    background: transparent;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.banner-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación suave */
+    box-shadow: var(--shadow-md);
+}
+
+.banner-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* ─── PRODUCTOS DESTACADOS (INDEX) ──────────────────────────── */
+.section-productos {
+  max-width: 1200px;
+  margin: 0 auto 25px;
+}
+
+.grid-productos-home {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+
 /* ============================================================
-   PAGE: PRODUCTOS (ALIMENTOS)
+  PAGE: PRODUCTOS (ALIMENTOS)
    ============================================================ */
 
 .productos-page {
@@ -1196,6 +1248,207 @@ footer {
   background: var(--teal);
   box-shadow: 0 4px 16px rgba(78,155,169,0.35);
   transform: translateY(-1px);
+}
+
+/* CARRITO - ESTILOS SIMPLIFICADOS */
+
+.carrito-page {
+    max-width: 1200px;
+    margin: 0 auto 25px;
+    padding: 48px 40px;
+}
+
+.carrito-header {
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.back-link:hover { 
+    color: var(--amber); 
+}
+
+.carrito-title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    color: var(--ink);
+}
+
+
+/* Layout principal */
+.carrito-layout {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 32px;
+}
+
+/* Producto individual */
+.carrito-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 100px 1fr 140px 140px;
+    gap: 20px;
+    align-items: center;
+}
+
+.item-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+}
+
+.item-brand {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.item-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+/* Cantidad */
+.qty-wrapper label {
+    font-size: 12px;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.qty-input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    background: var(--cream);
+    font-weight: 600;
+}
+
+/* Precios */
+.item-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.price-current {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--wine);
+}
+
+
+/* Resumen */
+.carrito-summary {
+    position: sticky;
+    top: 20px;
+}
+
+.summary-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.summary-card h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Cupón */
+.coupon-form {
+    display: flex;
+    gap: 10px;
+}
+
+.coupon-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    background: var(--cream);
+}
+
+.btn-apply {
+    background: var(--olive);
+    color: var(--white);
+    border: none;
+    padding: 0 20px;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-apply:hover { 
+    background: var(--amber); 
+}
+
+/* Totales */
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.total-row.final {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.free-shipping {
+    color: var(--teal);
+    font-weight: 600;
+}
+
+/* Botón checkout */
+.btn-checkout {
+    width: 100%;
+    padding: 16px;
+    background: var(--amber);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-pill);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.btn-checkout:hover {
+    background: var(--teal);
+}
+
+.secure-text {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 12px;
 }
 
 /* ============================================================

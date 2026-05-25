@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Alimentos — Dolly's House</title>
+</head>
+
+<body>
+
+    <!-- MARQUEE -->
+    <div class="barra-top">
+        <marquee behavior="scroll" direction="left">
+            Ofertas especiales esta semana 🎁 &nbsp;•&nbsp; 20% OFF en alimentos &nbsp;•&nbsp; Accesorios para hamsters
+            &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100!
+        </marquee>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png" alt="Dolly's House"></a>
+        <div class="header-right">
+            <div class="buscador-wrap">
+                <span class="icon-search">🔍</span>
+                <input type="text" class="buscador" placeholder="Buscar productos...">
+            </div>
+            <div class="header-icons">
+                <a href="#" class="login-btn">Iniciar Sesion</a>
+                <a href="#" class="icon-btn">♡</a>
+            </div>
+            <button class="carrito-btn">🛒 <span class="label">Carrito</span></button>
+        </div>
+        <button class="hamburger" onclick="toggleNav()" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navegacion" id="nav">
+        <ul class="opciones">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="#">Ropa</a></li>
+            <li><a href="Productos.html">Alimentos</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Alimentos por mascota</div>
+                    <div class="dropdown-grid">
+                        <a href="Productos.html"><span class="drop-icon">🐕</span>Perros</a>
+                        <a href="Productos.html"><span class="drop-icon">🐈</span>Gatos</a>
+                        <a href="Productos.html"><span class="drop-icon">🦜</span>Aves</a>
+                        <a href="Productos.html"><span class="drop-icon">🐹</span>Hámster</a>
+                        <a href="Productos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                        <a href="Productos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
+                        <a href="Productos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
+                        <a href="Productos.html"><span class="drop-icon">⭐</span>Super Premium</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Mascotas Grandes</a></li>
+            <li><a href="#">Mascotas Pequeñas</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Mascotas pequeñas</div>
+                    <div class="dropdown-grid">
+                        <a href="#"><span class="drop-icon">🐹</span>Hámster</a>
+                        <a href="#"><span class="drop-icon">🐰</span>Conejo</a>
+                        <a href="#"><span class="drop-icon">🐭</span>Ratón</a>
+                        <a href="#"><span class="drop-icon">🦔</span>Erizo</a>
+                        <a href="#"><span class="drop-icon">🧸</span>Juguetes</a>
+                        <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+                        <a href="#"><span class="drop-icon">🌿</span>Alimentos</a>
+                        <a href="#"><span class="drop-icon">🪺</span>Camas y Nidos</a>
+                        <a href="#"><span class="drop-icon">💊</span>Salud</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Aves</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Aves y accesorios</div>
+                    <div class="dropdown-grid">
+                        <a href="#"><span class="drop-icon">🦜</span>Loros</a>
+                        <a href="#"><span class="drop-icon">🐦</span>Canarios</a>
+                        <a href="#"><span class="drop-icon">🦚</span>Periquitos</a>
+                        <a href="#"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                        <a href="#"><span class="drop-icon">🌾</span>Semillas</a>
+                        <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+                        <a href="#"><span class="drop-icon">🛁</span>Bañeras</a>
+                        <a href="#"><span class="drop-icon">🪵</span>Perchas</a>
+                        <a href="#"><span class="drop-icon">💊</span>Vitaminas</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
+            <li><a href="#">Marcas</a>
+                <div class="dropdown-menu marcas-drop">
+                    <div class="drop-header">Nuestras marcas</div>
+                    <div class="marcas-grid">
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                        <a href="#"><img src="images/hills-pn.png" alt="Hills"></a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <div class="productos-page">
+        <div class="page-header">
+            <h1 class="section-title">Accesorios</h1>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Accesorios de calidad para el bienestar de cada mascota</p>
+        </div>
+
+        <div class="productos-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar-filtros">
+                <h3>Filtros</h3>
+                <button class="btn-borrar" onclick="clearFilters()">✕ Borrar filtros</button>
+
+                <div class="filtro-bloque">
+                    <div class="filtro-titulo">Tipo de Accesorio</div>
+                    <ul class="filtro-opciones">
+                        <li><input type="checkbox" id="f-alimentos"> Collares</li>
+                        <li><input type="checkbox" id="f-pequeños"> Juguetes</li>
+                        <li><input type="checkbox" id="f-aves"> Ropa</li>
+                        <li><input type="checkbox" id="f-corral"> Jaulas</li>
+                    </ul>
+                </div>
+
+                <div class="filtro-bloque">
+                    <div class="filtro-titulo">Tipo de Mascota</div>
+                    <ul class="filtro-opciones">
+                        <li><input type="checkbox" id="f-perro"> 🐕 Perro</li>
+                        <li><input type="checkbox" id="f-gato"> 🐈 Gato</li>
+                        <li><input type="checkbox" id="f-ave2"> 🦜 Ave</li>
+                        <li><input type="checkbox" id="f-hamster"> 🐹 Hámster</li>
+                    </ul>
+                </div>
+
+                <div class="filtro-bloque">
+                    <div class="filtro-titulo">Material</div>
+                    <ul class="filtro-opciones">
+                        <li><input type="checkbox" id="f-nylon"> Nylon resistente</li>
+                        <li><input type="checkbox" id="f-cuero"> Cuero</li>
+                        <li><input type="checkbox" id="f-algodon"> Algodon</li>
+                        <li><input type="checkbox" id="f-poliester"> Poliéster</li>
+                        <li><input type="checkbox" id="f-lana"> Lana</li>
+                    </ul>
+                </div>
+
+                <div class="filtro-bloque">
+                    <div class="filtro-titulo">Precio</div>
+                    <ul class="filtro-opciones">
+                        <li><input type="checkbox" id="f-p1"> S/. 0 – S/. 20</li>
+                        <li><input type="checkbox" id="f-p2"> S/. 21 – S/. 50</li>
+                        <li><input type="checkbox" id="f-p3"> S/. 51 – S/. 100</li>
+                        <li><input type="checkbox" id="f-p4"> S/. 100 a más</li>
+                    </ul>
+                </div>
+
+                <div class="filtro-bloque">
+                    <div class="filtro-titulo">Oferta</div>
+                    <ul class="filtro-opciones">
+                        <li><input type="checkbox" id="f-oferta"> Solo ofertas</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- PRODUCTOS -->
+            <div class="productos-area">
+                <div class="productos-header">
+                    <p class="resultados">20 resultados encontrados</p>
+                    <select class="ordenar">
+                        <option>Ordenar por</option>
+                        <option>Menor precio</option>
+                        <option>Mayor precio</option>
+                        <option>Más vendidos</option>
+                        <option>Novedades</option>
+                    </select>
+                </div>
+
+                <div class="grid-productos">
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/1.png" alt="Kit Diversión Total">
+                        <div class="card-body">
+                            <p class="marca">PETJOY</p>
+                            <p class="nombre">Kit Diversión Total: Mordedores, Pelotas y Accesorios Varios</p>
+                            <p class="precio">S/. 89.90</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="etiqueta oferta">20% OFF</div>
+                        <img src="../images/Images_Accesorios/2.png" alt="Carrito de Paseo">
+                        <div class="card-body">
+                            <p class="marca">TRAVEL DOG</p>
+                            <p class="nombre">Carrito de Paseo Plegable Premium con Ruedas 360°</p>
+                            <p class="precio-tachado"><s>S/. 299.00</s></p>
+                            <p class="precio">S/. 239.20</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/3.png" alt="Collar Nylon">
+                        <div class="card-body">
+                            <p class="marca">GLAMOUR PET</p>
+                            <p class="nombre">Collar Nylon Estampado Leopardo Rosa con Hebilla Segura</p>
+                            <p class="precio">S/. 30.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="etiqueta liquidacion">50% OFF</div>
+                        <img src="../images/Images_Accesorios/4.png" alt="Collar Personalizable con Placa">
+                        <div class="card-body">
+                            <p class="marca">URBAN PAWS</p>
+                            <p class="nombre">Collar Personalizable con Placa de ID y Moño Decorativo</p>
+                            <p class="precio-tachado"><s>S/. 55.00</s></p>
+                            <p class="precio">S/. 27.50</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/5.png" alt="Collar Personalizado">
+                        <div class="card-body">
+                            <p class="marca">BLING PAWS</p>
+                            <p class="nombre">Collar Personalizado con Cristales</p>
+                            <p class="precio">S/. 32.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="etiqueta regalo">REGALO</div>
+                        <img src="../images/Images_Accesorios/6.png" alt="Collar Táctico">
+                        <div class="card-body">
+                            <p class="marca">TACTICAL K9</p>
+                            <p class="nombre">Collar Táctico Resistente con Hebilla Metálica</p>
+                            <p class="precio">S/. 20.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/7.png" alt="Collar de Seguridad">
+                        <div class="card-body">
+                            <p class="marca">KITTY SAFE</p>
+                            <p class="nombre">Collar de Seguridad con Estampado de Huellas</p>
+                            <p class="precio">S/. 10.50</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/8.png" alt="Collar de Gato">
+                        <div class="card-body">
+                            <p class="marca">FELINE CHARM</p>
+                            <p class="nombre">Collar de Gato con Dije de Corazón en Cristales</p>
+                            <p class="precio">S/. 25.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="etiqueta oferta">10% OFF</div>
+                        <img src="../images/Images_Accesorios/9.png"
+                            alt="Collar con Funda para Rastreador GPS y Campana">
+                        <div class="card-body">
+                            <p class="marca">SMART PET</p>
+                            <p class="nombre">Collar con Funda para Rastreador GPS y Campana</p>
+                            <p class="precio-tachado"><s>S/. 31.00</s></p>
+                            <p class="precio">S/. 25.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/10.png" alt="Arnés para Hámsters y Cobayas">
+                        <div class="card-body">
+                            <p class="marca">LITTLE EXPLORER</p>
+                            <p class="nombre">Arnés de Paseo Ajustable para Hámsters y Cobayas con Correa</p>
+                            <p class="precio">S/. 10.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/11.png" alt="Collar Cojín Anti-Estrés para Gatos">
+                        <div class="card-body">
+                            <p class="marca">TOASTY PETS</p>
+                            <p class="nombre">Collar Cojín Anti-Estrés Forma de Pan Tostado para Gatos</p>
+                            <p class="precio">S/. 22.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/12.png" alt="Cueva Nido Acolchada para Erizos">
+                        <div class="card-body">
+                            <p class="marca">EXOTIC REST</p>
+                            <p class="nombre">Cueva Nido Acolchada "Caterpillar" para Erizos y Pequeños Mamíferos</p>
+                            <p class="precio">S/. 30.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/13.png" alt="Cama Redonda">
+                        <div class="card-body">
+                            <p class="marca">SNUGGLE PETS</p>
+                            <p class="nombre">Cama Redonda con Manta de Franela a Cuadros para Erizo</p>
+                            <p class="precio">S/. 48.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/14.png" alt="Suéter Térmico de Forro Polar para Loro">
+                        <div class="card-body">
+                            <p class="marca">BIRDIE STYLE</p>
+                            <p class="nombre">Suéter Térmico de Forro Polar para Loro con Moño (Varios Colores)</p>
+                            <p class="precio">S/. 15.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/15.png" alt="Kit Higiene Bucal">
+                        <div class="card-body">
+                            <p class="marca">VET DENTAL</p>
+                            <p class="nombre">Kit Higiene Bucal: Pasta Enzimática y Cepillos Dedal/Clip</p>
+                            <p class="precio">S/. 29.90</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/16.png" alt="Kit Nuevo Hogar">
+                        <div class="card-body">
+                            <p class="marca">COFAN HOME</p>
+                            <p class="nombre">Kit "Nuevo Hogar": Cama, Plato, Correa y Accesorios</p>
+                            <p class="precio">S/. 50.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/17.png" alt="Set de Deslanado Intensivo">
+                        <div class="card-body">
+                            <p class="marca">SHED MASTER</p>
+                            <p class="nombre">Set de Deslanado Intensivo: Rastrillo y Cuchilla de Acero</p>
+                            <p class="precio">S/. 23.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/18.png" alt="Kit de Aseo y Mantenimiento">
+                        <div class="card-body">
+                            <p class="marca">PET GEAR PRO</p>
+                            <p class="nombre">Kit de Aseo y Mantenimiento: Tijeras, Cortauñas y Peines Guía</p>
+                            <p class="precio">S/. 30.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/19.png" alt="Arenero Cerrado Premium">
+                        <div class="card-body">
+                            <p class="marca">CLEAN PAWS</p>
+                            <p class="nombre">Arenero Cerrado Premium con Tapa y Filtro Antiodor</p>
+                            <p class="precio">S/. 28.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <img src="../images/Images_Accesorios/20.png" alt="baño ecológico para perros">
+                        <div class="card-body">
+                            <p class="marca">GREEN PAWS</p>
+                            <p class="nombre">Baño Ecológico para Perros con Césped Artificial y Marco de Madera</p>
+                            <p class="precio">S/. 125.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
+            <div class="footer-col">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Productos.html">Alimentos</a></li>
+                    <li><a href="Nosotros.html">Nosotros</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><a href="https://instagram.com">Instagram</a></li>
+                    <li><a href="https://tiktok.com">TikTok</a></li>
+                    <li><a href="https://wa.me/51946414833">WhatsApp</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>+51 946 414 833</p>
+                <p>dollyshousen@gmail.com</p>
+                <p>Lun–Sab: 9am a 7pm</p>
+            </div>
+            <div class="footer-col">
+                <h3>Encuéntranos</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
+                    title="Mapa"></iframe>
+                <p>Jr. A. A. Cáceres 312, Alto Selva Alegre 04003</p>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
+    </footer>
+</body>
+
+</html>

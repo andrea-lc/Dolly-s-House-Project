@@ -196,19 +196,5 @@
     </div>
     <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
   </footer>
-
-  <script>
-    function toggleNav() { document.getElementById('nav').classList.toggle('open'); }
-    function enviarForm() {
-      const nombre = document.getElementById('nombre').value.trim();
-      const correo = document.getElementById('correo').value.trim();
-      const mensaje = document.getElementById('mensaje').value.trim();
-      if (!nombre || !correo || !mensaje) {
-        alert('Por favor completa los campos requeridos: Nombre, Correo y Mensaje.');
-        return;
-      }
-      alert('¡Gracias, ' + nombre + '! Tu mensaje fue enviado. Te contactaremos pronto. 🐾');
-    }
-  </script>
 </body>
 </html>
