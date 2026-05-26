@@ -1926,6 +1926,39 @@ footer {
   .marcas-grid {
     display: none !important;
   }
+
+  /* ─── CARRITO RESPONSIVE ─────────────────────────────── */
+  .carrito-page {
+    padding: 36px 24px;
+  }
+
+  .carrito-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .carrito-item {
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+  }
+
+  .qty-wrapper,
+  .item-pricing {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+
+  .coupon-form {
+    flex-direction: column;
+  }
+
+  .btn-apply {
+    width: 100%;
+    padding: 10px 0;
+  }
 }
 
 /* ─── MOBILE (≤600px) ───────────────────────────────────────── */
@@ -2081,6 +2114,50 @@ footer {
 
   .opciones li:hover .dropdown-menu {
     display: none !important;
+  }
+
+  /* ─── CARRITO RESPONSIVE ─────────────────────────────── */
+  .carrito-page {
+    padding: 28px 16px;
+  }
+
+  .carrito-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .item-img {
+    margin: 0 auto;
+  }
+
+  .item-img img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .qty-wrapper,
+  .item-pricing {
+    grid-column: auto;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .item-brand,
+  .item-name {
+    text-align: center;
+  }
+
+  .summary-card {
+    padding: 16px;
+  }
+
+  .total-row.final {
+    font-size: 16px;
   }
 
 }
