@@ -1132,8 +1132,6 @@ footer {
   box-shadow: var(--shadow-sm);
 }
 
-.form-col {}
-
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
 .form-group { margin-bottom: 18px; }
@@ -1491,19 +1489,6 @@ footer {
 
   .categorias-strip { padding: 20px 24px; }
   
-  .dropdown-menu {
-    display: none !important;
-  }
-
-  .opciones li:hover .dropdown-menu {
-    display: none !important;
-  }
-
-  .dropdown-grid,
-  .marcas-grid {
-    display: none !important;
-  }
-}
 
 /* ─── MOBILE (≤600px) ───────────────────────────────────────── */
 @media (max-width: 600px) {
@@ -1590,13 +1575,6 @@ footer {
   .tabla-comparativa { font-size: 12px; }
   .tabla-comparativa th, .tabla-comparativa td { padding: 9px 10px; }
   
-  .dropdown-menu {
-    display: none !important;
-  }
-
-  .opciones li:hover .dropdown-menu {
-    display: none !important;
-  }
   
 }
 
@@ -1604,4 +1582,4 @@ footer {
   .grid-productos-home,
   .grid-productos { grid-template-columns: 1fr; }
 }
-
+}
