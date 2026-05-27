@@ -2005,11 +2005,13 @@ footer {
   .opciones li{
     width: 100%;
   }
+  
 
   .opciones li a {
     padding: 12px 20px;
     border-bottom: 1px solid rgba(27,23,30,0.08);
   }
+  
   
   .opciones li a::after { display: none; }
   
