@@ -1969,14 +1969,23 @@ footer {
 @media (max-width: 600px) {
 
   /* Header móvil: buscador y login ocultos */
-   .site-header { padding: 10px 16px; gap: 10px; }
+  .site-header { 
+      padding: 10px 16px; gap: 10px; 
+  }
 
-  .buscador { width: 150px; }
+  .buscador { 
+      width: 150px; 
+  }
 
-  .carrito-btn span.label { display: none; }
+  .carrito-btn span.label { 
+      display: none; 
+  }
 
-  .hamburger { display: flex; }
-
+  .hamburger { 
+      display: flex; 
+  }
+  
+  
   .navegacion {
     display: none;
     flex-direction: column;
