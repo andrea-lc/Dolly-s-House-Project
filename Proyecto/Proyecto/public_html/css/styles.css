@@ -38,16 +38,10 @@
 }
 
 /* ─── RESET ─────────────────────────────────────────────────── */
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -621,6 +615,7 @@ footer {
 
 /* ─── HERO BANNER ───────────────────────────────────────────── */
 .hero {
+
   background-image: url('../images/Images_Head-Foot/Banner\ 4.png');
   background-size: cover;
   background-position: center;
@@ -637,6 +632,8 @@ footer {
   inset: 0;
   background: linear-gradient(135deg, rgba(27, 23, 30, 0.55) 0%, rgba(76, 79, 62, 0.35) 60%, transparent 100%);
 }
+
+
 
 .hero-content {
   position: relative;
@@ -873,6 +870,7 @@ footer {
    ============================================================ */
 
 .productos-page {
+    /* Espaciado y borde*/
   max-width: 1200px;
   margin: 0 auto;
   padding: 36px 40px;
@@ -1010,6 +1008,7 @@ footer {
    ============================================================ */
 
 .blog-page {
+    /* Espaciado y borde*/
   max-width: 900px;
   margin: 0 auto;
   padding: 48px 40px;
@@ -1106,6 +1105,7 @@ footer {
    ============================================================ */
 
 .nosotros-page {
+    /* Espaciado y borde*/
   max-width: 1180px;
   margin: 0 auto;
   padding: 48px 40px;
@@ -1254,6 +1254,7 @@ footer {
    ============================================================ */
 
 .contacto-page {
+    /* Espaciado y borde*/
   max-width: 960px;
   margin: 0 auto;
   padding: 48px 40px;
@@ -1538,6 +1539,7 @@ footer {
   line-height: 1.7;
   margin-bottom: 24px;
   font-size: 14.5px;
+  text-align: justify;
 }
 
 .btn-grande {
@@ -1598,11 +1600,12 @@ footer {
 
 
 /* ============================================================
-   PAGE: CARRITO
+    PAGE: CARRITO
    ============================================================ */
 
 
 .carrito-page {
+  /* Espaciado y borde*/
   max-width: 1200px;
   margin: 0 auto 25px;
   padding: 48px 40px;
@@ -1632,7 +1635,7 @@ footer {
 }
 
 
-/* Layout principal */
+/* Layout para Carrito con Grid  */
 .carrito-layout {
   display: grid;
   grid-template-columns: 1.8fr 1fr;
@@ -1693,7 +1696,7 @@ footer {
   font-weight: 600;
 }
 
-/* Precios */
+/* Uso de flex para apilar los hijos verticalmente y alinearlos a la izquierda*/
 .item-pricing {
   display: flex;
   flex-direction: column;
