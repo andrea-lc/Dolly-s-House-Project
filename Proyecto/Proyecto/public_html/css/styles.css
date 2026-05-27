@@ -231,7 +231,7 @@ textarea {
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); 
   background: #ffffff;
   border: 1px solid #e2d5c0;
   border-top: 3px solid #cc8747;
@@ -443,6 +443,7 @@ footer {
    SHARED — PRODUCT CARD
    ============================================================ */
 
+   /* Flexbox para tarjetas */
 .producto-card {
   background: #ffffff;
   border: 1px solid #e2d5c0;
@@ -454,9 +455,11 @@ footer {
   flex-direction: column;
 }
 
+
+/* Hover events que activan transiciones */
 .producto-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 24px rgba(27, 23, 30, 0.12);
+  transform: translateY(-4px);  /* Mueve la tarjeta hacia arriba */
+  box-shadow: 0 6px 24px rgba(27, 23, 30, 0.12);  /* Escala la imagen */
 }
 
 .producto-card img {
@@ -1022,19 +1025,20 @@ footer {
   z-index: 3;
   backdrop-filter: blur(4px);
 }
-
+/* Estilo para el texto de la marquesina */
 .texto-marquesina {
   white-space: nowrap;
   display: inline-block;
   padding-left: 100%;
   color: #082f49;
   font-weight: 700;
-  animation: moverMarquesina 18s linear infinite;
+  animation: moverMarquesina 18s linear infinite;  /* Repite sin "alternate" */
 }
 
+/* Animación para mover la marquesina de derecha a izquierda */
 @keyframes moverMarquesina {
   from {
-    transform: translateX(0);
+    transform: translateX(0);   /* En la animación del marquee */
   }
 
   to {
@@ -1408,6 +1412,7 @@ footer {
    ============================================================ */
 
 .breadcrumbs {
+  /* Espaciado y bordes */
   max-width: 1100px;
   margin: 24px auto 0;
   padding: 0 40px;
@@ -1424,7 +1429,7 @@ footer {
   margin: 0 auto;
   padding: 40px 40px;
 }
-
+/* Grid Layout Productos*/
 .detalle-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1446,7 +1451,7 @@ footer {
   display: block;
   object-fit: cover;
 }
-
+/* PRODUCTO Flexbox para componentes */
 .detalle-badges {
   display: flex;
   gap: 10px;
@@ -1944,16 +1949,13 @@ footer {
     grid-column: span 2;
   }
 
-  /* Producto detalle */
   .producto-detalle-page {
     padding: 32px 24px;
   }
-
   .detalle-layout {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-
   .detalle-secciones {
     padding: 24px;
   }
