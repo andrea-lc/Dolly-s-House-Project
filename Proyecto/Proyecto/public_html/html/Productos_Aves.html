@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aves — Dolly's House</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+      .barra-top {
+        background-color: #1b171e;
+        color: #dcc594;
+        padding: 6px 0;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- MARQUEE -->
+    <div class="barra-top">
+      <marquee behavior="scroll" direction="left">
+        Ofertas especiales esta semana 🎁 &nbsp;•&nbsp; 20% OFF en alimentos &nbsp;•&nbsp; Accesorios para hamsters
+        &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100!
+      </marquee>
+    </div>
+
+    <!-- HEADER -->
+    <input type="checkbox" id="menu-toggle" hidden>
+    <header class="site-header">
+      <a href="index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png" alt="Dolly's House"></a>
+      <div class="header-right">
+        <div class="buscador-wrap">
+          <span class="icon-search">🔍</span>
+          <input type="text" class="buscador" placeholder="Buscar productos...">
+        </div>
+        <div class="header-icons">
+          <a href="#" class="login-btn">Iniciar Sesion</a>
+          <a href="#" class="icon-btn">♡</a>
+        </div>
+        <a href="Carrito.html" class="carrito-link">
+          <button class="carrito-btn">🛒 <span class="label">Carrito</span></button>
+        </a>
+
+      </div>
+      <label for="menu-toggle" class="hamburger" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </header>
+
+    <!-- NAVEGACIÓN -->
+    <div class="navegacion" id="div">
+      <ul class="opciones">
+        <li><a href="index.html">Inicio</a></li>
+
+        <li><a href="Productos_Alimentos.html">Alimentos</a>
+          <div class="dropdown-menu">
+            <div class="drop-header">Alimentos por mascota</div>
+            <div class="dropdown-grid">
+              <a href="Productos_Alimentos.html"><span class="drop-icon">🐕</span>Perros</a>
+              <a href="Productos_Alimentos.html"><span class="drop-icon">🐈</span>Gatos</a>
+              <a href="Productos_Alimentos.html"><span class="drop-icon">🦜</span>Aves</a>
+              <a href="Productos_Alimentos.html"><span class="drop-icon">🐹</span>Hámster</a>
+              <a href="Productos_Alimentos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+              <a href="Productos_Alimentos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
+              <a href="Productos_Alimentos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
+              <a href="Productos_Alimentos.html"><span class="drop-icon">⭐</span>Super Premium</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Productos_Accesorios.html">Accesorios</a>
+          <div class="dropdown-menu">
+            <div class="drop-header">Accesorios para mascotas</div>
+            <div class="dropdown-grid">
+              <a href="Productos_Accesorios.html"><span class="drop-icon">📿</span>Collares</a>
+              <a href="Productos_Accesorios.html"><span class="drop-icon">🧸</span>Juguetes</a>
+              <a href="Productos_Accesorios.html"><span class="drop-icon">👕</span>Ropa</a>
+              <a href="Productos_Accesorios.html"><span class="drop-icon">🛏️</span>Camas</a>
+              <a href="Productos_Accesorios.html"><span class="drop-icon">🦮</span>Correas y Arneses</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">Mascotas Grandes</a>
+          <div class="dropdown-menu">
+            <div class="drop-header">Productos para mascotas grandes</div>
+            <div class="dropdown-grid">
+              <a href="#"><span class="drop-icon">🐕</span>Perros Grandes</a>
+              <a href="#"><span class="drop-icon">🦴</span>Snacks y Premios</a>
+              <a href="#"><span class="drop-icon">🥣</span>Comederos</a>
+              <a href="#"><span class="drop-icon">🛏️</span>Camas</a>
+              <a href="#"><span class="drop-icon">🎾</span>Juguetes Resistentes</a>
+              <a href="#"><span class="drop-icon">🦮</span>Correas y Arneses</a>
+              <a href="#"><span class="drop-icon">🧴</span>Higiene y Shampoo</a>
+              <a href="#"><span class="drop-icon">💊</span>Vitaminas y Salud</a>
+              <a href="#"><span class="drop-icon">🏠</span>Casas y Accesorios</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">Mascotas Pequeñas</a>
+          <div class="dropdown-menu">
+            <div class="drop-header">Mascotas pequeñas</div>
+            <div class="dropdown-grid">
+              <a href="#"><span class="drop-icon">🐹</span>Hámster</a>
+              <a href="#"><span class="drop-icon">🐰</span>Conejo</a>
+              <a href="#"><span class="drop-icon">🐭</span>Ratón</a>
+              <a href="#"><span class="drop-icon">🦔</span>Erizo</a>
+              <a href="#"><span class="drop-icon">🧸</span>Juguetes</a>
+              <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+              <a href="#"><span class="drop-icon">🌿</span>Alimentos</a>
+              <a href="#"><span class="drop-icon">🪺</span>Camas y Nidos</a>
+              <a href="#"><span class="drop-icon">💊</span>Salud</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Productos_Aves.html" class="active">Aves</a>
+          <div class="dropdown-menu">
+            <div class="drop-header">Aves y accesorios</div>
+            <div class="dropdown-grid">
+              <a href="#"><span class="drop-icon">🦜</span>Loros</a>
+              <a href="#"><span class="drop-icon">🐦</span>Canarios</a>
+              <a href="#"><span class="drop-icon">🦚</span>Periquitos</a>
+              <a href="#"><span class="drop-icon">🐔</span>Aves de Corral</a>
+              <a href="#"><span class="drop-icon">🌾</span>Semillas</a>
+              <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+              <a href="#"><span class="drop-icon">🛁</span>Bañeras</a>
+              <a href="#"><span class="drop-icon">🪵</span>Perchas</a>
+              <a href="#"><span class="drop-icon">💊</span>Vitaminas</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">Marcas</a>
+          <div class="dropdown-menu marcas-drop">
+            <div class="drop-header">Nuestras marcas</div>
+            <div class="marcas-grid">
+              <a href="#"><img src="../images/Images_Marcas/1.png" alt="Hills"></a>
+              <a href="#"><img src="../images/Images_Marcas/2.png" alt="RoyalCanin"></a>
+              <a href="#"><img src="../images/Images_Marcas/3.png" alt="Salvaje"></a>
+              <a href="#"><img src="../images/Images_Marcas/4.jpg" alt="TkPet"></a>
+            </div>
+          </div>
+        </li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="Contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+    <!-- CONTENIDO -->
+    <div class="productos-page">
+      <div class="page-header">
+        <h1 class="section-title">Aves</h1>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Todo para el cuidado y bienestar de tus aves</p>
+      </div>
+      <!-- BANNER PRINCIPAL -->
+      <section class="banner-aves-principal">
+        <!-- Imagen del banner -->
+        <img src="../images/Images_Aves/Banner.jpeg" alt="Banner Aves">
+        <!-- MARQUESINA -->
+        <div class="marquesina-banner">
+          <div class="texto-marquesina">
+            🦜 25% OFF en jaulas • 🌾 Semillas premium desde S/. 9.90 • 🎁 Envío gratis en compras mayores a S/. 80 • 🐦
+            Nuevos accesorios para periquitos
+          </div>
+        </div>
+        <!-- Texto centrado -->
+        <div class="banner-contenido">
+          <h2>Todo para tus Aves</h2>
+          <p>Descubre alimentos, jaulas y accesorios premium</p>
+          <a href="Productos_Alimentos.html" class="btn-banner">Explorar ofertas</a>
+        </div>
+      </section>
+      <div class="productos-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar-filtros">
+          <h3>Filtros</h3>
+          <button class="btn-borrar">✕ Borrar filtros</button>
+
+          <div class="filtro-bloque">
+            <div class="filtro-titulo">Categoría</div>
+            <ul class="filtro-opciones">
+              <li><input type="checkbox"> Loros</li>
+              <li><input type="checkbox"> Canarios</li>
+              <li><input type="checkbox"> Periquitos</li>
+              <li><input type="checkbox"> Aves de corral</li>
+            </ul>
+          </div>
+
+          <div class="filtro-bloque">
+            <div class="filtro-titulo">Productos</div>
+            <ul class="filtro-opciones">
+              <li><input type="checkbox"> Semillas</li>
+              <li><input type="checkbox"> Jaulas</li>
+              <li><input type="checkbox"> Vitaminas</li>
+              <li><input type="checkbox"> Juguetes</li>
+            </ul>
+          </div>
+
+          <div class="filtro-bloque">
+            <div class="filtro-titulo">Precio</div>
+            <ul class="filtro-opciones">
+              <li><input type="checkbox"> S/. 0 – S/. 20</li>
+              <li><input type="checkbox"> S/. 21 – S/. 50</li>
+              <li><input type="checkbox"> S/. 51 – S/. 100</li>
+              <li><input type="checkbox"> S/. 100 a más</li>
+            </ul>
+          </div>
+
+          <div class="filtro-bloque">
+            <div class="filtro-titulo">Oferta</div>
+            <ul class="filtro-opciones">
+              <li><input type="checkbox"> Solo ofertas</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- PRODUCTOS -->
+        <div class="productos-area">
+          <div class="productos-header">
+            <p class="resultados">20 productos encontrados</p>
+
+            <select class="ordenar">
+              <option>Ordenar por</option>
+              <option>Menor precio</option>
+              <option>Mayor precio</option>
+              <option>Más vendidos</option>
+              <option>Novedades</option>
+            </select>
+          </div>
+
+          <div class="grid-productos">
+
+            <!-- PRODUCTO 1 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/1.png" alt="Jaula Premium">
+              <div class="card-body">
+                <p class="marca">AviFood</p>
+                <p class="nombre">Jaula Grande para Canarios</p>
+                <p class="precio">S/. 110.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 2 -->
+            <div class="producto-card">
+              <div class="etiqueta oferta">15% OFF</div>
+              <img src="../images/Images_Aves/2.png" alt="Jaula Dorada">
+              <div class="card-body">
+                <p class="marca">BirdHome</p>
+                <p class="nombre">Jaula Blanca para Periquitos</p>
+                <p class="precio-tachado"><s>S/. 120.00</s></p>
+                <p class="precio">S/. 102.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 3 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/3.png" alt="Juguete de Bloques y Cuerdas">
+              <div class="card-body">
+                <p class="marca">FRESHBIRD</p>
+                <p class="nombre">Juguete Colgante de Bloques de Madera y Cuerdas de Algodón</p>
+                <p class="precio">S/. 15.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 4 -->
+            <div class="producto-card">
+              <div class="etiqueta liquidacion">30% OFF</div>
+              <img src="../images/Images_Aves/4.png" alt="Escalera de Cuerda y Madera">
+              <div class="card-body">
+                <p class="marca">FRESHBIRD</p>
+                <p class="nombre">Escalera Colgante Flexible de Madera y Cuerda Trenzada</p>
+                <p class="precio-tachado"><s>S/. 14.00</s></p>
+                <p class="precio">S/. 9.80</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 5 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/5.png" alt="Escalera Rígida de Madera (Arcoíris)">
+              <div class="card-body">
+                <p class="marca">FRESHBIRD</p>
+                <p class="nombre">Escalera de Madera de Colores para Trepar (7 Peldaños)</p>
+                <p class="precio">S/. 12.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 6 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/6.png" alt="Nido de Cuerda de Algodón">
+              <div class="card-body">
+                <p class="marca">COZYPET</p>
+                <p class="nombre">Nido de Cuerda de Algodón Tejido para Cría y Descanso</p>
+                <p class="precio">S/. 29.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 7 -->
+            <div class="producto-card">
+              <div class="etiqueta regalo">Favorito</div>
+              <img src="../images/Images_Aves/7.png" alt="Percha de Cuerda Moldeable">
+              <div class="card-body">
+                <p class="marca">FRESHBIRD</p>
+                <p class="nombre">Percha de Cuerda de Algodón Flexible Arcoíris L</p>
+                <p class="precio">S/. 18.50</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 8 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/8.png" alt="Juguete de Bloques Grandes y Cuerda Saborizada">
+              <div class="card-body">
+                <p class="marca">FRESHBIRD</p>
+                <p class="nombre">uguete de Madera Maxi Destructible para Loros y Ninfas</p>
+                <p class="precio">S/. 24.90</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+            <!-- PRODUCTO 9 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/9.png" alt="Hamaca / Nido de Tela Felpa (Túnel)">
+              <div class="card-body">
+                <p class="marca">COZYPET</p>
+                <p class="nombre">Hamaca Térmica de Felpa Suave Tipo Cabaña (Gris)</p>
+                <p class="precio">S/. 22P.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 10 -->
+            <div class="producto-card">
+              <div class="etiqueta oferta">20% OFF</div>
+              <img src="../images/Images_Aves/10.png" alt="Kit de Limpieza Men For San">
+              <div class="card-body">
+                <p class="marca">MEN FOR SAN</p>
+                <p class="nombre">Pack de Limpieza e Higiene Dual para Jaulas y Aves 300ml</p>
+                <p class="precio-tachado"><s>S/. 50.00</s></p>
+                <p class="precio">S/. 40.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 11 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/11.png" alt="Kit de Limpieza Men For San">
+              <div class="card-body">
+                <p class="marca">MEN FOR SAN</p>
+                <p class="nombre">Pack de Limpieza e Higiene Dual para Jaulas y Aves 150ml</p>
+                <p class="precio">S/. 34.50</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 12 -->
+            <div class="producto-card">
+              <div class="etiqueta liquidacion">40% OFF</div>
+              <img src="../images/Images_Aves/12.png" alt="Bebedero de Tubo">
+              <div class="card-body">
+                <p class="marca">FRESHBIRD</p>
+                <p class="nombre">Bebedero Automático de Tubo para Jaula 250ml</p>
+                <p class="precio-tachado"><s>S/. 12.00</s></p>
+                <p class="precio">S/. 7.20</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 13 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/13.png" alt="Bebedero de Copa para Corral">
+              <div class="card-body">
+                <p class="marca">AGROTOOLS</p>
+                <p class="nombre">Bebedero Automático de Copa con Conector en T</p>
+                <p class="precio">S/. 8.50</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 14 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/14.png" alt="Arnés Ajustable con Correa y Alitas para Ninfas">
+              <div class="card-body">
+                <p class="marca">PETJOY</p>
+                <p class="nombre">Arnés Ajustable con Correa y Alitas para Ninfas</p>
+                <p class="precio">S/. 18.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 15 -->
+            <div class="producto-card">
+              <div class="etiqueta regalo">Favorito</div>
+              <img src="../images/Images_Aves/15.png" alt="Mochila Transportadora Azul">
+              <div class="card-body">
+                <p class="marca">TRAVELBIRD</p>
+                <p class="nombre">Mochila Transportadora Panorámica Premium L - Azul</p>
+                <p class="precio">S/. 89.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 16 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/16.png" alt="Mochila Transportadora Gris">
+              <div class="card-body">
+                <p class="marca">TRAVELBIRD</p>
+                <p class="nombre">Mochila de Transporte Casual con Percha Flex - Gris</p>
+                <p class="precio">S/. 79.90</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 17 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/17.png" alt="Comedero de Tolva">
+              <div class="card-body">
+                <p class="marca">AGROTOOLS</p>
+                <p class="nombre">Comedero de Tolva Circular Anti-Desperdicio para Pollitos</p>
+                <p class="precio">S/. 15.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 18 -->
+            <div class="producto-card">
+              <div class="etiqueta oferta">10% OFF</div>
+              <img src="../images/Images_Aves/18.png" alt="Comedero Vintage">
+              <div class="card-body">
+                <p class="marca">GARDENBIRD</p>
+                <p class="nombre">Comedero de Pared y Ventana Tipo Casita Metálica</p>
+                <p class="precio-tachado"><s>S/. 45.00</s></p>
+                <p class="precio">S/. 41.50</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 19 -->
+            <div class="producto-card">
+              <img src="../images/Images_Aves/19.png" alt="Fregadero / Bañera Eléctrica">
+              <div class="card-body">
+                <p class="marca">FUNNYPET</p>
+                <p class="nombre">Bañera Automática con Grifo Eléctrico de Circulación</p>
+                <p class="precio">S/. 52.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 20 -->
+            <div class="producto-card">
+              <div class="etiqueta liquidacion">25% OFF</div>
+              <img src="../images/Images_Aves/20.png" alt="Kit aves">
+              <div class="card-body">
+                <p class="marca">BirdCare</p>
+                <p class="nombre">Kit Completo para el Cuidado de Aves</p>
+                <p class="precio-tachado"><s>S/. 80.00</s></p>
+                <p class="precio">S/. 60.00</p>
+                <a class="btn-comprar">Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
+
+        <div class="footer-col">
+          <h3> Navegación</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Productos_Accesorios.html">Accesorios</a></li>
+            <li><a href="Productos_Alimentos.html">Alimentos</a></li>
+            <li><a href="Productos_Aves.html">Aves</a></li>
+            <li><a href="Nosotros.html">Nosotros</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+      <div class="footer-col">
+        <h3>Redes Sociales</h3>
+        <ul>
+          <li><img src="../images/Imagenes_Logo/2.png" alt="Insta"> <a href="https://instagram.com">Instagram</a></li>
+          <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a href="https://facebook.com">Facebook</a></li>
+          <li><img src="../images/Imagenes_Logo/1.png"" alt="Whatsapp"><a href="https://wa.me/51946414833">WhatsApp</a></li>
+        </ul>
+      </div>
+
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <p>+51 946 414 833</p>
+          <p>dollyshousen@gmail.com</p>
+          <p>Lun–Sab: 9am a 7pm</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Encuéntranos</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
+            title="Mapa"></iframe>
+          <p>Jr. A. A. Cáceres 312, Alto Selva Alegre 04003</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
+    </footer>
+  </body>
+
+</html>
