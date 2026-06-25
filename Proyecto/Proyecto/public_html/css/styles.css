@@ -1965,24 +1965,40 @@ footer {
     display: none;
   }
 
-  .hero-content {
-    left: 40px;
-  }
-
-  .hero-title {
-    font-size: 48px;
-  }
-
-  .hero-desc {
-    font-size: 14px;
-  }
-
-  .hero-nav {
-    width: 42px;
-    height: 42px;
-    font-size: 22px;
-  }
-
+.hero-content {
+  left: 20px;
+  max-width: 400px;
+}
+.hero-eyebrow {
+  font-size: 9px;
+  margin-bottom: 6px;
+}
+.hero-title {
+  font-size: 24px;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.hero-desc {
+  font-size: 11px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  max-width: 100%;
+}
+.hero-cta {
+  padding: 8px 18px;
+  font-size: 10px;
+}
+.hero-nav {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+}
+.hero-prev {
+  left: 8px;
+}
+.hero-next {
+  right: 8px;
+}
   /* Promo banner */
   .promo-banner {
     margin: 24px 24px;
@@ -2174,43 +2190,50 @@ footer {
   }
 
   /* Hero */
-  .hero-content {
-    /* Centramos el contenido horizontal y verticalmente en móvil */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .hero-title {
-    font-size: 28px;
-  }
-
-  .hero-desc {
-    font-size: 13px;
-    max-width: 100%;
-  }
-
-  .hero-cta {
-    padding: 12px 28px;
-    font-size: 13px;
-  }
-
-  .hero-nav {
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
-  }
-
-  .hero-prev {
-    left: 10px;
-  }
-
-  .hero-next {
-    right: 10px;
-  }
-
+.hero-content {
+  left: 16px !important;
+  transform: translateY(-50%) !important;
+  width: calc(100% - 60px) !important;
+  max-width: none !important;
+  text-align: left !important;
+}
+.hero-eyebrow {
+  font-size: 8px !important;
+  margin-bottom: 4px !important;
+}
+.hero-title {
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+  margin-bottom: 6px !important;
+}
+.hero-desc {
+  font-size: 10px !important;
+  line-height: 1.35 !important;
+  margin-bottom: 10px !important;
+  max-width: 100% !important;
+}
+.hero-cta {
+  padding: 6px 14px !important;
+  font-size: 9px !important;
+}
+.hero-nav {
+  width: 26px !important;
+  height: 26px !important;
+  font-size: 12px !important;
+}
+.hero-prev {
+  left: 4px !important;
+}
+.hero-next {
+  right: 4px !important;
+}
+.hero-dots {
+  bottom: 8px !important;
+}
+.hero-dot {
+  width: 6px !important;
+  height: 6px !important;
+}
   /* Videos / categorías */
   .videos-grid {
     grid-template-columns: repeat(2, 1fr);
