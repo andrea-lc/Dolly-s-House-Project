@@ -591,34 +591,54 @@ footer {
    ============================================================ */
 
 /* ─── HERO BANNER ───────────────────────────────────────────── */
-.hero {
 
-  background-image: url('../images/Images_Head-Foot/Banner\ 4.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 520px;
-  display: flex;
-  align-items: center;
+.hero-carousel {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.hero::before {
+.hero-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.hero-slide {
+  min-width: 100%;
+  position: relative;
+  /* ¡Aquí está el truco! Ya no ponemos altura fija ni background-image. 
+     La altura la va a definir la etiqueta <img> automáticamente. */
+}
+
+/* La imagen actúa como fondo, pero respeta sus proporciones reales */
+.hero-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Mantenemos tu overlay degradado para que el texto blanco resalte */
+.hero-slide::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(27, 23, 30, 0.55) 0%, rgba(76, 79, 62, 0.35) 60%, transparent 100%);
+  z-index: 2;
 }
 
-
-
+/* El contenido se posiciona encima de todo */
 .hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 60px 60px;
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  z-index: 3;
   max-width: 600px;
 }
 
+/* Estilos de texto (los dejamos igual) */
 .hero-eyebrow {
   font-size: 11px;
   font-weight: 700;
@@ -666,6 +686,62 @@ footer {
   background: #4e9ba9;
   box-shadow: 0 4px 20px rgba(78, 155, 169, 0.4);
   transform: translateY(-2px);
+}
+
+/* ========================================
+   FLECHAS Y DOTS
+======================================== */
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .2);
+  backdrop-filter: blur(4px);
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 10;
+  transition: .3s;
+}
+
+.hero-nav:hover {
+  background: rgba(255, 255, 255, .35);
+}
+
+.hero-prev {
+  left: 20px;
+}
+
+.hero-next {
+  right: 20px;
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .5);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.hero-dot.active {
+  background: white;
+  transform: scale(1.2);
 }
 
 /* ─── CATEGORIES STRIP ──────────────────────────────────────── */
@@ -1833,14 +1909,22 @@ footer {
     display: none;
   }
 
-  /* Hero */
-  .hero {
-    min-height: 400px;
+  .hero-content {
+    left: 40px;
   }
 
-  .hero-content {
-    padding: 50px 30px;
-    max-width: 100%;
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .hero-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
   }
 
   /* Promo banner */
@@ -1978,31 +2062,32 @@ footer {
 @media (max-width: 600px) {
 
   /* Header móvil: buscador y login ocultos */
-  .site-header { 
-      padding: 10px 16px; gap: 10px; 
+  .site-header {
+    padding: 10px 16px;
+    gap: 10px;
   }
 
-  .buscador { 
-      width: 150px; 
+  .buscador {
+    width: 150px;
   }
 
-  .carrito-btn span.label { 
-      display: none; 
+  .carrito-btn span.label {
+    display: none;
   }
 
-  .hamburger { 
-      display: flex; 
+  .hamburger {
+    display: flex;
   }
-  
-  
-  
+
+
+
   .navegacion {
     display: none;
     flex-direction: column;
   }
 
-  #menu-toggle:checked + .site-header + .navegacion {
-  display: block;
+  #menu-toggle:checked+.site-header+.navegacion {
+    display: block;
   }
 
   .opciones {
@@ -2012,39 +2097,57 @@ footer {
     padding: 0;
   }
 
-  .opciones li{
+  .opciones li {
     width: 100%;
   }
-  
+
 
   .opciones li a {
     padding: 12px 20px;
-    border-bottom: 1px solid rgba(27,23,30,0.08);
-  }
-  
-  
-  .opciones li a::after { display: none; }
-  
-  /* Hero */
-  .hero {
-    min-height: 320px;
+    border-bottom: 1px solid rgba(27, 23, 30, 0.08);
   }
 
+
+  .opciones li a::after {
+    display: none;
+  }
+
+  /* Hero */
   .hero-content {
-    padding: 32px 18px;
+    /* Centramos el contenido horizontal y verticalmente en móvil */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 100%;
+    text-align: center;
   }
 
   .hero-title {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .hero-desc {
-    font-size: 13.5px;
+    font-size: 13px;
+    max-width: 100%;
   }
 
   .hero-cta {
     padding: 12px 28px;
     font-size: 13px;
+  }
+
+  .hero-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .hero-prev {
+    left: 10px;
+  }
+
+  .hero-next {
+    right: 10px;
   }
 
   /* Videos / categorías */

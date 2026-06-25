@@ -6,19 +6,21 @@
   <!-- Meta viewport para responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/javaScript.js"></script>
   <title>Dolly's House — Todo lo que tu mascota necesita</title>
   <style>
-      .barra-top {
-        background-color: #1b171e;
-        color: #dcc594;
-        padding: 6px 0;
-        font-size: 13px;
-        letter-spacing: 0.04em;
-       }
+    .barra-top {
+      background-color: #1b171e;
+      color: #dcc594;
+      padding: 6px 0;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
   </style>
 </head>
 
-  <!-- SHARED — HEADER & NAVIGATION -->
+<!-- SHARED — HEADER & NAVIGATION -->
+
 <body>
   <!-- MARQUEE -->
   <div class="barra-top">
@@ -150,15 +152,38 @@
   </div>
 
   <!-- HERO BANNER -->
-  <section class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">Tienda de mascotas · Arequipa, Perú</p>
-      <h1 class="hero-title">Dolly's <em>House</em></h1>
-      <p class="hero-desc">Todo lo que tu mascota necesita en un solo lugar. Alimentos premium, accesorios, ropa y mucho
-        más.</p>
-      <a href="Productos.html" class="hero-cta">Ver Productos</a>
+  <!-- HERO CAROUSEL -->
+ <section class="hero-carousel">
+  <div class="hero-track">
+
+    <!-- SLIDE 1 -->
+    <div class="hero-slide">
+      <img src="../images/Images_Head-Foot/Banner 4.png" alt="Banner de Dolly's House">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Tienda de mascotas · Arequipa, Perú</p>
+        <h1 class="hero-title">Dolly's <em>House</em></h1>
+        <p class="hero-desc">Todo lo que tu mascota necesita en un solo lugar. Alimentos premium, accesorios, ropa y mucho más.</p>
+        <a href="Productos.html" class="hero-cta">Ver Productos</a>
+      </div>
     </div>
-  </section>
+
+    <!-- SLIDE 2 -->
+    <div class="hero-slide">
+      <img src="../images/Images_Head-Foot/Banner 6.webp" alt="Banner 2">
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="hero-slide">
+      <img src="../images/Images_Head-Foot/Banner 7.png" alt="Banner 3">
+    </div>
+
+  </div>
+
+  <!-- Botones y puntos que ya tenías -->
+  <button class="hero-nav hero-prev">‹</button>
+  <button class="hero-nav hero-next">›</button>
+  <div class="hero-dots"></div>
+</section>
 
   <!-- BANNER RECTANGULAR PROMOCIONAL  -->
   <div class="promo-banner">
@@ -312,6 +337,46 @@
           <a class="btn-comprar">Agregar al carrito</a>
         </div>
       </div>
+      <!-- Producto 6 -->
+      <div class="producto-card">
+        <img src="../images/Images_Head-Foot/producto6.png" alt="juguete Colgante de Bloques de Madera">
+        <div class="card-body">
+          <p class="marca">FRESHBIRD</p>
+          <p class="nombre">Juguete Colgante de Bloques de Madera y Cuerdas de Algodón</p>
+          <p class="precio">S/. 15.00</p>
+          <a class="btn-comprar">Agregar al carrito</a>
+        </div>
+      </div>
+      <!-- Producto 7 -->
+      <div class="producto-card">
+        <img src="../images/Images_Head-Foot/producto7.png" alt="Cachorro Nutricion Completa">
+        <div class="card-body">
+          <p class="marca">ZEUS</p>
+          <p class="nombre">Cachorros: Nutricion Completa Multi Vitaminas</p>
+          <p class="precio">S/. 28.00</p>
+          <a class="btn-comprar">Agregar al carrito</a>
+        </div>
+      </div>
+      <!-- Producto 8 -->
+      <div class="producto-card">
+        <img src="../images/Images_Head-Foot/producto8.png" alt="Arnes de Paseo Ajustable">
+        <div class="card-body">
+          <p class="marca">LITTLE EXPLORER</p>
+          <p class="nombre">Arnés de Paseo Ajustable para Hámsters y Cobayas con Correa</p>
+          <p class="precio">S/. 10.00</p>
+          <a class="btn-comprar">Agregar al carrito</a>
+        </div>
+      </div>
+      <!-- Producto 9 -->
+      <div class="producto-card">
+        <img src="../images/Images_Head-Foot/producto9.png" alt="Cama redonda para Erizo">
+        <div class="card-body">
+          <p class="marca">SNUGGLE PETS</p>
+          <p class="nombre">Cama Redonda con Manta de Franela a Cuadros para Erizo</p>
+          <p class="precio">S/. 15.00</p>
+          <a class="btn-comprar">Agregar al carrito</a>
+        </div>
+      </div>
 
     </div>
   </section>
@@ -364,7 +429,8 @@
         <ul>
           <li><img src="../images/Imagenes_Logo/2.png" alt="Insta"> <a href="https://instagram.com">Instagram</a></li>
           <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a href="https://facebook.com">Facebook</a></li>
-          <li><img src="../images/Imagenes_Logo/1.png"" alt="Whatsapp"><a href="https://wa.me/51946414833">WhatsApp</a></li>
+          <li><img src="../images/Imagenes_Logo/1.png"" alt=" Whatsapp"><a href="https://wa.me/51946414833">WhatsApp</a>
+          </li>
         </ul>
       </div>
 
