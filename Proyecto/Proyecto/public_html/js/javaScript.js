@@ -85,6 +85,27 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoPlay();
 });
 
+
+// VIDEOS: Reproducir solo con hover del mouse de Categorias en Index
+
+// Seleccionamos todos los videos de la sección de categorías
+var videosCategorias = document.querySelectorAll('.videos-categorias video');
+
+// Recorremos cada video
+for (var i = 0; i < videosCategorias.length; i++) {
+    var video = videosCategorias[i];
+
+    // Cuando el mouse entra al video → reproducir
+    video.addEventListener('mouseenter', function() {
+        this.play(); // 'this' se refiere al video que disparó el evento
+    });
+
+    // Cuando el mouse sale del video → pausar
+    video.addEventListener('mouseleave', function() {
+        this.pause(); // Pausa el video
+        this.currentTime = 0; // Opcional: reinicia al inicio (quita esta línea si quieres que se quede donde quedó)
+    });
+}
 /*  CARRUSEL DE PRODUCTOS DESTACADOS INDEX*/
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -95,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!track || !prevBtn || !nextBtn) return;
 
-    // Tema 5: Responsive Logic - Calcular cuánto debe moverse
+    // Responsive Logic - Calcular cuánto debe moverse
     function getScrollAmount() {
         const card = track.querySelector('.producto-card');
         if (!card) return 250;
@@ -104,10 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return card.offsetWidth + gap;
     }
 
-    // Tema 6: Conditional Logic - Bucle Infinito (Wrap-around)
+    // Conditional Logic - Bucle Infinito (Wrap-around)
     nextBtn.addEventListener('click', () => {
         const maxScroll = track.scrollWidth - track.clientWidth;
-        
+
         // Si ya estamos al final (con un margen de 10px), volvemos al inicio
         if (track.scrollLeft >= maxScroll - 10) {
             track.scrollTo({ left: 0, behavior: 'smooth' });
@@ -126,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Tema 4: Touch Events (Swipe para móviles con bucle)
+    // Touch Events (Swipe para móviles con bucle)
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -162,4 +183,213 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+});
+
+/* ══════════════════════════════════════════
+    PRODUCTOS ALIMENTOS
+   ══════════════════════════════════════════ */
+/*   Barra de filtros para buscar productos y boton de filtrado de precios*/
+document.addEventListener('DOMContentLoaded', function () {
+    // Guardamos todos los elementos que vamos a usar
+    var productos = document.querySelectorAll('.producto-card'); // NodeList (similar a arreglo)
+    var checksCategoria = document.querySelectorAll('#alimentos, #pequenos, #aves, #corral'); // NodeList
+    var checksPrecio = document.querySelectorAll('#f-p1, #f-p2, #f-p3, #f-p4'); // NodeList
+    var selectOrdenar = document.getElementById('ordenar');
+    var btnBorrar = document.getElementById('btn-borrar'); // Botón eliminar filtros
+    var contador = document.getElementById('resultados');
+    var grid = document.getElementById('grid-productos');
+
+    // Función que revisa qué categorías están marcadas
+    // Ejemplo: si marcas "alimentos" y "aves", devuelve ["alimentos", "aves"]
+    function obtenerCategoriasMarcadas() {
+        var marcadas = []; // Arreglo unidimensional
+        for (var i = 0; i < checksCategoria.length; i++) { // Estructura repetitiva FOR
+            if (checksCategoria[i].checked == true) { // IF simple
+                var idLimpio = checksCategoria[i].id;
+                marcadas.push(idLimpio); // Operación: agregar elemento al arreglo
+            }
+        }
+        return marcadas;
+    }
+
+
+    // Función que revisa qué rangos de precio están marcados
+    function obtenerRangosMarcados() {
+        var marcados = []; // Arreglo unidimensional
+        for (var i = 0; i < checksPrecio.length; i++) { // Estructura repetitiva FOR
+            if (checksPrecio[i].checked == true) { // IF simple
+                marcados.push(checksPrecio[i].id);
+            }
+        }
+        return marcados;
+    }
+
+
+    // Función que revisa si un precio entra en algún rango marcado
+    // Si no hay rangos marcados, devuelve true (pasa todos)
+    function precioEnRango(precio, rangos) {
+        // Si no hay ningún rango marcado, pasa el filtro
+        if (rangos.length == 0) { // IF simple
+            return true;
+        }
+
+        // Recorremos cada rango marcado
+        for (var i = 0; i < rangos.length; i++) { // Estructura repetitiva FOR
+            var rango = rangos[i];
+
+            if (rango == 'f-p1' && precio >= 0 && precio <= 20) { // IF con operadores lógicos (AND) y matemáticos (>=, <=)
+                return true;
+            }
+            if (rango == 'f-p2' && precio >= 21 && precio <= 50) { // IF con operadores lógicos y matemáticos
+                return true;
+            }
+            if (rango == 'f-p3' && precio >= 51 && precio <= 100) { // IF con operadores lógicos y matemáticos
+                return true;
+            }
+            if (rango == 'f-p4' && precio > 100) { // IF con operadores lógicos y matemáticos (>)
+                return true;
+            }
+        }
+
+        // Si ningún rango coincidió, no pasa
+        return false;
+    }
+
+
+    // 5️⃣ Función que revisa si una categoría está en la lista de marcadas
+    function categoriaValida(cat, categorias) {
+        // Si no hay ninguna marcada, pasan todas
+        if (categorias.length == 0) { // IF simple
+            return true;
+        }
+
+        // Buscamos si la categoría está en el arreglo
+        for (var i = 0; i < categorias.length; i++) { // Estructura repetitiva FOR (búsqueda lineal)
+            if (categorias[i] == cat) { // IF simple con operador de comparación (==)
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    // 6️⃣ Función principal: filtra los productos
+    function aplicarFiltros() {
+        var categorias = obtenerCategoriasMarcadas();
+        var rangos = obtenerRangosMarcados();
+        var visibles = 0;
+
+        // Recorremos cada producto
+        for (var i = 0; i < productos.length; i++) { // Estructura repetitiva FOR
+            var prod = productos[i];
+
+            // Leemos sus datos (categoria y precio)
+            var cat = prod.getAttribute('data-categoria');
+            var precio = parseFloat(prod.getAttribute('data-precio')); // Conversión String a Double
+
+            // Revisamos si pasa ambos filtros
+            var pasaCat = categoriaValida(cat, categorias);
+            var pasaPrec = precioEnRango(precio, rangos);
+
+            // Si pasa ambos, lo mostramos. Si no, lo ocultamos.
+            if (pasaCat == true && pasaPrec == true) { // IF simple con operador lógico AND
+                prod.style.display = '';
+                visibles = visibles + 1; // Operación matemática: adición
+            } else { // ELSE (condicional doble IF-ELSE)
+                prod.style.display = 'none';
+            }
+        }
+
+        // Actualizamos el contador de resultados
+        if (visibles == 1) { // IF-ELSE doble
+            contador.textContent = visibles + " resultado encontrado"; // Concatenación de cadenas
+        } else {
+            contador.textContent = visibles + " resultados encontrados"; // Concatenación de cadenas
+        }
+
+        // Después de filtrar, ordenamos
+        ordenarProductos();
+    }
+
+
+    // Función para ordenar con BURBUJA 
+    function ordenarProductos() {
+        var criterio = selectOrdenar.value;
+
+        // Si está en "Ordenar por" (vacío), no hacemos nada
+        if (criterio == '') { // IF simple
+            return;
+        }
+
+        // Convertimos a arreglo para poder ordenar
+        var arreglo = []; // Arreglo unidimensional
+        for (var i = 0; i < productos.length; i++) { // Estructura repetitiva FOR
+            arreglo.push(productos[i]);
+        }
+
+        // BUBBLE SORT: comparamos pares y los intercambiamos si están mal
+        for (var i = 0; i < arreglo.length - 1; i++) { // Estructura repetitiva FOR (externa)
+            for (var j = 0; j < arreglo.length - 1 - i; j++) { // Estructura repetitiva FOR (interna - FOR anidado)
+
+                var precioA = parseFloat(arreglo[j].getAttribute('data-precio')); // Conversión String a Double
+                var precioB = parseFloat(arreglo[j + 1].getAttribute('data-precio')); // Conversión String a Double
+                var intercambiar = false;
+                // Si queremos menor precio: el grande debe ir al final
+                if (criterio == 'menor' && precioA > precioB) { // IF con operadores lógicos y matemáticos (>)
+                    intercambiar = true;
+                }
+                // Si queremos mayor precio: el chico debe ir al final
+                if (criterio == 'mayor' && precioA < precioB) { // IF con operadores lógicos y matemáticos (<)
+                    intercambiar = true;
+                }
+
+                // Intercambiamos las posiciones en el arreglo
+                if (intercambiar == true) { // IF simple
+                    var temp = arreglo[j]; // Variable auxiliar para intercambio
+                    arreglo[j] = arreglo[j + 1]; // Operación de asignación
+                    arreglo[j + 1] = temp; // Operación de asignación
+                }
+            }
+        }
+
+        // Ahora que el arreglo está ordenado, los ponemos en el grid en ese orden
+        for (var i = 0; i < arreglo.length; i++) { // Estructura repetitiva FOR
+            grid.appendChild(arreglo[i]);
+        }
+    }
+
+
+    // 8Escuchamos los cambios de los checkboxes de categoría
+    for (var i = 0; i < checksCategoria.length; i++) { // Estructura repetitiva FOR
+        checksCategoria[i].addEventListener('change', aplicarFiltros);
+    }
+
+    // Escuchamos los cambios de los checkboxes de precio
+    for (var i = 0; i < checksPrecio.length; i++) { // Estructura repetitiva FOR
+        checksPrecio[i].addEventListener('change', aplicarFiltros);
+    }
+
+    // Escuchamos el cambio del select de ordenar
+    selectOrdenar.addEventListener('change', aplicarFiltros);
+
+
+    // 9Botón para borrar todos los filtros
+    btnBorrar.addEventListener('click', function () { // Evento click del botón eliminar
+        // Desmarcamos todos los checkboxes de categoría
+        for (var i = 0; i < checksCategoria.length; i++) { // Estructura repetitiva FOR
+            checksCategoria[i].checked = false;
+        }
+
+        // Desmarcamos todos los checkboxes de precio
+        for (var i = 0; i < checksPrecio.length; i++) { // Estructura repetitiva FOR
+            checksPrecio[i].checked = false;
+        }
+
+        // Reseteamos el select
+        selectOrdenar.value = '';
+
+        // Volvemos a aplicar filtros (mostrará todo)
+        aplicarFiltros();
+    });
+
 });
