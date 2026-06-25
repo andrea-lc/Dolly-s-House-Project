@@ -2020,7 +2020,7 @@ footer {
     .productos-carousel-track .producto-card {
     flex: 0 0 calc(33.333% - 14px);
   }
-
+  
   /* Productos: quitar sidebar lateral */
   .productos-page {
     padding: 28px 24px;
@@ -2245,9 +2245,6 @@ footer {
   .promo-text h2 {
     font-size: 20px;
   }
-
-  /*INDEX productos destacados*/
-  
 
   /* Productos grid */
   .grid-productos-home,
