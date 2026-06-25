@@ -84,3 +84,82 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     startAutoPlay();
 });
+
+/*  CARRUSEL DE PRODUCTOS DESTACADOS INDEX*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Tema 1: DOM Manipulation
+    const track = document.querySelector('.productos-carousel-track');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    // Tema 5: Responsive Logic - Calcular cuánto debe moverse
+    function getScrollAmount() {
+        const card = track.querySelector('.producto-card');
+        if (!card) return 250;
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.gap) || 20;
+        return card.offsetWidth + gap;
+    }
+
+    // Tema 6: Conditional Logic - Bucle Infinito (Wrap-around)
+    nextBtn.addEventListener('click', () => {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        
+        // Si ya estamos al final (con un margen de 10px), volvemos al inicio
+        if (track.scrollLeft >= maxScroll - 10) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        // Si estamos al inicio, vamos al final
+        if (track.scrollLeft <= 10) {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        } else {
+            track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        }
+    });
+
+    // Tema 4: Touch Events (Swipe para móviles con bucle)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const threshold = 50; // Mínimo de píxeles para considerar un swipe
+        const diff = touchStartX - touchEndX;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                // Deslizar a la izquierda (siguiente)
+                if (track.scrollLeft >= maxScroll - 10) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                }
+            } else {
+                // Deslizar a la derecha (anterior)
+                if (track.scrollLeft <= 10) {
+                    track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+                } else {
+                    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+                }
+            }
+        }
+    }
+});

@@ -250,17 +250,17 @@
   <div class="banners-triple">
     <!-- Foto 1 -->
     <a href="Productos_Alimentos.html" class="banner-item">
-      <img src="../images/Images_Head-Foot/O1.jpg" alt="Promoción 1">
+      <img src="../images/Images_Head-Foot/bannertriple1.jpg" alt="Promoción 1">
     </a>
 
     <!-- Foto 2 -->
     <a href="Productos_Accesorios.html" class="banner-item">
-      <img src="../images/Images_Head-Foot/O2.jpg" alt="Promoción 2">
+      <img src="../images/Images_Head-Foot/bannertriple2.jpg" alt="Promoción 2">
     </a>
 
     <!-- Foto 3 -->
     <a href="Productos_Aves.html" class="banner-item">
-      <img src="../images/Images_Head-Foot/O3.png" alt="Promoción 3">
+      <img src="../images/Images_Head-Foot/bannertriple3.jpg" alt="Promoción 3">
     </a>
   </div>
 
@@ -270,15 +270,20 @@
       <img src="../images/Images_Head-Foot/Banner 3.png" alt="Promoción destacada" class="banner-img">
     </a>
   </div>
-  <!-- PRODUCTOS DESTACADOS -->
-  <section class="section-productos">
-    <div>
-      <p class="section-title">Top más vendidos del mes</p>
-      <div class="section-line"></div>
-      <p class="section-subtitle">Los favoritos de nuestros clientes para sus engreídos</p>
-    </div>
+<!-- PRODUCTOS DESTACADOS (CARRUSEL) -->
+<section class="section-productos">
+  <div>
+    <p class="section-title">Top más vendidos del mes</p>
+    <div class="section-line"></div>
+    <p class="section-subtitle">Los favoritos de nuestros clientes para sus engreídos</p>
+  </div>
 
-    <div class="grid-productos-home">
+  <!-- Contenedor del carrusel (NUEVO) -->
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev-btn" aria-label="Anterior">❮</button>
+    
+    <!-- Agregamos la clase 'productos-carousel-track' a tu grid existente -->
+    <div class="grid-productos-home productos-carousel-track">
 
       <!-- Producto 1 -->
       <div class="producto-card">
@@ -337,6 +342,7 @@
           <a class="btn-comprar">Agregar al carrito</a>
         </div>
       </div>
+
       <!-- Producto 6 -->
       <div class="producto-card">
         <img src="../images/Images_Head-Foot/producto6.png" alt="juguete Colgante de Bloques de Madera">
@@ -347,6 +353,7 @@
           <a class="btn-comprar">Agregar al carrito</a>
         </div>
       </div>
+
       <!-- Producto 7 -->
       <div class="producto-card">
         <img src="../images/Images_Head-Foot/producto7.png" alt="Cachorro Nutricion Completa">
@@ -357,6 +364,7 @@
           <a class="btn-comprar">Agregar al carrito</a>
         </div>
       </div>
+
       <!-- Producto 8 -->
       <div class="producto-card">
         <img src="../images/Images_Head-Foot/producto8.png" alt="Arnes de Paseo Ajustable">
@@ -367,6 +375,7 @@
           <a class="btn-comprar">Agregar al carrito</a>
         </div>
       </div>
+
       <!-- Producto 9 -->
       <div class="producto-card">
         <img src="../images/Images_Head-Foot/producto9.png" alt="Cama redonda para Erizo">
@@ -379,7 +388,11 @@
       </div>
 
     </div>
-  </section>
+
+    <button class="carousel-btn next-btn" aria-label="Siguiente">❯</button>
+  </div>
+  
+</section>
 
   <!-- BANNERS EN FILA (2 COLUMNAS) -->
   <div class="banners-doble">

@@ -905,6 +905,8 @@ footer {
 }
 
 
+
+
 /* ─── PRODUCTOS DESTACADOS (INDEX) ──────────────────────────── */
 .section-productos {
   max-width: 1200px;
@@ -915,6 +917,60 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.productos-carousel-track {
+  display: flex !important;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 10px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.productos-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* AQUÍ ESTÁ EL CAMBIO: 20% para que quepan 5 productos (100% / 5 = 20%) */
+.productos-carousel-track .producto-card {
+  flex: 0 0 calc(20% - 16px); 
+  min-width: 180px;
+  scroll-snap-align: start;
+}
+
+.carousel-btn {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e2d5c0;
+  background: #ffffff;
+  color: #1b171e;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+  box-shadow: 0 2px 8px rgba(27, 23, 30, 0.08);
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: #cc8747;
+  color: #ffffff;
+  border-color: #cc8747;
 }
 
 
@@ -1960,6 +2016,11 @@ footer {
     margin: 24px 24px;
   }
 
+  /*INDEX Productos destacados*/
+    .productos-carousel-track .producto-card {
+    flex: 0 0 calc(33.333% - 14px);
+  }
+
   /* Productos: quitar sidebar lateral */
   .productos-page {
     padding: 28px 24px;
@@ -2184,6 +2245,9 @@ footer {
   .promo-text h2 {
     font-size: 20px;
   }
+
+  /*INDEX productos destacados*/
+  
 
   /* Productos grid */
   .grid-productos-home,
