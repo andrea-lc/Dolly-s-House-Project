@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <title>Animales Pequeños — Dolly's House</title>
+    <style>
+        .barra-top {
+            background-color: #1b171e;
+            color: #dcc594;
+            padding: 6px 0;
+            font-size: 13px;
+            letter-spacing: 0.04em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- MARQUEE -->
+    <div class="barra-top">
+        <marquee behavior="scroll" direction="left">
+            Ofertas especiales esta semana 🎁 &nbsp;•&nbsp; 20% OFF en alimentos &nbsp;•&nbsp; Accesorios para hamsters
+            &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100!
+        </marquee>
+    </div>
+
+    <!-- HEADER -->
+    <input type="checkbox" id="menu-toggle" hidden>
+    <header class="site-header">
+        <a href="index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png" alt="Dolly's House"></a>
+        <div class="header-right">
+            <div class="buscador-wrap">
+                <span class="icon-search">🔍</span>
+                <input type="text" class="buscador" placeholder="Buscar productos...">
+            </div>
+            <div class="header-icons">
+                <a href="#" class="login-btn">Iniciar Sesion</a>
+                <a href="#" class="icon-btn">♡</a>
+            </div>
+            <a href="Carrito.html" class="carrito-link">
+                <button class="carrito-btn">🛒 <span class="label">Carrito</span></button>
+            </a>
+
+        </div>
+        <label for="menu-toggle" class="hamburger" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </header>
+
+    <!-- NAVEGACIÓN -->
+    <div class="navegacion" id="div">
+        <ul class="opciones">
+            <li><a href="index.html">Inicio</a></li>
+
+            <li><a href="Productos_Alimentos.html">Alimentos</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Alimentos por mascota</div>
+                    <div class="dropdown-grid">
+                        <a href="Productos_Alimentos.html"><span class="drop-icon">🐕</span>Perros</a>
+                        <a href="Productos_Alimentos.html"><span class="drop-icon">🐈</span>Gatos</a>
+                        <a href="Productos_Alimentos.html"><span class="drop-icon">🦜</span>Aves</a>
+                        <a href="Productos_Alimentos.html"><span class="drop-icon">🐹</span>Hámster</a>
+                        <a href="Productos_Alimentos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                        <a href="Productos_Alimentos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
+                        <a href="Productos_Alimentos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
+                        <a href="Productos_Alimentos.html"><span class="drop-icon">⭐</span>Super Premium</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="Productos_Accesorios.html">Accesorios</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Accesorios para mascotas</div>
+                    <div class="dropdown-grid">
+                        <a href="Productos_Accesorios.html"><span class="drop-icon">📿</span>Collares</a>
+                        <a href="Productos_Accesorios.html"><span class="drop-icon">🧸</span>Juguetes</a>
+                        <a href="Productos_Accesorios.html"><span class="drop-icon">👕</span>Ropa</a>
+                        <a href="Productos_Accesorios.html"><span class="drop-icon">🛏️</span>Camas</a>
+                        <a href="Productos_Accesorios.html"><span class="drop-icon">🦮</span>Correas y Arneses</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Mascotas Grandes</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Productos para mascotas grandes</div>
+                    <div class="dropdown-grid">
+                        <a href="#"><span class="drop-icon">🐕</span>Perros Grandes</a>
+                        <a href="#"><span class="drop-icon">🦴</span>Snacks y Premios</a>
+                        <a href="#"><span class="drop-icon">🥣</span>Comederos</a>
+                        <a href="#"><span class="drop-icon">🛏️</span>Camas</a>
+                        <a href="#"><span class="drop-icon">🎾</span>Juguetes Resistentes</a>
+                        <a href="#"><span class="drop-icon">🦮</span>Correas y Arneses</a>
+                        <a href="#"><span class="drop-icon">🧴</span>Higiene y Shampoo</a>
+                        <a href="#"><span class="drop-icon">💊</span>Vitaminas y Salud</a>
+                        <a href="#"><span class="drop-icon">🏠</span>Casas y Accesorios</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../html/Productos_Animales_Pequeños.html" class="active">Mascotas Pequeñas</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Mascotas pequeñas</div>
+                    <div class="dropdown-grid">
+                        <a href="#"><span class="drop-icon">🐹</span>Hámster</a>
+                        <a href="#"><span class="drop-icon">🐰</span>Conejo</a>
+                        <a href="#"><span class="drop-icon">🐭</span>Ratón</a>
+                        <a href="#"><span class="drop-icon">🦔</span>Erizo</a>
+                        <a href="#"><span class="drop-icon">🧸</span>Juguetes</a>
+                        <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+                        <a href="#"><span class="drop-icon">🌿</span>Alimentos</a>
+                        <a href="#"><span class="drop-icon">🪺</span>Camas y Nidos</a>
+                        <a href="#"><span class="drop-icon">💊</span>Salud</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="Productos_Aves.html">Aves</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Aves y accesorios</div>
+                    <div class="dropdown-grid">
+                        <a href="#"><span class="drop-icon">🦜</span>Loros</a>
+                        <a href="#"><span class="drop-icon">🐦</span>Canarios</a>
+                        <a href="#"><span class="drop-icon">🦚</span>Periquitos</a>
+                        <a href="#"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                        <a href="#"><span class="drop-icon">🌾</span>Semillas</a>
+                        <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+                        <a href="#"><span class="drop-icon">🛁</span>Bañeras</a>
+                        <a href="#"><span class="drop-icon">🪵</span>Perchas</a>
+                        <a href="#"><span class="drop-icon">💊</span>Vitaminas</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Marcas</a>
+                <div class="dropdown-menu marcas-drop">
+                    <div class="drop-header">Nuestras marcas</div>
+                    <div class="marcas-grid">
+                        <a href="#"><img src="../images/Images_Marcas/1.png" alt="Hills"></a>
+                        <a href="#"><img src="../images/Images_Marcas/2.png" alt="RoyalCanin"></a>
+                        <a href="#"><img src="../images/Images_Marcas/3.png" alt="Salvaje"></a>
+                        <a href="#"><img src="../images/Images_Marcas/4.jpg" alt="TkPet"></a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
+        </ul>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="productos-page">
+        <div class="page-header">
+            <h1 class="section-title">Animales Pequeños</h1>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Descubre curiosidades para las mascotas más adorables</p>
+        </div>
+
+        <div class="productos-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar-filtros">
+                <h3>Filtros</h3>
+                <button class="btn-borrar" id="btn-borrar">✕ Borrar filtros</button>
+
+                <div class="filtro-bloque">
+                    <div class="filtro-titulo">Categoría</div>
+                    <ul class="filtro-opciones">
+                        <li><input type="checkbox" id="hamster"> Hamsters</li>
+                        <li><input type="checkbox" id="erizo"> Erizos</li>
+                        <li><input type="checkbox" id="chinchilla"> Chinchillas</li>
+                        <li><input type="checkbox" id="conejo"> Conejos</li>
+                    </ul>
+                </div>
+
+                <div class="filtro-bloque">
+                    <div class="filtro-titulo">Precio</div>
+                    <ul class="filtro-opciones">
+                        <li><input type="checkbox" id="f-p1"> S/. 0 – S/. 20</li>
+                        <li><input type="checkbox" id="f-p2"> S/. 21 – S/. 50</li>
+                        <li><input type="checkbox" id="f-p3"> S/. 51 – S/. 100</li>
+                        <li><input type="checkbox" id="f-p4"> S/. 100 a más</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- PRODUCTOS -->
+            <div class="productos-area">
+                <div class="productos-header">
+                    <p class="resultados" id="resultados">10 resultados encontrados</p>
+                    <select class="ordenar" id="ordenar">
+                        <option value="">Ordenar por</option>
+                        <option value="menor">Menor precio</option>
+                        <option value="mayor">Mayor precio</option>
+                    </select>
+                </div>
+
+                <div class="grid-productos" id="grid-productos">
+
+           
+                    <div class="producto-card" data-categoria="conejo" data-precio="15.9">
+                        <img src="../images/Images_Mascotas_pequeñas/1.png" >
+                        <div class="card-body">
+                            <p class="marca">Orejitas Felices</p>
+                            <p class="nombre">Mini Refugio de Madera Pino con Rampa para Conejos</p>
+                            <p class="precio">S/. 15.90</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="39.9">
+                        <div class="etiqueta oferta">20% OFF</div>
+                        <img src="../images/Images_Mascotas_pequeñas/2.png">
+                        <div class="card-body">
+                            <p class="marca">Mascotas Felices</p>
+                            <p class="nombre">Mansión de Madera para Hamster y Roedores Pequeños</p>
+                            <p class="precio-tachado"><s>S/. 48.00</s></p>
+                            <p class="precio">S/. 39.90</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="22">
+                        <img src="../images/Images_Mascotas_pequeñas/3.png">
+                        <div class="card-body">
+                            <p class="marca">Diviértete</p>
+                            <p class="nombre">Kit Modular Tubos para Hámster 4 Piezas</p>
+                            <p class="precio">S/. 22.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="15">
+                        <div class="etiqueta liquidacion">50% OFF</div>
+                        <img src="../images/Images_Mascotas_pequeñas/4.png">
+                        <div class="card-body">
+                            <p class="marca">Economascota</p>
+                            <p class="nombre">Túnel Plegable para Hámster Colores</p>
+                            <p class="precio-tachado"><s>S/. 20.00</s></p>
+                            <p class="precio">S/. 15.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="erizo" data-precio="16">
+                        <img src="../images/Images_Mascotas_pequeñas/5.png">
+                        <div class="card-body">
+                            <p class="marca">Huellitas Chic</p>
+                            <p class="nombre">Juguete Interactivo Dispensador de Snacks Premium para Erizos y Roedores</p>
+                            <p class="precio">S/. 16.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="12">
+                        <img src="../images/Images_Mascotas_pequeñas/6.png" >
+                        <div class="card-body">
+                            <p class="marca">Patitas & Co.</p>
+                            <p class="nombre">Puente Flexible de Madera Natural para Hámster y Mascotas Pequeñas</p>
+                            <p class="precio">S/. 12.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="erizo" data-precio="24">
+                        <img src="../images/Images_Mascotas_pequeñas/7.png" >
+                        <div class="card-body">
+                            <p class="marca">Pequeños Pasos</p>
+                            <p class="nombre">Rueda de Ejercicios Acrílica Silenciosa Color Ámbar para Hámster</p>
+                            <p class="precio">S/. 24.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="24">
+                        <img src="../images/Images_Mascotas_pequeñas/8.png" alt="Collar de Gato">
+                        <div class="card-body">
+                            <p class="marca">Oro Rodante</p>
+                            <p class="nombre">Rueda Acrílica Transparente Ultra Silenciosa para Erizos y Roedores</p>
+                            <p class="precio">S/. 24.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="1">
+                        <div class="etiqueta oferta">10% OFF</div>
+                        <img src="../images/Images_Mascotas_pequeñas/9.png"
+                            alt="Collar con Funda para Rastreador GPS y Campana">
+                        <div class="card-body">
+                            <p class="marca">Huellitas Chic</p>
+                            <p class="nombre">Palitos de Madera de Kiwi Natural para Desgaste Dental de Hámster x 10 und</p>
+                            <p class="precio-tachado"><s>S/. 10.00</s></p>
+                            <p class="precio">S/1.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="6.9">
+                        <img src="../images/Images_Mascotas_pequeñas/10.png" alt="Arnés para Hámsters y Cobayas">
+                        <div class="card-body">
+                            <p class="marca">Patitas & Co.</p>
+                            <p class="nombre">Bloque de Calcio y Minerales para Roedores con Sujetador</p>
+                            <p class="precio">S/.6.90</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="14">
+                        <img src="../images/Images_Mascotas_pequeñas/11.png" alt="Collar Cojín Anti-Estrés para Gatos">
+                        <div class="card-body">
+                            <p class="marca">Mascotas Felices PE</p>
+                            <p class="nombre">Arena de Baño Sanitaria Aroma Lavanda para Hámsters y Chinchillas 2kg</p>
+                            <p class="precio">S/. 14.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="chinchilla" data-precio="11">
+                        <img src="../images/Images_Mascotas_pequeñas/12.png" alt="Cueva Nido Acolchada para Erizos">
+                        <div class="card-body">
+                            <p class="marca">Huellitas Chic</p>
+                            <p class="nombre">Espuma de Baño en Seco Libre de Alcohol para Pequeños Roedores 100ml</p>
+                            <p class="precio">S/. 11.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="conejo" data-precio="13">
+                        <img src="../images/Images_Mascotas_pequeñas/13.png" alt="Cama Redonda">
+                        <div class="card-body">
+                            <p class="marca">Huellitas Chic</p>
+                            <p class="nombre">Shampoo pH Neutro Sin Perfume Especial para Cuyes y Roedores</p>
+                            <p class="precio">S/. 13.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="10">
+                        <img src="../images/Images_Mascotas_pequeñas/14.png" alt="Suéter Térmico de Forro Polar para Loro">
+                        <div class="card-body">
+                            <p class="marca">Patitas & Co.</p>
+                            <p class="nombre">Bebedero Automático de Goteo con Soporte para Jaula de Conejos y Roedores</p>
+                            <p class="precio">S/. 10.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="conejo" data-precio="16.9">
+                        <img src="../images/Images_Mascotas_pequeñas/15.png" alt="Kit Higiene Bucal">
+                        <div class="card-body">
+                            <p class="marca">Patitas & Co.</p>
+                            <p class="nombre">Shampoo Delicado con Manzanilla y Aloe Vera para Conejos y Roedores</p>
+                            <p class="precio">S/. 16.90</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="erizo" data-precio="14">
+                        <img src="../images/Images_Mascotas_pequeñas/16.png" alt="Kit Nuevo Hogar">
+                        <div class="card-body">
+                            <p class="marca">COFAN HOME</p>
+                            <p class="nombre">Shampoo Suave Hipoalergénico Especial para Erizos de Tierra</p>
+                            <p class="precio">S/. 14.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="conejo" data-precio="13">
+                        <img src="../images/Images_Mascotas_pequeñas/17.png" alt="Set de Deslanado Intensivo">
+                        <div class="card-body">
+                            <p class="marca">SHED MASTER</p>
+                            <p class="nombre">Rueda Tipo Disco Giratorio de Ejercicios para Hámster y Pequeños Roedores</p>
+                            <p class="precio">S/. 13.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="16">
+                        <img src="../images/Images_Mascotas_pequeñas/18.png" alt="Kit de Aseo y Mantenimiento">
+                        <div class="card-body">
+                            <p class="marca">PET GEAR PRO</p>
+                            <p class="nombre">Arnés Ajustable con Correa para Conejos y Mascotas Pequeñas</p>
+                            <p class="precio">S/. 16.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="erizo" data-precio="18">
+                        <img src="../images/Images_Mascotas_pequeñas/19.png" alt="Arenero Cerrado Premium">
+                        <div class="card-body">
+                            <p class="marca">CLEAN PET</p>
+                            <p class="nombre">Arnés de Tela Suave Diseño Dinosaurio con Correa para Erizos y Pequeños Roedores</p>
+                            <p class="precio">S/. 18.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                    <div class="producto-card" data-categoria="hamster" data-precio="25">
+                        <img src="../images/Images_Mascotas_pequeñas/20.png" alt="baño ecológico para perros">
+                        <div class="card-body">
+                            <p class="marca">GREEN PAWS</p>
+                            <p class="nombre">Jaula Completa de 2 Pisos con Circuito Extensible de Tubos y Accesorios para</p>
+                            <p class="precio">S/. 25.00</p>
+                            <a class="btn-comprar">Agregar al carrito</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
+
+            <div class="footer-col">
+                <h3> Navegación</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Productos_Accesorios.html">Accesorios</a></li>
+                    <li><a href="Productos_Alimentos.html">Alimentos</a></li>
+                    <li><a href="Productos_Aves.html">Aves</a></li>
+                    <li><a href="Nosotros.html">Nosotros</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><img src="../images/Imagenes_Logo/2.png" alt="Insta"> <a
+                            href="https://instagram.com">Instagram</a></li>
+                    <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a
+                            href="https://facebook.com">Facebook</a></li>
+                    <li><img src="../images/Imagenes_Logo/1.png"" alt=" Whatsapp"><a
+                            href="https://wa.me/51946414833">WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>+51 946 414 833</p>
+                <p>dollyshousen@gmail.com</p>
+                <p>Lun–Sab: 9am a 7pm</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Encuéntranos</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
+                    title="Mapa"></iframe>
+                <p>Jr. A. A. Cáceres 312, Alto Selva Alegre 04003</p>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
+    </footer>
+    <script src="../js/javaScript.js"></script>
+</body>
+
+</html>

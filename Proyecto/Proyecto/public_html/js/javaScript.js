@@ -96,12 +96,12 @@ for (var i = 0; i < videosCategorias.length; i++) {
     var video = videosCategorias[i];
 
     // Cuando el mouse entra al video → reproducir
-    video.addEventListener('mouseenter', function() {
+    video.addEventListener('mouseenter', function () {
         this.play(); // 'this' se refiere al video que disparó el evento
     });
 
     // Cuando el mouse sale del video → pausar
-    video.addEventListener('mouseleave', function() {
+    video.addEventListener('mouseleave', function () {
         this.pause(); // Pausa el video
         this.currentTime = 0; // Opcional: reinicia al inicio (quita esta línea si quieres que se quede donde quedó)
     });
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
     // Guardamos todos los elementos que vamos a usar
     var productos = document.querySelectorAll('.producto-card'); // NodeList (similar a arreglo)
-    var checksCategoria = document.querySelectorAll('#alimentos, #pequenos, #aves, #corral'); // NodeList
+    var checksCategoria = document.querySelectorAll('#alimentos, #pequenos, #aves, #corral, #conejo, #hamster, #chinchilla, #erizo'); // NodeList
     var checksPrecio = document.querySelectorAll('#f-p1, #f-p2, #f-p3, #f-p4'); // NodeList
     var selectOrdenar = document.getElementById('ordenar');
     var btnBorrar = document.getElementById('btn-borrar'); // Botón eliminar filtros
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // 5️⃣ Función que revisa si una categoría está en la lista de marcadas
+    //  Función que revisa si una categoría está en la lista de marcadas
     function categoriaValida(cat, categorias) {
         // Si no hay ninguna marcada, pasan todas
         if (categorias.length == 0) { // IF simple
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // 6️⃣ Función principal: filtra los productos
+    //  Función principal: filtra los productos
     function aplicarFiltros() {
         var categorias = obtenerCategoriasMarcadas();
         var rangos = obtenerRangosMarcados();
@@ -392,4 +392,238 @@ document.addEventListener('DOMContentLoaded', function () {
         aplicarFiltros();
     });
 
+});
+
+/* ══════════════════════════════════════════
+    INICIO DE SESION - REGISTRO
+   ══════════════════════════════════════════ */
+// USO DE VARIABLES (CONST Y LET) — Declaración de constantes
+const formLogin = document.getElementById("form-login");
+const formRegistro = document.getElementById("form-registro");
+
+function mostrarError(id, mensaje) {
+    let span = document.getElementById(id);   // USO DE VARIABLES LET
+    span.textContent = mensaje;                // USO DE INTERACCIÓN CON FORMULARIOS (textContent)
+    span.style.color = "#9f4451";              // USO DE MANIPULACIÓN CSS VÍA JS
+}
+// USO DE FUNCIONES — Función para limpiar errores
+function limpiarError(id) {
+    document.getElementById(id).textContent = "";
+}
+
+
+// USO DE FUNCIONES CON PARÁMETROS — Valida si el email tiene "@" y "."
+// USO DE IF ELSE DOBLE — Condicional con && (AND)
+function emailValido(email) {
+    if (email.includes("@") && email.includes(".")) {  // USO DE OPERADORES DE CADENAS
+        return true;    // USO DE TIPO BOOLEAN
+    } else {
+        return false;
+    }
+}
+
+/* VALIDACIÓN DEL LOGIN */
+// USO DE FUNCIONES CON PARÁMETROS — Recibe el evento del submit
+function validarLogin(e) {
+    e.preventDefault();   // USO DE MÉTODOS DEL OBJETO EVENT
+
+    // USO DE INTERACCIÓN CON FORMULARIOS — Leer valor de inputs
+    let email = document.getElementById("email-login").value.trim();
+    let password = document.getElementById("password-login").value.trim();
+    let valido = true;   // USO DE TIPO BOOLEAN
+
+    limpiarError("error-email");
+    limpiarError("error-password");
+
+    // USO DE IF ELSE ANIDADO — Valida email vacío o inválido
+    if (email === "") {                        // USO DE OPERADOR DE COMPARACIÓN ===
+        mostrarError("error-email", "El correo es obligatorio");
+        valido = false;
+    } else if (!emailValido(email)) {          // USO DE IF ELSE IF ANIDADO
+        mostrarError("error-email", "Correo no válido");
+        valido = false;
+    }
+
+    // USO DE IF ELSE DOBLE — Valida contraseña
+    if (password === "") {
+        mostrarError("error-password", "La contraseña es obligatoria");
+        valido = false;
+    } else if (password.length < 6) {          // USO DE OPERADORES MATEMÁTICOS (COMPARACIÓN <)
+        mostrarError("error-password", "Mínimo 6 caracteres");
+        valido = false;
+    }
+
+    // USO DE IF SIMPLE — Si todo está bien
+    if (valido) {
+        // USO DE CONCATENACIÓN DE CADENAS — Une texto con +
+        alert("Bienvenida " + email + "!");
+    }
+}
+
+/*  VALIDACIÓN DEL REGISTRO */
+function validarRegistro(e) {
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value.trim();
+    let email = document.getElementById("email-registro").value.trim();
+    let pass = document.getElementById("password-registro").value.trim();
+    let confirm = document.getElementById("password-confirm").value.trim();
+    let terminos = document.getElementById("terminos").checked;   // USO DE TIPO BOOLEAN
+    let valido = true;
+
+    // Limpiar errores previos
+    limpiarError("error-nombre");
+    limpiarError("error-email-reg");
+    limpiarError("error-pass-reg");
+    limpiarError("error-confirm");
+    limpiarError("error-terminos");
+
+    // USO DE IF SIMPLE — Valida nombre vacío
+    if (nombre === "") {
+        mostrarError("error-nombre", "El nombre es obligatorio");
+        valido = false;
+    }
+
+    // USO DE IF ELSE DOBLE — Valida email
+    if (email === "") {
+        mostrarError("error-email-reg", "El correo es obligatorio");
+        valido = false;
+    } else if (!emailValido(email)) {
+        mostrarError("error-email-reg", "Correo no válido");
+        valido = false;
+    }
+
+    // USO DE IF ELSE IF ANIDADO — Valida contraseña
+    if (pass === "") {
+        mostrarError("error-pass-reg", "La contraseña es obligatoria");
+        valido = false;
+    } else if (pass.length < 6) {
+        mostrarError("error-pass-reg", "Mínimo 6 caracteres");
+        valido = false;
+    }
+
+    // USO DE IF SIMPLE — Compara contraseñas
+    if (pass !== confirm) {                    // USO DE OPERADOR DE COMPARACIÓN !==
+        mostrarError("error-confirm", "Las contraseñas no coinciden");
+        valido = false;
+    }
+
+    // USO DE IF SIMPLE — Valida checkbox
+    if (!terminos) {                           // USO DE OPERADOR LÓGICO NOT (!)
+        mostrarError("error-terminos", "Acepta los términos");
+        valido = false;
+    }
+
+    if (valido) {
+        alert("🎉 Cuenta creada, bienvenida " + nombre);
+    }
+}
+
+
+/* BARRA DE FUERZA DE CONTRASEÑA */
+// USO DE FUNCIONES CON PARÁMETROS — Calcula la fuerza
+// USO DE IF ELSE IF ANIDADO — Suma puntos según reglas
+function calcularFuerza(pass) {
+    let puntos = 0;   // USO DE TIPO INTEGER
+
+    if (pass.length >= 6) puntos++;   // USO DE OPERADOR INCREMENTO (++)
+    if (pass.length >= 10) puntos++;
+    if (pass !== pass.toLowerCase()) puntos++;   // USO DE OPERADORES DE CADENAS
+
+    // USO DE FOR (BUCLE REPETITIVO) — Recorre cada carácter
+    for (let i = 0; i < pass.length; i++) {      // USO DE TIPO INTEGER I
+        let c = pass[i];                           // USO DE TIPO CARÁCTER
+        if (c >= "0" && c <= "9") {                // USO DE OPERADORES LÓGICOS &&
+            puntos++;
+            break;   // USO DE BREAK — Sale del bucle
+        }
+    }
+    return puntos;
+}
+
+// USO DE SWITCH CASE — Devuelve texto y color según puntos
+function nivelFuerza(puntos) {
+    let texto, color, ancho;
+
+    switch (puntos) {
+        case 0: case 1:
+            texto = "Muy débil"; color = "#9f4451"; ancho = "25%"; break;
+        case 2:
+            texto = "Débil"; color = "#cc8747"; ancho = "50%"; break;
+        case 3:
+            texto = "Buena"; color = "#4e9ba9"; ancho = "75%"; break;
+        case 4:
+            texto = "Fuerte"; color = "#4c4f3e"; ancho = "100%"; break;
+        default:
+            texto = ""; color = "#e2d5c0"; ancho = "0%";
+    }
+
+    // USO DE OBJETOS — Retorna un objeto literal (Módulo E)
+    return { texto: texto, color: color, ancho: ancho };
+}
+
+// USO DE FUNCIONES — Actualiza la barra visual
+// USO DE MANIPULACIÓN CSS VÍA JS — Cambia width y background
+function actualizarFuerza(pass) {
+    let barra = document.getElementById("strength-fill");
+    let texto = document.getElementById("strength-text");
+    if (!barra || !texto) return;
+
+    if (pass.length === 0) {
+        barra.style.width = "0%";
+        barra.style.background = "#e2d5c0";
+        texto.textContent = "Escribe una contraseña";
+        return;
+    }
+
+    let nivel = nivelFuerza(calcularFuerza(pass));
+    barra.style.width = nivel.ancho;             // USO DE MANIPULACIÓN CSS
+    barra.style.background = nivel.color;
+    texto.textContent = nivel.texto;
+    texto.style.color = nivel.color;
+}
+
+
+/* MOSTRAR / OCULTAR CONTRASEÑA  */
+function activarOjo(idBoton, idInput) {
+    let boton = document.getElementById(idBoton);
+    let input = document.getElementById(idInput);
+    if (!boton || !input) return;
+
+    // USO DE ADD EVENT LISTENER — Evento click
+    boton.addEventListener("click", function () {
+        // USO OF HASATTRIBUTE — Verifica atributo type
+        if (input.getAttribute("type") === "password") {
+            input.setAttribute("type", "text");      // USO DE SETATTRIBUTE
+            boton.textContent = "🙈";
+        } else {
+            input.setAttribute("type", "password");  // USO DE SETATTRIBUTE
+            boton.textContent = "👁";
+        }
+    });
+}
+
+/* INICIALIZACIÓN — Cuando carga la página */
+// USO DEL OBJETO WINDOW — Evento DOMContentLoaded
+window.addEventListener("DOMContentLoaded", function () {
+
+    activarOjo("toggle-pass-login", "password-login");
+    activarOjo("toggle-pass-reg", "password-registro");
+
+    // USO DE IF SIMPLE — Solo si existe el formulario
+    if (formLogin) {
+        formLogin.addEventListener("submit", validarLogin);   // USO DE ADD EVENT LISTENER
+    }
+
+    if (formRegistro) {
+        formRegistro.addEventListener("submit", validarRegistro);
+
+        // USO DE ADD EVENT LISTENER — Evento input (mientras escribe)
+        let inputPass = document.getElementById("password-registro");
+        if (inputPass) {
+            inputPass.addEventListener("input", function () {
+                actualizarFuerza(inputPass.value);
+            });
+        }
+    }
 });
