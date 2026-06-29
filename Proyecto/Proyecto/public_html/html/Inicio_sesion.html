@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Meta viewport para responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Inicio Sesion — Dolly's House</title>
+    <title>Inicio de Sesion — Dolly's House</title>
     <style>
         .barra-top {
             background-color: #1b171e;
@@ -18,243 +17,228 @@
     </style>
 </head>
 
-<!-- SHARED — HEADER & NAVIGATION -->
+<!-- MARQUEE -->
+<div class="barra-top">
+    <marquee behavior="scroll" direction="left">
+        Ofertas especiales esta semana 🎁 &nbsp;•&nbsp; 20% OFF en alimentos &nbsp;•&nbsp; Accesorios para hamsters
+        &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100!
+    </marquee>
+</div>
 
-<body>
-    <!-- MARQUEE -->
-    <div class="barra-top">
-        <marquee behavior="scroll" direction="left">
-            Ofertas especiales esta semana 🎁 &nbsp;•&nbsp; 20% OFF en alimentos &nbsp;•&nbsp; Accesorios para hamsters
-            &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100!
-        </marquee>
-    </div>
 
-    <!-- HEADER -->
-    <input type="checkbox" id="menu-toggle" hidden>
-    <header class="site-header">
-        <a href="index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png" alt="Dolly's House"></a>
-        <div class="header-right">
-            <div class="buscador-wrap">
-                <span class="icon-search">🔍</span>
-                <input type="text" class="buscador" placeholder="Buscar productos...">
-            </div>
-            <div class="header-icons">
-                <a href="#" class="login-btn">Iniciar Sesion</a>
-                <a href="#" class="icon-btn">♡</a>
-            </div>
-            <a href="Carrito.html" class="carrito-link">
-                <button class="carrito-btn">🛒 <span class="label">Carrito</span></button>
-            </a>
-
+<!-- HEADER -->
+<input type="checkbox" id="menu-toggle" hidden>
+<header class="site-header">
+    <a href="index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png" alt="Dolly's House"></a>
+    <div class="header-right">
+        <div class="buscador-wrap">
+            <span class="icon-search">🔍</span>
+            <input type="text" class="buscador" placeholder="Buscar productos...">
         </div>
-        <label for="menu-toggle" class="hamburger" aria-label="Menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-    </header>
-    <!-- NAVEGACIÓN -->
-    <div class="navegacion" id="div">
-        <ul class="opciones">
-            <li><a href="index.html" class="active">Inicio</a></li>
+        <div class="header-icons">
+            <a href="#" class="login-btn">Iniciar Sesion</a>
+            <a href="#" class="icon-btn">♡</a>
+        </div>
+        <a href="Carrito.html" class="carrito-link">
+            <button class="carrito-btn">🛒 <span class="label">Carrito</span></button>
+        </a>
 
-            <li><a href="Productos_Alimentos.html">Alimentos</a>
-                <div class="dropdown-menu">
-                    <div class="drop-header">Alimentos por mascota</div>
-                    <div class="dropdown-grid">
-                        <a href="Productos_Alimentos.html"><span class="drop-icon">🐕</span>Perros</a>
-                        <a href="Productos_Alimentos.html"><span class="drop-icon">🐈</span>Gatos</a>
-                        <a href="Productos_Alimentos.html"><span class="drop-icon">🦜</span>Aves</a>
-                        <a href="Productos_Alimentos.html"><span class="drop-icon">🐹</span>Hámster</a>
-                        <a href="Productos_Alimentos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
-                        <a href="Productos_Alimentos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
-                        <a href="Productos_Alimentos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
-                        <a href="Productos_Alimentos.html"><span class="drop-icon">⭐</span>Super Premium</a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="Productos_Accesorios.html">Accesorios</a>
-                <div class="dropdown-menu">
-                    <div class="drop-header">Accesorios para mascotas</div>
-                    <div class="dropdown-grid">
-                        <a href="Productos_Accesorios.html"><span class="drop-icon">📿</span>Collares</a>
-                        <a href="Productos_Accesorios.html"><span class="drop-icon">🧸</span>Juguetes</a>
-                        <a href="Productos_Accesorios.html"><span class="drop-icon">👕</span>Ropa</a>
-                        <a href="Productos_Accesorios.html"><span class="drop-icon">🛏️</span>Camas</a>
-                        <a href="Productos_Accesorios.html"><span class="drop-icon">🦮</span>Correas y Arneses</a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="#">Mascotas Grandes</a>
-                <div class="dropdown-menu">
-                    <div class="drop-header">Productos para mascotas grandes</div>
-                    <div class="dropdown-grid">
-                        <a href="#"><span class="drop-icon">🐕</span>Perros Grandes</a>
-                        <a href="#"><span class="drop-icon">🦴</span>Snacks y Premios</a>
-                        <a href="#"><span class="drop-icon">🥣</span>Comederos</a>
-                        <a href="#"><span class="drop-icon">🛏️</span>Camas</a>
-                        <a href="#"><span class="drop-icon">🎾</span>Juguetes Resistentes</a>
-                        <a href="#"><span class="drop-icon">🦮</span>Correas y Arneses</a>
-                        <a href="#"><span class="drop-icon">🧴</span>Higiene y Shampoo</a>
-                        <a href="#"><span class="drop-icon">💊</span>Vitaminas y Salud</a>
-                        <a href="#"><span class="drop-icon">🏠</span>Casas y Accesorios</a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="#">Mascotas Pequeñas</a>
-                <div class="dropdown-menu">
-                    <div class="drop-header">Mascotas pequeñas</div>
-                    <div class="dropdown-grid">
-                        <a href="#"><span class="drop-icon">🐹</span>Hámster</a>
-                        <a href="#"><span class="drop-icon">🐰</span>Conejo</a>
-                        <a href="#"><span class="drop-icon">🐭</span>Ratón</a>
-                        <a href="#"><span class="drop-icon">🦔</span>Erizo</a>
-                        <a href="#"><span class="drop-icon">🧸</span>Juguetes</a>
-                        <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
-                        <a href="#"><span class="drop-icon">🌿</span>Alimentos</a>
-                        <a href="#"><span class="drop-icon">🪺</span>Camas y Nidos</a>
-                        <a href="#"><span class="drop-icon">💊</span>Salud</a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="Productos_Aves.html">Aves</a>
-                <div class="dropdown-menu">
-                    <div class="drop-header">Aves y accesorios</div>
-                    <div class="dropdown-grid">
-                        <a href="#"><span class="drop-icon">🦜</span>Loros</a>
-                        <a href="#"><span class="drop-icon">🐦</span>Canarios</a>
-                        <a href="#"><span class="drop-icon">🦚</span>Periquitos</a>
-                        <a href="#"><span class="drop-icon">🐔</span>Aves de Corral</a>
-                        <a href="#"><span class="drop-icon">🌾</span>Semillas</a>
-                        <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
-                        <a href="#"><span class="drop-icon">🛁</span>Bañeras</a>
-                        <a href="#"><span class="drop-icon">🪵</span>Perchas</a>
-                        <a href="#"><span class="drop-icon">💊</span>Vitaminas</a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="#">Marcas</a>
-                <div class="dropdown-menu marcas-drop">
-                    <div class="drop-header">Nuestras marcas</div>
-                    <div class="marcas-grid">
-                        <a href="#"><img src="../images/Images_Marcas/1.png" alt="Hills"></a>
-                        <a href="#"><img src="../images/Images_Marcas/2.png" alt="RoyalCanin"></a>
-                        <a href="#"><img src="../images/Images_Marcas/3.png" alt="Salvaje"></a>
-                        <a href="#"><img src="../images/Images_Marcas/4.jpg" alt="TkPet"></a>
-                    </div>
-                </div>
-            </li>
-            <li><a href="Blog.html">Blog</a></li>
-            <li><a href="Nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="Contacto.html">Contáctanos</a></li>
-        </ul>
     </div>
+    <label for="menu-toggle" class="hamburger" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+</header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <div class="auth-page">
-        <div class="page-header">
-            <h1 class="section-title">Inicio de Sesion</h1>
+<!-- NAVEGACIÓN -->
+<div class="navegacion" id="div">
+    <ul class="opciones">
+        <li><a href="index.html">Inicio</a></li>
+
+        <li><a href="Productos_Alimentos.html">Alimentos</a>
+            <div class="dropdown-menu">
+                <div class="drop-header">Alimentos por mascota</div>
+                <div class="dropdown-grid">
+                    <a href="Productos_Alimentos.html"><span class="drop-icon">🐕</span>Perros</a>
+                    <a href="Productos_Alimentos.html"><span class="drop-icon">🐈</span>Gatos</a>
+                    <a href="Productos_Alimentos.html"><span class="drop-icon">🦜</span>Aves</a>
+                    <a href="Productos_Alimentos.html"><span class="drop-icon">🐹</span>Hámster</a>
+                    <a href="Productos_Alimentos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                    <a href="Productos_Alimentos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
+                    <a href="Productos_Alimentos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
+                    <a href="Productos_Alimentos.html"><span class="drop-icon">⭐</span>Super Premium</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="Productos_Accesorios.html">Accesorios</a>
+            <div class="dropdown-menu">
+                <div class="drop-header">Accesorios para mascotas</div>
+                <div class="dropdown-grid">
+                    <a href="Productos_Accesorios.html"><span class="drop-icon">📿</span>Collares</a>
+                    <a href="Productos_Accesorios.html"><span class="drop-icon">🧸</span>Juguetes</a>
+                    <a href="Productos_Accesorios.html"><span class="drop-icon">👕</span>Ropa</a>
+                    <a href="Productos_Accesorios.html"><span class="drop-icon">🛏️</span>Camas</a>
+                    <a href="Productos_Accesorios.html"><span class="drop-icon">🦮</span>Correas y Arneses</a>
+                </div>
+            </div>
+        </li>
+
+        <li><a href="../html/Productos_Animales_Pequeños.html">Mascotas Pequeñas</a>
+            <div class="dropdown-menu">
+                <div class="drop-header">Mascotas pequeñas</div>
+                <div class="dropdown-grid">
+                    <a href="#"><span class="drop-icon">🐹</span>Hámster</a>
+                    <a href="#"><span class="drop-icon">🐰</span>Conejo</a>
+                    <a href="#"><span class="drop-icon">🐭</span>Ratón</a>
+                    <a href="#"><span class="drop-icon">🦔</span>Erizo</a>
+                    <a href="#"><span class="drop-icon">🧸</span>Juguetes</a>
+                    <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+                    <a href="#"><span class="drop-icon">🌿</span>Alimentos</a>
+                    <a href="#"><span class="drop-icon">🪺</span>Camas y Nidos</a>
+                    <a href="#"><span class="drop-icon">💊</span>Salud</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="Productos_Aves.html">Aves</a>
+            <div class="dropdown-menu">
+                <div class="drop-header">Aves y accesorios</div>
+                <div class="dropdown-grid">
+                    <a href="#"><span class="drop-icon">🦜</span>Loros</a>
+                    <a href="#"><span class="drop-icon">🐦</span>Canarios</a>
+                    <a href="#"><span class="drop-icon">🦚</span>Periquitos</a>
+                    <a href="#"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                    <a href="#"><span class="drop-icon">🌾</span>Semillas</a>
+                    <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+                    <a href="#"><span class="drop-icon">🛁</span>Bañeras</a>
+                    <a href="#"><span class="drop-icon">🪵</span>Perchas</a>
+                    <a href="#"><span class="drop-icon">💊</span>Vitaminas</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="#">Marcas</a>
+            <div class="dropdown-menu marcas-drop">
+                <div class="drop-header">Nuestras marcas</div>
+                <div class="marcas-grid">
+                    <a href="#"><img src="../images/Images_Marcas/1.png" alt="Hills"></a>
+                    <a href="#"><img src="../images/Images_Marcas/2.png" alt="RoyalCanin"></a>
+                    <a href="#"><img src="../images/Images_Marcas/3.png" alt="Salvaje"></a>
+                    <a href="#"><img src="../images/Images_Marcas/4.jpg" alt="TkPet"></a>
+                </div>
+            </div>
+        </li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="Contacto.html">Contáctanos</a></li>
+    </ul>
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="auth-page">
+    <div class="page-header">
+        <h1 class="section-title">Inicio de Sesion</h1>
+        <div class="section-line"></div>
+    </div>
+    <div class="auth-container">
+
+        <!-- LADO IZQUIERDO: FORMULARIO -->
+        <div class="auth-form-side">
+            <h1 class="section-title">Bienvenido de vuelta</h1>
             <div class="section-line"></div>
+            <p class="section-subtitle">Ingresa a tu cuenta de Dolly's House 🐾</p>
+
+            <form id="form-login" class="auth-form" novalidate>
+                <!-- Campo email -->
+                <div class="form-group">
+                    <label for="email-login">Correo electrónico</label>
+                    <input type="email" id="email-login" placeholder="ejemplo@correo.com" required>
+                    <!-- Mensaje de error (se muestra con JS) -->
+                    <span class="error-msg" id="error-email"></span>
+                </div>
+
+                <!-- Campo contraseña -->
+                <div class="form-group">
+                    <label for="password-login">Contraseña</label>
+                    <div class="password-wrap">
+                        <input type="password" id="password-login" placeholder="••••••••" required>
+                        <button type="button" class="btn-eye" id="toggle-pass-login">👁</button>
+                    </div>
+                    <span class="error-msg" id="error-password"></span>
+                </div>
+
+                <!-- Checkbox recordarme -->
+                <div class="form-group check-group">
+                    <input type="checkbox" id="recordar">
+                    <label for="recordar">Recordarme</label>
+                </div>
+
+                <!-- Botón enviar -->
+                <button type="submit" class="btn-submit">Iniciar Sesión</button>
+
+                <!-- Enlace a registro -->
+                <p class="auth-switch">¿No tienes cuenta? <a href="../html/Registro.html">Regístrate aquí</a></p>
+            </form>
         </div>
-        <div class="auth-container">
 
-            <!-- LADO IZQUIERDO: FORMULARIO -->
-            <div class="auth-form-side">
-                <h1 class="section-title">Bienvenido de vuelta</h1>
-                <div class="section-line"></div>
-                <p class="section-subtitle">Ingresa a tu cuenta de Dolly's House 🐾</p>
+        <!-- LADO DERECHO: FOTO GRANDE (dejas el espacio) -->
+        <div class="auth-image-side">
+            <!-- 👇 Aquí pones la ruta de tu imagen -->
+            <img src="../images/Images_Registro-Sesion/ImagenRS.jpg" alt="Foto de mascotas">
+        </div>
 
-                <form id="form-login" class="auth-form" novalidate>
-                    <!-- Campo email -->
-                    <div class="form-group">
-                        <label for="email-login">Correo electrónico</label>
-                        <input type="email" id="email-login" placeholder="ejemplo@correo.com" required>
-                        <!-- Mensaje de error (se muestra con JS) -->
-                        <span class="error-msg" id="error-email"></span>
-                    </div>
+    </div>
+</div>
 
-                    <!-- Campo contraseña -->
-                    <div class="form-group">
-                        <label for="password-login">Contraseña</label>
-                        <div class="password-wrap">
-                            <input type="password" id="password-login" placeholder="••••••••" required>
-                            <button type="button" class="btn-eye" id="toggle-pass-login">👁</button>
-                        </div>
-                        <span class="error-msg" id="error-password"></span>
-                    </div>
+<!-- SHARED — FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
 
-                    <!-- Checkbox recordarme -->
-                    <div class="form-group check-group">
-                        <input type="checkbox" id="recordar">
-                        <label for="recordar">Recordarme</label>
-                    </div>
+        <div class="footer-col">
+            <h3> Navegación</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos_Accesorios.html">Accesorios</a></li>
+                <li><a href="Productos_Alimentos.html">Alimentos</a></li>
+                <li><a href="Productos_Alimentos.html">Mascotas Pequeñas</a></li>
+                <li><a href="Productos_Aves.html">Aves</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </div>
 
-                    <!-- Botón enviar -->
-                    <button type="submit" class="btn-submit">Iniciar Sesión</button>
+        <div class="footer-col">
+            <h3>Redes Sociales</h3>
+            <ul>
+                <li><img src="../images/Imagenes_Logo/2.png" alt="Insta"> <a href="https://instagram.com">Instagram</a>
+                </li>
+                <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a href="https://facebook.com">Facebook</a>
+                </li>
+                <li><img src="../images/Imagenes_Logo/1.png"" alt=" Whatsapp"><a
+                        href="https://wa.me/51946414833">WhatsApp</a>
+                </li>
+            </ul>
+        </div>
 
-                    <!-- Enlace a registro -->
-                    <p class="auth-switch">¿No tienes cuenta? <a href="../html/Registro.html">Regístrate aquí</a></p>
-                </form>
-            </div>
+        <div class="footer-col">
+            <h3>Contacto</h3>
+            <p>+51 946 414 833</p>
+            <p>dollyshousen@gmail.com</p>
+            <p>Lun–Sab: 9am a 7pm</p>
+        </div>
 
-            <!-- LADO DERECHO: FOTO GRANDE (dejas el espacio) -->
-            <div class="auth-image-side">
-                <!-- 👇 Aquí pones la ruta de tu imagen -->
-                <img src="../images/Images_Registro-Sesion/ImagenRS.jpg" alt="Foto de mascotas">
-            </div>
-
+        <div class="footer-col">
+            <h3>Encuéntranos</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
+                title="Mapa"></iframe>
+            <p>Jr. A. A. Cáceres 312, Alto Selva Alegre 04003</p>
         </div>
     </div>
-
-    <!-- SHARED — FOOTER -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
-
-            <div class="footer-col">
-                <h3> Navegación</h3>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="Productos_Accesorios.html">Accesorios</a></li>
-                    <li><a href="Productos_Alimentos.html">Alimentos</a></li>
-                    <li><a href="Productos_Aves.html">Aves</a></li>
-                    <li><a href="Nosotros.html">Nosotros</a></li>
-                    <li><a href="Blog.html">Blog</a></li>
-                    <li><a href="Contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>Redes Sociales</h3>
-                <ul>
-                    <li><img src="../images/Imagenes_Logo/2.png" alt="Insta"> <a
-                            href="https://instagram.com">Instagram</a></li>
-                    <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a
-                            href="https://facebook.com">Facebook</a></li>
-                    <li><img src="../images/Imagenes_Logo/1.png"" alt=" Whatsapp"><a
-                            href="https://wa.me/51946414833">WhatsApp</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>Contacto</h3>
-                <p>+51 946 414 833</p>
-                <p>dollyshousen@gmail.com</p>
-                <p>Lun–Sab: 9am a 7pm</p>
-            </div>
-
-            <div class="footer-col">
-                <h3>Encuéntranos</h3>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
-                    title="Mapa"></iframe>
-                <p>Jr. A. A. Cáceres 312, Alto Selva Alegre 04003</p>
-            </div>
-        </div>
-        <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
-    </footer>
-    <script src="../js/javaScript.js"></script>
+    <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
+</footer>
+<script src="../js/javaScript.js"></script>
 
 </body>
 

@@ -1,292 +1,280 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/styles.css">
   <title>Sobre Nosotros — Dolly's House</title>
-    <style>
-      .barra-top {
-        background-color: #1b171e;
-        color: #dcc594;
-        padding: 6px 0;
-        font-size: 13px;
-        letter-spacing: 0.04em;
-       }
+  <style>
+    .barra-top {
+      background-color: #1b171e;
+      color: #dcc594;
+      padding: 6px 0;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
   </style>
 </head>
 
-  <!-- MARQUEE -->
-  <div class="barra-top">
-    <marquee behavior="scroll" direction="left">
-      Ofertas especiales esta semana 🎁 &nbsp;•&nbsp; 20% OFF en alimentos &nbsp;•&nbsp; Accesorios para hamsters
-      &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100!
-    </marquee>
-  </div>
+<!-- MARQUEE -->
+<div class="barra-top">
+  <marquee behavior="scroll" direction="left">
+    Ofertas especiales esta semana 🎁 &nbsp;•&nbsp; 20% OFF en alimentos &nbsp;•&nbsp; Accesorios para hamsters
+    &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100!
+  </marquee>
+</div>
 
-  
-  <!-- HEADER -->
-  <input type="checkbox" id="menu-toggle" hidden>
-  <header class="site-header">
-    <a href="index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png" alt="Dolly's House"></a>
-    <div class="header-right">
-      <div class="buscador-wrap">
-        <span class="icon-search">🔍</span>
-        <input type="text" class="buscador" placeholder="Buscar productos...">
-      </div>
-      <div class="header-icons">
-        <a href="#" class="login-btn">Iniciar Sesion</a>
-        <a href="#" class="icon-btn">♡</a>
-      </div>
-      <a href="Carrito.html" class="carrito-link">
-        <button class="carrito-btn">🛒 <span class="label">Carrito</span></button>
-      </a>
 
+<!-- HEADER -->
+<input type="checkbox" id="menu-toggle" hidden>
+<header class="site-header">
+  <a href="index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png" alt="Dolly's House"></a>
+  <div class="header-right">
+    <div class="buscador-wrap">
+      <span class="icon-search">🔍</span>
+      <input type="text" class="buscador" placeholder="Buscar productos...">
     </div>
-    <label for="menu-toggle" class="hamburger" aria-label="Menú">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </header>
+    <div class="header-icons">
+      <a href="#" class="login-btn">Iniciar Sesion</a>
+      <a href="#" class="icon-btn">♡</a>
+    </div>
+    <a href="Carrito.html" class="carrito-link">
+      <button class="carrito-btn">🛒 <span class="label">Carrito</span></button>
+    </a>
 
-  <!-- NAVEGACIÓN -->
-  <div class="navegacion" id="div">
-    <ul class="opciones">
-      <li><a href="index.html">Inicio</a></li>
-
-      <li><a href="Productos_Alimentos.html">Alimentos</a>
-        <div class="dropdown-menu">
-          <div class="drop-header">Alimentos por mascota</div>
-          <div class="dropdown-grid">
-            <a href="Productos_Alimentos.html"><span class="drop-icon">🐕</span>Perros</a>
-            <a href="Productos_Alimentos.html"><span class="drop-icon">🐈</span>Gatos</a>
-            <a href="Productos_Alimentos.html"><span class="drop-icon">🦜</span>Aves</a>
-            <a href="Productos_Alimentos.html"><span class="drop-icon">🐹</span>Hámster</a>
-            <a href="Productos_Alimentos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
-            <a href="Productos_Alimentos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
-            <a href="Productos_Alimentos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
-            <a href="Productos_Alimentos.html"><span class="drop-icon">⭐</span>Super Premium</a>
-          </div>
-        </div>
-      </li>
-      <li><a href="Productos_Accesorios.html">Accesorios</a>
-        <div class="dropdown-menu">
-          <div class="drop-header">Accesorios para mascotas</div>
-          <div class="dropdown-grid">
-            <a href="Productos_Accesorios.html"><span class="drop-icon">📿</span>Collares</a>
-            <a href="Productos_Accesorios.html"><span class="drop-icon">🧸</span>Juguetes</a>
-            <a href="Productos_Accesorios.html"><span class="drop-icon">👕</span>Ropa</a>
-            <a href="Productos_Accesorios.html"><span class="drop-icon">🛏️</span>Camas</a>
-            <a href="Productos_Accesorios.html"><span class="drop-icon">🦮</span>Correas y Arneses</a>
-          </div>
-        </div>
-      </li>
-      <li><a href="#">Mascotas Grandes</a>
-        <div class="dropdown-menu">
-          <div class="drop-header">Productos para mascotas grandes</div>
-          <div class="dropdown-grid">
-            <a href="#"><span class="drop-icon">🐕</span>Perros Grandes</a>
-            <a href="#"><span class="drop-icon">🦴</span>Snacks y Premios</a>
-            <a href="#"><span class="drop-icon">🥣</span>Comederos</a>
-            <a href="#"><span class="drop-icon">🛏️</span>Camas</a>
-            <a href="#"><span class="drop-icon">🎾</span>Juguetes Resistentes</a>
-            <a href="#"><span class="drop-icon">🦮</span>Correas y Arneses</a>
-            <a href="#"><span class="drop-icon">🧴</span>Higiene y Shampoo</a>
-            <a href="#"><span class="drop-icon">💊</span>Vitaminas y Salud</a>
-            <a href="#"><span class="drop-icon">🏠</span>Casas y Accesorios</a>
-          </div>
-        </div>
-      </li>
-      <li><a href="#">Mascotas Pequeñas</a>
-        <div class="dropdown-menu">
-          <div class="drop-header">Mascotas pequeñas</div>
-          <div class="dropdown-grid">
-            <a href="#"><span class="drop-icon">🐹</span>Hámster</a>
-            <a href="#"><span class="drop-icon">🐰</span>Conejo</a>
-            <a href="#"><span class="drop-icon">🐭</span>Ratón</a>
-            <a href="#"><span class="drop-icon">🦔</span>Erizo</a>
-            <a href="#"><span class="drop-icon">🧸</span>Juguetes</a>
-            <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
-            <a href="#"><span class="drop-icon">🌿</span>Alimentos</a>
-            <a href="#"><span class="drop-icon">🪺</span>Camas y Nidos</a>
-            <a href="#"><span class="drop-icon">💊</span>Salud</a>
-          </div>
-        </div>
-      </li>
-      <li><a href="Productos_Aves.html">Aves</a>
-        <div class="dropdown-menu">
-          <div class="drop-header">Aves y accesorios</div>
-          <div class="dropdown-grid">
-            <a href="#"><span class="drop-icon">🦜</span>Loros</a>
-            <a href="#"><span class="drop-icon">🐦</span>Canarios</a>
-            <a href="#"><span class="drop-icon">🦚</span>Periquitos</a>
-            <a href="#"><span class="drop-icon">🐔</span>Aves de Corral</a>
-            <a href="#"><span class="drop-icon">🌾</span>Semillas</a>
-            <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
-            <a href="#"><span class="drop-icon">🛁</span>Bañeras</a>
-            <a href="#"><span class="drop-icon">🪵</span>Perchas</a>
-            <a href="#"><span class="drop-icon">💊</span>Vitaminas</a>
-          </div>
-        </div>
-      </li>
-      <li><a href="#">Marcas</a>
-        <div class="dropdown-menu marcas-drop">
-          <div class="drop-header">Nuestras marcas</div>
-          <div class="marcas-grid">
-            <a href="#"><img src="../images/Images_Marcas/1.png" alt="Hills"></a>
-            <a href="#"><img src="../images/Images_Marcas/2.png" alt="RoyalCanin"></a>
-            <a href="#"><img src="../images/Images_Marcas/3.png" alt="Salvaje"></a>
-            <a href="#"><img src="../images/Images_Marcas/4.jpg" alt="TkPet"></a>
-          </div>
-        </div>
-      </li>
-      <li><a href="Blog.html">Blog</a></li>
-      <li><a href="Nosotros.html">Sobre Nosotros</a></li>
-      <li><a href="Contacto.html">Contáctanos</a></li>
-    </ul>
   </div>
+  <label for="menu-toggle" class="hamburger" aria-label="Menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+</header>
+
+<!-- NAVEGACIÓN -->
+<div class="navegacion" id="div">
+  <ul class="opciones">
+    <li><a href="index.html">Inicio</a></li>
+
+    <li><a href="Productos_Alimentos.html">Alimentos</a>
+      <div class="dropdown-menu">
+        <div class="drop-header">Alimentos por mascota</div>
+        <div class="dropdown-grid">
+          <a href="Productos_Alimentos.html"><span class="drop-icon">🐕</span>Perros</a>
+          <a href="Productos_Alimentos.html"><span class="drop-icon">🐈</span>Gatos</a>
+          <a href="Productos_Alimentos.html"><span class="drop-icon">🦜</span>Aves</a>
+          <a href="Productos_Alimentos.html"><span class="drop-icon">🐹</span>Hámster</a>
+          <a href="Productos_Alimentos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+          <a href="Productos_Alimentos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
+          <a href="Productos_Alimentos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
+          <a href="Productos_Alimentos.html"><span class="drop-icon">⭐</span>Super Premium</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="Productos_Accesorios.html">Accesorios</a>
+      <div class="dropdown-menu">
+        <div class="drop-header">Accesorios para mascotas</div>
+        <div class="dropdown-grid">
+          <a href="Productos_Accesorios.html"><span class="drop-icon">📿</span>Collares</a>
+          <a href="Productos_Accesorios.html"><span class="drop-icon">🧸</span>Juguetes</a>
+          <a href="Productos_Accesorios.html"><span class="drop-icon">👕</span>Ropa</a>
+          <a href="Productos_Accesorios.html"><span class="drop-icon">🛏️</span>Camas</a>
+          <a href="Productos_Accesorios.html"><span class="drop-icon">🦮</span>Correas y Arneses</a>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="../html/Productos_Animales_Pequeños.html">Mascotas Pequeñas</a>
+      <div class="dropdown-menu">
+        <div class="drop-header">Mascotas pequeñas</div>
+        <div class="dropdown-grid">
+          <a href="#"><span class="drop-icon">🐹</span>Hámster</a>
+          <a href="#"><span class="drop-icon">🐰</span>Conejo</a>
+          <a href="#"><span class="drop-icon">🐭</span>Ratón</a>
+          <a href="#"><span class="drop-icon">🦔</span>Erizo</a>
+          <a href="#"><span class="drop-icon">🧸</span>Juguetes</a>
+          <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+          <a href="#"><span class="drop-icon">🌿</span>Alimentos</a>
+          <a href="#"><span class="drop-icon">🪺</span>Camas y Nidos</a>
+          <a href="#"><span class="drop-icon">💊</span>Salud</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="Productos_Aves.html">Aves</a>
+      <div class="dropdown-menu">
+        <div class="drop-header">Aves y accesorios</div>
+        <div class="dropdown-grid">
+          <a href="#"><span class="drop-icon">🦜</span>Loros</a>
+          <a href="#"><span class="drop-icon">🐦</span>Canarios</a>
+          <a href="#"><span class="drop-icon">🦚</span>Periquitos</a>
+          <a href="#"><span class="drop-icon">🐔</span>Aves de Corral</a>
+          <a href="#"><span class="drop-icon">🌾</span>Semillas</a>
+          <a href="#"><span class="drop-icon">🏠</span>Jaulas</a>
+          <a href="#"><span class="drop-icon">🛁</span>Bañeras</a>
+          <a href="#"><span class="drop-icon">🪵</span>Perchas</a>
+          <a href="#"><span class="drop-icon">💊</span>Vitaminas</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="#">Marcas</a>
+      <div class="dropdown-menu marcas-drop">
+        <div class="drop-header">Nuestras marcas</div>
+        <div class="marcas-grid">
+          <a href="#"><img src="../images/Images_Marcas/1.png" alt="Hills"></a>
+          <a href="#"><img src="../images/Images_Marcas/2.png" alt="RoyalCanin"></a>
+          <a href="#"><img src="../images/Images_Marcas/3.png" alt="Salvaje"></a>
+          <a href="#"><img src="../images/Images_Marcas/4.jpg" alt="TkPet"></a>
+        </div>
+      </div>
+    </li>
+    <li><a href="Blog.html">Blog</a></li>
+    <li><a href="Nosotros.html">Sobre Nosotros</a></li>
+    <li><a href="Contacto.html">Contáctanos</a></li>
+  </ul>
+</div>
 
 <!-- CARRITO  -->
 
-  <div class="carrito-page">
-    <div class="page-header">
-      <h1 class="section-title">Mi Carrito</h1>
-      <div class="section-line"></div>
-    </div>
-
-    <!-- Layout Principal: Grid -->
-    <div class="carrito-layout">
-
-      <!-- COLUMNA IZQUIERDA: ITEMS -->
-      <section class="carrito-items">
-
-        <!-- Producto 1 -->
-        <article class="carrito-item">
-          <div class="item-img">
-            <img src="../images/Images_Alimentos/9.png">
-          </div>
-          <div class="item-info">
-            <div class="item-brand">ZEUS</div>
-            <h2 class="item-name">Cachorros: Nutrición Completa Multi Vitaminas</h2>
-          </div>
-          <div class="item-controls">
-            <div class="qty-wrapper">
-              <label>Cantidad</label>
-              <input type="number" class="qty-input">
-            </div>
-          </div>
-          <div class="item-pricing">
-            <!-- Uso de Inline Style para resaltar el precio actual -->
-            <span class="price-current" style="color: var(--wine);">S/28.00</span>
-          </div>
-        </article>
-
-        <!-- Producto 2 (Ejemplo sin descuento) -->
-        <article class="carrito-item">
-          <div class="item-img">
-            <img src="../images/Images_Accesorios/19.png" alt="Clean Paws">
-          </div>
-          <div class="item-info">
-            <div class="item-brand">CLEAN PAWS</div>
-            <h2 class="item-name">Arenero Cerrado Premium con Tapa y Filtro Antiodor</h2>
-          </div>
-          <div class="item-controls">
-            <div class="qty-wrapper">
-              <label>Cantidad</label>
-              <input type="number" class="qty-input">
-            </div>
-          </div>
-          <div class="item-pricing">
-            <!-- Uso de Inline Style para resaltar el precio actual -->
-            <span class="price-current" style="color: var(--wine);">S/28.00</span>
-          </div>
-        </article>
-
-      </section>
-
-      <!-- COLUMNA DERECHA: RESUMEN -->
-      <aside class="carrito-summary">
-
-        <!-- Sección de Cupón -->
-        <div class="summary-card coupon-box">
-          <h3>¿Tienes un cupón?</h3>
-          <div class="coupon-form">
-            <input type="text" placeholder="Código cupón">
-            <button class="btn-apply">Aplicar</button>
-          </div>
-        </div>
-
-        <!-- Totales -->
-        <div class="summary-card totals-box">
-          <div class="total-row">
-            <span>Subtotal</span>
-            <span>S/58.00</span>
-          </div>
-          <div class="total-row">
-            <span>Gastos de envío</span>
-            <span class="free-shipping">Gratis</span>
-          </div>
-          <div class="total-row final">
-            <span>Total</span>
-            <span class="total-price">S/58.00</span>
-          </div>
-
-          <button class="btn-checkout">
-            Hacer pedido <span class="arrow">→</span>
-          </button>
-
-          <p class="secure-text"> Compra segura encriptada</p>
-        </div>
-
-      </aside>
-    </div>
+<div class="carrito-page">
+  <div class="page-header">
+    <h1 class="section-title">Mi Carrito</h1>
+    <div class="section-line"></div>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
+  <!-- Layout Principal: Grid -->
+  <div class="carrito-layout">
 
-      <div class="footer-col">
-        <h3> Navegación</h3>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="Productos_Accesorios.html">Accesorios</a></li>
-          <li><a href="Productos_Alimentos.html">Alimentos</a></li>
-          <li><a href="Productos_Aves.html">Aves</a></li>
-          <li><a href="Nosotros.html">Nosotros</a></li>
-          <li><a href="Blog.html">Blog</a></li>
-          <li><a href="Contacto.html">Contacto</a></li>
-        </ul>
+    <!-- COLUMNA IZQUIERDA: ITEMS -->
+    <section class="carrito-items">
+
+      <!-- Producto 1 -->
+      <article class="carrito-item">
+        <div class="item-img">
+          <img src="../images/Images_Alimentos/9.png">
+        </div>
+        <div class="item-info">
+          <div class="item-brand">ZEUS</div>
+          <h2 class="item-name">Cachorros: Nutrición Completa Multi Vitaminas</h2>
+        </div>
+        <div class="item-controls">
+          <div class="qty-wrapper">
+            <label>Cantidad</label>
+            <input type="number" class="qty-input">
+          </div>
+        </div>
+        <div class="item-pricing">
+          <!-- Uso de Inline Style para resaltar el precio actual -->
+          <span class="price-current" style="color: var(--wine);">S/28.00</span>
+        </div>
+      </article>
+
+      <!-- Producto 2 (Ejemplo sin descuento) -->
+      <article class="carrito-item">
+        <div class="item-img">
+          <img src="../images/Images_Accesorios/19.png" alt="Clean Paws">
+        </div>
+        <div class="item-info">
+          <div class="item-brand">CLEAN PAWS</div>
+          <h2 class="item-name">Arenero Cerrado Premium con Tapa y Filtro Antiodor</h2>
+        </div>
+        <div class="item-controls">
+          <div class="qty-wrapper">
+            <label>Cantidad</label>
+            <input type="number" class="qty-input">
+          </div>
+        </div>
+        <div class="item-pricing">
+          <!-- Uso de Inline Style para resaltar el precio actual -->
+          <span class="price-current" style="color: var(--wine);">S/28.00</span>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- COLUMNA DERECHA: RESUMEN -->
+    <aside class="carrito-summary">
+
+      <!-- Sección de Cupón -->
+      <div class="summary-card coupon-box">
+        <h3>¿Tienes un cupón?</h3>
+        <div class="coupon-form">
+          <input type="text" placeholder="Código cupón">
+          <button class="btn-apply">Aplicar</button>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h3>Redes Sociales</h3>
-        <ul>
-          <li><img src="../images/Imagenes_Logo/2.png" alt="Insta"> <a href="https://instagram.com">Instagram</a></li>
-          <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a href="https://facebook.com">Facebook</a></li>
-          <li><img src="../images/Imagenes_Logo/1.png"" alt="Whatsapp"><a href="https://wa.me/51946414833">WhatsApp</a></li>
-        </ul>
+      <!-- Totales -->
+      <div class="summary-card totals-box">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <span>S/58.00</span>
+        </div>
+        <div class="total-row">
+          <span>Gastos de envío</span>
+          <span class="free-shipping">Gratis</span>
+        </div>
+        <div class="total-row final">
+          <span>Total</span>
+          <span class="total-price">S/58.00</span>
+        </div>
+
+        <button class="btn-checkout">
+          Hacer pedido <span class="arrow">→</span>
+        </button>
+
+        <p class="secure-text"> Compra segura encriptada</p>
       </div>
 
-      <div class="footer-col">
-        <h3>Contacto</h3>
-        <p>+51 946 414 833</p>
-        <p>dollyshousen@gmail.com</p>
-        <p>Lun–Sab: 9am a 7pm</p>
-      </div>
+    </aside>
+  </div>
+</div>
 
-      <div class="footer-col">
-        <h3>Encuéntranos</h3>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
-          title="Mapa"></iframe>
-        <p>Jr. A. A. Cáceres 312, Alto Selva Alegre 04003</p>
-      </div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
+
+    <div class="footer-col">
+      <h3> Navegación</h3>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Productos_Accesorios.html">Accesorios</a></li>
+        <li><a href="Productos_Alimentos.html">Alimentos</a></li>
+        <li><a href="Productos_Alimentos.html">Mascotas Pequeñas</a></li>
+        <li><a href="Productos_Aves.html">Aves</a></li>
+        <li><a href="Nosotros.html">Nosotros</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+      </ul>
     </div>
-    <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
-  </footer>
+
+    <div class="footer-col">
+      <h3>Redes Sociales</h3>
+      <ul>
+        <li><img src="../images/Imagenes_Logo/2.png" alt="Insta"> <a href="https://instagram.com">Instagram</a></li>
+        <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a href="https://facebook.com">Facebook</a></li>
+        <li><img src="../images/Imagenes_Logo/1.png"" alt=" Whatsapp"><a href="https://wa.me/51946414833">WhatsApp</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contacto</h3>
+      <p>+51 946 414 833</p>
+      <p>dollyshousen@gmail.com</p>
+      <p>Lun–Sab: 9am a 7pm</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Encuéntranos</h3>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
+        title="Mapa"></iframe>
+      <p>Jr. A. A. Cáceres 312, Alto Selva Alegre 04003</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
+</footer>
 </body>
 
 </html>

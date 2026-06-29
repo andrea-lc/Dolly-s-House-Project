@@ -587,7 +587,7 @@ footer {
 }
 
 /* ============================================================
-   PAGE: INDEX
+  PAGE: INDEX
    ============================================================ */
 
 /* ─── HERO BANNER ───────────────────────────────────────────── */
@@ -606,8 +606,6 @@ footer {
 .hero-slide {
   min-width: 100%;
   position: relative;
-  /* ¡Aquí está el truco! Ya no ponemos altura fija ni background-image. 
-     La altura la va a definir la etiqueta <img> automáticamente. */
 }
 
 /* La imagen actúa como fondo, pero respeta sus proporciones reales */
@@ -619,8 +617,8 @@ footer {
   z-index: 1;
 }
 
-/* Mantenemos tu overlay degradado para que el texto blanco resalte */
-.hero-slide::before {
+/* Efecto de degradado en el banner */
+.hero-slide-efecto {
   content: '';
   position: absolute;
   inset: 0;
