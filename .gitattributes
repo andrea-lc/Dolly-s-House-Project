@@ -1,1 +1,2 @@
+*.mp4 filter=lfs diff=lfs merge=lfs -text
 Proyecto/Proyecto/public_html/videos/videos_Blog/*.mp4 filter=lfs diff=lfs merge=lfs -text
