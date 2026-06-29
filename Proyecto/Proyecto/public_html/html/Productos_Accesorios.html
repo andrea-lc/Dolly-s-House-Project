@@ -147,53 +147,29 @@
             <!-- SIDEBAR -->
             <aside class="sidebar-filtros">
                 <h3>Filtros</h3>
-                <button class="btn-borrar" onclick="clearFilters()">✕ Borrar filtros</button>
+                <!-- 9Botón para borrar todos los filtros -->
+                <button class="btn-borrar" id="btn-borrar" onclick="borrarFiltros()">✕ Borrar filtros</button>
 
                 <div class="filtro-bloque">
-                    <div class="filtro-titulo">Tipo de Accesorio</div>
+                    <div class="filtro-titulo">Categoría</div>
                     <ul class="filtro-opciones">
-                        <li><input type="checkbox" id="f-alimentos"> Collares</li>
-                        <li><input type="checkbox" id="f-pequeños"> Juguetes</li>
-                        <li><input type="checkbox" id="f-aves"> Ropa</li>
-                        <li><input type="checkbox" id="f-corral"> Jaulas</li>
-                    </ul>
-                </div>
-
-                <div class="filtro-bloque">
-                    <div class="filtro-titulo">Tipo de Mascota</div>
-                    <ul class="filtro-opciones">
-                        <li><input type="checkbox" id="f-perro"> 🐕 Perro</li>
-                        <li><input type="checkbox" id="f-gato"> 🐈 Gato</li>
-                        <li><input type="checkbox" id="f-ave2"> 🦜 Ave</li>
-                        <li><input type="checkbox" id="f-hamster"> 🐹 Hámster</li>
-                    </ul>
-                </div>
-
-                <div class="filtro-bloque">
-                    <div class="filtro-titulo">Material</div>
-                    <ul class="filtro-opciones">
-                        <li><input type="checkbox" id="f-nylon"> Nylon resistente</li>
-                        <li><input type="checkbox" id="f-cuero"> Cuero</li>
-                        <li><input type="checkbox" id="f-algodon"> Algodon</li>
-                        <li><input type="checkbox" id="f-poliester"> Poliéster</li>
-                        <li><input type="checkbox" id="f-lana"> Lana</li>
+                        <!-- 8Escuchamos los cambios de los checkboxes de categoría -->
+                        <li><input type="checkbox" id="collares" onchange="aplicarFiltros()"> Collares
+                        </li>
+                        <li><input type="checkbox" id="camitas" onchange="aplicarFiltros()"> Camitas</li>
+                        <li><input type="checkbox" id="higiene" onchange="aplicarFiltros()"> Higiene</li>
+                        <li><input type="checkbox" id="otros" onchange="aplicarFiltros()"> Otros</li>
                     </ul>
                 </div>
 
                 <div class="filtro-bloque">
                     <div class="filtro-titulo">Precio</div>
                     <ul class="filtro-opciones">
-                        <li><input type="checkbox" id="f-p1"> S/. 0 – S/. 20</li>
-                        <li><input type="checkbox" id="f-p2"> S/. 21 – S/. 50</li>
-                        <li><input type="checkbox" id="f-p3"> S/. 51 – S/. 100</li>
-                        <li><input type="checkbox" id="f-p4"> S/. 100 a más</li>
-                    </ul>
-                </div>
-
-                <div class="filtro-bloque">
-                    <div class="filtro-titulo">Oferta</div>
-                    <ul class="filtro-opciones">
-                        <li><input type="checkbox" id="f-oferta"> Solo ofertas</li>
+                        <!-- Escuchamos los cambios de los checkboxes de precio -->
+                        <li><input type="checkbox" id="f-p1" onchange="aplicarFiltros()"> S/. 0 – S/. 20</li>
+                        <li><input type="checkbox" id="f-p2" onchange="aplicarFiltros()"> S/. 21 – S/. 50</li>
+                        <li><input type="checkbox" id="f-p3" onchange="aplicarFiltros()"> S/. 51 – S/. 100</li>
+                        <li><input type="checkbox" id="f-p4" onchange="aplicarFiltros()"> S/. 100 a más</li>
                     </ul>
                 </div>
             </aside>
@@ -201,41 +177,40 @@
             <!-- PRODUCTOS -->
             <div class="productos-area">
                 <div class="productos-header">
-                    <p class="resultados">20 resultados encontrados</p>
-                    <select class="ordenar">
-                        <option>Ordenar por</option>
-                        <option>Menor precio</option>
-                        <option>Mayor precio</option>
-                        <option>Más vendidos</option>
-                        <option>Novedades</option>
+                    <p class="resultados" id="resultados">20 resultados encontrados</p>
+                    <!-- Escuchamos el cambio del select de ordenar -->
+                    <select class="ordenar" id="ordenar" onchange="aplicarFiltros()">
+                        <option value="">Ordenar por</option>
+                        <option value="menor">Menor precio</option>
+                        <option value="mayor">Mayor precio</option>
                     </select>
                 </div>
 
-                <div class="grid-productos">
+                <div class="grid-productos" id="grid-productos">
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="collares" data-precio="20">
                         <img src="../images/Images_Accesorios/1.png" alt="Kit Diversión Total">
                         <div class="card-body">
                             <p class="marca">PETJOY</p>
                             <p class="nombre">Kit Diversión Total: Mordedores, Pelotas y Accesorios Varios</p>
-                            <p class="precio">S/. 89.90</p>
+                            <p class="precio">S/. 20.00</p>
                             <a class="btn-comprar">Agregar al carrito</a>
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="otros" data-precio="100">
                         <div class="etiqueta oferta">20% OFF</div>
                         <img src="../images/Images_Accesorios/2.png" alt="Carrito de Paseo">
                         <div class="card-body">
                             <p class="marca">TRAVEL DOG</p>
                             <p class="nombre">Carrito de Paseo Plegable Premium con Ruedas 360°</p>
                             <p class="precio-tachado"><s>S/. 299.00</s></p>
-                            <p class="precio">S/. 239.20</p>
+                            <p class="precio">S/. 100.200</p>
                             <a class="btn-comprar">Agregar al carrito</a>
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="collares" data-precio="30">
                         <img src="../images/Images_Accesorios/3.png" alt="Collar Nylon">
                         <div class="card-body">
                             <p class="marca">GLAMOUR PET</p>
@@ -245,7 +220,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="collares" data-precio="27.5">
                         <div class="etiqueta liquidacion">50% OFF</div>
                         <img src="../images/Images_Accesorios/4.png" alt="Collar Personalizable con Placa">
                         <div class="card-body">
@@ -257,7 +232,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="collares" data-precio="32.00">
                         <img src="../images/Images_Accesorios/5.png" alt="Collar Personalizado">
                         <div class="card-body">
                             <p class="marca">BLING PAWS</p>
@@ -267,7 +242,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="collares" data-precio="20">
                         <div class="etiqueta regalo">REGALO</div>
                         <img src="../images/Images_Accesorios/6.png" alt="Collar Táctico">
                         <div class="card-body">
@@ -278,7 +253,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="collares" data-precio="10.5">
                         <img src="../images/Images_Accesorios/7.png" alt="Collar de Seguridad">
                         <div class="card-body">
                             <p class="marca">KITTY SAFE</p>
@@ -288,7 +263,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="collares" data-precio="25">
                         <img src="../images/Images_Accesorios/8.png" alt="Collar de Gato">
                         <div class="card-body">
                             <p class="marca">FELINE CHARM</p>
@@ -298,7 +273,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="collares" data-precio="25">
                         <div class="etiqueta oferta">10% OFF</div>
                         <img src="../images/Images_Accesorios/9.png"
                             alt="Collar con Funda para Rastreador GPS y Campana">
@@ -311,7 +286,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="otros" data-precio="10">
                         <img src="../images/Images_Accesorios/10.png" alt="Arnés para Hámsters y Cobayas">
                         <div class="card-body">
                             <p class="marca">LITTLE EXPLORER</p>
@@ -321,7 +296,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="collares" data-precio="22">
                         <img src="../images/Images_Accesorios/11.png" alt="Collar Cojín Anti-Estrés para Gatos">
                         <div class="card-body">
                             <p class="marca">TOASTY PETS</p>
@@ -331,7 +306,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="camitas" data-precio="30">
                         <img src="../images/Images_Accesorios/12.png" alt="Cueva Nido Acolchada para Erizos">
                         <div class="card-body">
                             <p class="marca">EXOTIC REST</p>
@@ -341,7 +316,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="camitas" data-precio="48">
                         <img src="../images/Images_Accesorios/13.png" alt="Cama Redonda">
                         <div class="card-body">
                             <p class="marca">SNUGGLE PETS</p>
@@ -351,7 +326,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="otros" data-precio="15">
                         <img src="../images/Images_Accesorios/14.png" alt="Suéter Térmico de Forro Polar para Loro">
                         <div class="card-body">
                             <p class="marca">BIRDIE STYLE</p>
@@ -361,7 +336,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="higiene" data-precio="29.9">
                         <img src="../images/Images_Accesorios/15.png" alt="Kit Higiene Bucal">
                         <div class="card-body">
                             <p class="marca">VET DENTAL</p>
@@ -371,7 +346,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="otros" data-precio="50">
                         <img src="../images/Images_Accesorios/16.png" alt="Kit Nuevo Hogar">
                         <div class="card-body">
                             <p class="marca">COFAN HOME</p>
@@ -381,7 +356,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="higiene" data-precio="23">
                         <img src="../images/Images_Accesorios/17.png" alt="Set de Deslanado Intensivo">
                         <div class="card-body">
                             <p class="marca">SHED MASTER</p>
@@ -391,7 +366,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="higiene" data-precio="30">
                         <img src="../images/Images_Accesorios/18.png" alt="Kit de Aseo y Mantenimiento">
                         <div class="card-body">
                             <p class="marca">PET GEAR PRO</p>
@@ -401,7 +376,7 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="higiene" data-precio="28">
                         <img src="../images/Images_Accesorios/19.png" alt="Arenero Cerrado Premium">
                         <div class="card-body">
                             <p class="marca">CLEAN PAWS</p>
@@ -411,12 +386,12 @@
                         </div>
                     </div>
 
-                    <div class="producto-card">
+                    <div class="producto-card" data-categoria="higiene" data-precio="45">
                         <img src="../images/Images_Accesorios/20.png" alt="baño ecológico para perros">
                         <div class="card-body">
                             <p class="marca">GREEN PAWS</p>
                             <p class="nombre">Baño Ecológico para Perros con Césped Artificial y Marco de Madera</p>
-                            <p class="precio">S/. 125.00</p>
+                            <p class="precio">S/. 45.00</p>
                             <a class="btn-comprar">Agregar al carrito</a>
                         </div>
                     </div>
@@ -452,7 +427,7 @@
                             href="https://instagram.com">Instagram</a></li>
                     <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a
                             href="https://facebook.com">Facebook</a></li>
-                    <li><img src="../images/Imagenes_Logo/1.png"" alt=" Whatsapp"><a
+                    <li><img src="../images/Imagenes_Logo/1.png" alt=" Whatsapp"><a
                             href="https://wa.me/51946414833">WhatsApp</a></li>
                 </ul>
             </div>
@@ -474,6 +449,83 @@
         </div>
         <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
     </footer>
+
+    <script>
+        /* ══════════════════════════════════════════
+            PRODUCTOS EN GENERAL
+           ══════════════════════════════════════════ */
+        /*   Barra de filtros para buscar productos y boton de filtrado de precios*/
+
+        // Guardamos todos los elementos que vamos a usar
+        var productos = document.querySelectorAll('.producto-card'); // NodeList (similar a arreglo)
+        var checksCategoria = document.querySelectorAll('#collares, #camitas, #otros, #higiene'); // NodeList
+        var checksPrecio = document.querySelectorAll('#f-p1, #f-p2, #f-p3, #f-p4'); // NodeList
+        var selectOrdenar = document.getElementById('ordenar');
+        var btnBorrar = document.getElementById('btn-borrar'); // Botón eliminar filtros
+        var contador = document.getElementById('resultados');
+        var grid = document.getElementById('grid-productos');
+
+
+        //  Función principal: filtra los productos
+        function aplicarFiltros() {
+            var categorias = obtenerCategoriasMarcadas();
+            var rangos = obtenerRangosMarcados();
+            var visibles = 0;
+
+            // Recorremos cada producto
+            for (var i = 0; i < productos.length; i++) { // Estructura repetitiva FOR
+                var prod = productos[i];
+
+                // Leemos sus datos (categoria y precio)
+                var cat = prod.getAttribute('data-categoria');
+                var precio = parseFloat(prod.getAttribute('data-precio')); // Conversión String a Double
+
+                // Revisamos si pasa ambos filtros
+                var pasaCat = categoriaValida(cat, categorias);
+                var pasaPrec = precioEnRango(precio, rangos);
+
+                // Si pasa ambos, lo mostramos. Si no, lo ocultamos.
+                if (pasaCat == true && pasaPrec == true) { // IF simple con operador lógico AND
+                    prod.style.display = '';
+                    visibles = visibles + 1; // Operación matemática: adición
+                } else { // ELSE (condicional doble IF-ELSE)
+                    prod.style.display = 'none';
+                }
+            }
+
+            // Actualizamos el contador de resultados
+            if (visibles == 1) { // IF-ELSE doble
+                contador.textContent = visibles + " resultado encontrado"; // Concatenación de cadenas
+            } else {
+                contador.textContent = visibles + " resultados encontrados"; // Concatenación de cadenas
+            }
+
+            // Después de filtrar, ordenamos
+            ordenarProductos();
+        }
+
+
+        // 9Botón para borrar todos los filtros
+        function borrarFiltros() { // Evento click del botón eliminar
+            // Desmarcamos todos los checkboxes de categoría
+            for (var i = 0; i < checksCategoria.length; i++) { // Estructura repetitiva FOR
+                checksCategoria[i].checked = false;
+            }
+
+            // Desmarcamos todos los checkboxes de precio
+            for (var i = 0; i < checksPrecio.length; i++) { // Estructura repetitiva FOR
+                checksPrecio[i].checked = false;
+            }
+
+            // Reseteamos el select
+            selectOrdenar.value = '';
+
+            // Volvemos a aplicar filtros (mostrará todo)
+            aplicarFiltros();
+        }
+    </script>
+    <!-- Funciones auxiliares -->
+    <script src="../js/javaScript.js"></script>
 </body>
 
 </html>

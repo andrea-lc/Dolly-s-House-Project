@@ -147,25 +147,28 @@
       <!-- SIDEBAR -->
       <aside class="sidebar-filtros">
         <h3>Filtros</h3>
-        <button class="btn-borrar" id="btn-borrar">✕ Borrar filtros</button>
+        <!-- 9Botón para borrar todos los filtros -->
+        <button class="btn-borrar" id="btn-borrar" onclick="borrarFiltros()">✕ Borrar filtros</button>
 
         <div class="filtro-bloque">
           <div class="filtro-titulo">Categoría</div>
           <ul class="filtro-opciones">
-            <li><input type="checkbox" id="alimentos"> Alimentos para mascotas</li>
-            <li><input type="checkbox" id="pequenos"> Animales pequeños</li>
-            <li><input type="checkbox" id="aves"> Alimento para Aves</li>
-            <li><input type="checkbox" id="corral"> Aves de corral</li>
+            <!-- 8Escuchamos los cambios de los checkboxes de categoría -->
+            <li><input type="checkbox" id="alimentos" onchange="aplicarFiltros()"> Alimentos para mascotas</li>
+            <li><input type="checkbox" id="pequenos" onchange="aplicarFiltros()"> Animales pequeños</li>
+            <li><input type="checkbox" id="aves" onchange="aplicarFiltros()"> Alimento para Aves</li>
+            <li><input type="checkbox" id="corral" onchange="aplicarFiltros()"> Aves de corral</li>
           </ul>
         </div>
 
         <div class="filtro-bloque">
           <div class="filtro-titulo">Precio</div>
           <ul class="filtro-opciones">
-            <li><input type="checkbox" id="f-p1"> S/. 0 – S/. 20</li>
-            <li><input type="checkbox" id="f-p2"> S/. 21 – S/. 50</li>
-            <li><input type="checkbox" id="f-p3"> S/. 51 – S/. 100</li>
-            <li><input type="checkbox" id="f-p4"> S/. 100 a más</li>
+            <!-- Escuchamos los cambios de los checkboxes de precio -->
+            <li><input type="checkbox" id="f-p1" onchange="aplicarFiltros()"> S/. 0 – S/. 20</li>
+            <li><input type="checkbox" id="f-p2" onchange="aplicarFiltros()"> S/. 21 – S/. 50</li>
+            <li><input type="checkbox" id="f-p3" onchange="aplicarFiltros()"> S/. 51 – S/. 100</li>
+            <li><input type="checkbox" id="f-p4" onchange="aplicarFiltros()"> S/. 100 a más</li>
           </ul>
         </div>
       </aside>
@@ -174,7 +177,8 @@
       <div class="productos-area">
         <div class="productos-header">
           <p class="resultados" id="resultados">10 resultados encontrados</p>
-          <select class="ordenar" id="ordenar">
+          <!-- Escuchamos el cambio del select de ordenar -->
+          <select class="ordenar" id="ordenar" onchange="aplicarFiltros()">
             <option value="">Ordenar por</option>
             <option value="menor">Menor precio</option>
             <option value="mayor">Mayor precio</option>
@@ -344,6 +348,83 @@
     </div>
     <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
   </footer>
+
+  <script>
+    /* ══════════════════════════════════════════
+        PRODUCTOS EN GENERAL
+       ══════════════════════════════════════════ */
+    /*   Barra de filtros para buscar productos y boton de filtrado de precios*/
+
+    // Guardamos todos los elementos que vamos a usar
+    var productos = document.querySelectorAll('.producto-card'); // NodeList (similar a arreglo)
+    var checksCategoria = document.querySelectorAll('#alimentos, #pequenos, #aves, #corral, #conejo, #hamster, #chinchilla, #erizo'); // NodeList
+    var checksPrecio = document.querySelectorAll('#f-p1, #f-p2, #f-p3, #f-p4'); // NodeList
+    var selectOrdenar = document.getElementById('ordenar');
+    var btnBorrar = document.getElementById('btn-borrar'); // Botón eliminar filtros
+    var contador = document.getElementById('resultados');
+    var grid = document.getElementById('grid-productos');
+
+
+    //  Función principal: filtra los productos
+    function aplicarFiltros() {
+      var categorias = obtenerCategoriasMarcadas();
+      var rangos = obtenerRangosMarcados();
+      var visibles = 0;
+
+      // Recorremos cada producto
+      for (var i = 0; i < productos.length; i++) { // Estructura repetitiva FOR
+        var prod = productos[i];
+
+        // Leemos sus datos (categoria y precio)
+        var cat = prod.getAttribute('data-categoria');
+        var precio = parseFloat(prod.getAttribute('data-precio')); // Conversión String a Double
+
+        // Revisamos si pasa ambos filtros
+        var pasaCat = categoriaValida(cat, categorias);
+        var pasaPrec = precioEnRango(precio, rangos);
+
+        // Si pasa ambos, lo mostramos. Si no, lo ocultamos.
+        if (pasaCat == true && pasaPrec == true) { // IF simple con operador lógico AND
+          prod.style.display = '';
+          visibles = visibles + 1; // Operación matemática: adición
+        } else { // ELSE (condicional doble IF-ELSE)
+          prod.style.display = 'none';
+        }
+      }
+
+      // Actualizamos el contador de resultados
+      if (visibles == 1) { // IF-ELSE doble
+        contador.textContent = visibles + " resultado encontrado"; // Concatenación de cadenas
+      } else {
+        contador.textContent = visibles + " resultados encontrados"; // Concatenación de cadenas
+      }
+
+      // Después de filtrar, ordenamos
+      ordenarProductos();
+    }
+
+
+    // 9Botón para borrar todos los filtros
+    function borrarFiltros() { // Evento click del botón eliminar
+      // Desmarcamos todos los checkboxes de categoría
+      for (var i = 0; i < checksCategoria.length; i++) { // Estructura repetitiva FOR
+        checksCategoria[i].checked = false;
+      }
+
+      // Desmarcamos todos los checkboxes de precio
+      for (var i = 0; i < checksPrecio.length; i++) { // Estructura repetitiva FOR
+        checksPrecio[i].checked = false;
+      }
+
+      // Reseteamos el select
+      selectOrdenar.value = '';
+
+      // Volvemos a aplicar filtros (mostrará todo)
+      aplicarFiltros();
+    }
+  </script>
+
+  <!-- Funciones auxiliares -->
   <script src="../js/javaScript.js"></script>
 </body>
 

@@ -154,7 +154,7 @@
                 <div class="section-line"></div>
                 <p class="section-subtitle">Únete a la familia Dolly's House 🐶🐱</p>
 
-                <form id="form-registro" class="auth-form" novalidate>
+                <form id="form-registro" class="auth-form" novalidate onsubmit="validarRegistro(event)">
 
                     <!-- Nombre completo -->
                     <div class="form-group">
@@ -174,8 +174,10 @@
                     <div class="form-group">
                         <label for="password-registro">Contraseña</label>
                         <div class="password-wrap">
-                            <input type="password" id="password-registro" placeholder="Mínimo 6 caracteres" required>
-                            <button type="button" class="btn-eye" id="toggle-pass-reg">👁</button>
+                            <input type="password" id="password-registro" placeholder="Mínimo 6 caracteres" required
+                                oninput="actualizarFuerza(this.value)"> <button type="button" class="btn-eye" <button
+                                type="button" class="btn-eye" id="toggle-pass-reg"
+                                onclick="activarOjo('toggle-pass-reg', 'password-registro')">👁</button>
                         </div>
                         <span class="error-msg" id="error-pass-reg"></span>
                         <!-- Barra de fuerza de contraseña -->
@@ -258,7 +260,103 @@
         <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
     </footer>
     <script src="../js/javaScript.js"></script>
+    <script>
+        /*  VALIDACIÓN DEL REGISTRO */
+        function validarRegistro(e) {
+            e.preventDefault();
 
+            let nombre = document.getElementById("nombre").value.trim();
+            let email = document.getElementById("email-registro").value.trim();
+            let pass = document.getElementById("password-registro").value.trim();
+            let confirm = document.getElementById("password-confirm").value.trim();
+            let terminos = document.getElementById("terminos").checked;   // USO DE TIPO BOOLEAN
+            let valido = true;
+
+            // Limpiar errores previos
+            limpiarError("error-nombre");
+            limpiarError("error-email-reg");
+            limpiarError("error-pass-reg");
+            limpiarError("error-confirm");
+            limpiarError("error-terminos");
+
+            // USO DE IF SIMPLE — Valida nombre vacío
+            if (nombre === "") {
+                mostrarError("error-nombre", "El nombre es obligatorio");
+                valido = false;
+            }
+
+            // USO DE IF ELSE DOBLE — Valida email
+            if (email === "") {
+                mostrarError("error-email-reg", "El correo es obligatorio");
+                valido = false;
+            } else if (!emailValido(email)) {
+                mostrarError("error-email-reg", "Correo no válido");
+                valido = false;
+            }
+
+            // USO DE IF ELSE IF ANIDADO — Valida contraseña
+            if (pass === "") {
+                mostrarError("error-pass-reg", "La contraseña es obligatoria");
+                valido = false;
+            } else if (pass.length < 6) {
+                mostrarError("error-pass-reg", "Mínimo 6 caracteres");
+                valido = false;
+            }
+
+            // USO DE IF SIMPLE — Compara contraseñas
+            if (pass !== confirm) {                    // USO DE OPERADOR DE COMPARACIÓN !==
+                mostrarError("error-confirm", "Las contraseñas no coinciden");
+                valido = false;
+            }
+
+            // USO DE IF SIMPLE — Valida checkbox
+            if (!terminos) {                           // USO DE OPERADOR LÓGICO NOT (!)
+                mostrarError("error-terminos", "Acepta los términos");
+                valido = false;
+            }
+
+            if (valido) {
+                alert("🎉 Cuenta creada, bienvenida " + nombre);
+            }
+        }
+
+        // USO DE FUNCIONES — Actualiza la barra visual
+        // USO DE MANIPULACIÓN CSS VÍA JS — Cambia width y background
+        function actualizarFuerza(pass) {
+            let barra = document.getElementById("strength-fill");
+            let texto = document.getElementById("strength-text");
+            if (!barra || !texto) return;
+
+            if (pass.length === 0) {
+                barra.style.width = "0%";
+                barra.style.background = "#e2d5c0";
+                texto.textContent = "Escribe una contraseña";
+                return;
+            }
+
+            let nivel = nivelFuerza(calcularFuerza(pass));
+            barra.style.width = nivel.ancho;             // USO DE MANIPULACIÓN CSS
+            barra.style.background = nivel.color;
+            texto.textContent = nivel.texto;
+            texto.style.color = nivel.color;
+        }
+
+        /* MOSTRAR / OCULTAR CONTRASEÑA  */
+        // USO DE ADD EVENT LISTENER — Evento click (ahora llamado desde onclick en HTML)
+        function activarOjo(idBoton, idInput) {
+            let boton = document.getElementById(idBoton);
+            let input = document.getElementById(idInput);
+            if (!boton || !input) return;
+
+            // USO OF HASATTRIBUTE — Verifica atributo type
+            if (input.getAttribute("type") === "password") {
+                input.setAttribute("type", "text");      // USO DE SETATTRIBUTE
+            } else {
+                input.setAttribute("type", "password");  // USO DE SETATTRIBUTE
+                boton.textContent = "👁";
+            }
+        }
+    </script>
 </body>
 
 </html>

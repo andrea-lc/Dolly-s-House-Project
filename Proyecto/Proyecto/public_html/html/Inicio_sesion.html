@@ -147,7 +147,7 @@
             <div class="section-line"></div>
             <p class="section-subtitle">Ingresa a tu cuenta de Dolly's House 🐾</p>
 
-            <form id="form-login" class="auth-form" novalidate>
+            <form id="form-login" class="auth-form" novalidate onsubmit="validarLogin(event)">
                 <!-- Campo email -->
                 <div class="form-group">
                     <label for="email-login">Correo electrónico</label>
@@ -161,7 +161,7 @@
                     <label for="password-login">Contraseña</label>
                     <div class="password-wrap">
                         <input type="password" id="password-login" placeholder="••••••••" required>
-                        <button type="button" class="btn-eye" id="toggle-pass-login">👁</button>
+                        <button type="button" class="btn-eye" id="toggle-pass-login" onclick="activarOjo('toggle-pass-login', 'password-login')">👁</button>
                     </div>
                     <span class="error-msg" id="error-password"></span>
                 </div>
@@ -239,7 +239,61 @@
     <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
 </footer>
 <script src="../js/javaScript.js"></script>
+<script>
+    /* VALIDACIÓN DEL LOGIN */
+    // USO DE FUNCIONES CON PARÁMETROS — Recibe el evento del submit
+    function validarLogin(e) {
+        e.preventDefault();   // USO DE MÉTODOS DEL OBJETO EVENT
 
+        // USO DE INTERACCIÓN CON FORMULARIOS — Leer valor de inputs
+        let email = document.getElementById("email-login").value.trim();
+        let password = document.getElementById("password-login").value.trim();
+        let valido = true;   // USO DE TIPO BOOLEAN
+
+        limpiarError("error-email");
+        limpiarError("error-password");
+
+        // USO DE IF ELSE ANIDADO — Valida email vacío o inválido
+        if (email === "") {                        // USO DE OPERADOR DE COMPARACIÓN ===
+            mostrarError("error-email", "El correo es obligatorio");
+            valido = false;
+        } else if (!emailValido(email)) {          // USO DE IF ELSE IF ANIDADO
+            mostrarError("error-email", "Correo no válido");
+            valido = false;
+        }
+
+        // USO DE IF ELSE DOBLE — Valida contraseña
+        if (password === "") {
+            mostrarError("error-password", "La contraseña es obligatoria");
+            valido = false;
+        } else if (password.length < 6) {          // USO DE OPERADORES MATEMÁTICOS (COMPARACIÓN <)
+            mostrarError("error-password", "Mínimo 6 caracteres");
+            valido = false;
+        }
+
+        // USO DE IF SIMPLE — Si todo está bien
+        if (valido) {
+            // USO DE CONCATENACIÓN DE CADENAS — Une texto con +
+            alert("Bienvenida " + email + "!");
+        }
+    }
+
+    /* MOSTRAR / OCULTAR CONTRASEÑA  */
+    // USO DE ADD EVENT LISTENER — Evento click (ahora llamado desde onclick en HTML)
+    function activarOjo(idBoton, idInput) {
+        let boton = document.getElementById(idBoton);
+        let input = document.getElementById(idInput);
+        if (!boton || !input) return;
+
+        // USO OF HASATTRIBUTE — Verifica atributo type
+        if (input.getAttribute("type") === "password") {
+            input.setAttribute("type", "text");      // USO DE SETATTRIBUTE
+        } else {
+            input.setAttribute("type", "password");  // USO DE SETATTRIBUTE
+            boton.textContent = "👁";
+        }
+    }
+</script>
 </body>
 
 </html>

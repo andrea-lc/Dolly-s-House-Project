@@ -160,42 +160,30 @@
       <!-- SIDEBAR -->
       <aside class="sidebar-filtros">
         <h3>Filtros</h3>
-        <button class="btn-borrar">✕ Borrar filtros</button>
+        <!-- 9Botón para borrar todos los filtros -->
+        <button class="btn-borrar" id="btn-borrar" onclick="borrarFiltros()">✕ Borrar filtros</button>
 
         <div class="filtro-bloque">
           <div class="filtro-titulo">Categoría</div>
           <ul class="filtro-opciones">
-            <li><input type="checkbox"> Loros</li>
-            <li><input type="checkbox"> Canarios</li>
-            <li><input type="checkbox"> Periquitos</li>
-            <li><input type="checkbox"> Aves de corral</li>
-          </ul>
-        </div>
-
-        <div class="filtro-bloque">
-          <div class="filtro-titulo">Productos</div>
-          <ul class="filtro-opciones">
-            <li><input type="checkbox"> Semillas</li>
-            <li><input type="checkbox"> Jaulas</li>
-            <li><input type="checkbox"> Vitaminas</li>
-            <li><input type="checkbox"> Juguetes</li>
+            <!-- 8Escuchamos los cambios de los checkboxes de categoría -->
+            <li><input type="checkbox" id="jaulas" onchange="aplicarFiltros()"> Jaulas
+            </li>
+            <li><input type="checkbox" id="higiene" onchange="aplicarFiltros()">Higiene</li>
+            <li><input type="checkbox" id="juguetes" onchange="aplicarFiltros()"> Juguetes</li>
+            <li><input type="checkbox" id="comederoybebedero" onchange="aplicarFiltros()"> Bebedero y comedero</li>
+            <li><input type="checkbox" id="mochilas" onchange="aplicarFiltros()"> Mochilas</li>
           </ul>
         </div>
 
         <div class="filtro-bloque">
           <div class="filtro-titulo">Precio</div>
           <ul class="filtro-opciones">
-            <li><input type="checkbox"> S/. 0 – S/. 20</li>
-            <li><input type="checkbox"> S/. 21 – S/. 50</li>
-            <li><input type="checkbox"> S/. 51 – S/. 100</li>
-            <li><input type="checkbox"> S/. 100 a más</li>
-          </ul>
-        </div>
-
-        <div class="filtro-bloque">
-          <div class="filtro-titulo">Oferta</div>
-          <ul class="filtro-opciones">
-            <li><input type="checkbox"> Solo ofertas</li>
+            <!-- Escuchamos los cambios de los checkboxes de precio -->
+            <li><input type="checkbox" id="f-p1" onchange="aplicarFiltros()"> S/. 0 – S/. 20</li>
+            <li><input type="checkbox" id="f-p2" onchange="aplicarFiltros()"> S/. 21 – S/. 50</li>
+            <li><input type="checkbox" id="f-p3" onchange="aplicarFiltros()"> S/. 51 – S/. 100</li>
+            <li><input type="checkbox" id="f-p4" onchange="aplicarFiltros()"> S/. 100 a más</li>
           </ul>
         </div>
       </aside>
@@ -203,21 +191,18 @@
       <!-- PRODUCTOS -->
       <div class="productos-area">
         <div class="productos-header">
-          <p class="resultados">20 productos encontrados</p>
-
-          <select class="ordenar">
-            <option>Ordenar por</option>
-            <option>Menor precio</option>
-            <option>Mayor precio</option>
-            <option>Más vendidos</option>
-            <option>Novedades</option>
+          <p class="resultados" id="resultados">20 resultados encontrados</p>
+          <select class="ordenar" id="ordenar" onchange="aplicarFiltros()">
+            <option value="">Ordenar por</option>
+            <option value="menor">Menor precio</option>
+            <option value="mayor">Mayor precio</option>
           </select>
         </div>
 
-        <div class="grid-productos">
+        <div class="grid-productos" id="grid-productos">
 
           <!-- PRODUCTO 1 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="jaulas" data-precio="110">
             <img src="../images/Images_Aves/1.png" alt="Jaula Premium">
             <div class="card-body">
               <p class="marca">AviFood</p>
@@ -228,7 +213,7 @@
           </div>
 
           <!-- PRODUCTO 2 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="jaulas" data-precio="102">
             <div class="etiqueta oferta">15% OFF</div>
             <img src="../images/Images_Aves/2.png" alt="Jaula Dorada">
             <div class="card-body">
@@ -241,7 +226,7 @@
           </div>
 
           <!-- PRODUCTO 3 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="juguetes" data-precio="15">
             <img src="../images/Images_Aves/3.png" alt="Juguete de Bloques y Cuerdas">
             <div class="card-body">
               <p class="marca">FRESHBIRD</p>
@@ -252,7 +237,7 @@
           </div>
 
           <!-- PRODUCTO 4 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="juguetes" data-precio="9.80">
             <div class="etiqueta liquidacion">30% OFF</div>
             <img src="../images/Images_Aves/4.png" alt="Escalera de Cuerda y Madera">
             <div class="card-body">
@@ -265,7 +250,7 @@
           </div>
 
           <!-- PRODUCTO 5 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="juguetes" data-precio="12">
             <img src="../images/Images_Aves/5.png" alt="Escalera Rígida de Madera (Arcoíris)">
             <div class="card-body">
               <p class="marca">FRESHBIRD</p>
@@ -276,51 +261,52 @@
           </div>
 
           <!-- PRODUCTO 6 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="comederoybebedero" data-precio="29">
             <img src="../images/Images_Aves/6.png" alt="Nido de Cuerda de Algodón">
             <div class="card-body">
               <p class="marca">COZYPET</p>
-              <p class="nombre">Nido de Cuerda de Algodón Tejido para Cría y Descanso</p>
+              <p class="nombre">Comedor para Aves Tamaño Promedio</p>
               <p class="precio">S/. 29.00</p>
               <a class="btn-comprar">Agregar al carrito</a>
             </div>
           </div>
 
           <!-- PRODUCTO 7 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="comederoybebedero" data-precio="18.5">
             <div class="etiqueta regalo">Favorito</div>
             <img src="../images/Images_Aves/7.png" alt="Percha de Cuerda Moldeable">
             <div class="card-body">
               <p class="marca">FRESHBIRD</p>
-              <p class="nombre">Percha de Cuerda de Algodón Flexible Arcoíris L</p>
+              <p class="nombre">Bebedero de Color Azul 100ml</p>
               <p class="precio">S/. 18.50</p>
               <a class="btn-comprar">Agregar al carrito</a>
             </div>
           </div>
 
           <!-- PRODUCTO 8 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="higiene" data-precio="24.9">
             <img src="../images/Images_Aves/8.png" alt="Juguete de Bloques Grandes y Cuerda Saborizada">
             <div class="card-body">
               <p class="marca">FRESHBIRD</p>
-              <p class="nombre">uguete de Madera Maxi Destructible para Loros y Ninfas</p>
+              <p class="nombre">Vitaminas para Aves</p>
               <p class="precio">S/. 24.90</p>
               <a class="btn-comprar">Agregar al carrito</a>
             </div>
           </div>
+
           <!-- PRODUCTO 9 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="higiene" data-precio="22">
             <img src="../images/Images_Aves/9.png" alt="Hamaca / Nido de Tela Felpa (Túnel)">
             <div class="card-body">
               <p class="marca">COZYPET</p>
-              <p class="nombre">Hamaca Térmica de Felpa Suave Tipo Cabaña (Gris)</p>
-              <p class="precio">S/. 22P.00</p>
+              <p class="nombre">Set de Vitaminas y Cuidado para Aves</p>
+              <p class="precio">S/. 22.00</p>
               <a class="btn-comprar">Agregar al carrito</a>
             </div>
           </div>
 
           <!-- PRODUCTO 10 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="higiene" data-precio="40">
             <div class="etiqueta oferta">20% OFF</div>
             <img src="../images/Images_Aves/10.png" alt="Kit de Limpieza Men For San">
             <div class="card-body">
@@ -333,7 +319,7 @@
           </div>
 
           <!-- PRODUCTO 11 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="higiene" data-precio="34.50">
             <img src="../images/Images_Aves/11.png" alt="Kit de Limpieza Men For San">
             <div class="card-body">
               <p class="marca">MEN FOR SAN</p>
@@ -344,7 +330,7 @@
           </div>
 
           <!-- PRODUCTO 12 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="bebederoycomedero" data-precio="7.20">
             <div class="etiqueta liquidacion">40% OFF</div>
             <img src="../images/Images_Aves/12.png" alt="Bebedero de Tubo">
             <div class="card-body">
@@ -357,7 +343,7 @@
           </div>
 
           <!-- PRODUCTO 13 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="bebederoycomedero" data-precio="8.50">
             <img src="../images/Images_Aves/13.png" alt="Bebedero de Copa para Corral">
             <div class="card-body">
               <p class="marca">AGROTOOLS</p>
@@ -368,7 +354,7 @@
           </div>
 
           <!-- PRODUCTO 14 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="juguetes" data-precio="18">
             <img src="../images/Images_Aves/14.png" alt="Arnés Ajustable con Correa y Alitas para Ninfas">
             <div class="card-body">
               <p class="marca">PETJOY</p>
@@ -379,7 +365,7 @@
           </div>
 
           <!-- PRODUCTO 15 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="mochilas" data-precio="89">
             <div class="etiqueta regalo">Favorito</div>
             <img src="../images/Images_Aves/15.png" alt="Mochila Transportadora Azul">
             <div class="card-body">
@@ -391,7 +377,7 @@
           </div>
 
           <!-- PRODUCTO 16 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="mochilas" data-precio="79.90">
             <img src="../images/Images_Aves/16.png" alt="Mochila Transportadora Gris">
             <div class="card-body">
               <p class="marca">TRAVELBIRD</p>
@@ -402,7 +388,7 @@
           </div>
 
           <!-- PRODUCTO 17 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="bebederoycomedero" data-precio="15">
             <img src="../images/Images_Aves/17.png" alt="Comedero de Tolva">
             <div class="card-body">
               <p class="marca">AGROTOOLS</p>
@@ -413,7 +399,7 @@
           </div>
 
           <!-- PRODUCTO 18 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="bebederoycomedero" data-precio="41.50">
             <div class="etiqueta oferta">10% OFF</div>
             <img src="../images/Images_Aves/18.png" alt="Comedero Vintage">
             <div class="card-body">
@@ -426,7 +412,7 @@
           </div>
 
           <!-- PRODUCTO 19 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="higiene" data-precio="52">
             <img src="../images/Images_Aves/19.png" alt="Fregadero / Bañera Eléctrica">
             <div class="card-body">
               <p class="marca">FUNNYPET</p>
@@ -437,12 +423,12 @@
           </div>
 
           <!-- PRODUCTO 20 -->
-          <div class="producto-card">
+          <div class="producto-card" data-categoria="juguetes" data-precio="60">
             <div class="etiqueta liquidacion">25% OFF</div>
             <img src="../images/Images_Aves/20.png" alt="Kit aves">
             <div class="card-body">
               <p class="marca">BirdCare</p>
-              <p class="nombre">Kit Completo para el Cuidado de Aves</p>
+              <p class="nombre">Moño para Loros Tamaño Adaptable</p>
               <p class="precio-tachado"><s>S/. 80.00</s></p>
               <p class="precio">S/. 60.00</p>
               <a class="btn-comprar">Agregar al carrito</a>
@@ -498,6 +484,84 @@
     </div>
     <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
   </footer>
+
+  <script>
+    /* ══════════════════════════════════════════
+        PRODUCTOS EN GENERAL
+       ══════════════════════════════════════════ */
+    /*   Barra de filtros para buscar productos y boton de filtrado de precios*/
+
+    // Guardamos todos los elementos que vamos a usar
+    var productos = document.querySelectorAll('.producto-card'); // NodeList (similar a arreglo)
+    var checksCategoria = document.querySelectorAll('#jaulas, #higiene, #juguetes, #comederoybebedero,#mochilas'); // NodeList
+    var checksPrecio = document.querySelectorAll('#f-p1, #f-p2, #f-p3, #f-p4'); // NodeList
+    var selectOrdenar = document.getElementById('ordenar');
+    var btnBorrar = document.getElementById('btn-borrar'); // Botón eliminar filtros
+    var contador = document.getElementById('resultados');
+    var grid = document.getElementById('grid-productos');
+
+
+    //  Función principal: filtra los productos
+    function aplicarFiltros() {
+      var categorias = obtenerCategoriasMarcadas();
+      var rangos = obtenerRangosMarcados();
+      var visibles = 0;
+
+      // Recorremos cada producto
+      for (var i = 0; i < productos.length; i++) { // Estructura repetitiva FOR
+        var prod = productos[i];
+
+        // Leemos sus datos (categoria y precio)
+        var cat = prod.getAttribute('data-categoria');
+        var precio = parseFloat(prod.getAttribute('data-precio')); // Conversión String a Double
+
+        // Revisamos si pasa ambos filtros
+        var pasaCat = categoriaValida(cat, categorias);
+        var pasaPrec = precioEnRango(precio, rangos);
+
+        // Si pasa ambos, lo mostramos. Si no, lo ocultamos.
+        if (pasaCat == true && pasaPrec == true) { // IF simple con operador lógico AND
+          prod.style.display = '';
+          visibles = visibles + 1; // Operación matemática: adición
+        } else { // ELSE (condicional doble IF-ELSE)
+          prod.style.display = 'none';
+        }
+      }
+
+      // Actualizamos el contador de resultados
+      if (visibles == 1) { // IF-ELSE doble
+        contador.textContent = visibles + " resultado encontrado"; // Concatenación de cadenas
+      } else {
+        contador.textContent = visibles + " resultados encontrados"; // Concatenación de cadenas
+      }
+
+      // Después de filtrar, ordenamos
+      ordenarProductos();
+    }
+
+
+    // 9Botón para borrar todos los filtros
+    function borrarFiltros() { // Evento click del botón eliminar
+      // Desmarcamos todos los checkboxes de categoría
+      for (var i = 0; i < checksCategoria.length; i++) { // Estructura repetitiva FOR
+        checksCategoria[i].checked = false;
+      }
+
+      // Desmarcamos todos los checkboxes de precio
+      for (var i = 0; i < checksPrecio.length; i++) { // Estructura repetitiva FOR
+        checksPrecio[i].checked = false;
+      }
+
+      // Reseteamos el select
+      selectOrdenar.value = '';
+
+      // Volvemos a aplicar filtros (mostrará todo)
+      aplicarFiltros();
+    }
+  </script>
+
+  <!-- Funciones auxiliares -->
+  <script src="../js/javaScript.js"></script>
 </body>
 
 </html>
