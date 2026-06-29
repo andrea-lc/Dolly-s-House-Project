@@ -15,7 +15,7 @@
        }
   </style>
 </head>
-
+ 
   <!-- MARQUEE -->
   <div class="barra-top">
     <marquee behavior="scroll" direction="left">
@@ -23,7 +23,7 @@
       &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100!
     </marquee>
   </div>
-
+ 
   
   <!-- HEADER -->
   <input type="checkbox" id="menu-toggle" hidden>
@@ -41,7 +41,7 @@
       <a href="Carrito.html" class="carrito-link">
         <button class="carrito-btn">🛒 <span class="label">Carrito</span></button>
       </a>
-
+ 
     </div>
     <label for="menu-toggle" class="hamburger" aria-label="Menú">
       <span></span>
@@ -49,12 +49,12 @@
       <span></span>
     </label>
   </header>
-
+ 
   <!-- NAVEGACIÓN -->
   <div class="navegacion" id="div">
     <ul class="opciones">
       <li><a href="index.html">Inicio</a></li>
-
+ 
       <li><a href="Productos_Alimentos.html">Alimentos</a>
         <div class="dropdown-menu">
           <div class="drop-header">Alimentos por mascota</div>
@@ -141,26 +141,27 @@
           </div>
         </div>
       </li>
+      <li><a href="Recomendacion.html">Recomendaciones</a></li>
       <li><a href="Blog.html">Blog</a></li>
       <li><a href="Nosotros.html">Sobre Nosotros</a></li>
       <li><a href="Contacto.html">Contáctanos</a></li>
     </ul>
   </div>
-
+ 
 <!-- CARRITO  -->
-
+ 
   <div class="carrito-page">
     <div class="page-header">
       <h1 class="section-title">Mi Carrito</h1>
       <div class="section-line"></div>
     </div>
-
+ 
     <!-- Layout Principal: Grid -->
     <div class="carrito-layout">
-
+ 
       <!-- COLUMNA IZQUIERDA: ITEMS -->
       <section class="carrito-items">
-
+ 
         <!-- Producto 1 -->
         <article class="carrito-item">
           <div class="item-img">
@@ -173,16 +174,15 @@
           <div class="item-controls">
             <div class="qty-wrapper">
               <label>Cantidad</label>
-              <input type="number" class="qty-input">
+              <input type="number" class="qty-input" value="1" min="1" data-precio="28.00" oninput="calcularTotal()">
             </div>
           </div>
           <div class="item-pricing">
-            <!-- Uso de Inline Style para resaltar el precio actual -->
             <span class="price-current" style="color: var(--wine);">S/28.00</span>
           </div>
         </article>
-
-        <!-- Producto 2 (Ejemplo sin descuento) -->
+ 
+        <!-- Producto 2 -->
         <article class="carrito-item">
           <div class="item-img">
             <img src="../images/Images_Accesorios/19.png" alt="Clean Paws">
@@ -194,20 +194,19 @@
           <div class="item-controls">
             <div class="qty-wrapper">
               <label>Cantidad</label>
-              <input type="number" class="qty-input">
+              <input type="number" class="qty-input" value="1" min="1" data-precio="30.00" oninput="calcularTotal()">
             </div>
           </div>
           <div class="item-pricing">
-            <!-- Uso de Inline Style para resaltar el precio actual -->
-            <span class="price-current" style="color: var(--wine);">S/28.00</span>
+            <span class="price-current" style="color: var(--wine);">S/30.00</span>
           </div>
         </article>
-
+ 
       </section>
-
+ 
       <!-- COLUMNA DERECHA: RESUMEN -->
       <aside class="carrito-summary">
-
+ 
         <!-- Sección de Cupón -->
         <div class="summary-card coupon-box">
           <h3>¿Tienes un cupón?</h3>
@@ -216,12 +215,12 @@
             <button class="btn-apply">Aplicar</button>
           </div>
         </div>
-
+ 
         <!-- Totales -->
         <div class="summary-card totals-box">
           <div class="total-row">
             <span>Subtotal</span>
-            <span>S/58.00</span>
+            <span id="subtotal">S/58.00</span>
           </div>
           <div class="total-row">
             <span>Gastos de envío</span>
@@ -229,25 +228,25 @@
           </div>
           <div class="total-row final">
             <span>Total</span>
-            <span class="total-price">S/58.00</span>
+            <span class="total-price" id="total-final">S/58.00</span>
           </div>
-
+          <a href="Pagos.html">  
           <button class="btn-checkout">
             Hacer pedido <span class="arrow">→</span>
           </button>
-
+          </a>
           <p class="secure-text"> Compra segura encriptada</p>
         </div>
-
+ 
       </aside>
     </div>
   </div>
-
+ 
   <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
-
+ 
       <div class="footer-col">
         <h3> Navegación</h3>
         <ul>
@@ -260,7 +259,7 @@
           <li><a href="Contacto.html">Contacto</a></li>
         </ul>
       </div>
-
+ 
       <div class="footer-col">
         <h3>Redes Sociales</h3>
         <ul>
@@ -269,14 +268,14 @@
           <li><img src="../images/Imagenes_Logo/1.png"" alt="Whatsapp"><a href="https://wa.me/51946414833">WhatsApp</a></li>
         </ul>
       </div>
-
+ 
       <div class="footer-col">
         <h3>Contacto</h3>
         <p>+51 946 414 833</p>
         <p>dollyshousen@gmail.com</p>
         <p>Lun–Sab: 9am a 7pm</p>
       </div>
-
+ 
       <div class="footer-col">
         <h3>Encuéntranos</h3>
         <iframe
@@ -287,6 +286,23 @@
     </div>
     <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
   </footer>
+ 
+  <!-- JS inline: cálculo dinámico del carrito -->
+  <script>
+    function calcularTotal() {
+      var inputs = document.querySelectorAll('.qty-input');
+      var suma = 0;
+      inputs.forEach(function(inp) {
+        var qty   = Math.max(1, parseInt(inp.value) || 1);
+        var precio = parseFloat(inp.dataset.precio) || 0;
+        suma += qty * precio;
+      });
+      var txt = 'S/' + suma.toFixed(2);
+      document.getElementById('subtotal').textContent    = txt;
+      document.getElementById('total-final').textContent = txt;
+    }
+    // Calcular al cargar
+    calcularTotal();
+  </script>
 </body>
-
 </html>
