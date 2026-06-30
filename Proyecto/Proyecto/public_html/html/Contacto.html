@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +24,6 @@
       &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras mayores a S/100!
     </marquee>
   </div>
-
   <!-- HEADER -->
   <input type="checkbox" id="menu-toggle" hidden>
   <header class="site-header">
@@ -85,6 +83,7 @@
       </li>
 
       <li><a href="../html/Productos_Animales_Pequeños.html">Mascotas Pequeñas</a>
+
         <div class="dropdown-menu">
           <div class="drop-header">Mascotas pequeñas</div>
           <div class="dropdown-grid">
@@ -127,6 +126,8 @@
           </div>
         </div>
       </li>
+
+      <li><a href="Recomendacion.html">Recomendaciones</a></li>
       <li><a href="Blog.html">Blog</a></li>
       <li><a href="Nosotros.html">Sobre Nosotros</a></li>
       <li><a href="Contacto.html" class="active">Contáctanos</a></li>
@@ -137,6 +138,7 @@
     <h1 class="form-title">Contáctanos — Dolly's House</h1>
 
     <div class="form-card">
+
 
       <!-- COLUMNA IZQUIERDA -->
       <div class="form-col">
@@ -158,9 +160,10 @@
           <label for="correo">Correo electrónico</label>
           <input type="email" id="correo" placeholder="tu@correo.com">
         </div>
-        <button class="btn-submit" type="button">✉ ENVIAR MENSAJE</button>
-      </div>
 
+        <button class="btn-submit" type="button" onclick="validarFormulario()">✉ ENVIAR MENSAJE</button>
+      </div>
+ 
       <!-- COLUMNA DERECHA -->
       <div class="form-col">
         <div class="form-group">
@@ -178,14 +181,15 @@
           <textarea id="mensaje" rows="10" placeholder="Escribe tu mensaje aquí..."></textarea>
         </div>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
+
 
       <div class="footer-col">
         <h3> Navegación</h3>
@@ -227,6 +231,43 @@
     </div>
     <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
   </footer>
+ 
+  <!-- JS inline: validación del formulario -->
+  <script>
+    function validarFormulario() {
+      var nombre  = document.getElementById('nombre').value.trim();
+      var correo  = document.getElementById('correo').value.trim();
+      var asunto  = document.getElementById('asunto').value;
+      var mensaje = document.getElementById('mensaje').value.trim();
+ 
+      if (!nombre) { alert('Por favor ingresa tu nombre.'); return; }
+      if (!correo || !correo.includes('@')) { alert('Ingresa un correo válido.'); return; }
+      if (!asunto) { alert('Selecciona un asunto.'); return; }
+      if (!mensaje) { alert('Escribe tu mensaje.'); return; }
+ 
+      // Si todo está bien
+      mostrarConfirmacion();
+    }
+ 
+    function mostrarConfirmacion() {
+      var btn = document.querySelector('.btn-submit');
+      btn.textContent = '✅ Mensaje enviado';
+      btn.style.background = '#4caf50';
+      btn.disabled = true;
+ 
+      // Limpiar campos
+      ['nombre','apellidos','telefono','correo','mensaje'].forEach(function(id) {
+        document.getElementById(id).value = '';
+      });
+      document.getElementById('asunto').value = '';
+ 
+      setTimeout(function() {
+        btn.textContent = '✉ ENVIAR MENSAJE';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    }
+  </script>
 </body>
-
+ 
 </html>

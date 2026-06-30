@@ -83,8 +83,23 @@
         </div>
       </div>
     </li>
-
-    <li><a href="../html/Productos_Animales_Pequeños.html">Mascotas Pequeñas</a>
+    <li><a href="#">Mascotas Grandes</a>
+      <div class="dropdown-menu">
+        <div class="drop-header">Productos para mascotas grandes</div>
+        <div class="dropdown-grid">
+          <a href="#"><span class="drop-icon">🐕</span>Perros Grandes</a>
+          <a href="#"><span class="drop-icon">🦴</span>Snacks y Premios</a>
+          <a href="#"><span class="drop-icon">🥣</span>Comederos</a>
+          <a href="#"><span class="drop-icon">🛏️</span>Camas</a>
+          <a href="#"><span class="drop-icon">🎾</span>Juguetes Resistentes</a>
+          <a href="#"><span class="drop-icon">🦮</span>Correas y Arneses</a>
+          <a href="#"><span class="drop-icon">🧴</span>Higiene y Shampoo</a>
+          <a href="#"><span class="drop-icon">💊</span>Vitaminas y Salud</a>
+          <a href="#"><span class="drop-icon">🏠</span>Casas y Accesorios</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="#">Mascotas Pequeñas</a>
       <div class="dropdown-menu">
         <div class="drop-header">Mascotas pequeñas</div>
         <div class="dropdown-grid">
@@ -127,6 +142,7 @@
         </div>
       </div>
     </li>
+    <li><a href="Recomendacion.html">Recomendaciones</a></li>
     <li><a href="Blog.html">Blog</a></li>
     <li><a href="Nosotros.html">Sobre Nosotros</a></li>
     <li><a href="Contacto.html">Contáctanos</a></li>
@@ -159,16 +175,15 @@
         <div class="item-controls">
           <div class="qty-wrapper">
             <label>Cantidad</label>
-            <input type="number" class="qty-input">
+            <input type="number" class="qty-input" value="1" min="1" data-precio="28.00" oninput="calcularTotal()">
           </div>
         </div>
         <div class="item-pricing">
-          <!-- Uso de Inline Style para resaltar el precio actual -->
           <span class="price-current" style="color: var(--wine);">S/28.00</span>
         </div>
       </article>
 
-      <!-- Producto 2 (Ejemplo sin descuento) -->
+      <!-- Producto 2 -->
       <article class="carrito-item">
         <div class="item-img">
           <img src="../images/Images_Accesorios/19.png" alt="Clean Paws">
@@ -180,12 +195,11 @@
         <div class="item-controls">
           <div class="qty-wrapper">
             <label>Cantidad</label>
-            <input type="number" class="qty-input">
+            <input type="number" class="qty-input" value="1" min="1" data-precio="30.00" oninput="calcularTotal()">
           </div>
         </div>
         <div class="item-pricing">
-          <!-- Uso de Inline Style para resaltar el precio actual -->
-          <span class="price-current" style="color: var(--wine);">S/28.00</span>
+          <span class="price-current" style="color: var(--wine);">S/30.00</span>
         </div>
       </article>
 
@@ -207,7 +221,7 @@
       <div class="summary-card totals-box">
         <div class="total-row">
           <span>Subtotal</span>
-          <span>S/58.00</span>
+          <span id="subtotal">S/58.00</span>
         </div>
         <div class="total-row">
           <span>Gastos de envío</span>
@@ -215,13 +229,13 @@
         </div>
         <div class="total-row final">
           <span>Total</span>
-          <span class="total-price">S/58.00</span>
+          <span class="total-price" id="total-final">S/58.00</span>
         </div>
-
-        <button class="btn-checkout">
-          Hacer pedido <span class="arrow">→</span>
-        </button>
-
+        <a href="Pagos.html">
+          <button class="btn-checkout">
+            Hacer pedido <span class="arrow">→</span>
+          </button>
+        </a>
         <p class="secure-text"> Compra segura encriptada</p>
       </div>
 
@@ -240,7 +254,6 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="Productos_Accesorios.html">Accesorios</a></li>
         <li><a href="Productos_Alimentos.html">Alimentos</a></li>
-        <li><a href="Productos_Alimentos.html">Mascotas Pequeñas</a></li>
         <li><a href="Productos_Aves.html">Aves</a></li>
         <li><a href="Nosotros.html">Nosotros</a></li>
         <li><a href="Blog.html">Blog</a></li>
@@ -275,6 +288,24 @@
   </div>
   <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
 </footer>
+
+<!-- JS inline: cálculo dinámico del carrito -->
+<script>
+  function calcularTotal() {
+    var inputs = document.querySelectorAll('.qty-input');
+    var suma = 0;
+    inputs.forEach(function (inp) {
+      var qty = Math.max(1, parseInt(inp.value) || 1);
+      var precio = parseFloat(inp.dataset.precio) || 0;
+      suma += qty * precio;
+    });
+    var txt = 'S/' + suma.toFixed(2);
+    document.getElementById('subtotal').textContent = txt;
+    document.getElementById('total-final').textContent = txt;
+  }
+  // Calcular al cargar
+  calcularTotal();
+</script>
 </body>
 
 </html>
