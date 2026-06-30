@@ -2359,6 +2359,42 @@ PAGE: LOGIN / REGISTRO (AUTH)
   .breadcrumbs {
     padding: 0 24px;
   }
+  /*Inicio de sesion y registro*/
+    .auth-page {
+    padding: 30px 24px;
+  }
+
+  /* Contenedor pasa a 1 columna */
+  .auth-container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  /* Imagen arriba (order 1), formulario abajo (order 2) */
+  .auth-image-side {
+    order: 1;
+    min-height: 280px;
+  }
+
+  .auth-image-side img {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .auth-form-side {
+    order: 2;
+    padding: 40px 36px;
+  }
+
+  .auth-form-side .section-title {
+    font-size: 26px;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+  }
+  
 }
 
 /* ─── MÓVIL (≤600px) ────────────────────────────────────────── */
@@ -2502,7 +2538,7 @@ PAGE: LOGIN / REGISTRO (AUTH)
 
   /* Promo banner */
   .promo-banner {
-    margin: 0 16px 28px;
+    margin: 16px 28px;
     padding: 24px 18px;
     flex-direction: column;
     text-align: center;
@@ -2655,6 +2691,109 @@ PAGE: LOGIN / REGISTRO (AUTH)
 
   .marquesina-banner {
     padding: 10px 0;
+  }
+
+  /*inicio de sesion*/
+    .auth-page {
+    padding: 20px 14px;
+  }
+
+  .page-header {
+    margin-bottom: 20px;
+  }
+
+  .page-header .section-title {
+    font-size: 24px;
+  }
+
+  /* Contenedor en columna */
+  .auth-container {
+    grid-template-columns: 1fr;
+    border-radius: 14px;
+    min-height: auto;
+  }
+
+  /* Imagen más compacta en móvil */
+  .auth-image-side {
+    order: 1;
+    min-height: 180px;
+  }
+
+  .auth-image-side img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Formulario con padding reducido */
+  .auth-form-side {
+    order: 2;
+    padding: 28px 20px;
+  }
+
+  .auth-form-side .section-title {
+    font-size: 22px;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  /* Labels más pequeños */
+  .auth-form label {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  /* Inputs más compactos */
+  .auth-form input[type="text"],
+  .auth-form input[type="email"],
+  .auth-form input[type="password"] {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  /* Grupos de formulario */
+  .auth-form .form-group {
+    margin-bottom: 14px;
+  }
+
+  /* Checkbox y textos */
+  .check-group label {
+    font-size: 12px;
+  }
+
+  .check-group input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Botón submit */
+  .btn-submit {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  /* Enlace de cambio */
+  .auth-switch {
+    font-size: 12px;
+    margin-top: 16px;
+  }
+
+  /* Mensajes de error */
+  .error-msg {
+    font-size: 11px;
+  }
+
+  /* Barra de fuerza de contraseña */
+  .strength-bar {
+    margin-top: 6px;
+  }
+
+  #strength-text {
+    font-size: 10px;
   }
 }
 
