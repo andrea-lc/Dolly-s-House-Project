@@ -366,44 +366,57 @@
     /*   Barra de filtros para buscar productos y boton de filtrado de precios*/
 
     // Guardamos todos los elementos que vamos a usar
-    var productos = document.querySelectorAll('.producto-card'); // NodeList (similar a arreglo)
-    var checksCategoria = document.querySelectorAll('#alimentos, #pequenos, #aves, #corral, #conejo, #hamster, #chinchilla, #erizo'); // NodeList
-    var checksPrecio = document.querySelectorAll('#f-p1, #f-p2, #f-p3, #f-p4'); // NodeList
+    // con quertSelectorAll Busca todos los elementos HTML que tengan la clase "producto-card"...
+    // y los guarda en una lista como un arreglo.
+    var productos = document.querySelectorAll('.producto-card'); 
+    //guarda todos los checkboxes de categoria y precio en variables en una lista
+    var checksCategoria = document.querySelectorAll('#alimentos, #pequenos, #aves, #corral'); // NodeList
+    //guarda todos los checkboxes de precio en variables en una lista
+    var checksPrecio = document.querySelectorAll('#f-p1, #f-p2, #f-p3, #f-p4'); //precios
+    // Busca el menú desplegable con ID "ordenar"
     var selectOrdenar = document.getElementById('ordenar');
+    // busca el boton id
     var btnBorrar = document.getElementById('btn-borrar'); // Botón eliminar filtros
+    // busca el elemento donde se mostrara el texto de resultados
     var contador = document.getElementById('resultados');
+    //busca el contenedor principal donde se muestran los productos
     var grid = document.getElementById('grid-productos');
 
 
     //  Función principal: filtra los productos
     function aplicarFiltros() {
+      //llama a la funcion para obtener las casillas marcadas de categoria
       var categorias = obtenerCategoriasMarcadas();
+      //llama a la funcion para obtener las casillas marcadas de precio
       var rangos = obtenerRangosMarcados();
+      //contador para ver los productos que pasan los filtros
       var visibles = 0;
 
-      // Recorremos cada producto
+      // se recorre cada producto
       for (var i = 0; i < productos.length; i++) { // Estructura repetitiva FOR
-        var prod = productos[i];
+        var prod = productos[i]; //guarda cada producto en un arreglo
 
-        // Leemos sus datos (categoria y precio)
+        // guarda  sus datos (categoria y precio)
         var cat = prod.getAttribute('data-categoria');
         var precio = parseFloat(prod.getAttribute('data-precio')); // Conversión String a Double
 
         // Revisamos si pasa ambos filtros
+        //como parametros reciben la categoria del producto y todas las cateogrias disponibles
         var pasaCat = categoriaValida(cat, categorias);
         var pasaPrec = precioEnRango(precio, rangos);
 
         // Si pasa ambos, lo mostramos. Si no, lo ocultamos.
         if (pasaCat == true && pasaPrec == true) { // IF simple con operador lógico AND
-          prod.style.display = '';
-          visibles = visibles + 1; // Operación matemática: adición
+          prod.style.display = ''; //mantiene el producto visible
+          visibles = visibles + 1; // Operación matemática: añade a la cantidad de productos visibles que pasaron los filtros
         } else { // ELSE (condicional doble IF-ELSE)
-          prod.style.display = 'none';
+          prod.style.display = 'none'; // oculta el producto "no muestra el elemento"
         }
-      }
+      } 
 
       // Actualizamos el contador de resultados
       if (visibles == 1) { // IF-ELSE doble
+        //cambiamos el texto del contador según la cantidad de resultados
         contador.textContent = visibles + " resultado encontrado"; // Concatenación de cadenas
       } else {
         contador.textContent = visibles + " resultados encontrados"; // Concatenación de cadenas
@@ -414,11 +427,11 @@
     }
 
 
-    // 9Botón para borrar todos los filtros
+    // Botón para borrar todos los filtros
     function borrarFiltros() { // Evento click del botón eliminar
-      // Desmarcamos todos los checkboxes de categoría
+      // Desmarcamos todos los checkboxes de categoría,m las recorre con for
       for (var i = 0; i < checksCategoria.length; i++) { // Estructura repetitiva FOR
-        checksCategoria[i].checked = false;
+        checksCategoria[i].checked = false; //checked = false significa que desmarca la casilla
       }
 
       // Desmarcamos todos los checkboxes de precio
@@ -427,10 +440,10 @@
       }
 
       // Reseteamos el select
-      selectOrdenar.value = '';
+      selectOrdenar.value = '';  //pone el menu desplegable en su valor por defecto 
 
       // Volvemos a aplicar filtros (mostrará todo)
-      aplicarFiltros();
+      aplicarFiltros();//llama a la funcion aplicarFiltros() denuevo y como no hay nada marcado, mostrara todos los productos
     }
   </script>
 

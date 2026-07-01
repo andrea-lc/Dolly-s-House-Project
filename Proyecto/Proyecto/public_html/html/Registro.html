@@ -268,6 +268,7 @@
         function validarRegistro(e) {
             e.preventDefault();
 
+            //lee todo lo que escribio el usuario y lo guarda en variables
             let nombre = document.getElementById("nombre").value.trim();
             let email = document.getElementById("email-registro").value.trim();
             let pass = document.getElementById("password-registro").value.trim();
@@ -275,7 +276,7 @@
             let terminos = document.getElementById("terminos").checked;   // USO DE TIPO BOOLEAN
             let valido = true;
 
-            // Limpiar errores previos
+            // Limpiar errores en caso los datos ingresados sean incorrectos
             limpiarError("error-nombre");
             limpiarError("error-email-reg");
             limpiarError("error-pass-reg");
@@ -288,11 +289,11 @@
                 valido = false;
             }
 
-            // USO DE IF ELSE DOBLE — Valida email
+            // USO DE IF ELSE DOBLE — Valida email en caso este vacio
             if (email === "") {
                 mostrarError("error-email-reg", "El correo es obligatorio");
                 valido = false;
-            } else if (!emailValido(email)) {
+            } else if (!emailValido(email)) { //en caso el email no cumpla con el formato correcto, se muestra un mensaje de error
                 mostrarError("error-email-reg", "Correo no válido");
                 valido = false;
             }
@@ -301,7 +302,7 @@
             if (pass === "") {
                 mostrarError("error-pass-reg", "La contraseña es obligatoria");
                 valido = false;
-            } else if (pass.length < 6) {
+            } else if (pass.length < 6) { //la contraseña debe tener al menos 6 caracteres, si no cumple con esto se muestra un mensaje de error
                 mostrarError("error-pass-reg", "Mínimo 6 caracteres");
                 valido = false;
             }
@@ -309,15 +310,17 @@
             // USO DE IF SIMPLE — Compara contraseñas
             if (pass !== confirm) {                    // USO DE OPERADOR DE COMPARACIÓN !==
                 mostrarError("error-confirm", "Las contraseñas no coinciden");
+                // en caso de que las contraseñas no coincidan, se muestra un mensaje de error
                 valido = false;
             }
 
             // USO DE IF SIMPLE — Valida checkbox
             if (!terminos) {                           // USO DE OPERADOR LÓGICO NOT (!)
                 mostrarError("error-terminos", "Acepta los términos");
+                //en caso el usuario no aprete la opcion de aceptar terminos y condiciones, se muestra un mensaje de error
                 valido = false;
             }
-
+            // en caso todos los datos sean correctos, se muestra un mensaje de bienvenida con el nombre del usuario
             if (valido) {
                 alert("🎉 Cuenta creada, bienvenida " + nombre);
             }
@@ -326,18 +329,23 @@
         // USO DE FUNCIONES — Actualiza la barra visual
         // USO DE MANIPULACIÓN CSS VÍA JS — Cambia width y background
         function actualizarFuerza(pass) {
+            // Esta función se ejecuta cada vez que escribes una letra en la contraseña
+            // Busca la barrita visual (el relleno de la barra)
             let barra = document.getElementById("strength-fill");
+            // Busca el texto que dice "Débil", "Media", "Fuerte"
             let texto = document.getElementById("strength-text");
-            if (!barra || !texto) return;
+            if (!barra || !texto) return;   // Si alguno de los dos no existe, sale de la función
 
-            if (pass.length === 0) {
+            if (pass.length === 0) { // en caso no se halla escrito una contraseña aun 
+                //la barra no tendra un anch, tendra un color medio gris y mostrara un mensaje de "Escribe una contraseña"
                 barra.style.width = "0%";
                 barra.style.background = "#e2d5c0";
                 texto.textContent = "Escribe una contraseña";
                 return;
             }
 
-            let nivel = nivelFuerza(calcularFuerza(pass));
+            let nivel = nivelFuerza(calcularFuerza(pass));//calcula la fuerza de una contraseña en puntos y convierte esos puntos en un nivel
+            //devuelve un tamaño, color y texto para mostrar en la barra visual
             barra.style.width = nivel.ancho;             // USO DE MANIPULACIÓN CSS
             barra.style.background = nivel.color;
             texto.textContent = nivel.texto;
@@ -351,7 +359,7 @@
             let input = document.getElementById(idInput);
             if (!boton || !input) return;
 
-            // USO OF HASATTRIBUTE — Verifica atributo type
+            // Verifica atributo type
             if (input.getAttribute("type") === "password") {
                 input.setAttribute("type", "text");      // USO DE SETATTRIBUTE
             } else {

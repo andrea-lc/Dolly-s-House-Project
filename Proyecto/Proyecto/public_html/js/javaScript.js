@@ -281,8 +281,8 @@ function ordenarProductos() {
     for (var i = 0; i < arreglo.length - 1; i++) { // Estructura repetitiva FOR (externa)
         for (var j = 0; j < arreglo.length - 1 - i; j++) { // Estructura repetitiva FOR (interna - FOR anidado)
 
-            var precioA = parseFloat(arreglo[j].getAttribute('data-precio')); // Conversión String a Double
-            var precioB = parseFloat(arreglo[j + 1].getAttribute('data-precio')); // Conversión String a Double
+            var precioA = parseFloat(arreglo[j].getAttribute('data-precio')); // lee el precio y lo convierte a Double
+            var precioB = parseFloat(arreglo[j + 1].getAttribute('data-precio')); // Lee el precio del producto b y lo convierte tambien
             var intercambiar = false;
             // Si queremos menor precio: el grande debe ir al final
             if (criterio == 'menor' && precioA > precioB) { // IF con operadores lógicos y matemáticos (>)
@@ -296,13 +296,15 @@ function ordenarProductos() {
             // Intercambiamos las posiciones en el arreglo
             if (intercambiar == true) { // IF simple
                 var temp = arreglo[j]; // Variable auxiliar para intercambio
-                arreglo[j] = arreglo[j + 1]; // Operación de asignación
-                arreglo[j + 1] = temp; // Operación de asignación
+                arreglo[j] = arreglo[j + 1]; // guarda el producto j +1 en una anterior
+                arreglo[j + 1] = temp; // guarda en la posicion sigiente el producto que estaba antes
             }
         }
     }
 
     // Ahora que el arreglo está ordenado, los ponemos en el grid en ese orden
+    // toma cada producto delarreglo ya ordenado y lo agrega en el contenedor de productos
+    // con apprendChilde que agrega el producto alfinal delcontenedor
     for (var i = 0; i < arreglo.length; i++) { // Estructura repetitiva FOR
         grid.appendChild(arreglo[i]);
     }
@@ -316,8 +318,8 @@ const formRegistro = document.getElementById("form-registro");
 
 function mostrarError(id, mensaje) {
     let span = document.getElementById(id);   // USO DE VARIABLES LET
-    span.textContent = mensaje;                // USO DE INTERACCIÓN CON FORMULARIOS (textContent)
-    span.style.color = "#9f4451";              // USO DE MANIPULACIÓN CSS VÍA JS
+    span.textContent = mensaje;                // USO DE INTERACCIÓN CON FORMULARIOS (textContent) indica un mensaje en caso de error
+    span.style.color = "#9f4451";              // USO DE MANIPULACIÓN CSS VÍA JS al haber un error cambia el color 
 }
 
 // USO DE FUNCIONES — Función para limpiar errores
@@ -328,6 +330,7 @@ function limpiarError(id) {
 // USO DE FUNCIONES CON PARÁMETROS — Valida si el email tiene "@" y "."
 // USO DE IF ELSE DOBLE — Condicional con && (AND)
 function emailValido(email) {
+    // el email debe incluir "@" y "." para ser considerado válido
     if (email.includes("@") && email.includes(".")) {  // USO DE OPERADORES DE CADENAS
         return true;    // USO DE TIPO BOOLEAN
     } else {
@@ -377,7 +380,10 @@ function nivelFuerza(puntos) {
     return { texto: texto, color: color, ancho: ancho };
 }
 
-// javaScript.js — Dolly's House
+
+/* ══════════════════════════════════════════
+    PRODUCTOS DETALLE
+   ══════════════════════════════════════════ */
 
 /* ── 1. SELECTOR DE CANTIDAD ── */
 function crearSelectorCantidad() {

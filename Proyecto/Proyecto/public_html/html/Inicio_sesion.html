@@ -128,7 +128,7 @@
             <li><a href="../html/Recomendacion.html">Recomendaciones</a></li>
             <li><a href="../html/Blog.html">Blog</a></li>
             <li><a href="../html/Nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="../html/Contacto.html" >Contáctanos</a></li>
+            <li><a href="../html/Contacto.html">Contáctanos</a></li>
         </ul>
     </div>
 
@@ -202,7 +202,7 @@
                     <li><a href="../html/Productos_Alimentos.html">Mascotas Pequeñas</a></li>
 
                     <li><a href="../html/Productos_Aves.html">Aves</a></li>
-          <li><a href="../html/Recomendacion.html">Recomendaciones</a></li>
+                    <li><a href="../html/Recomendacion.html">Recomendaciones</a></li>
                     <li><a href="../html/Nosotros.html">Nosotros</a></li>
                     <li><a href="../html/Blog.html">Blog</a></li>
                     <li><a href="../html/Contacto.html">Contacto</a></li>
@@ -246,11 +246,12 @@
         function validarLogin(e) {
             e.preventDefault();   // USO DE MÉTODOS DEL OBJETO EVENT
 
-            // USO DE INTERACCIÓN CON FORMULARIOS — Leer valor de inputs
+            // Leer los valores ingresados en los inputs
             let email = document.getElementById("email-login").value.trim();
             let password = document.getElementById("password-login").value.trim();
-            let valido = true;   // USO DE TIPO BOOLEAN
+            let valido = true;   // booleando que confirmara si se puede hacer el inicio de sesion o no
 
+            // en caso de poner un email o contraseña invalida los borra para volvera ingrsar uno nuevo
             limpiarError("error-email");
             limpiarError("error-password");
 
@@ -258,16 +259,16 @@
             if (email === "") {                        // USO DE OPERADOR DE COMPARACIÓN ===
                 mostrarError("error-email", "El correo es obligatorio");
                 valido = false;
-            } else if (!emailValido(email)) {          // USO DE IF ELSE IF ANIDADO
+            } else if (!emailValido(email)) {          // USO DE IF ELSE IF ANIDADO, si el email no es válido, muestra un mensaje de error
                 mostrarError("error-email", "Correo no válido");
                 valido = false;
             }
 
             // USO DE IF ELSE DOBLE — Valida contraseña
-            if (password === "") {
+            if (password === "") { //si la contraseña esta vacia muestra un mensaje de error
                 mostrarError("error-password", "La contraseña es obligatoria");
                 valido = false;
-            } else if (password.length < 6) {          // USO DE OPERADORES MATEMÁTICOS (COMPARACIÓN <)
+            } else if (password.length < 6) {          // USO DE OPERADORES MATEMÁTICOS - si la contraseña es menor a 6 caracteres muestra un mensaje de error
                 mostrarError("error-password", "Mínimo 6 caracteres");
                 valido = false;
             }
@@ -275,23 +276,27 @@
             // USO DE IF SIMPLE — Si todo está bien
             if (valido) {
                 // USO DE CONCATENACIÓN DE CADENAS — Une texto con +
-                alert("Bienvenida " + email + "!");
+                alert("Bienvenida " + email + "!"); //mmuestra un mensaje de bienvenida con el email ingresado
             }
         }
 
         /* MOSTRAR / OCULTAR CONTRASEÑA  */
         // USO DE ADD EVENT LISTENER — Evento click (ahora llamado desde onclick en HTML)
         function activarOjo(idBoton, idInput) {
+            // Esta función recibe dos parámetros:
+            // - idBoton: el ID del botón del ojo
+            // - idInput: el ID del input de la contraseña
             let boton = document.getElementById(idBoton);
             let input = document.getElementById(idInput);
-            if (!boton || !input) return;
+            if (!boton || !input) return; // verifica que existan los elementos antes de continuar
 
-            // USO OF HASATTRIBUTE — Verifica atributo type
+            // Verifica atributo type
             if (input.getAttribute("type") === "password") {
+                // Cambia el atributo type a text para mostrar la contraseña
                 input.setAttribute("type", "text");      // USO DE SETATTRIBUTE
             } else {
+                // Cambia el atributo type a password para ocultar la contraseña
                 input.setAttribute("type", "password");  // USO DE SETATTRIBUTE
-                boton.textContent = "👁";
             }
         }
     </script>
