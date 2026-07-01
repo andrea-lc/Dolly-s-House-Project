@@ -266,7 +266,7 @@
             </div>
 
             <div class="producto-card">
-              <img src="../images/Images_Alimentos/9.png" alt="Royal Canin Puppy">
+              <img src="../images/Images_Alimentos/14.png" alt="Royal Canin Puppy">
               <div class="card-body">
                 <span class="marca">Royal Canin</span>
                 <p class="nombre">Royal Canin Puppy Medium 1Kg - Nutrición para cachorros medianos</p>
@@ -277,7 +277,7 @@
 
             <div class="producto-card">
               <span class="etiqueta regalo">Favorito</span>
-              <img src="../images/Images_Alimentos/9.png" alt="Hills Science Diet">
+              <img src="../images/Images_Alimentos/5.png" alt="Hills Science Diet">
               <div class="card-body">
                 <span class="marca">Hills</span>
                 <p class="nombre">Hills Science Diet Adulto 1.5Kg - Fórmula veterinaria recomendada</p>
@@ -288,7 +288,7 @@
             </div>
 
             <div class="producto-card">
-              <img src="../images/Images_Alimentos/9.png" alt="Pedigree Adulto">
+              <img src="../images/Images_Alimentos/19.png" alt="Pedigree Adulto">
               <div class="card-body">
                 <span class="marca">Pedigree</span>
                 <p class="nombre">Pedigree Adulto Carne y Verduras 3Kg - Completo y balanceado</p>
@@ -371,12 +371,21 @@
     });
 
     function imgIrA(i) {
-      var total = imgTrack.querySelectorAll('img').length;
-      imgActual = (i + total) % total;
-      imgTrack.style.transform = 'translateX(-' + (imgActual * imgAncho) + 'px)';
+        var imgs = imgTrack.querySelectorAll('img');
+        imgActual = (i + imgs.length) % imgs.length;
+
+        var actual    = imgs[imgActual];
+        var anterior  = actual.previousElementSibling;  // previousElementSibling
+        var siguiente = actual.nextElementSibling;       // nextElementSibling
+
+        // Atenuar flecha si no hay imagen en esa dirección
+        document.querySelector('.img-flecha-prev').style.opacity = anterior  ? '1' : '0.3';
+        document.querySelector('.img-flecha-next').style.opacity = siguiente ? '1' : '0.3';
+
+        imgTrack.style.transform = 'translateX(-' + (imgActual * imgAncho) + 'px)';
     }
 
-    // Auto-avance cada 4 segundos
+    // Auto-avance cada 7 segundos
     setInterval(function () { imgIrA(imgActual + 1); }, 7000);
 
     // Descuento automático

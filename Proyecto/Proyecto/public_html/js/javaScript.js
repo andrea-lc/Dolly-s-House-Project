@@ -444,7 +444,11 @@ function iniciarCarrusel() {
     if (!track || !outer) return;
 
     const VISIBLE = 3, GAP = 20;
-    const originales = Array.from(track.querySelectorAll('.producto-card'));
+    const primera    = track.firstElementChild;   // firstElementChild
+    const ultima     = track.lastElementChild;    // lastElementChild
+    const originales = [];
+    let el = primera;
+    while (el) { originales.push(el); el = el.nextElementSibling; }  // nextElementSibling
     const total = originales.length;
     const cardWidth = Math.floor((outer.offsetWidth - GAP * (VISIBLE - 1)) / VISIBLE);
     const paso = cardWidth + GAP;
