@@ -458,7 +458,7 @@ function iniciarCarrusel() {
     originales.forEach(c => track.appendChild(c.cloneNode(true)));
     originales.slice().reverse().forEach(c => track.insertBefore(c.cloneNode(true), track.firstChild));
 
-    let cur = total, lock = false;
+        let cur = total, lock = false;
 
     const ir = (i, anim = true) => {
         track.style.transition = anim ? 'transform 0.4s ease' : 'none';
