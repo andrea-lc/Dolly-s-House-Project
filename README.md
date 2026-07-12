@@ -13,11 +13,15 @@ Dolly's House es una tienda virtual ficticia especializada en accesorios y alime
 
 ### Páginas del sitio
 
-- 🏠 **Inicio** — banner principal y productos destacados
-- 🛒 **Productos** — catálogo por categorías con filtros visuales
-- 🏢 **Sobre Nosotros** — misión, visión y datos de contacto
-- 📬 **Contacto** — formulario de consultas y mapa integrado
-- 📝 **Blog** — artículos sobre cuidado de mascotas
+- 🏠 **Inicio** — banner principal, video y productos destacados
+- 🍖 **Productos / Alimentos** — catálogo de alimentos para mascotas
+- 🎾 **Productos / Accesorios** — juguetes, camas, correas y más
+- 🐦 **Productos / Aves** — catálogo específico para aves
+- 🔍 **Producto Detallado** — vista individual con descripción del artículo
+- 🛒 **Carrito** — resumen visual de compras (prototipo estático)
+- 🏢 **Sobre Nosotros** — misión, visión, valores y mapa integrado
+- 📬 **Contacto** — formulario de consultas y datos de contacto
+- 📝 **Blog** — artículos y consejos sobre cuidado de mascotas
 
 ---
 
@@ -37,21 +41,29 @@ Dolly's House es una tienda virtual ficticia especializada en accesorios y alime
 📁 Site Root
  ├── 📁 html/
  │    ├── index.html
- │    ├── Productos.html
+ │    ├── Productos_Alimentos.html
+ │    ├── Productos_Accesorios.html
+ │    ├── Productos_Aves.html
+ │    ├── Producto_Detalle.html
+ │    ├── Carrito.html
  │    ├── Nosotros.html
  │    ├── Contacto.html
  │    └── Blog.html
  ├── 📁 css/
- │    ├── DiseñoIndex.css
- │    ├── DiseñoProductos.css
- │    ├── DiseñoNosotros.css
- │    ├── DiseñoContacto.css
- │    └── DiseñoBlog.css
- └── 📁 images/
-      ├── Images_Aboutus/
-      ├── Images_Blog/
-      ├── Images_Head-Foot/
-      └── Images_Product/
+ │    └── styles.css          ← hoja de estilos centralizada
+ ├── 📁 images/
+ │    ├── Imagenes_Logo/
+ │    ├── Images_Aboutus/
+ │    ├── Images_Accesorios/
+ │    ├── Images_Alimentos/
+ │    ├── Images_Aves/
+ │    ├── Images_Blog/
+ │    ├── Images_Head-Foot/
+ │    ├── Images_Marcas/
+ │    └── Images_Mascotas_pequeñas/
+ └── 📁 videos/
+      ├── videos_Inicio/
+      └── videos_Blog/
 ```
 
 ---
@@ -67,13 +79,19 @@ Dos estudiantes, muchos errores de compilación y cero sueño después:
 
 ### Características principales
 
-- ✅ Diseño responsive (adaptable a móviles y escritorio)
-- ✅ Catálogo de productos organizado por categorías
-- ✅ Formulario de contacto
+- ✅ Diseño responsive con **media queries**
+- ✅ Maquetación con **Flexbox y Grid Layout**
+- ✅ Animaciones y transiciones CSS
+- ✅ Catálogo organizado por categorías (alimentos, accesorios, aves)
+- ✅ Vista detallada de producto
+- ✅ Prototipo visual del carrito de compras
+- ✅ Formulario de contacto funcional
 - ✅ Integración con Google Maps
 - ✅ Blog con artículos informativos
+- ✅ Contenido multimedia (imágenes y videos)
 - ✅ Control de versiones con Git y GitHub
 
 ---
 
 > *Proyecto desarrollado sin inversión económica, usando herramientas gratuitas.*  
+> 📌 **Estado actual:** Avance del Proyecto 02 (mayo 2026)
