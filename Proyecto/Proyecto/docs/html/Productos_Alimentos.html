@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <title>Alimentos — Dolly's House</title>
+
+  <style>
+    .barra-top {
+      background-color: #1b171e;
+      color: #dcc594;
+      padding: 6px 0;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="barra-top">
+    <marquee behavior="scroll" direction="left">
+      Ofertas especiales esta semana 🎁 &nbsp;•&nbsp; 20% OFF en alimentos &nbsp;•&nbsp; 🚚 ¡Envío gratis en compras
+      mayores a S/100!
+    </marquee>
+  </div>
+
+  <input type="checkbox" id="menu-toggle" hidden>
+  <header class="site-header">
+    <a href="../html/index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png" alt="Dolly's House"></a>
+    <div class="header-right">
+      <div class="buscador-wrap"><span class="icon-search">🔍</span><input type="text" class="buscador"
+          placeholder="Buscar productos..."></div>
+      <div class="header-icons">
+        <div class="header-icons2">
+          <a href="../html/Inicio_sesion.html" class="login-btn">Iniciar Sesion</a>
+          <p style="color: #dcc594;">|</p>
+          <a href="../html/Registro.html" class="login-btn">Registrarse</a>
+        </div>
+        <a href="#" class="icon-btn">♡</a>
+      </div>
+      <a href="../html/Carrito.html" class="carrito-link"><button class="carrito-btn">🛒 <span
+            class="label">Carrito</span></button></a>
+    </div>
+    <label for="menu-toggle" class="hamburger"><span></span><span></span><span></span></label>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <div class="navegacion" id="div">
+    <ul class="opciones">
+      <li><a href="../html/index.html">Inicio</a></li>
+
+      <li><a href="../html/Productos_Alimentos.html" class="active">Alimentos</a>
+        <div class="dropdown-menu">
+          <div class="drop-header">Alimentos por mascota</div>
+          <div class="dropdown-grid">
+            <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🐕</span>Perros</a>
+            <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🐈</span>Gatos</a>
+            <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🦜</span>Aves</a>
+            <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🐹</span>Hámster</a>
+            <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+            <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
+            <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
+            <a href="../html/Productos_Alimentos.html"><span class="drop-icon">⭐</span>Super Premium</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="../html/Productos_Accesorios.html">Accesorios</a>
+        <div class="dropdown-menu">
+          <div class="drop-header">Accesorios para mascotas</div>
+          <div class="dropdown-grid">
+            <a href="../html/Productos_Accesorios.html"><span class="drop-icon">📿</span>Collares</a>
+            <a href="../html/Productos_Accesorios.html"><span class="drop-icon">🧸</span>Juguetes</a>
+            <a href="../html/Productos_Accesorios.html"><span class="drop-icon">👕</span>Ropa</a>
+            <a href="../html/Productos_Accesorios.html"><span class="drop-icon">🛏️</span>Camas</a>
+            <a href="../html/Productos_Accesorios.html"><span class="drop-icon">🦮</span>Correas y Arneses</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="../html/Productos_Animales_Pequeños.html">Mascotas Pequeñas</a>
+        <div class="dropdown-menu">
+          <div class="drop-header">Mascotas pequeñas</div>
+          <div class="dropdown-grid">
+            <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🐹</span>Hámster</a>
+            <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🐰</span>Conejo</a>
+            <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🐭</span>Ratón</a>
+            <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🦔</span>Erizo</a>
+            <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🧸</span>Juguetes</a>
+            <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🏠</span>Jaulas</a>
+            <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🌿</span>Alimentos</a>
+            <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🪺</span>Camas y Nidos</a>
+            <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">💊</span>Salud</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="../html/Productos_Aves.html">Aves</a>
+        <div class="dropdown-menu">
+          <div class="drop-header">Aves y accesorios</div>
+          <div class="dropdown-grid">
+            <a href="../html/Productos_Aves.html"><span class="drop-icon">🦜</span>Loros</a>
+            <a href="../html/Productos_Aves.html"><span class="drop-icon">🐦</span>Canarios</a>
+            <a href="../html/Productos_Aves.html"><span class="drop-icon">🦚</span>Periquitos</a>
+            <a href="../html/Productos_Aves.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+            <a href="../html/Productos_Aves.html"><span class="drop-icon">🌾</span>Semillas</a>
+            <a href="../html/Productos_Aves.html"><span class="drop-icon">🏠</span>Jaulas</a>
+            <a href="../html/Productos_Aves.html"><span class="drop-icon">🛁</span>Bañeras</a>
+            <a href="../html/Productos_Aves.html"><span class="drop-icon">🪵</span>Perchas</a>
+            <a href="../html/Productos_Aves.html"><span class="drop-icon">💊</span>Vitaminas</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="#">Marcas</a>
+        <div class="dropdown-menu marcas-drop">
+          <div class="drop-header">Nuestras marcas</div>
+          <div class="marcas-grid">
+            <a href="#"><img src="../images/Images_Marcas/1.png" alt="Hills"></a>
+            <a href="#"><img src="../images/Images_Marcas/2.png" alt="RoyalCanin"></a>
+            <a href="#"><img src="../images/Images_Marcas/3.png" alt="Salvaje"></a>
+            <a href="#"><img src="../images/Images_Marcas/4.jpg" alt="TkPet"></a>
+          </div>
+        </div>
+      </li>
+      <li><a href="../html/Recomendacion.html">Recomendaciones</a></li>
+      <li><a href="../html/Blog.html">Blog</a></li>
+      <li><a href="../html/Nosotros.html">Sobre Nosotros</a></li>
+      <li><a href="../html/Contacto.html">Contáctanos</a></li>
+    </ul>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="productos-page">
+    <div class="page-header">
+      <h1 class="section-title">Alimentos</h1>
+      <div class="section-line"></div>
+      <p class="section-subtitle">Nutrición de calidad para cada tipo de mascota</p>
+    </div>
+
+    <div class="productos-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar-filtros">
+        <h3>Filtros</h3>
+        <!-- Botón para borrar todos los filtros -->
+        <button class="btn-borrar" id="btn-borrar" onclick="borrarFiltros()">✕ Borrar filtros</button>
+
+
+        <div class="filtro-bloque">
+          <div class="filtro-titulo">Categoría</div>
+          <ul class="filtro-opciones">
+            <!-- 8Escuchamos los cambios de los checkboxes de categoría -->
+            <li><input type="checkbox" id="alimentos" onchange="aplicarFiltros()"> Alimentos para mascotas</li>
+            <li><input type="checkbox" id="pequenos" onchange="aplicarFiltros()"> Animales pequeños</li>
+            <li><input type="checkbox" id="aves" onchange="aplicarFiltros()"> Alimento para Aves</li>
+            <li><input type="checkbox" id="corral" onchange="aplicarFiltros()"> Aves de corral</li>
+
+          </ul>
+        </div>
+
+        <div class="filtro-bloque">
+          <div class="filtro-titulo">Precio</div>
+          <ul class="filtro-opciones">
+            <!-- Escuchamos los cambios de los checkboxes de precio -->
+            <li><input type="checkbox" id="f-p1" onchange="aplicarFiltros()"> S/. 0 – S/. 20</li>
+            <li><input type="checkbox" id="f-p2" onchange="aplicarFiltros()"> S/. 21 – S/. 50</li>
+            <li><input type="checkbox" id="f-p3" onchange="aplicarFiltros()"> S/. 51 – S/. 100</li>
+            <li><input type="checkbox" id="f-p4" onchange="aplicarFiltros()"> S/. 100 a más</li>
+
+          </ul>
+        </div>
+      </aside>
+
+      <!-- PRODUCTOS -->
+      <div class="productos-area">
+        <div class="productos-header">
+          <p class="resultados" id="resultados">10 resultados encontrados</p>
+          <!-- Escuchamos el cambio del select de ordenar -->
+          <select class="ordenar" id="ordenar" onchange="aplicarFiltros()">
+            <option value="">Ordenar por</option>
+            <option value="menor">Menor precio</option>
+            <option value="mayor">Mayor precio</option>
+          </select>
+        </div>
+
+        <div class="grid-productos" id="grid-productos">
+
+          <div class="producto-card" data-categoria="alimentos" data-precio="6">
+
+            <img src="../images/Images_Alimentos/1.png" alt="Croquetas Premium Perro">
+            <div class="card-body">
+              <p class="marca">PetFood</p>
+              <p class="nombre">Croquetas Premium Perro Adulto 3kg</p>
+              <p class="precio">S/. 6.00</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="alimentos" data-precio="12">
+
+            <div class="etiqueta oferta">20% OFF</div>
+            <img src="../images/Images_Alimentos/2.png" alt="Alimento Húmedo Gato">
+            <div class="card-body">
+              <p class="marca">NaturCat</p>
+              <p class="nombre">Alimento Húmedo Gato Adulto x12</p>
+              <p class="precio-tachado"><s>S/. 15.00</s></p>
+              <p class="precio">S/. 12.00</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="alimentos" data-precio="18">
+
+            <img src="../images/Images_Alimentos/3.png" alt="Mix Semillas Brit">
+            <div class="card-body">
+              <p class="marca">Brit</p>
+              <p class="nombre">Mix de Semillas y Proteína Brit Animals</p>
+              <p class="precio">S/. 18.00</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="pequenos" data-precio="40">
+
+            <div class="etiqueta liquidacion">50% OFF</div>
+            <img src="../images/Images_Alimentos/4.png" alt="Alimento Granja Aves">
+            <div class="card-body">
+              <p class="marca">Purina</p>
+              <p class="nombre">Alimento Granja Familiar para Hamsters — Saco 5kg</p>
+              <p class="precio-tachado"><s>S/. 80.00</s></p>
+              <p class="precio">S/. 40.00</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="corral" data-precio="32">
+
+            <img src="../images/Images_Alimentos/5.png" alt="Alimento Gallinas Ponedoras">
+            <div class="card-body">
+              <p class="marca">Purina</p>
+              <p class="nombre">Alimento Premium para Gallinas Ponedoras</p>
+              <p class="precio">S/. 32.00</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="aves" data-precio="55">
+
+            <div class="etiqueta regalo">Favorito</div>
+            <img src="../images/Images_Alimentos/6.png" alt="Alimento para Pericas">
+            <div class="card-body">
+              <p class="marca">Harpp</p>
+              <p class="nombre">Alimento HARPP para Pericas — Nutrición Balanceada</p>
+              <p class="precio">S/. 55.00</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="aves" data-precio="9.5">
+
+            <img src="../images/Images_Alimentos/7.png" alt="Alpiste Premium">
+            <div class="card-body">
+              <p class="marca">AviFood</p>
+              <p class="nombre">Alpiste Premium para Aves 1kg</p>
+              <p class="precio">S/. 9.50</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="alimentos" data-precio="4.9">
+
+            <img src="../images/Images_Alimentos/8.png" alt="Paté Gatos">
+            <div class="card-body">
+              <p class="marca">Purina Felix</p>
+              <p class="nombre">Paté Sabor Pollo para Gatos (Pouch)</p>
+              <p class="precio">S/. 4.90</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="alimentos" data-precio="28">
+
+            <div class="etiqueta oferta">10% OFF</div>
+            <a href="Producto_Detalle.html">
+              <img src="../images/Images_Alimentos/9.png" alt="Multivitaminas Cachorros">
+            </a>
+            <div class="card-body">
+              <p class="marca">Zeus</p>
+              <a href="../html/">
+                <p class="nombre">Cachorros: Nutrición Completa Multi Vitaminas</p>
+              </a>
+              <p class="precio-tachado"><s>S/. 31.00</s></p>
+              <p class="precio">S/. 28.00</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="alimentos" data-precio="22">
+
+            <img src="../images/Images_Alimentos/10.png" alt="Mordedor Wooden Antler">
+            <div class="card-body">
+              <p class="marca">Wooden Antler</p>
+              <p class="nombre">Mordedor para Perros — Fibra de Madera Natural</p>
+              <p class="precio">S/. 22.00</p>
+              <a class="btn-comprar">Agregar al carrito</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
+
+      <div class="footer-col">
+        <h3> Navegación</h3>
+        <ul>
+          <li><a href="../html/index.html">Inicio</a></li>
+          <li><a href="../html/Productos_Accesorios.html">Accesorios</a></li>
+          <li><a href="../html/Productos_Alimentos.html">Alimentos</a></li>
+          <li><a href="../html/Productos_Alimentos.html">Mascotas Pequeñas</a></li>
+          <li><a href="../html/Productos_Aves.html">Aves</a></li>
+          <li><a href="../html/Recomendacion.html">Recomendaciones</a></li>
+          <li><a href="../html/Nosotros.html">Nosotros</a></li>
+          <li><a href="../html/Blog.html">Blog</a></li>
+          <li><a href="../html/Contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Redes Sociales</h3>
+        <ul>
+          <li><img src="../images/Imagenes_Logo/2.png" alt="Insta"> <a href="https://instagram.com">Instagram</a></li>
+          <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a href="https://facebook.com">Facebook</a></li>
+          <li><img src="../images/Imagenes_Logo/1.png"" alt=" Whatsapp"><a href="https://wa.me/51946414833">WhatsApp</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>+51 946 414 833</p>
+        <p>dollyshousen@gmail.com</p>
+        <p>Lun–Sab: 9am a 7pm</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Encuéntranos</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
+          title="Mapa"></iframe>
+        <p>Jr. A. A. Cáceres 312, Alto Selva Alegre 04003</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
+  </footer>
+
+  <script>
+    /* ══════════════════════════════════════════
+        PRODUCTOS EN GENERAL
+       ══════════════════════════════════════════ */
+    /*   Barra de filtros para buscar productos y boton de filtrado de precios*/
+
+    // Guardamos todos los elementos que vamos a usar
+    // con quertSelectorAll Busca todos los elementos HTML que tengan la clase "producto-card"...
+    // y los guarda en una lista como un arreglo.
+    var productos = document.querySelectorAll('.producto-card'); 
+    //guarda todos los checkboxes de categoria y precio en variables en una lista
+    var checksCategoria = document.querySelectorAll('#alimentos, #pequenos, #aves, #corral'); // NodeList
+    //guarda todos los checkboxes de precio en variables en una lista
+    var checksPrecio = document.querySelectorAll('#f-p1, #f-p2, #f-p3, #f-p4'); //precios
+    // Busca el menú desplegable con ID "ordenar"
+    var selectOrdenar = document.getElementById('ordenar');
+    // busca el boton id
+    var btnBorrar = document.getElementById('btn-borrar'); // Botón eliminar filtros
+    // busca el elemento donde se mostrara el texto de resultados
+    var contador = document.getElementById('resultados');
+    //busca el contenedor principal donde se muestran los productos
+    var grid = document.getElementById('grid-productos');
+
+
+    //  Función principal: filtra los productos
+    function aplicarFiltros() {
+      //llama a la funcion para obtener las casillas marcadas de categoria
+      var categorias = obtenerCategoriasMarcadas();
+      //llama a la funcion para obtener las casillas marcadas de precio
+      var rangos = obtenerRangosMarcados();
+      //contador para ver los productos que pasan los filtros
+      var visibles = 0;
+
+      // se recorre cada producto
+      for (var i = 0; i < productos.length; i++) { // Estructura repetitiva FOR
+        var prod = productos[i]; //guarda cada producto en un arreglo
+
+        // guarda  sus datos (categoria y precio)
+        var cat = prod.getAttribute('data-categoria');
+        var precio = parseFloat(prod.getAttribute('data-precio')); // Conversión String a Double
+
+        // Revisamos si pasa ambos filtros
+        //como parametros reciben la categoria del producto y todas las cateogrias disponibles
+        var pasaCat = categoriaValida(cat, categorias);
+        var pasaPrec = precioEnRango(precio, rangos);
+
+        // Si pasa ambos, lo mostramos. Si no, lo ocultamos.
+        if (pasaCat == true && pasaPrec == true) { // IF simple con operador lógico AND
+          prod.style.display = ''; //mantiene el producto visible
+          visibles = visibles + 1; // Operación matemática: añade a la cantidad de productos visibles que pasaron los filtros
+        } else { // ELSE (condicional doble IF-ELSE)
+          prod.style.display = 'none'; // oculta el producto "no muestra el elemento"
+        }
+      } 
+
+      // Actualizamos el contador de resultados
+      if (visibles == 1) { // IF-ELSE doble
+        //cambiamos el texto del contador según la cantidad de resultados
+        contador.textContent = visibles + " resultado encontrado"; // Concatenación de cadenas
+      } else {
+        contador.textContent = visibles + " resultados encontrados"; // Concatenación de cadenas
+      }
+
+      // Después de filtrar, ordenamos
+      ordenarProductos();
+    }
+
+
+    // Botón para borrar todos los filtros
+    function borrarFiltros() { // Evento click del botón eliminar
+      // Desmarcamos todos los checkboxes de categoría,m las recorre con for
+      for (var i = 0; i < checksCategoria.length; i++) { // Estructura repetitiva FOR
+        checksCategoria[i].checked = false; //checked = false significa que desmarca la casilla
+      }
+
+      // Desmarcamos todos los checkboxes de precio
+      for (var i = 0; i < checksPrecio.length; i++) { // Estructura repetitiva FOR
+        checksPrecio[i].checked = false;
+      }
+
+      // Reseteamos el select
+      selectOrdenar.value = '';  //pone el menu desplegable en su valor por defecto 
+
+      // Volvemos a aplicar filtros (mostrará todo)
+      aplicarFiltros();//llama a la funcion aplicarFiltros() denuevo y como no hay nada marcado, mostrara todos los productos
+    }
+  </script>
+
+  <!-- Funciones auxiliares -->
+  <script src="../js/javaScript.js"></script>
+
+</body>
+
+</html>

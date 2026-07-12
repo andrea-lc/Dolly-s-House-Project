@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Inicio de Sesion — Dolly's House</title>
+    <style>
+        .barra-top {
+            background-color: #1b171e;
+            color: #dcc594;
+            padding: 6px 0;
+            font-size: 13px;
+            letter-spacing: 0.04em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="barra-top">
+        <marquee behavior="scroll" direction="left">
+            Ofertas especiales esta semana 🎁 &nbsp;•&nbsp; 20% OFF en alimentos &nbsp;•&nbsp; 🚚 ¡Envío gratis en
+            compras
+            mayores a S/100!
+        </marquee>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" hidden>
+    <header class="site-header">
+        <a href="../html/index.html" class="logo"><img src="../images/Images_Head-Foot/logo.png"
+                alt="Dolly's House"></a>
+        <div class="header-right">
+            <div class="buscador-wrap"><span class="icon-search">🔍</span><input type="text" class="buscador"
+                    placeholder="Buscar productos..."></div>
+            <div class="header-icons">
+                <div class="header-icons2">
+                    <a href="../html/Inicio_sesion.html" class="login-btn">Iniciar Sesion</a>
+                    <p style="color: #dcc594;">|</p>
+                    <a href="../html/Registro.html" class="login-btn">Registrarse</a>
+                </div>
+                <a href="#" class="icon-btn">♡</a>
+            </div>
+            <a href="../html/Carrito.html" class="carrito-link"><button class="carrito-btn">🛒 <span
+                        class="label">Carrito</span></button></a>
+        </div>
+        <label for="menu-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    </header>
+
+    <!-- NAVEGACIÓN -->
+    <div class="navegacion" id="div">
+        <ul class="opciones">
+            <li><a href="../html/index.html">Inicio</a></li>
+
+            <li><a href="../html/Productos_Alimentos.html">Alimentos</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Alimentos por mascota</div>
+                    <div class="dropdown-grid">
+                        <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🐕</span>Perros</a>
+                        <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🐈</span>Gatos</a>
+                        <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🦜</span>Aves</a>
+                        <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🐹</span>Hámster</a>
+                        <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                        <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🌾</span>Alimento Seco</a>
+                        <a href="../html/Productos_Alimentos.html"><span class="drop-icon">🥫</span>Alimento Húmedo</a>
+                        <a href="../html/Productos_Alimentos.html"><span class="drop-icon">⭐</span>Super Premium</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../html/Productos_Accesorios.html">Accesorios</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Accesorios para mascotas</div>
+                    <div class="dropdown-grid">
+                        <a href="../html/Productos_Accesorios.html"><span class="drop-icon">📿</span>Collares</a>
+                        <a href="../html/Productos_Accesorios.html"><span class="drop-icon">🧸</span>Juguetes</a>
+                        <a href="../html/Productos_Accesorios.html"><span class="drop-icon">👕</span>Ropa</a>
+                        <a href="../html/Productos_Accesorios.html"><span class="drop-icon">🛏️</span>Camas</a>
+                        <a href="../html/Productos_Accesorios.html"><span class="drop-icon">🦮</span>Correas y
+                            Arneses</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../html/Productos_Animales_Pequeños.html">Mascotas Pequeñas</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Mascotas pequeñas</div>
+                    <div class="dropdown-grid">
+                        <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🐹</span>Hámster</a>
+                        <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🐰</span>Conejo</a>
+                        <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🐭</span>Ratón</a>
+                        <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🦔</span>Erizo</a>
+                        <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🧸</span>Juguetes</a>
+                        <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🏠</span>Jaulas</a>
+                        <a href="../html/Productos_Animales_Pequeños.html"><span
+                                class="drop-icon">🌿</span>Alimentos</a>
+                        <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">🪺</span>Camas y
+                            Nidos</a>
+                        <a href="../html/Productos_Animales_Pequeños.html"><span class="drop-icon">💊</span>Salud</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../html/Productos_Aves.html">Aves</a>
+                <div class="dropdown-menu">
+                    <div class="drop-header">Aves y accesorios</div>
+                    <div class="dropdown-grid">
+                        <a href="../html/Productos_Aves.html"><span class="drop-icon">🦜</span>Loros</a>
+                        <a href="../html/Productos_Aves.html"><span class="drop-icon">🐦</span>Canarios</a>
+                        <a href="../html/Productos_Aves.html"><span class="drop-icon">🦚</span>Periquitos</a>
+                        <a href="../html/Productos_Aves.html"><span class="drop-icon">🐔</span>Aves de Corral</a>
+                        <a href="../html/Productos_Aves.html"><span class="drop-icon">🌾</span>Semillas</a>
+                        <a href="../html/Productos_Aves.html"><span class="drop-icon">🏠</span>Jaulas</a>
+                        <a href="../html/Productos_Aves.html"><span class="drop-icon">🛁</span>Bañeras</a>
+                        <a href="../html/Productos_Aves.html"><span class="drop-icon">🪵</span>Perchas</a>
+                        <a href="../html/Productos_Aves.html"><span class="drop-icon">💊</span>Vitaminas</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Marcas</a>
+                <div class="dropdown-menu marcas-drop">
+                    <div class="drop-header">Nuestras marcas</div>
+                    <div class="marcas-grid">
+                        <a href="#"><img src="../images/Images_Marcas/1.png" alt="Hills"></a>
+                        <a href="#"><img src="../images/Images_Marcas/2.png" alt="RoyalCanin"></a>
+                        <a href="#"><img src="../images/Images_Marcas/3.png" alt="Salvaje"></a>
+                        <a href="#"><img src="../images/Images_Marcas/4.jpg" alt="TkPet"></a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../html/Recomendacion.html">Recomendaciones</a></li>
+            <li><a href="../html/Blog.html">Blog</a></li>
+            <li><a href="../html/Nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="../html/Contacto.html">Contáctanos</a></li>
+        </ul>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="auth-page">
+        <div class="page-header">
+            <h1 class="section-title">Inicio de Sesion</h1>
+            <div class="section-line"></div>
+        </div>
+        <div class="auth-container">
+
+            <!-- LADO IZQUIERDO: FORMULARIO -->
+            <div class="auth-form-side">
+                <h1 class="section-title">Bienvenido de vuelta</h1>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Ingresa a tu cuenta de Dolly's House 🐾</p>
+
+                <form id="form-login" class="auth-form" novalidate onsubmit="validarLogin(event)">
+                    <!-- Campo email -->
+                    <div class="form-group">
+                        <label for="email-login">Correo electrónico</label>
+                        <input type="email" id="email-login" placeholder="ejemplo@correo.com" required>
+                        <!-- Mensaje de error (se muestra con JS) -->
+                        <span class="error-msg" id="error-email"></span>
+                    </div>
+
+                    <!-- Campo contraseña -->
+                    <div class="form-group">
+                        <label for="password-login">Contraseña</label>
+                        <div class="password-wrap">
+                            <input type="password" id="password-login" placeholder="••••••••" required>
+                            <button type="button" class="btn-eye" id="toggle-pass-login"
+                                onclick="activarOjo('toggle-pass-login', 'password-login')">👁</button>
+                        </div>
+                        <span class="error-msg" id="error-password"></span>
+                    </div>
+
+                    <!-- Checkbox recordarme -->
+                    <div class="form-group check-group">
+                        <input type="checkbox" id="recordar">
+                        <label for="recordar">Recordarme</label>
+                    </div>
+
+                    <!-- Botón enviar -->
+                    <button type="submit" class="btn-submit">Iniciar Sesión</button>
+
+                    <!-- Enlace a registro -->
+                    <p class="auth-switch">¿No tienes cuenta? <a href="../html/Registro.html">Regístrate aquí</a></p>
+                </form>
+            </div>
+
+            <!-- LADO DERECHO: FOTO GRANDE (dejas el espacio) -->
+            <div class="auth-image-side">
+                <img src="../images/Images_Registro-Sesion/ImagenRS.jpg" alt="Foto de mascotas">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SHARED — FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo"><img src="../images/Images_Head-Foot/logo.png" alt="Logo"></div>
+
+            <div class="footer-col">
+                <h3> Navegación</h3>
+                <ul>
+                    <li><a href="../html/index.html">Inicio</a></li>
+                    <li><a href="../html/Productos_Accesorios.html">Accesorios</a></li>
+                    <li><a href="../html/Productos_Alimentos.html">Alimentos</a></li>
+                    <li><a href="../html/Productos_Alimentos.html">Mascotas Pequeñas</a></li>
+
+                    <li><a href="../html/Productos_Aves.html">Aves</a></li>
+                    <li><a href="../html/Recomendacion.html">Recomendaciones</a></li>
+                    <li><a href="../html/Nosotros.html">Nosotros</a></li>
+                    <li><a href="../html/Blog.html">Blog</a></li>
+                    <li><a href="../html/Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><img src="../images/Imagenes_Logo/2.png" alt="Insta"> <a
+                            href="https://instagram.com">Instagram</a></li>
+                    <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a
+                            href="https://facebook.com">Facebook</a></li>
+                    <li><img src="../images/Imagenes_Logo/1.png"" alt=" Whatsapp"><a
+                            href="https://wa.me/51946414833">WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>+51 946 414 833</p>
+                <p>dollyshousen@gmail.com</p>
+                <p>Lun–Sab: 9am a 7pm</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Encuéntranos</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.436750371485!2d-71.5249557!3d-16.3771383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424bcd17eb3709%3A0x8b07f66147a731bb!2sPet%20Shop%20-%20HOGAR%20MASCOTA!5e0!3m2!1ses!2spe!4v1715634567890!5m2!1ses!2spe"
+                    title="Mapa"></iframe>
+                <p>Jr. A. A. Cáceres 312, Alto Selva Alegre 04003</p>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
+    </footer>
+    <script src="../js/javaScript.js"></script>
+    <script>
+        /* VALIDACIÓN DEL LOGIN */
+        // USO DE FUNCIONES CON PARÁMETROS — Recibe el evento del submit
+        function validarLogin(e) {
+            e.preventDefault();   // USO DE MÉTODOS DEL OBJETO EVENT
+
+            // Leer los valores ingresados en los inputs
+            let email = document.getElementById("email-login").value.trim();
+            let password = document.getElementById("password-login").value.trim();
+            let valido = true;   // booleando que confirmara si se puede hacer el inicio de sesion o no
+
+            // en caso de poner un email o contraseña invalida los borra para volvera ingrsar uno nuevo
+            limpiarError("error-email");
+            limpiarError("error-password");
+
+            // USO DE IF ELSE ANIDADO — Valida email vacío o inválido
+            if (email === "") {                        // USO DE OPERADOR DE COMPARACIÓN ===
+                mostrarError("error-email", "El correo es obligatorio");
+                valido = false;
+            } else if (!emailValido(email)) {          // USO DE IF ELSE IF ANIDADO, si el email no es válido, muestra un mensaje de error
+                mostrarError("error-email", "Correo no válido");
+                valido = false;
+            }
+
+            // USO DE IF ELSE DOBLE — Valida contraseña
+            if (password === "") { //si la contraseña esta vacia muestra un mensaje de error
+                mostrarError("error-password", "La contraseña es obligatoria");
+                valido = false;
+            } else if (password.length < 6) {          // USO DE OPERADORES MATEMÁTICOS - si la contraseña es menor a 6 caracteres muestra un mensaje de error
+                mostrarError("error-password", "Mínimo 6 caracteres");
+                valido = false;
+            }
+
+            // USO DE IF SIMPLE — Si todo está bien
+            if (valido) {
+                // USO DE CONCATENACIÓN DE CADENAS — Une texto con +
+                alert("Bienvenida " + email + "!"); //mmuestra un mensaje de bienvenida con el email ingresado
+            }
+        }
+
+        /* MOSTRAR / OCULTAR CONTRASEÑA  */
+        // USO DE ADD EVENT LISTENER — Evento click (ahora llamado desde onclick en HTML)
+        function activarOjo(idBoton, idInput) {
+            // Esta función recibe dos parámetros:
+            // - idBoton: el ID del botón del ojo
+            // - idInput: el ID del input de la contraseña
+            let boton = document.getElementById(idBoton);
+            let input = document.getElementById(idInput);
+            if (!boton || !input) return; // verifica que existan los elementos antes de continuar
+
+            // Verifica atributo type
+            if (input.getAttribute("type") === "password") {
+                // Cambia el atributo type a text para mostrar la contraseña
+                input.setAttribute("type", "text");      // USO DE SETATTRIBUTE
+            } else {
+                // Cambia el atributo type a password para ocultar la contraseña
+                input.setAttribute("type", "password");  // USO DE SETATTRIBUTE
+            }
+        }
+    </script>
+</body>
+
+</html>
