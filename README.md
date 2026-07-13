@@ -38,8 +38,9 @@ Dolly's House es una tienda virtual ficticia especializada en accesorios y alime
 ![GitHub](https://img.shields.io/badge/GitHub-D4537E?style=flat-square&logo=github&logoColor=white)
 ![Canva](https://img.shields.io/badge/Canva-D4537E?style=flat-square&logo=canva&logoColor=white)
 
-```
+---
 ### Estructura del proyecto
+```
 📁 Site Root
  ├── 📁 docs/
  │    ├── 📁 css/
