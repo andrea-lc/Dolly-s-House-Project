@@ -39,6 +39,7 @@ Dolly's House es una tienda virtual ficticia especializada en accesorios y alime
 ![Canva](https://img.shields.io/badge/Canva-D4537E?style=flat-square&logo=canva&logoColor=white)
 
 ---
+
 ### Estructura del proyecto
 ```
 📁 Site Root
@@ -81,7 +82,7 @@ Dolly's House es una tienda virtual ficticia especializada en accesorios y alime
  ├── .gitattributes
  ├── .gitignore
  └── index.html
- ```
+```
 ---
 
 ### El equipo detrás del caos 🐾
