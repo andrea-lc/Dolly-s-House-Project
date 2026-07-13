@@ -1,35 +1,56 @@
 # 🐾 Dolly's House — Tienda Virtual de Productos para Mascotas
 
 > Proyecto académico desarrollado para el curso **Taller de Programación Web**  
-> Universidad Tecnológica del Perú · Ciclo 05 · 2026
+> Universidad Tecnológica del Perú · Ciclo V · 2026
 
 ---
 
-### ¿Qué es Dolly's House?
+# 🌐 ¿Qué es Dolly's House?
 
-Dolly's House es una tienda virtual ficticia especializada en accesorios y alimentos para mascotas: perros, gatos, aves, hámsters y animales pequeños. El objetivo fue construir una presencia digital atractiva y funcional usando tecnologías web estándar, evolucionando desde un prototipo estático hasta una aplicación web con interactividad real.
+**Dolly's House** es una tienda virtual ficticia dedicada a la venta de alimentos, accesorios y productos para mascotas.
+
+El proyecto fue desarrollado como parte del curso **Taller de Programación Web**, aplicando conceptos de desarrollo Frontend mediante **HTML5, CSS3 y JavaScript**, siguiendo buenas prácticas de organización del código, diseño responsive y control de versiones con Git y GitHub.
 
 ---
 
-### Páginas del sitio
+# ✨ Características principales
 
-- 🏠 **Inicio** — banner principal, video, marquee de ofertas y productos destacados
-- 🍖 **Productos / Alimentos** — catálogo con filtros dinámicos
-- 🎾 **Productos / Accesorios** — juguetes, camas, correas y más
-- 🐦 **Productos / Aves** — catálogo específico para aves
-- 🐹 **Productos / Animales Pequeños** — hámsters, conejos y más
-- 🔍 **Producto Detallado** — vista individual con especificaciones y productos relacionados
-- 🛒 **Carrito** — gestión de productos seleccionados con totales y cupones
-- 💳 **Pagos** — prototipo visual del checkout
-- 🏢 **Sobre Nosotros** — misión, visión, valores y mapa integrado
-- 📬 **Contacto** — formulario con validación y datos de contacto
-- 📝 **Blog** — artículos y consejos sobre cuidado de mascotas
-- 📖 **Recomendaciones** — vista detallada de artículos con videos tutoriales
-- 🔐 **Login / Registro** — autenticación con barra de fuerza de contraseña
-```
+- ✅ Diseño responsive adaptable a móviles, tablets y PC
+- ✅ Maquetación utilizando **Flexbox** y **CSS Grid**
+- ✅ Animaciones, transiciones y efectos visuales
+- ✅ Catálogo organizado por categorías
+- ✅ Página de detalle de productos
+- ✅ Carrito de compras (prototipo visual)
+- ✅ Inicio de sesión y registro de usuarios
+- ✅ Formularios con validaciones
+- ✅ Manipulación del DOM mediante JavaScript
+- ✅ Blog informativo sobre el cuidado de mascotas
+- ✅ Integración con Google Maps
+- ✅ Contenido multimedia (imágenes y videos)
+- ✅ Organización modular del proyecto
+- ✅ Control de versiones con Git y GitHub
+
 ---
 
-### Tecnologías usadas
+# 📄 Páginas del sitio
+
+- 🏠 Inicio
+- 🍖 Productos - Alimentos
+- 🎾 Productos - Accesorios
+- 🐦 Productos - Aves
+- 🐹 Productos - Mascotas Pequeñas
+- 🔍 Producto Detallado
+- 🛒 Carrito de Compras
+- 👤 Inicio de Sesión
+- 📝 Registro de Usuario
+- 💳 Página de Pagos (Mockup)
+- 📖 Recomendaciones / Blog
+- 🏢 Sobre Nosotros
+- 📬 Contacto
+
+---
+
+# 🛠 Tecnologías utilizadas
 
 ![HTML5](https://img.shields.io/badge/HTML5-D4537E?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-D4537E?style=flat-square&logo=css3&logoColor=white)
@@ -40,102 +61,168 @@ Dolly's House es una tienda virtual ficticia especializada en accesorios y alime
 
 ---
 
-### Estructura del proyecto
-```
+# 📂 Estructura del proyecto
+
+```text
 📁 Site Root
- ├── 📁 docs/
- │    ├── 📁 css/
- │    │    └── styles.css
- │    ├── 📁 html/
- │    │    ├── index.html
- │    │    ├── Productos_Alimentos.html
- │    │    ├── Productos_Accesorios.html
- │    │    ├── Productos_Aves.html
- │    │    ├── Productos_Mascotas_Pequeñas.html
- │    │    ├── Producto_Detalle.html
- │    │    ├── Carrito.html
- │    │    ├── Pagos.html
- │    │    ├── Nosotros.html
- │    │    ├── Contacto.html
- │    │    ├── Blog.html
- │    │    ├── Recomendaciones.html
- │    │    ├── Login.html
- │    │    └── Registro.html
- │    ├──  images/
- │    │    ├── Imagenes_Logo/
- │    │    ├── Images_Aboutus/
- │    │    ├── Images_Accesorios/
- │    │    ├── Images_Alimentos/
- │    │    ├── Images_Aves/
- │    │    ├── Images_Mascotas_pequeñas/
- │    │    ├── Images_Blog/
- │    │    ├── Images_Head-Foot/
- │    │    ├── Images_Marcas/
- │    │    ── Images_Product/
- │    ├── 📁 js/
- │    │    └── script.js
- │    └── 📁 videos/
- │         ├── videos_Inicio/
- │         └── videos_Blog/
- ├──  nbproject/
- ├── 📁 test/
- ├── .gitattributes
- ├── .gitignore
- └── index.html
+│
+├── 📁 html/
+│   ├── index.html
+│   ├── Productos_Alimentos.html
+│   ├── Productos_Accesorios.html
+│   ├── Productos_Aves.html
+│   ├── Productos_Mascotas_Pequenas.html
+│   ├── Producto_Detalle.html
+│   ├── Carrito.html
+│   ├── Login.html
+│   ├── Registro.html
+│   ├── Pagos.html
+│   ├── Recomendaciones.html
+│   ├── Nosotros.html
+│   ├── Contacto.html
+│   └── Blog.html
+│
+├── 📁 css/
+│   └── styles.css
+│
+├── 📁 js/
+│   └── script.js
+│
+├── 📁 images/
+│   ├── Imagenes_Logo/
+│   ├── Images_Aboutus/
+│   ├── Images_Accesorios/
+│   ├── Images_Alimentos/
+│   ├── Images_Aves/
+│   ├── Images_Blog/
+│   ├── Images_Head-Foot/
+│   ├── Images_Marcas/
+│   └── Images_Mascotas_pequeñas/
+│
+└── 📁 videos/
+    ├── videos_Inicio/
+    └── videos_Blog/
 ```
----
-
-### El equipo detrás del caos 🐾
-
-Dos estudiantes, muchos errores de compilación y cero sueño después:
-
-[![andrea-lc](https://img.shields.io/badge/andrea--lc-D4537E?style=flat-square&logo=github&logoColor=white)](https://github.com/andrea-lc)
-[![bryanuni1809](https://img.shields.io/badge/bryanuni1809-D4537E?style=flat-square&logo=github&logoColor=white)](https://github.com/bryanuni1809)
 
 ---
 
-### Características principales
+# 🚀 Funcionalidades implementadas
 
-#### 🎨 Diseño y Estructura
-- ✅ Diseño responsive con **media queries**
-- ✅ Maquetación con **Flexbox y Grid Layout**
-- ✅ Animaciones y transiciones CSS
-- ✅ HTML5 semántico y accesible
+### 🛍 Catálogo de productos
 
-#### 🛍️ Catálogo y Productos
-- ✅ Catálogo organizado por categorías (alimentos, accesorios, aves, animales pequeños)
-- ✅ Filtros dinámicos por categoría, precio y tipo de producto
-- ✅ Vista detallada de producto con información ampliada
-- ✅ Carrusel de productos destacados y banners promocionales
-- ✅ Marquee superior con ofertas rotativas
+- Productos organizados por categorías
+- Tarjetas con imágenes y descripción
+- Filtros visuales
+- Productos destacados
 
-#### ⚡ Interactividad con JavaScript
-- ✅ Validación de formularios (contacto, login y registro)
-- ✅ Manipulación del DOM en tiempo real
-- ✅ Gestión del carrito de compras con arreglos y estructuras de datos
-- ✅ Barra de fuerza de contraseña en el registro
-- ✅ Menús desplegables y navegación dinámica
+### 🔍 Detalle de producto
 
-#### 📚 Contenido y UX
-- ✅ Blog con artículos informativos y guías de cuidado
-- ✅ Vista detallada de recomendaciones con videos embebidos
-- ✅ Integración con Google Maps
-- ✅ Contenido multimedia (imágenes y videos)
-- ✅ Control de versiones con Git y GitHub
+- Información ampliada
+- Precio
+- Especificaciones
+- Productos relacionados
+
+### 👤 Usuarios
+
+- Inicio de sesión
+- Registro
+- Barra de seguridad de contraseña
+- Validación de formularios
+
+### 🛒 Carrito
+
+- Resumen visual de productos
+- Cantidades
+- Cupón de descuento
+- Totales
+
+### 📖 Blog
+
+- Artículos informativos
+- Videos
+- Consejos para mascotas
+
+### 📱 Responsive Design
+
+El sitio fue desarrollado para visualizarse correctamente en:
+
+- 💻 Computadoras
+- 📱 Celulares
+- 📲 Tablets
 
 ---
 
-### 🚀 Próximos pasos (Trabajo Futuro)
+# 💡 Conceptos aplicados
 
-- 💾 Implementar `localStorage` para persistir el carrito entre sesiones
-- 🔍 Algoritmos de búsqueda más avanzados
-- 🖼️ Optimización con *lazy loading* para imágenes y videos
-- 🛠️ Desarrollo de backend con Node.js o PHP
-- 🗄️ Sistema de autenticación con base de datos
-- 💳 Integración con pasarelas de pago reales
-- ⚛️ Migración a frameworks modernos (React, Vue.js o Angular)
+- HTML5 semántico
+- CSS3
+- Flexbox
+- CSS Grid
+- Media Queries
+- Animaciones CSS
+- Transiciones
+- Manipulación del DOM
+- Variables
+- Condicionales
+- Bucles
+- Arreglos
+- Validación de formularios
+- Organización modular del proyecto
+- Git Flow básico
 
 ---
 
-> *Proyecto desarrollado sin inversión económica, usando herramientas gratuitas.*  
-> 📌 **Estado actual:** Avance del Proyecto 03 (julio 2026)
+# 👨‍💻 Equipo de desarrollo
+
+### Andrea López Calderón
+
+Diseño UI/UX, estructura visual, prototipos en Canva y desarrollo Frontend.
+
+[![GitHub](https://img.shields.io/badge/andrea--lc-D4537E?style=for-the-badge&logo=github&logoColor=white)](https://github.com/andrea-lc)
+
+---
+
+### Luis Bryan Guardia Quispe
+
+Desarrollo Frontend, estructura HTML, navegación y colaboración en CSS y JavaScript.
+
+[![GitHub](https://img.shields.io/badge/bryanuni1809-D4537E?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bryanuni1809)
+
+---
+
+# 📌 Estado del proyecto
+
+🟢 **Proyecto Académico Finalizado**
+
+Este proyecto corresponde al desarrollo del curso **Taller de Programación Web**.
+
+Actualmente incluye:
+
+- Frontend completo
+- Diseño responsive
+- JavaScript para interactividad
+- Organización modular del código
+- Documentación técnica
+
+---
+
+# 🔮 Trabajo futuro
+
+En futuras versiones se plantea incorporar:
+
+- Backend con Node.js o PHP
+- Base de datos
+- Autenticación completa
+- Pasarela de pagos
+- Persistencia del carrito con LocalStorage
+- Panel de administración
+- Gestión de inventario
+- Historial de compras
+
+---
+
+## 📜 Licencia
+
+Proyecto desarrollado únicamente con fines académicos para la **Universidad Tecnológica del Perú (UTP)**.
+
+No tiene fines comerciales.
