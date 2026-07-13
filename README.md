@@ -192,7 +192,7 @@ Desarrollo Frontend, estructura HTML, navegación y colaboración en CSS y JavaS
 
 # 📌 Estado del proyecto
 
-🟢 **Proyecto Académico Finalizado**
+🟢 **Proyecto Académico En Proceso**
 
 Este proyecto corresponde al desarrollo del curso **Taller de Programación Web**.
 
