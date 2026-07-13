@@ -42,39 +42,45 @@ Dolly's House es una tienda virtual ficticia especializada en accesorios y alime
 
 ### Estructura del proyecto
 📁 Site Root
-├── 📁 html/
-│ ├── index.html
-│ ├── Productos_Alimentos.html
-│ ├── Productos_Accesorios.html
-│ ├── Productos_Aves.html
-│ ├── Productos_Mascotas_Pequeñas.html
-│ ├── Producto_Detalle.html
-│ ├── Carrito.html
-│ ├── Pagos.html
-│ ├── Nosotros.html
-│ ├── Contacto.html
-│ ├── Blog.html
-│ ├── Recomendaciones.html
-│ ├── Login.html
-│ └── Registro.html
-├── 📁 css/
-│ └── styles.css ← hoja de estilos centralizada
-├── 📁 js/
-│ └── script.js ← lógica, validaciones y manipulación del DOM
-├── 📁 images/
-│ ├── Imagenes_Logo/
-│ ├── Images_Aboutus/
-│ ├── Images_Accesorios/
-│ ├── Images_Alimentos/
-│ ├── Images_Aves/
-│ ├── Images_Blog/
-│ ├── Images_Head-Foot/
-│ ├── Images_Marcas/
-│ └── Images_Mascotas_pequeñas/
-└── 📁 videos/
-├── videos_Inicio/
-└── videos_Blog/
-
+ ├── 📁 docs/
+ │    ├── 📁 css/
+ │    │    └── styles.css
+ │    ├── 📁 html/
+ │    │    ├── index.html
+ │    │    ├── Productos_Alimentos.html
+ │    │    ├── Productos_Accesorios.html
+ │    │    ├── Productos_Aves.html
+ │    │    ├── Productos_Mascotas_Pequeñas.html
+ │    │    ├── Producto_Detalle.html
+ │    │    ├── Carrito.html
+ │    │    ├── Pagos.html
+ │    │    ├── Nosotros.html
+ │    │    ├── Contacto.html
+ │    │    ├── Blog.html
+ │    │    ├── Recomendaciones.html
+ │    │    ├── Login.html
+ │    │    └── Registro.html
+ │    ├──  images/
+ │    │    ├── Imagenes_Logo/
+ │    │    ├── Images_Aboutus/
+ │    │    ├── Images_Accesorios/
+ │    │    ├── Images_Alimentos/
+ │    │    ├── Images_Aves/
+ │    │    ├── Images_Mascotas_pequeñas/
+ │    │    ├── Images_Blog/
+ │    │    ├── Images_Head-Foot/
+ │    │    ├── Images_Marcas/
+ │    │    ── Images_Product/
+ │    ├── 📁 js/
+ │    │    └── script.js
+ │    └── 📁 videos/
+ │         ├── videos_Inicio/
+ │         └── videos_Blog/
+ ├──  nbproject/
+ ├── 📁 test/
+ ├── .gitattributes
+ ├── .gitignore
+ └── index.html
 ---
 
 ### El equipo detrás del caos 🐾
