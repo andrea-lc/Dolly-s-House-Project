@@ -1840,6 +1840,51 @@ footer {
   font-weight: 600;
 }
 
+.btn-eliminar {
+  margin-top: 10px;
+  background: none;
+  border: 1px solid #d97b7b;
+  color: #b8433f;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-eliminar:hover {
+  background: #f7e3e3;
+}
+
+.btn-vaciar {
+  display: inline-block;
+  margin-top: 8px;
+  background: none;
+  border: 1px solid #6b6460;
+  color: #6b6460;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-vaciar:hover {
+  background: #efe9df;
+}
+
+.carrito-vacio {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 15px;
+  color: #6b6460;
+}
+
+.carrito-vacio a {
+  color: var(--wine);
+  font-weight: 600;
+}
+
 /* Uso de flex para apilar los hijos verticalmente y alinearlos a la izquierda*/
 .item-pricing {
   display: flex;

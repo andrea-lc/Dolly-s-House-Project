@@ -409,19 +409,115 @@ function mostrarToast(msg) {
     setTimeout(() => t.classList.remove('visible'), 3000);
 }
 
+/* ══════════════════════════════════════════
+    CARRITO — CRUD (persistido en localStorage)
+    Cada item: { id, nombre, marca, precio, imagen, cantidad }
+   ══════════════════════════════════════════ */
+const CARRITO_KEY = 'dollyCarrito';
+
+// Genera un id "slug" a partir del nombre (ej: "Croquetas Zeus" -> "croquetas-zeus")
+function generarIdProducto(nombre) {
+    return nombre
+        .toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+}
+
+// READ — devuelve el arreglo completo del carrito
+function obtenerCarrito() {
+    try {
+        return JSON.parse(localStorage.getItem(CARRITO_KEY)) || [];
+    } catch (e) {
+        return [];
+    }
+}
+
+// (privado) guarda el arreglo completo y refresca el badge del header
+function guardarCarrito(carrito) {
+    localStorage.setItem(CARRITO_KEY, JSON.stringify(carrito));
+    actualizarBadgeCarrito();
+}
+
+// CREATE — agrega un producto; si ya existe, suma la cantidad en vez de duplicar
+function crearItemCarrito(producto, cantidad = 1) {
+    const carrito = obtenerCarrito();
+    const existente = carrito.find(p => p.id === producto.id);
+    if (existente) {
+        existente.cantidad += cantidad;
+    } else {
+        carrito.push({ ...producto, cantidad });
+    }
+    guardarCarrito(carrito);
+    return carrito;
+}
+
+// UPDATE — cambia la cantidad de un producto puntual
+function actualizarCantidadCarrito(id, nuevaCantidad) {
+    const carrito = obtenerCarrito();
+    const item = carrito.find(p => p.id === id);
+    if (!item) return carrito;
+    item.cantidad = Math.max(1, parseInt(nuevaCantidad) || 1);
+    guardarCarrito(carrito);
+    return carrito;
+}
+
+// DELETE — elimina un producto puntual del carrito
+function eliminarItemCarrito(id) {
+    const carrito = obtenerCarrito().filter(p => p.id !== id);
+    guardarCarrito(carrito);
+    return carrito;
+}
+
+// DELETE — vacía todo el carrito
+function vaciarCarrito() {
+    guardarCarrito([]);
+}
+
+// Refresca el número sobre el ícono 🛒 en TODAS las páginas
+function actualizarBadgeCarrito() {
+    const total = obtenerCarrito().reduce((acc, p) => acc + p.cantidad, 0);
+    document.querySelectorAll('.carrito-btn').forEach(c => {
+        c.innerHTML = `🛒 <span class="label">Carrito</span>` +
+            (total > 0 ? ` <span class="carrito-badge">${total}</span>` : '');
+    });
+}
+
+// Lee el precio/cantidad del producto en la página de DETALLE y lo agrega (CREATE)
 function agregarAlCarrito() {
     const btn = document.querySelector('.btn-grande');
     if (!btn) return;
     btn.onclick = () => {
         const n = parseInt(document.getElementById('cantidad-val')?.textContent || 1);
-        const c = document.querySelector('.carrito-btn');
-        if (c) {
-            const total = (parseInt(c.dataset.count || 0)) + n;
-            c.dataset.count = total;
-            c.innerHTML = `🛒 <span class="label">Carrito</span> <span class="carrito-badge">${total}</span>`;
-        }
+        const nombre = document.querySelector('.detalle-titulo')?.textContent.trim() || 'Producto';
+        const marca = document.querySelector('.marca')?.textContent.trim() || '';
+        const precioTexto = document.getElementById('precio-final')?.textContent
+            || document.querySelector('.precio-grande')?.textContent || '0';
+        const precio = parseFloat(precioTexto.replace(/S\/\.?/, '').replace(',', '.').trim()) || 0;
+        const imagen = document.querySelector('#img-track img')?.getAttribute('src') || '';
+
+        crearItemCarrito({ id: generarIdProducto(nombre), nombre, marca, precio, imagen }, n);
         mostrarToast(`✅ ${n} producto(s) agregado(s) al carrito`);
     };
+}
+
+// Conecta el botón "Agregar al carrito" de cada tarjeta en páginas de categoría (CREATE)
+function iniciarBotonesCarritoCards() {
+    document.querySelectorAll('.producto-card').forEach(card => {
+        const btn = card.querySelector('.btn-comprar');
+        if (!btn) return;
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const nombre = card.querySelector('.nombre')?.textContent.trim() || 'Producto';
+            const marca = card.querySelector('.marca')?.textContent.trim() || '';
+            const precioTexto = card.querySelector('.precio')?.textContent || '0';
+            const precio = parseFloat(precioTexto.replace(/S\/\.?/, '').replace(',', '.').trim()) || 0;
+            const imagen = card.querySelector('img')?.getAttribute('src') || '';
+
+            crearItemCarrito({ id: generarIdProducto(nombre), nombre, marca, precio, imagen }, 1);
+            mostrarToast(`✅ ${nombre} agregado al carrito`);
+        });
+    });
 }
 
 /* ── 3. ACORDEÓN ── */
@@ -494,6 +590,8 @@ function iniciarCarrusel() {
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
+    actualizarBadgeCarrito();
+    iniciarBotonesCarritoCards();
     crearSelectorCantidad();
     agregarAlCarrito();
     iniciarAcordeon();
