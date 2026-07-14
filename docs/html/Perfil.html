@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Meta viewport para responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Animales Pequeños — Dolly's House</title>
+    <title>Mi Perfil — Dolly's House</title>
     <style>
         .barra-top {
             background-color: #1b171e;
@@ -17,8 +16,6 @@
         }
     </style>
 </head>
-
-<!-- SHARED — HEADER & NAVIGATION -->
 
 <body>
     <div class="barra-top">
@@ -53,7 +50,7 @@
     <!-- NAVEGACIÓN -->
     <div class="navegacion" id="div">
         <ul class="opciones">
-            <li><a href=../../index.html>Inicio</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
 
             <li><a href="../html/Productos_Alimentos.html">Alimentos</a>
                 <div class="dropdown-menu">
@@ -138,74 +135,68 @@
     <!-- CONTENIDO PRINCIPAL -->
     <div class="auth-page">
         <div class="page-header">
-            <h1 class="section-title">Registro</h1>
+            <h1 class="section-title">Mi Perfil</h1>
             <div class="section-line"></div>
         </div>
         <div class="auth-container">
 
-            <!-- 👈 LADO IZQUIERDO: FOTO GRANDE (invertido respecto al login) -->
-            <div class="auth-image-side">
-                <!-- 👇 Aquí pones la ruta de tu imagen -->
-                <img src="../images/Images_Registro-Sesion/ImagenRS.jpg" alt="Foto de mascotas">
+            <!-- LADO IZQUIERDO: FORMULARIO -->
+            <div class="auth-form-side">
+                <h1 class="section-title">Edita tus datos</h1>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Actualiza tu información cuando quieras 🐾</p>
+
+                <form id="form-perfil" class="auth-form" novalidate onsubmit="validarPerfil(event)">
+                    <!-- Campo nombre -->
+                    <div class="form-group">
+                        <label for="nombre-perfil">Nombre completo</label>
+                        <input type="text" id="nombre-perfil" placeholder="Tu nombre" required>
+                        <span class="error-msg" id="error-nombre-perfil"></span>
+                    </div>
+
+                    <!-- Campo email -->
+                    <div class="form-group">
+                        <label for="email-perfil">Correo electrónico</label>
+                        <input type="email" id="email-perfil" placeholder="ejemplo@correo.com" required>
+                        <span class="error-msg" id="error-email-perfil"></span>
+                    </div>
+
+                    <!-- Nueva contraseña (opcional) -->
+                    <div class="form-group">
+                        <label for="password-perfil">Nueva contraseña (opcional)</label>
+                        <div class="password-wrap">
+                            <input type="password" id="password-perfil" placeholder="Déjalo vacío para no cambiarla">
+                            <button type="button" class="btn-eye" id="toggle-pass-perfil"
+                                onclick="activarOjo('toggle-pass-perfil', 'password-perfil')">👁</button>
+                        </div>
+                        <span class="error-msg" id="error-password-perfil"></span>
+                    </div>
+
+                    <!-- Confirmar nueva contraseña -->
+                    <div class="form-group">
+                        <label for="password-perfil-confirm">Confirmar nueva contraseña</label>
+                        <div class="password-wrap">
+                            <input type="password" id="password-perfil-confirm" placeholder="Repite la nueva contraseña">
+                            <button type="button" class="btn-eye" id="toggle-pass-perfil-confirm"
+                                onclick="activarOjo('toggle-pass-perfil-confirm', 'password-perfil-confirm')">👁</button>
+                        </div>
+                        <span class="error-msg" id="error-password-perfil-confirm"></span>
+                    </div>
+
+                    <!-- Mensaje general de éxito -->
+                    <span class="error-msg" id="exito-perfil" style="color:#4c4f3e;"></span>
+
+                    <button type="submit" class="btn-submit">Guardar Cambios</button>
+
+                    <p class="auth-switch">
+                        <a href="#" id="link-cerrar-sesion">Cerrar sesión</a>
+                    </p>
+                </form>
             </div>
 
-            <!-- LADO DERECHO: FORMULARIO -->
-            <div class="auth-form-side">
-                <h1 class="section-title">Crea tu cuenta</h1>
-                <div class="section-line"></div>
-                <p class="section-subtitle">Únete a la familia Dolly's House 🐶🐱</p>
-
-                <form id="form-registro" class="auth-form" novalidate onsubmit="validarRegistro(event)">
-
-                    <!-- Nombre completo -->
-                    <div class="form-group">
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" required>
-                        <span class="error-msg" id="error-nombre"></span>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label for="email-registro">Correo electrónico</label>
-                        <input type="email" id="email-registro" required>
-                        <span class="error-msg" id="error-email-reg"></span>
-                    </div>
-
-                    <!-- Contraseña -->
-                    <div class="form-group">
-                        <label for="password-registro">Contraseña</label>
-                        <div class="password-wrap">
-                            <input type="password" id="password-registro" placeholder="Mínimo 6 caracteres" required
-                                oninput="actualizarFuerza(this.value)"> <button type="button" class="btn-eye" <button
-                                type="button" class="btn-eye" id="toggle-pass-reg"
-                                onclick="activarOjo('toggle-pass-reg', 'password-registro')">👁</button>
-                        </div>
-                        <span class="error-msg" id="error-pass-reg"></span>
-                        <!-- Barra de fuerza de contraseña -->
-                        <div class="strength-bar">
-                            <div class="strength-fill" id="strength-fill"></div>
-                        </div>
-                        <small id="strength-text">Escribe una contraseña</small>
-                    </div>
-
-                    <!-- Confirmar contraseña -->
-                    <div class="form-group">
-                        <label for="password-confirm">Confirmar contraseña</label>
-                        <input type="password" id="password-confirm" placeholder="Repite tu contraseña" required>
-                        <span class="error-msg" id="error-confirm"></span>
-                    </div>
-
-                    <!-- Términos -->
-                    <div class="form-group check-group">
-                        <input type="checkbox" id="terminos" required>
-                        <label for="terminos">Acepto los términos y condiciones</label>
-                        <span class="error-msg" id="error-terminos"></span>
-                    </div>
-
-                    <button type="submit" class="btn-submit">Crear Cuenta</button>
-
-                    <p class="auth-switch">¿Ya tienes cuenta? <a href="../html/Inicio_sesion.html">Inicia sesión</a></p>
-                </form>
+            <!-- LADO DERECHO: FOTO -->
+            <div class="auth-image-side">
+                <img src="../images/Images_Registro-Sesion/perfil-image.png" alt="Foto de mascotas">
             </div>
 
         </div>
@@ -219,7 +210,7 @@
             <div class="footer-col">
                 <h3> Navegación</h3>
                 <ul>
-                    <li><a href=../../index.html>Inicio</a></li>
+                    <li><a href="../../index.html">Inicio</a></li>
                     <li><a href="../html/Productos_Accesorios.html">Accesorios</a></li>
                     <li><a href="../html/Productos_Alimentos.html">Alimentos</a></li>
                     <li><a href="../html/Productos_Alimentos.html">Mascotas Pequeñas</a></li>
@@ -239,7 +230,7 @@
                             href="https://instagram.com">Instagram</a></li>
                     <li><img src="../images/Imagenes_Logo/3.png" alt="Facebook"><a
                             href="https://facebook.com">Facebook</a></li>
-                    <li><img src="../images/Imagenes_Logo/1.png"" alt=" Whatsapp"><a
+                    <li><img src="../images/Imagenes_Logo/1.png" alt=" Whatsapp"><a
                             href="https://wa.me/51946414833">WhatsApp</a>
                     </li>
                 </ul>
@@ -264,121 +255,83 @@
     </footer>
     <script src="../js/javaScript.js"></script>
     <script>
-        /*  VALIDACIÓN DEL REGISTRO */
-        function validarRegistro(e) {
+        /* PROTECCIÓN DE LA PÁGINA: si no hay sesión activa, mandamos al usuario a iniciar sesión */
+        let sesion = obtenerSesionActual();
+        if (!sesion) {
+            alert("Debes iniciar sesión para ver tu perfil");
+            window.location.href = "../html/Inicio_sesion.html";
+        }
+
+        // Guardamos el correo original para poder ubicar al usuario aunque cambie su email
+        let emailOriginalPerfil = sesion ? sesion.email : "";
+
+        // Precargamos el formulario con los datos actuales del usuario
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!sesion) return;
+            document.getElementById("nombre-perfil").value = sesion.nombre;
+            document.getElementById("email-perfil").value = sesion.email;
+        });
+
+        /* VALIDACIÓN DEL FORMULARIO DE PERFIL */
+        function validarPerfil(e) {
             e.preventDefault();
 
-            //lee todo lo que escribio el usuario y lo guarda en variables
-            let nombre = document.getElementById("nombre").value.trim();
-            let email = document.getElementById("email-registro").value.trim();
-            let pass = document.getElementById("password-registro").value.trim();
-            let confirm = document.getElementById("password-confirm").value.trim();
-            let terminos = document.getElementById("terminos").checked;   // USO DE TIPO BOOLEAN
+            let nombre = document.getElementById("nombre-perfil").value.trim();
+            let email = document.getElementById("email-perfil").value.trim();
+            let pass = document.getElementById("password-perfil").value;
+            let passConfirm = document.getElementById("password-perfil-confirm").value;
             let valido = true;
 
-            // Limpiar errores en caso los datos ingresados sean incorrectos
-            limpiarError("error-nombre");
-            limpiarError("error-email-reg");
-            limpiarError("error-pass-reg");
-            limpiarError("error-confirm");
-            limpiarError("error-terminos");
+            limpiarError("error-nombre-perfil");
+            limpiarError("error-email-perfil");
+            limpiarError("error-password-perfil");
+            limpiarError("error-password-perfil-confirm");
+            document.getElementById("exito-perfil").textContent = "";
 
-            // USO DE IF SIMPLE — Valida nombre vacío
             if (nombre === "") {
-                mostrarError("error-nombre", "El nombre es obligatorio");
+                mostrarError("error-nombre-perfil", "El nombre es obligatorio");
                 valido = false;
             }
 
-            // USO DE IF ELSE DOBLE — Valida email en caso este vacio
             if (email === "") {
-                mostrarError("error-email-reg", "El correo es obligatorio");
+                mostrarError("error-email-perfil", "El correo es obligatorio");
                 valido = false;
-            } else if (!emailValido(email)) { //en caso el email no cumpla con el formato correcto, se muestra un mensaje de error
-                mostrarError("error-email-reg", "Correo no válido");
-                valido = false;
-            }
-
-            // USO DE IF ELSE IF ANIDADO — Valida contraseña
-            if (pass === "") {
-                mostrarError("error-pass-reg", "La contraseña es obligatoria");
-                valido = false;
-            } else if (pass.length < 6) { //la contraseña debe tener al menos 6 caracteres, si no cumple con esto se muestra un mensaje de error
-                mostrarError("error-pass-reg", "Mínimo 6 caracteres");
+            } else if (!emailValido(email)) {
+                mostrarError("error-email-perfil", "Correo no válido");
                 valido = false;
             }
 
-            // USO DE IF SIMPLE — Compara contraseñas
-            if (pass !== confirm) {                    // USO DE OPERADOR DE COMPARACIÓN !==
-                mostrarError("error-confirm", "Las contraseñas no coinciden");
-                // en caso de que las contraseñas no coincidan, se muestra un mensaje de error
-                valido = false;
+            // La contraseña es opcional: solo la validamos si el usuario escribió algo
+            if (pass !== "" || passConfirm !== "") {
+                if (pass.length < 6) {
+                    mostrarError("error-password-perfil", "Mínimo 6 caracteres");
+                    valido = false;
+                } else if (pass !== passConfirm) {
+                    mostrarError("error-password-perfil-confirm", "Las contraseñas no coinciden");
+                    valido = false;
+                }
             }
 
-            // USO DE IF SIMPLE — Valida checkbox
-            if (!terminos) {                           // USO DE OPERADOR LÓGICO NOT (!)
-                mostrarError("error-terminos", "Acepta los términos");
-                //en caso el usuario no aprete la opcion de aceptar terminos y condiciones, se muestra un mensaje de error
-                valido = false;
-            }
-            // en caso todos los datos sean correctos, creamos el OBJETO Usuario y lo guardamos
             if (valido) {
-                // USO DE CLASES/OBJETOS — registrarUsuario() crea un objeto Usuario y lo guarda
-                let resultado = registrarUsuario(nombre, email, pass);
-
+                let resultado = actualizarUsuario(emailOriginalPerfil, nombre, email, pass);
                 if (resultado.exito) {
-                    iniciarSesion(resultado.usuario); // deja al usuario logeado automáticamente
-                    alert("🎉 Cuenta creada, bienvenida " + resultado.usuario.nombre);
-                    formRegistro.reset();
-                    actualizarFuerza("");
-                    // Volvemos al inicio; usamos el href del logo para no depender de la ubicación de la página
-                    window.location.href = document.querySelector(".logo").getAttribute("href");
+                    emailOriginalPerfil = resultado.usuario.email; // por si cambió el correo
+                    sesion = resultado.usuario;
+                    document.getElementById("password-perfil").value = "";
+                    document.getElementById("password-perfil-confirm").value = "";
+                    document.getElementById("exito-perfil").textContent = "✅ Datos actualizados correctamente";
                 } else {
-                    mostrarError("error-email-reg", resultado.mensaje);
+                    mostrarError("error-email-perfil", resultado.mensaje);
                 }
             }
         }
 
-        // USO DE FUNCIONES — Actualiza la barra visual
-        // USO DE MANIPULACIÓN CSS VÍA JS — Cambia width y background
-        function actualizarFuerza(pass) {
-            // Esta función se ejecuta cada vez que escribes una letra en la contraseña
-            // Busca la barrita visual (el relleno de la barra)
-            let barra = document.getElementById("strength-fill");
-            // Busca el texto que dice "Débil", "Media", "Fuerte"
-            let texto = document.getElementById("strength-text");
-            if (!barra || !texto) return;   // Si alguno de los dos no existe, sale de la función
-
-            if (pass.length === 0) { // en caso no se halla escrito una contraseña aun 
-                //la barra no tendra un anch, tendra un color medio gris y mostrara un mensaje de "Escribe una contraseña"
-                barra.style.width = "0%";
-                barra.style.background = "#e2d5c0";
-                texto.textContent = "Escribe una contraseña";
-                return;
-            }
-
-            let nivel = nivelFuerza(calcularFuerza(pass));//calcula la fuerza de una contraseña en puntos y convierte esos puntos en un nivel
-            //devuelve un tamaño, color y texto para mostrar en la barra visual
-            barra.style.width = nivel.ancho;             // USO DE MANIPULACIÓN CSS
-            barra.style.background = nivel.color;
-            texto.textContent = nivel.texto;
-            texto.style.color = nivel.color;
-        }
-
-        /* MOSTRAR / OCULTAR CONTRASEÑA  */
-        // USO DE ADD EVENT LISTENER — Evento click (ahora llamado desde onclick en HTML)
-        function activarOjo(idBoton, idInput) {
-            let boton = document.getElementById(idBoton);
-            let input = document.getElementById(idInput);
-            if (!boton || !input) return;
-
-            // Verifica atributo type
-            if (input.getAttribute("type") === "password") {
-                input.setAttribute("type", "text");      // USO DE SETATTRIBUTE
-            } else {
-                input.setAttribute("type", "password");  // USO DE SETATTRIBUTE
-                boton.textContent = "👁";
-            }
-        }
+        // Cerrar sesión desde el perfil
+        document.getElementById("link-cerrar-sesion").addEventListener("click", (e) => {
+            e.preventDefault();
+            cerrarSesion();
+            window.location.href = "../../index.html";
+        });
     </script>
 </body>
 

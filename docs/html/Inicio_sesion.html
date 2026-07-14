@@ -34,7 +34,7 @@
             <div class="buscador-wrap"><span class="icon-search">🔍</span><input type="text" class="buscador"
                     placeholder="Buscar productos..."></div>
             <div class="header-icons">
-                <div class="header-icons2">
+                <div class="header-icons2" id="auth-area">
                     <a href="../html/Inicio_sesion.html" class="login-btn">Iniciar Sesion</a>
                     <p style="color: #dcc594;">|</p>
                     <a href="../html/Registro.html" class="login-btn">Registrarse</a>
@@ -275,8 +275,18 @@
 
             // USO DE IF SIMPLE — Si todo está bien
             if (valido) {
-                // USO DE CONCATENACIÓN DE CADENAS — Une texto con +
-                alert("Bienvenida " + email + "!"); //mmuestra un mensaje de bienvenida con el email ingresado
+                // USO DE CLASES/OBJETOS — autenticar() busca el usuario y compara la contraseña
+                let resultado = autenticar(email, password);
+
+                if (resultado.exito) {
+                    let dias = resultado.usuario.diasRegistrado(); // CÁLCULO hecho por el objeto Usuario
+                    iniciarSesion(resultado.usuario); // guarda la sesión activa en localStorage
+                    alert("Bienvenida " + resultado.usuario.nombre + "! Llevas " + dias + " día(s) con nosotros.");
+                    // Volvemos al inicio; usamos el href del logo para no depender de la ubicación de la página
+                    window.location.href = document.querySelector(".logo").getAttribute("href");
+                } else {
+                    mostrarError("error-password", resultado.mensaje);
+                }
             }
         }
 

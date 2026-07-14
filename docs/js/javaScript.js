@@ -380,6 +380,174 @@ function nivelFuerza(puntos) {
     return { texto: texto, color: color, ancho: ancho };
 }
 
+/* ══════════════════════════════════════════
+    CLASES Y OBJETOS — USUARIOS (POO)
+   ══════════════════════════════════════════ */
+
+// USO DE CLASES — molde para crear un usuario
+class Usuario {
+    // USO DE CONSTRUCTOR — se ejecuta al hacer "new Usuario(...)"
+    constructor(nombre, email, password) {
+        this.nombre = nombre;      // USO DE ATRIBUTOS
+        this.email = email;
+        this.password = password;
+        this.fechaRegistro = new Date().toISOString(); // fecha en que se creó el objeto
+
+    }
+
+    // USO DE MÉTODO CON CÁLCULO — cuántos días lleva registrado
+    diasRegistrado() {
+        let hoy = new Date();
+        let registro = new Date(this.fechaRegistro);
+        let diferenciaMs = hoy - registro;                          // OPERACIÓN MATEMÁTICA: resta de fechas
+        return Math.floor(diferenciaMs / (1000 * 60 * 60 * 24));    // milisegundos → días
+    }
+
+    // USO DE MÉTODO — compara si la contraseña ingresada coincide
+    validarPassword(passwordIngresada) {
+        return this.password === passwordIngresada; // USO DE OPERADOR DE COMPARACIÓN
+    }
+}
+
+// USO DE ARREGLO — aquí se guardan todos los objetos Usuario (nuestra lista de usuarios)
+// Al recargar la página, reconstruimos cada uno con "new Usuario(...)" para que conserven sus métodos
+let usuarios = (JSON.parse(localStorage.getItem("usuarios")) || []).map(function (u) {
+    let usuario = new Usuario(u.nombre, u.email, u.password);
+    usuario.fechaRegistro = u.fechaRegistro; // conserva la fecha real de registro
+    return usuario;
+});
+
+// Guarda el arreglo de usuarios en el navegador
+function guardarUsuarios() {
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
+
+// Busca un usuario por su correo dentro del arreglo
+function buscarUsuario(email) {
+    for (let i = 0; i < usuarios.length; i++) { // Estructura repetitiva FOR
+        if (usuarios[i].email.toLowerCase() === email.toLowerCase()) {
+            return usuarios[i];
+        }
+    }
+    return null;
+}
+
+// Crea un nuevo objeto Usuario y lo agrega al arreglo (si el correo no existe ya)
+function registrarUsuario(nombre, email, password) {
+    if (buscarUsuario(email)) {
+        return { exito: false, mensaje: "Ese correo ya está registrado" };
+    }
+    let nuevoUsuario = new Usuario(nombre, email, password); // USO DE OBJETOS
+    usuarios.push(nuevoUsuario);
+    guardarUsuarios();
+    return { exito: true, usuario: nuevoUsuario };
+}
+
+// Verifica correo + contraseña
+function autenticar(email, password) {
+    let usuario = buscarUsuario(email);
+    if (!usuario) {
+        return { exito: false, mensaje: "No existe una cuenta con ese correo" };
+    }
+    if (usuario.password !== password) {
+        return { exito: false, mensaje: "Contraseña incorrecta" };
+    }
+    return { exito: true, usuario: usuario };
+}
+
+// Actualiza los datos (nombre, correo y opcionalmente contraseña) de un usuario existente
+function actualizarUsuario(emailOriginal, nuevoNombre, nuevoEmail, nuevaPassword) {
+    let usuario = buscarUsuario(emailOriginal);
+    if (!usuario) {
+        return { exito: false, mensaje: "No se encontró el usuario" };
+    }
+
+    // Si cambia de correo, verificamos que ninguna otra cuenta ya lo use
+    if (nuevoEmail.toLowerCase() !== emailOriginal.toLowerCase() && buscarUsuario(nuevoEmail)) {
+        return { exito: false, mensaje: "Ese correo ya está en uso por otra cuenta" };
+    }
+
+    usuario.nombre = nuevoNombre;
+    usuario.email = nuevoEmail;
+    if (nuevaPassword) { // solo la cambiamos si el usuario escribió una nueva
+        usuario.password = nuevaPassword;
+    }
+
+    guardarUsuarios();
+
+    // Si el correo cambió, la sesión activa debe seguir apuntando al usuario correcto
+    if (localStorage.getItem("sesionActual") === emailOriginal) {
+        localStorage.setItem("sesionActual", nuevoEmail);
+    }
+
+    return { exito: true, usuario: usuario };
+}
+
+/* ══════════════════════════════════════════
+    SESIÓN ACTIVA — HEADER DINÁMICO
+   ══════════════════════════════════════════ */
+
+// Guarda en localStorage el correo del usuario que acaba de iniciar sesión
+function iniciarSesion(usuario) {
+    localStorage.setItem("sesionActual", usuario.email);
+}
+
+// Devuelve el objeto Usuario que tiene la sesión activa, o null si nadie ha iniciado sesión
+function obtenerSesionActual() {
+    let email = localStorage.getItem("sesionActual");
+    if (!email) return null;
+    return buscarUsuario(email);
+}
+
+// Cierra la sesión activa y recarga la página para que el header vuelva a su estado normal
+function cerrarSesion() {
+    localStorage.removeItem("sesionActual");
+    location.reload();
+}
+
+// Reemplaza los enlaces "Iniciar Sesion / Registrarse" del header por un saludo
+// con el nombre del usuario, si es que hay una sesión activa
+function actualizarHeaderSesion() {
+    const cont = document.getElementById("auth-area");
+    if (!cont) return; // esta página aún no tiene el header actualizado
+
+    const usuario = obtenerSesionActual();
+    if (!usuario) return; // nadie ha iniciado sesión, dejamos el header tal cual está
+
+    const primerNombre = usuario.nombre.split(" ")[0];
+
+    cont.innerHTML = `
+        <div class="usuario-menu" style="position:relative;">
+            <button type="button" id="usuario-toggle" class="login-btn"
+                style="background:none;border:none;cursor:pointer;font:inherit;">
+                Hola, ${primerNombre} ▾
+            </button>
+            <div id="usuario-dropdown" style="display:none;position:absolute;right:0;top:100%;
+                background:#1b171e;color:#dcc594;min-width:170px;padding:8px 0;z-index:50;
+                border-radius:4px;box-shadow:0 6px 16px rgba(0,0,0,0.25);">
+                <a href="../html/Perfil.html" style="display:block;padding:8px 16px;color:#dcc594;text-decoration:none;">Editar perfil</a>
+                <button type="button" id="btn-cerrar-sesion"
+                    style="display:block;width:100%;text-align:left;padding:8px 16px;background:none;
+                    border:none;color:#dcc594;cursor:pointer;font:inherit;">Cerrar sesión</button>
+            </div>
+        </div>
+    `;
+
+    const toggle = document.getElementById("usuario-toggle");
+    const dropdown = document.getElementById("usuario-dropdown");
+    toggle.addEventListener("click", () => {
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    });
+    // Cierra el menú si el usuario hace click fuera de él
+    document.addEventListener("click", (e) => {
+        if (!cont.contains(e.target)) dropdown.style.display = "none";
+    });
+    document.getElementById("btn-cerrar-sesion").addEventListener("click", cerrarSesion);
+}
+
+// Se ejecuta en TODAS las páginas que incluyan este archivo (por eso va fuera de otros listeners)
+document.addEventListener("DOMContentLoaded", actualizarHeaderSesion);
+
 
 /* ══════════════════════════════════════════
     PRODUCTOS DETALLE
