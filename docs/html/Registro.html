@@ -320,9 +320,18 @@
                 //en caso el usuario no aprete la opcion de aceptar terminos y condiciones, se muestra un mensaje de error
                 valido = false;
             }
-            // en caso todos los datos sean correctos, se muestra un mensaje de bienvenida con el nombre del usuario
+            // en caso todos los datos sean correctos, creamos el OBJETO Usuario y lo guardamos
             if (valido) {
-                alert("🎉 Cuenta creada, bienvenida " + nombre);
+                // USO DE CLASES/OBJETOS — registrarUsuario() crea un objeto Usuario y lo guarda
+                let resultado = registrarUsuario(nombre, email, pass);
+
+                if (resultado.exito) {
+                    alert("🎉 Cuenta creada, bienvenida " + resultado.usuario.nombre);
+                    formRegistro.reset();
+                    actualizarFuerza("");
+                } else {
+                    mostrarError("error-email-reg", resultado.mensaje);
+                }
             }
         }
 

@@ -275,8 +275,15 @@
 
             // USO DE IF SIMPLE — Si todo está bien
             if (valido) {
-                // USO DE CONCATENACIÓN DE CADENAS — Une texto con +
-                alert("Bienvenida " + email + "!"); //mmuestra un mensaje de bienvenida con el email ingresado
+                // USO DE CLASES/OBJETOS — autenticar() busca el usuario y compara la contraseña
+                let resultado = autenticar(email, password);
+
+                if (resultado.exito) {
+                    let dias = resultado.usuario.diasRegistrado(); // CÁLCULO hecho por el objeto Usuario
+                    alert("Bienvenida " + resultado.usuario.nombre + "! Llevas " + dias + " día(s) con nosotros.");
+                } else {
+                    mostrarError("error-password", resultado.mensaje);
+                }
             }
         }
 

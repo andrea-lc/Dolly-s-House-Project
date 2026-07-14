@@ -380,6 +380,80 @@ function nivelFuerza(puntos) {
     return { texto: texto, color: color, ancho: ancho };
 }
 
+/* ══════════════════════════════════════════
+    CLASES Y OBJETOS — USUARIOS (POO)
+   ══════════════════════════════════════════ */
+
+// USO DE CLASES — molde para crear un usuario
+class Usuario {
+    // USO DE CONSTRUCTOR — se ejecuta al hacer "new Usuario(...)"
+    constructor(nombre, email, password) {
+        this.nombre = nombre;      // USO DE ATRIBUTOS
+        this.email = email;
+        this.password = password;
+        this.fechaRegistro = new Date().toISOString(); // fecha en que se creó el objeto
+    }
+
+    // USO DE MÉTODO CON CÁLCULO — cuántos días lleva registrado
+    diasRegistrado() {
+        let hoy = new Date();
+        let registro = new Date(this.fechaRegistro);
+        let diferenciaMs = hoy - registro;                          // OPERACIÓN MATEMÁTICA: resta de fechas
+        return Math.floor(diferenciaMs / (1000 * 60 * 60 * 24));    // milisegundos → días
+    }
+
+    // USO DE MÉTODO — compara si la contraseña ingresada coincide
+    validarPassword(passwordIngresada) {
+        return this.password === passwordIngresada; // USO DE OPERADOR DE COMPARACIÓN
+    }
+}
+
+// USO DE ARREGLO — aquí se guardan todos los objetos Usuario (nuestra lista de usuarios)
+// Al recargar la página, reconstruimos cada uno con "new Usuario(...)" para que conserven sus métodos
+let usuarios = (JSON.parse(localStorage.getItem("usuarios")) || []).map(function (u) {
+    let usuario = new Usuario(u.nombre, u.email, u.password);
+    usuario.fechaRegistro = u.fechaRegistro; // conserva la fecha real de registro
+    return usuario;
+});
+
+// Guarda el arreglo de usuarios en el navegador
+function guardarUsuarios() {
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
+
+// Busca un usuario por su correo dentro del arreglo
+function buscarUsuario(email) {
+    for (let i = 0; i < usuarios.length; i++) { // Estructura repetitiva FOR
+        if (usuarios[i].email.toLowerCase() === email.toLowerCase()) {
+            return usuarios[i];
+        }
+    }
+    return null;
+}
+
+// Crea un nuevo objeto Usuario y lo agrega al arreglo (si el correo no existe ya)
+function registrarUsuario(nombre, email, password) {
+    if (buscarUsuario(email)) {
+        return { exito: false, mensaje: "Ese correo ya está registrado" };
+    }
+    let nuevoUsuario = new Usuario(nombre, email, password); // USO DE OBJETOS
+    usuarios.push(nuevoUsuario);
+    guardarUsuarios();
+    return { exito: true, usuario: nuevoUsuario };
+}
+
+// Verifica correo + contraseña
+function autenticar(email, password) {
+    let usuario = buscarUsuario(email);
+    if (!usuario) {
+        return { exito: false, mensaje: "No existe una cuenta con ese correo" };
+    }
+    if (usuario.password !== password) {
+        return { exito: false, mensaje: "Contraseña incorrecta" };
+    }
+    return { exito: true, usuario: usuario };
+}
+
 
 /* ══════════════════════════════════════════
     PRODUCTOS DETALLE
