@@ -505,7 +505,10 @@ function cerrarSesion() {
 // Reemplaza los enlaces "Iniciar Sesion / Registrarse" del header por un saludo
 // con el nombre del usuario, si es que hay una sesión activa
 function actualizarHeaderSesion() {
+        // Buscamos el contenedor en el HTML donde deberían ir los botones de login/registro
     const cont = document.getElementById("auth-area");
+     // Cláusula de Guarda: Si este archivo se carga en una página que NO tiene "auth-area",
+    // la función se detiene aquí silenciosamente. Evita que el script rompa otras páginas
     if (!cont) return; // esta página aún no tiene el header actualizado
 
     const usuario = obtenerSesionActual();
