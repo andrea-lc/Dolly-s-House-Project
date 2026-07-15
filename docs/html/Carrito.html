@@ -235,17 +235,75 @@
     <div class="footer-bottom">© 2025 Dolly's House · Arequipa, Perú · Hecho con 🐾</div>
   </footer>
 
-  <!-- JS inline: cálculo dinámico del carrito -->
-  <script src="../js/javaScript.js">
-    function calcularTotal() {
-      var inputs = document.querySelectorAll('.qty-input');
-      var suma = 0;
-      inputs.forEach(function (inp) {
-        var qty = Math.max(1, parseInt(inp.value) || 1);
-        var precio = parseFloat(inp.dataset.precio) || 0;
-        suma += qty * precio;
-      });
-      var txt = 'S/' + suma.toFixed(2);
+  <script src="../js/javaScript.js"></script>
+
+  <!-- JS: pinta el carrito real (CRUD sobre localStorage) -->
+  <script>
+    // READ + pintado del carrito completo
+    function renderizarCarrito() {
+      const cont = document.getElementById('carrito-items-container');
+      const btnVaciar = document.getElementById('btn-vaciar-carrito');
+      const carrito = obtenerCarrito();
+
+      if (carrito.length === 0) {
+        cont.innerHTML = '<p class="carrito-vacio">Tu carrito está vacío. <a href="../../index.html">Sigue comprando →</a></p>';
+        btnVaciar.style.display = 'none';
+        actualizarTotales();
+        return;
+      }
+
+      btnVaciar.style.display = 'inline-block';
+      cont.innerHTML = carrito.map(function (p) {
+        return '<article class="carrito-item" data-id="' + p.id + '">' +
+          '<div class="item-img"><img src="' + p.imagen + '" alt="' + p.nombre + '"></div>' +
+          '<div class="item-info">' +
+            '<div class="item-brand">' + p.marca + '</div>' +
+            '<h2 class="item-name">' + p.nombre + '</h2>' +
+          '</div>' +
+          '<div class="item-controls">' +
+            '<div class="qty-wrapper">' +
+              '<label>Cantidad</label>' +
+              '<input type="number" class="qty-input" value="' + p.cantidad + '" min="1" data-id="' + p.id + '" oninput="cambiarCantidad(this)">' +
+            '</div>' +
+            '<button class="btn-eliminar" onclick="quitarDelCarrito(\'' + p.id + '\')">🗑️ Eliminar</button>' +
+          '</div>' +
+          '<div class="item-pricing">' +
+            '<span class="price-current" style="color: var(--wine);">S/' + (p.precio * p.cantidad).toFixed(2) + '</span>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+
+      actualizarTotales();
+    }
+
+    // UPDATE — cambia cantidad de un item y vuelve a pintar
+    function cambiarCantidad(input) {
+      actualizarCantidadCarrito(input.dataset.id, input.value);
+      renderizarCarrito();
+    }
+
+    // DELETE — quita un item puntual
+    function quitarDelCarrito(id) {
+      eliminarItemCarrito(id);
+      renderizarCarrito();
+      mostrarToast('🗑️ Producto eliminado del carrito');
+    }
+
+    // DELETE — vacía todo, con confirmación
+    function confirmarVaciarCarrito() {
+      if (obtenerCarrito().length === 0) return;
+      if (confirm('¿Vaciar todo el carrito?')) {
+        vaciarCarrito();
+        renderizarCarrito();
+        mostrarToast('🗑️ Carrito vaciado');
+      }
+    }
+
+    // Recalcula subtotal y total a partir del carrito actual
+    function actualizarTotales() {
+      const carrito = obtenerCarrito();
+      const suma = carrito.reduce(function (acc, p) { return acc + p.precio * p.cantidad; }, 0);
+      const txt = 'S/' + suma.toFixed(2);
       document.getElementById('subtotal').textContent = txt;
       document.getElementById('total-final').textContent = txt;
     }
