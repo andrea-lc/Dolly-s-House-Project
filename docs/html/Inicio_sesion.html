@@ -279,9 +279,8 @@
                 let resultado = autenticar(email, password);
 
                 if (resultado.exito) {
-                    let dias = resultado.usuario.diasRegistrado(); // CÁLCULO hecho por el objeto Usuario
                     iniciarSesion(resultado.usuario); // guarda la sesión activa en localStorage
-                    alert("Bienvenida " + resultado.usuario.nombre + "! Llevas " + dias + " día(s) con nosotros.");
+                    alert("Bienvenida " + resultado.usuario.nombre);
                     // Volvemos al inicio; usamos el href del logo para no depender de la ubicación de la página
                     window.location.href = document.querySelector(".logo").getAttribute("href");
                 } else {

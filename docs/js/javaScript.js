@@ -391,16 +391,7 @@ class Usuario {
         this.nombre = nombre;      // USO DE ATRIBUTOS
         this.email = email;
         this.password = password;
-        this.fechaRegistro = new Date().toISOString(); // fecha en que se creó el objeto
 
-    }
-
-    // USO DE MÉTODO CON CÁLCULO — cuántos días lleva registrado
-    diasRegistrado() {
-        let hoy = new Date();
-        let registro = new Date(this.fechaRegistro);
-        let diferenciaMs = hoy - registro;                          // OPERACIÓN MATEMÁTICA: resta de fechas
-        return Math.floor(diferenciaMs / (1000 * 60 * 60 * 24));    // milisegundos → días
     }
 
     // USO DE MÉTODO — compara si la contraseña ingresada coincide
@@ -413,7 +404,6 @@ class Usuario {
 // Al recargar la página, reconstruimos cada uno con "new Usuario(...)" para que conserven sus métodos
 let usuarios = (JSON.parse(localStorage.getItem("usuarios")) || []).map(function (u) {
     let usuario = new Usuario(u.nombre, u.email, u.password);
-    usuario.fechaRegistro = u.fechaRegistro; // conserva la fecha real de registro
     return usuario;
 });
 
