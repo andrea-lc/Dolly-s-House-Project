@@ -403,12 +403,14 @@ class Usuario {
 // USO DE ARREGLO — aquí se guardan todos los objetos Usuario (nuestra lista de usuarios)
 // Al recargar la página, reconstruimos cada uno con "new Usuario(...)" para que conserven sus métodos
 let usuarios = (JSON.parse(localStorage.getItem("usuarios")) || []).map(function (u) {
+    //.map() recorre cada dato plano (JSON) guardado para reconstruirlo.
     let usuario = new Usuario(u.nombre, u.email, u.password);
     return usuario;
 });
 
 // Guarda el arreglo de usuarios en el navegador
 function guardarUsuarios() {
+    //// JSON.stringify convierte el arreglo de objetos complejos a una cadena de texto.
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 
@@ -435,10 +437,13 @@ function registrarUsuario(nombre, email, password) {
 
 // Verifica correo + contraseña
 function autenticar(email, password) {
+    // Intenta obtener el objeto usuario asociado a ese correo.
     let usuario = buscarUsuario(email);
+    // Si buscarUsuario devolvió null, el usuario no existe.
     if (!usuario) {
         return { exito: false, mensaje: "No existe una cuenta con ese correo" };
-    }
+    }  
+     // Si el usuario existe, verifica si la contraseña coincide. 
     if (usuario.password !== password) {
         return { exito: false, mensaje: "Contraseña incorrecta" };
     }
@@ -447,6 +452,7 @@ function autenticar(email, password) {
 
 // Actualiza los datos (nombre, correo y opcionalmente contraseña) de un usuario existente
 function actualizarUsuario(emailOriginal, nuevoNombre, nuevoEmail, nuevaPassword) {
+     // Busca al usuario usando su correo actual (que actúa como clave primaria lógica).
     let usuario = buscarUsuario(emailOriginal);
     if (!usuario) {
         return { exito: false, mensaje: "No se encontró el usuario" };
@@ -456,13 +462,14 @@ function actualizarUsuario(emailOriginal, nuevoNombre, nuevoEmail, nuevaPassword
     if (nuevoEmail.toLowerCase() !== emailOriginal.toLowerCase() && buscarUsuario(nuevoEmail)) {
         return { exito: false, mensaje: "Ese correo ya está en uso por otra cuenta" };
     }
-
+// Actualiza las propiedades del objeto en memoria con los nuevos valores.
     usuario.nombre = nuevoNombre;
     usuario.email = nuevoEmail;
+    // Evalúa si se proporcionó una nueva contraseña (una cadena con texto).
     if (nuevaPassword) { // solo la cambiamos si el usuario escribió una nueva
         usuario.password = nuevaPassword;
     }
-
+ // Persiste los cambios realizados en el navegador.
     guardarUsuarios();
 
     // Si el correo cambió, la sesión activa debe seguir apuntando al usuario correcto
