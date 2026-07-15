@@ -77,6 +77,7 @@ El proyecto fue desarrollado como parte del curso **Taller de Programación Web*
 │   ├── Login.html
 │   ├── Registro.html
 │   ├── Pagos.html
+│   ├── Perfil.html
 │   ├── Recomendaciones.html
 │   ├── Nosotros.html
 │   ├── Contacto.html
@@ -142,6 +143,12 @@ El proyecto fue desarrollado como parte del curso **Taller de Programación Web*
 - Videos
 - Consejos para mascotas
 
+### 👤 Perfil
+
+- Edicion de datos del perfil
+- Uso de objetos para mantener usuarios
+- Cambio de sontraseña
+
 ### 📱 Responsive Design
 
 El sitio fue desarrollado para visualizarse correctamente en:
@@ -203,21 +210,6 @@ Actualmente incluye:
 - JavaScript para interactividad
 - Organización modular del código
 - Documentación técnica
-
----
-
-# 🔮 Trabajo futuro
-
-En futuras versiones se plantea incorporar:
-
-- Backend con Node.js o PHP
-- Base de datos
-- Autenticación completa
-- Pasarela de pagos
-- Persistencia del carrito con LocalStorage
-- Panel de administración
-- Gestión de inventario
-- Historial de compras
 
 ---
 
